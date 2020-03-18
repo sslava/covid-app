@@ -8,6 +8,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "dummy": "npx http-server ./scripts",
     "test": "jest",
     "lint": "eslint ."
   },
@@ -17,8 +18,13 @@
     ]
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.8.1",
+    "@react-navigation/bottom-tabs": "^5.2.1",
+    "@react-navigation/native": "^5.1.0",
     "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react-native": "0.61.5",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
