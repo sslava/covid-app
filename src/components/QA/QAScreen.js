@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-export default function HomeScreen() {
+import styles from './QAScreen.styles';
+
+export default function QAScreen() {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Home!</Text>
+    <View style={styles.container}>
+      <Text>QA</Text>
     </View>
   );
 }
