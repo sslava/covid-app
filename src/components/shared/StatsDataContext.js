@@ -10,7 +10,6 @@ import {
 import ItemStore from '../../common/ItemStore';
 
 const StatsContext = createContext(null);
-
 const statsStorage = new ItemStore('stats', initialStatsState.stats);
 
 export function useStatsContext() {
@@ -25,7 +24,7 @@ export function StatsDataProvider({children}) {
       const loaded = await statsStorage.load();
       dispatch({type: statsActionTypes.SET, payload: loaded});
       const fetch = fetchStatsSaga(dispatch, statsStorage);
-      // fetch();
+      fetch();
     }
     init();
   }, []);

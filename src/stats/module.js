@@ -33,9 +33,14 @@ export function fetchStatsSaga(dispatch, storage) {
 export function statsReducer(state = initialStatsState, action) {
   switch (action.type) {
     case statsActionTypes.FETCH:
-      return {...state, fetchState: 'Fetching'};
+      return {...state, fetchState: 'Fetching', error: null};
     case statsActionTypes.FETCH_COMPLETE:
-      return {...state, fetchState: 'Fetched', stats: action.payload};
+      return {
+        ...state,
+        fetchState: 'Fetched',
+        stats: action.payload,
+        error: null,
+      };
     case statsActionTypes.FETCH_FAILED:
       return {...state, fetchState: 'Error', error: action.payload};
     case statsActionTypes.SET:
