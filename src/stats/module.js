@@ -1,9 +1,7 @@
-import StatsStore from './StatsStore';
-
 import {apiRequest} from '../common/api';
 
 async function apiFetchStats() {
-  return apiRequest('GET', 'http://127.0.0.1:8080/response.json');
+  return apiRequest('GET', 'https://jsonplaceholder.typicode.com/todos/1');
 }
 
 export const statsActionTypes = {
@@ -14,7 +12,7 @@ export const statsActionTypes = {
 };
 
 export const initialStatsState = {
-  stats: StatsStore.defaultStats,
+  stats: {},
   fetchState: 'NotFetched',
   error: null,
 };

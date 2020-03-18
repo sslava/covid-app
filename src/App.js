@@ -6,7 +6,7 @@ import StatsScreen from './components/Stats/StatsScreen';
 import QAScreen from './components/QA/QAScreen';
 import ContactsScreen from './components/Contacts/ContactsScreen';
 
-import StatsDataProvider from './components/shared/StatsDataProvider';
+import {StatsDataProvider} from './components/shared/StatsDataContext';
 
 const Tab = createBottomTabNavigator();
 
