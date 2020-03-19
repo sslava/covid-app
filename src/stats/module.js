@@ -1,7 +1,10 @@
 import {apiRequest} from '../common/api';
 
 async function apiFetchStats() {
-  return apiRequest('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+  return apiRequest(
+    'GET',
+    'http://dev:mn17KRvc1Q@1koronavirus.ru/request/get_stat',
+  );
 }
 
 export const statsActionTypes = {
@@ -13,7 +16,14 @@ export const statsActionTypes = {
 
 export const initialStatsState = {
   stats: {
-    id: 3,
+    top: [],
+    russia: {
+      country_name: 'Россия',
+      country_name_en: 'Russia',
+      deaths: '0',
+      alive: '0',
+      total: '0',
+    },
   },
   fetchState: 'NotFetched',
   error: null,
@@ -24,8 +34,17 @@ export function fetchStatsSaga(dispatch, storage) {
     dispatch({type: statsActionTypes.FETCH});
     try {
       const data = await apiFetchStats();
-      dispatch({type: statsActionTypes.FETCH_COMPLETE, payload: data});
-      await storage.set(data);
+      const countries = Reflect.ownKeys(data.countries)
+        .map(key => data.countries[key][0])
+        .sort((a, b) => b.total - a.total);
+
+      const payload = {
+        top: countries.slice(0, 20),
+        russia: countries.find(c => c.country_name_en === 'Russia'),
+      };
+
+      dispatch({type: statsActionTypes.FETCH_COMPLETE, payload});
+      await storage.set(payload);
     } catch (error) {
       dispatch({type: statsActionTypes.FETCH_FAILED, payload: error});
     }

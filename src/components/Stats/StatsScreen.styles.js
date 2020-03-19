@@ -1,24 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import DeviceInfo from 'react-native-device-info';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-
 export default StyleSheet.create({
-  scroll: {
-    flex: 1,
-  },
-  container: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    minHeight: '100%',
-  },
-  header: {
-    paddingTop: 10,
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 34,
-  },
   stats: {},
   block: {
     flex: 1,
