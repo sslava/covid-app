@@ -12,7 +12,9 @@ export const statsActionTypes = {
 };
 
 export const initialStatsState = {
-  stats: {},
+  stats: {
+    id: 3,
+  },
   fetchState: 'NotFetched',
   error: null,
 };
