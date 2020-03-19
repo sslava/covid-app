@@ -31,8 +31,8 @@ export default function App() {
           })}
           tabBarOptions={{
             showLabel: false,
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
+            // activeTintColor: 'tomato',
+            // inactiveTintColor: 'gray',
           }}>
           <Tab.Screen name="stats" component={StatsScreen} />
           <Tab.Screen name="qa" component={QAScreen} />
