@@ -13,6 +13,7 @@ export default function Pie({
   style,
   innerRadius = 80,
   innerColor = 'white',
+  blankColor = 'white',
   animDuration = 500,
 }) {
   const anim = useRef(new Animated.Value(0.0));
@@ -33,6 +34,7 @@ export default function Pie({
       height={height}
       style={style}
       viewBox={'-100 -100 200 200'}>
+      <Circle cx={0} cy={0} r={100} fill={blankColor} />
       <G>
         {data.map((item, index) => {
           return (
@@ -40,7 +42,6 @@ export default function Pie({
               key={'pie_shape_' + index}
               index={index}
               endAngle={endAngle}
-              color={item.color}
               data={data}
             />
           );
