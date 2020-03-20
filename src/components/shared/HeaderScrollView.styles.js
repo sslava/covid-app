@@ -6,7 +6,7 @@ const height = DeviceInfo.hasNotch() ? 88 : 60;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: 'white',
   },
   toolbar: {
     height,
