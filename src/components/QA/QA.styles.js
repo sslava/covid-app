@@ -9,11 +9,11 @@ export default StyleSheet.create({
   },
   question: {
     fontSize: 22,
-    fontFamily: 'Helvetica',
     fontWeight: '800',
   },
   answer: {
-    marginTop: 10,
+    marginTop: 14,
+    fontFamily: 'New York',
   },
   subTitle: {
     fontSize: 20,
