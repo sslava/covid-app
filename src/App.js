@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import StatsScreen from './components/Stats/StatsScreen';
 import QAScreen from './components/QA/QAScreen';
-import ContactsScreen from './components/Contacts/ContactsScreen';
+import InfoScreen from './components/Info/InfoScreen';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -17,11 +17,11 @@ const icons = {
   contacts: 'phone',
 };
 
-const Tabs = createBottomTabNavigator();
+const RootTabs = createBottomTabNavigator();
 
 function Root() {
   return (
-    <Tabs.Navigator
+    <RootTabs.Navigator
       screenOptions={({route}) => ({
         tabBarIcon: ({focused, color, size}) => {
           const iconName = icons[route.name];
@@ -33,24 +33,21 @@ function Root() {
           bottom: 'always',
         },
         showLabel: false,
-        // activeTintColor: 'tomato',
-        // inactiveTintColor: 'gray',
       }}>
-      <Tabs.Screen name="stats" component={StatsScreen} />
-      <Tabs.Screen name="qa" component={QAScreen} />
-      <Tabs.Screen name="contacts" component={ContactsScreen} />
-    </Tabs.Navigator>
+      <RootTabs.Screen name="stats" component={StatsScreen} />
+      <RootTabs.Screen name="qa" component={InfoScreen} />
+    </RootTabs.Navigator>
   );
 }
 
-const Stack = createStackNavigator();
+const AppStack = createStackNavigator();
 
 export default function App() {
   return (
     <StatsDataProvider>
       <NavigationContainer>
-        <Stack.Navigator headerMode="screen">
-          <Stack.Screen
+        <AppStack.Navigator headerMode="screen">
+          <AppStack.Screen
             name="Root"
             component={Root}
             options={{
@@ -58,7 +55,7 @@ export default function App() {
               headerTransparent: true,
             }}
           />
-          <Stack.Screen
+          <AppStack.Screen
             name="Faq"
             component={QAScreen}
             headerMode="screen"
@@ -68,7 +65,7 @@ export default function App() {
               headerTransparent: true,
             }}
           />
-        </Stack.Navigator>
+        </AppStack.Navigator>
       </NavigationContainer>
     </StatsDataProvider>
   );
