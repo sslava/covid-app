@@ -52,7 +52,7 @@ export default class HeaderScrollView extends Component {
     );
 
     return (
-      <View style={styles.container}>
+      <View style={[styles.container]}>
         <View style={styles.toolbar}>
           <Fade visible={isHeaderScrolled}>
             <View style={[styles.header]}>
