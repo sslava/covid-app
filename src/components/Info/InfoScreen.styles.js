@@ -1,64 +1,61 @@
 import {StyleSheet} from 'react-native';
 
+import DeviceInfo from 'react-native-device-info';
+
 export default StyleSheet.create({
-  stats: {},
-  block: {
+  topBlock: {
+    backgroundColor: '#003CBF',
+    paddingTop: DeviceInfo.hasNotch() ? 60 : 30,
+    paddingLeft: 12,
+    paddingRight: 12,
+    paddingBottom: 12,
+  },
+  header: {
+    paddingLeft: 12,
+  },
+  title: {
+    fontFamily: 'DM Sans',
+    fontSize: 24,
+    lineHeight: 36,
+    fontWeight: '500',
+    color: 'white',
+  },
+  cards: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: 20,
-    paddingBottom: 20,
-  },
-  all: {
-    fontSize: 80,
-    fontWeight: '600',
-    color: 'olive',
-  },
-  deaths: {
-    fontSize: 60,
-    fontWeight: '600',
-    color: 'tomato',
-  },
-  recovered: {
-    fontSize: 60,
-    fontWeight: '600',
-    color: 'grey',
-  },
-  info: {
-    fontSize: 20,
-    fontWeight: '600',
-  },
-  buttons: {
-    flex: 1,
-    width: '100%',
     flexDirection: 'row',
-    paddingLeft: 5,
-    paddingRight: 5,
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    marginTop: 12,
   },
-  button: {
-    borderRadius: 10,
-    flexGrow: 1,
-    flex: 1,
-    height: 100,
-    margin: 10,
-    padding: 15,
-    flexDirection: 'column-reverse',
+  cardOuter: {
+    paddingLeft: 12,
+    paddingRight: 12,
+    width: '50%',
+    marginBottom: 24,
   },
-  buttonText: {
-    color: 'rgb(242,242, 247)',
+  card: {
+    backgroundColor: '#265AD2',
+    padding: 16,
+    borderRadius: 5,
+    height: 160,
+    justifyContent: 'space-between',
+  },
+  cardImage: {
+    width: 36,
+    height: 36,
+  },
+  cardTitle: {
+    fontFamily: 'DM Sans',
+    fontWeight: '500',
     fontSize: 18,
-    fontWeight: '800',
+    lineHeight: 24,
+    color: 'white',
   },
-  orange: {
-    backgroundColor: 'rgb(255, 140, 0)',
-  },
-  green: {
-    backgroundColor: 'rgb(52, 199, 89)',
-  },
-  indigo: {
-    backgroundColor: 'rgb(88, 86, 214)',
-  },
-  purple: {
-    backgroundColor: 'rgb(175, 82, 222)',
+  cardDesc: {
+    marginTop: 4,
+    fontFamily: 'DM Sans',
+    fontSize: 14,
+    lineHeight: 20,
+    color: '#5B95EA',
   },
 });
