@@ -12,8 +12,6 @@ export default class Slice extends Component {
 
   render() {
     const {endAngle, index, data} = this.props;
-    // const val = data[index].number;
-
     const arcs = pie()
       .sort(item => item.index)
       .value(item => item.number)

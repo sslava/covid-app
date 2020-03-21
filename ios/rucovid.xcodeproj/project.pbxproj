@@ -20,6 +20,12 @@
 		770B5114B4323CFC11406943 /* libPods-rucovid-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0D09A1E910996F3E7D26A2 /* libPods-rucovid-tvOS.a */; };
 		A32B501E9547FEB7A64576CC /* libPods-rucovid-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7EDAE5F4FF778E2D83FF86 /* libPods-rucovid-tvOSTests.a */; };
 		A6D0CB5E0C18F03D3085B65D /* libPods-rucovidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A998BA715500A75508AF21 /* libPods-rucovidTests.a */; };
+		F9033DD72425B87700DEB100 /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD12425B87700DEB100 /* DMSans-BoldItalic.ttf */; };
+		F9033DD82425B87700DEB100 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD22425B87700DEB100 /* DMSans-Bold.ttf */; };
+		F9033DD92425B87700DEB100 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD32425B87700DEB100 /* DMSans-Medium.ttf */; };
+		F9033DDA2425B87700DEB100 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD42425B87700DEB100 /* DMSans-MediumItalic.ttf */; };
+		F9033DDB2425B87700DEB100 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD52425B87700DEB100 /* DMSans-Regular.ttf */; };
+		F9033DDC2425B87700DEB100 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD62425B87700DEB100 /* DMSans-Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,12 @@
 		E51A7A911D21CB424E6A08F6 /* Pods-rucovidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovidTests.release.xcconfig"; path = "Target Support Files/Pods-rucovidTests/Pods-rucovidTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F9033DD12425B87700DEB100 /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-BoldItalic.ttf"; path = "../../assets/fonts/DMSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F9033DD22425B87700DEB100 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Bold.ttf"; path = "../../assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		F9033DD32425B87700DEB100 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Medium.ttf"; path = "../../assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		F9033DD42425B87700DEB100 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-MediumItalic.ttf"; path = "../../assets/fonts/DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F9033DD52425B87700DEB100 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Regular.ttf"; path = "../../assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		F9033DD62425B87700DEB100 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Italic.ttf"; path = "../../assets/fonts/DMSans-Italic.ttf"; sourceTree = "<group>"; };
 		F917CF382422A37100C4BA62 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB0D09A1E910996F3E7D26A2 /* libPods-rucovid-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovid-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,11 +172,13 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F9033DD02425B83900DEB100 /* Resources */,
 				13B07FAE1A68108700A75B9A /* rucovid */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* rucovidTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				F9033DCF2425B80500DEB100 /* Resources */,
 				AD9C8EF0AA80696938B5DC40 /* Pods */,
 			);
 			indentWidth = 2;
@@ -196,6 +210,26 @@
 				E51A7A911D21CB424E6A08F6 /* Pods-rucovidTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F9033DCF2425B80500DEB100 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F9033DD02425B83900DEB100 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9033DD22425B87700DEB100 /* DMSans-Bold.ttf */,
+				F9033DD12425B87700DEB100 /* DMSans-BoldItalic.ttf */,
+				F9033DD62425B87700DEB100 /* DMSans-Italic.ttf */,
+				F9033DD32425B87700DEB100 /* DMSans-Medium.ttf */,
+				F9033DD42425B87700DEB100 /* DMSans-MediumItalic.ttf */,
+				F9033DD52425B87700DEB100 /* DMSans-Regular.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,8 +372,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9033DD92425B87700DEB100 /* DMSans-Medium.ttf in Resources */,
+				F9033DDB2425B87700DEB100 /* DMSans-Regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				F9033DDA2425B87700DEB100 /* DMSans-MediumItalic.ttf in Resources */,
+				F9033DD72425B87700DEB100 /* DMSans-BoldItalic.ttf in Resources */,
+				F9033DDC2425B87700DEB100 /* DMSans-Italic.ttf in Resources */,
+				F9033DD82425B87700DEB100 /* DMSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
