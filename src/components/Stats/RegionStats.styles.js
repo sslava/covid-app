@@ -78,4 +78,16 @@ export default StyleSheet.create({
     fontFamily: 'DM Sans',
     fontSize: 14,
   },
+  country: {
+    paddingTop: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  img: {
+    width: width - 30,
+    height: 230,
+    tintColor: '#06CAFD',
+    opacity: 0.3,
+    resizeMode: 'center',
+  },
 });

@@ -1,11 +1,11 @@
 import React, {useMemo} from 'react';
-import {View, Text, Dimensions} from 'react-native';
-
+import {View, Text, Dimensions, Image} from 'react-native';
 import Pie from '../shared/Pie';
 
-const {width} = Dimensions.get('window');
-
+import {images} from '../shared/countryImages';
 import styles from './RegionStats.styles';
+
+const {width} = Dimensions.get('window');
 
 function NumberBlock({number, total, title, color}) {
   return (
@@ -79,6 +79,9 @@ export default function RegionStats({region}) {
           number={region.total}
           total={region.total}
         />
+      </View>
+      <View style={styles.country}>
+        <Image style={[styles.img]} source={images[region.country_name_en]} />
       </View>
     </View>
   );
