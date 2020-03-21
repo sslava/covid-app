@@ -4,7 +4,7 @@ import {View} from 'react-native';
 import RegionStats from './RegionStats';
 
 import {useStatsContext} from '../shared/StatsDataContext';
-import HeaderScrollView from '../shared/HeaderScrollView';
+import HeaderScrollView from '../shared/HeaderScroll/HeaderScrollView';
 
 import styles from './StatsScreen.styles';
 

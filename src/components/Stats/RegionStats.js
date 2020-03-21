@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 import {View, Text, Dimensions, Image} from 'react-native';
-import Pie from '../shared/Pie';
+import Pie from '../shared/PieChart/Pie';
 
 import {images} from '../shared/countryImages';
 import {formatNumber} from '../../common/utils';
