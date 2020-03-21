@@ -40,7 +40,7 @@ export function fetchStatsSaga(dispatch, storage) {
 
       const payload = {
         top: countries.slice(0, 20),
-        russia: countries.find(c => c.country_name_en === 'China'),
+        russia: countries.find(c => c.country_name_en === 'Russia'),
       };
 
       dispatch({type: statsActionTypes.FETCH_COMPLETE, payload});
