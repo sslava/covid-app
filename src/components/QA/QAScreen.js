@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 
 import {QA, QABlock, AnswerText, SubQuestion, Ul, Li} from './QA';
-import HeaderScrollView from '../shared/HeaderScrollView';
+import HeaderScrollView from '../shared/HeaderScroll/HeaderScrollView';
 
 import styles from './QAScreen.styles';
 
