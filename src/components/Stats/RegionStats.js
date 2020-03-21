@@ -3,6 +3,8 @@ import {View, Text, Dimensions, Image} from 'react-native';
 import Pie from '../shared/Pie';
 
 import {images} from '../shared/countryImages';
+import {formatNumber} from '../../common/utils';
+
 import styles from './RegionStats.styles';
 
 const {width} = Dimensions.get('window');
@@ -16,7 +18,7 @@ function NumberBlock({number, total, title, color}) {
         )}
         <Text style={styles.numberBlockTitle}>{title}</Text>
       </View>
-      <Text style={styles.numberBlockNumber}>{number}</Text>
+      <Text style={styles.numberBlockNumber}>{formatNumber(number)}</Text>
     </View>
   );
 }
@@ -49,13 +51,13 @@ export default function RegionStats({region}) {
           />
           <View style={styles.total}>
             <Text style={styles.totalCaption}>Случаев{'\n'}заболевания</Text>
-            <Text style={styles.totalNumber}>{region.total}</Text>
+            <Text style={styles.totalNumber}>{formatNumber(region.total)}</Text>
           </View>
         </View>
       </View>
       <View style={styles.numberStats}>
         <NumberBlock
-          title="Dыздоровело"
+          title="Выздоровело"
           number={region.alive}
           color="#0ccafd"
           total={region.total}

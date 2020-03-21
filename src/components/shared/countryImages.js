@@ -1,5 +1,5 @@
 export const images = {
-  Russia: require('../../assets/Russia.png'),
-  China: require('../../assets/China.png'),
-  Spain: require('../../assets/Spain.png'),
+  Russia: require('../../assets/countries/ru.png'),
+  China: require('../../assets/countries/cn.png'),
+  Spain: require('../../assets/countries/es.png'),
 };
