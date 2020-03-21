@@ -18,6 +18,7 @@ export const fonts = {
   Heading3: {
     fontFamily: 'DM Sans',
     fontSize: 24,
+    lineHeight: 36,
   },
   Heading4: {
     fontFamily: 'DM Sans',
