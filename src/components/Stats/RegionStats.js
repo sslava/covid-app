@@ -10,11 +10,13 @@ import styles from './RegionStats.styles';
 function NumberBlock({number, total, title, color}) {
   return (
     <View style={styles.numberBlock}>
-      <Text style={styles.numberBlockNumber}>{number}</Text>
-      <Text style={styles.numberBlockTitle}>{title}</Text>
-      <View style={styles.numberBlockStats}>
-        <View style={[styles.numberBlockBar, {color}]} />
+      <View style={styles.numberBlockLine}>
+        {color && (
+          <View style={[styles.numberBlockColor, {backgroundColor: color}]} />
+        )}
+        <Text style={styles.numberBlockTitle}>{title}</Text>
       </View>
+      <Text style={styles.numberBlockNumber}>{number}</Text>
     </View>
   );
 }
@@ -40,26 +42,26 @@ export default function RegionStats({region}) {
           <Pie
             data={data}
             style={styles.pie}
-            width={width - 120}
-            height={width - 120}
-            innerRadius={80}
+            width={width - 150}
+            height={width - 150}
+            innerRadius={75}
             blankColor={'#eeeef3'}
           />
           <View style={styles.total}>
-            <Text style={styles.totalCaption}>Случаев заболевания</Text>
+            <Text style={styles.totalCaption}>Случаев{'\n'}заболевания</Text>
             <Text style={styles.totalNumber}>{region.total}</Text>
           </View>
         </View>
       </View>
       <View style={styles.numberStats}>
         <NumberBlock
-          title="Человек выздоровело"
+          title="Dыздоровело"
           number={region.alive}
           color="#0ccafd"
           total={region.total}
         />
         <NumberBlock
-          title="Человек умерло"
+          title="Умерло"
           number={region.deaths}
           color="#ff5c4d"
           total={region.total}
@@ -67,15 +69,14 @@ export default function RegionStats({region}) {
       </View>
       <View style={styles.numberStats}>
         <NumberBlock
-          title="Человек болеет"
+          title="Болеет"
           number={region.total - region.deaths - region.alive}
-          color="#ff5c4d"
+          color="#003cbf"
           total={region.total}
         />
         <NumberBlock
-          title="Случаев заболевания"
+          title="Случаев всего"
           number={region.total}
-          color="#ff5c4d"
           total={region.total}
         />
       </View>
