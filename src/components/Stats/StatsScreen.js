@@ -27,6 +27,7 @@ export default function StatsScreen({navigation}) {
       <NavStatusBar barStyle="dark-content" />
       <ScrollView
         style={styles.scroll}
+        indicatorStyle="black"
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>

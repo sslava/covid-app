@@ -1,7 +1,5 @@
 import React from 'react';
 
-import {Image} from 'react-native';
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -15,9 +13,10 @@ import SymptomsScreen from './components/Symptoms/SymptomsScreen';
 import SpreadScreen from './components/Spread/SpreadScreen';
 import PreventScreen from './components/Prevent/PreventScreen';
 
-import backImage from './assets/icons/back_white.png';
-
+import HeaderBackImage from './components/shared/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
+
+import styles from './components/shared/navigator.styles';
 
 const icons = {
   Stats: 'chart-line',
@@ -45,52 +44,38 @@ function Root() {
 
 const AppStack = createStackNavigator();
 
+const titles = {
+  Root: null,
+  WhoFaq: 'Вопросы и ответы',
+  Symptoms: 'Симптомы',
+  Spread: 'Как передается',
+  Prevent: 'Профилактика',
+};
+
 export default function App() {
   return (
     <StatsDataProvider>
       <NavigationContainer>
         <AppStack.Navigator
           headerMode="screen"
-          screenOptions={() => ({
-            headerBackImage: () => <Image source={backImage} />,
-            headerBackTitle: null,
+          screenOptions={({route}) => ({
+            title: titles[route.name],
+            headerBackTitle: ' ',
+            headerStyle: styles.headerStyle,
+            headerTitleStyle: styles.headerTitleStyle,
+            headerBackImage: HeaderBackImage,
           })}>
           <AppStack.Screen
             name="Root"
             component={Root}
             options={{
-              title: null,
               headerTransparent: true,
             }}
           />
-          <AppStack.Screen
-            name="WhoFaq"
-            component={WhoFaqScreen}
-            options={{
-              title: 'Вопросы и ответы',
-            }}
-          />
-          <AppStack.Screen
-            name="Symptoms"
-            component={SymptomsScreen}
-            options={{
-              title: 'Симптомы',
-            }}
-          />
-          <AppStack.Screen
-            name="Spread"
-            component={SpreadScreen}
-            options={{
-              title: 'Как передается',
-            }}
-          />
-          <AppStack.Screen
-            name="Prevent"
-            component={PreventScreen}
-            options={{
-              title: 'Профилактика',
-            }}
-          />
+          <AppStack.Screen name="WhoFaq" component={WhoFaqScreen} />
+          <AppStack.Screen name="Symptoms" component={SymptomsScreen} />
+          <AppStack.Screen name="Spread" component={SpreadScreen} />
+          <AppStack.Screen name="Prevent" component={PreventScreen} />
         </AppStack.Navigator>
       </NavigationContainer>
     </StatsDataProvider>
