@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  scroll: {},
-  content: {
-    paddingLeft: 20,
-    paddingRight: 20,
+  scroll: {
+    backgroundColor: '#003CBF',
+    flex: 1,
   },
-  bold: {
-    fontWeight: '800',
+  scrollContent: {
+    flex: 1,
+    backgroundColor: 'white',
   },
 });
