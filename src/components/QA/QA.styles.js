@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  qa: {
-    marginTop: 10,
+  container: {
+    color: 'white',
   },
   block: {
     marginTop: 20,

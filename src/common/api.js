@@ -18,12 +18,17 @@ export async function apiRequest(
 ): Promise<?Object> {
   const response = await fetch(url, {...params, method});
   const text = await response.text();
-  let json = text.length ? JSON.parse(text) : null;
+  let json = null;
+  try {
+    json = text.length ? JSON.parse(text) : null;
+  } catch (err) {
+    throw new Error(`Parsing error: \r\nresponeText:\rn${text}`);
+  }
   if (json && json.error) {
-    throw new Error(json.error || '');
+    throw new Error(JSON.stringify(json.error));
   }
   if (response.status < 200 || response.status >= 400) {
-    throw new Error(json || '');
+    throw new Error(text);
   }
   return json;
 }

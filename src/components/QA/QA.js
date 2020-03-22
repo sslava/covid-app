@@ -3,6 +3,10 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 import styles from './QA.styles';
 
+export function QAContainer({children}) {
+  return <View style={styles.container}>{children}</View>;
+}
+
 export function AnswerText({children}) {
   return <Text style={styles.answerText}>{children}</Text>;
 }
@@ -35,8 +39,4 @@ export function QABlock({title, children}) {
       {expanded && <View style={styles.answer}>{children}</View>}
     </View>
   );
-}
-
-export function QA({children}) {
-  return <View style={styles.qa}>{children}</View>;
 }

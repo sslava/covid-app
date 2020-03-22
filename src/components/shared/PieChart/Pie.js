@@ -1,7 +1,6 @@
 import React, {useRef, useEffect} from 'react';
 import {Animated, Easing} from 'react-native';
 import Svg, {G, Circle} from 'react-native-svg';
-
 import Slice from './Slice';
 
 const AnimatedSlice = Animated.createAnimatedComponent(Slice);

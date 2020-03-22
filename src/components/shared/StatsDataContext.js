@@ -1,4 +1,10 @@
-import React, {createContext, useReducer, useEffect, useContext} from 'react';
+import React, {
+  createContext,
+  useReducer,
+  useEffect,
+  useContext,
+  useCallback,
+} from 'react';
 
 import {
   initialStatsState,
@@ -17,18 +23,20 @@ export function useStatsContext() {
 }
 
 export function StatsDataProvider({children}) {
-  const [stats, dispatch] = useReducer(statsReducer, initialStatsState);
+  const [state, dispatch] = useReducer(statsReducer, initialStatsState);
+  const refreshStats = useCallback(fetchStatsSaga(dispatch, statsStorage), []);
 
   useEffect(() => {
     async function init() {
       const loaded = await statsStorage.load();
       dispatch({type: statsActionTypes.SET, payload: loaded});
-      const fetch = fetchStatsSaga(dispatch, statsStorage);
-      fetch();
+      refreshStats();
     }
     init();
-  }, []);
+  }, [refreshStats]);
   return (
-    <StatsContext.Provider value={stats}>{children}</StatsContext.Provider>
+    <StatsContext.Provider value={{state, refreshStats}}>
+      {children}
+    </StatsContext.Provider>
   );
 }
