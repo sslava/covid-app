@@ -13,7 +13,24 @@ export default StyleSheet.create({
     borderRadius: 5,
   },
   button: {
-    padding: 16,
+    position: 'relative',
+    flexDirection: 'row',
+    paddingLeft: 16,
+    paddingRight: 32,
+    paddingTop: 16,
+    paddingBottom: 16,
+  },
+  questionIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 12,
+  },
+  arrowDown: {
+    position: 'absolute',
+    right: 16,
+    top: 20,
+    width: 18,
+    height: 18,
   },
   question: {
     fontFamily: 'DM Sans',
@@ -23,7 +40,7 @@ export default StyleSheet.create({
     color: 'white',
   },
   answer: {
-    paddingTop: 16,
+    paddingTop: 8,
     paddingBottom: 24,
     paddingLeft: 16,
     paddingRight: 16,
