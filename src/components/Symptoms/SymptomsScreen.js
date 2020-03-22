@@ -2,8 +2,12 @@ import React from 'react';
 
 import {ScrollView, Text} from 'react-native';
 
-import {QAContainer, QABlock, AnswerText, Ul, Li} from '../shared/QA/QA';
+import {QAContainer, QABlock, AnswerText} from '../shared/QA/QA';
 import NavStatusBar from '../shared/NavStatusBar';
+
+import tempIcon from '../../assets/icons/thermometer_yellow.png';
+import lungsIcon from '../../assets/icons/lungs_yellow.png';
+import coughtingIcon from '../../assets/icons/coughting_yellow.png';
 
 import styles from './SymptomsScreen.styles';
 
@@ -14,13 +18,13 @@ export default function SymptomsScreen() {
       contentContainerStyle={styles.scrollContent}>
       <NavStatusBar barStyle="light-content" />
       <QAContainer>
-        <QABlock title="высокая температура тела">
+        <QABlock title="Высокая температура тела" icon={tempIcon}>
           <AnswerText>
             Коронавирусы составляют обширное семейство вирусов с доказанными
             болезнетворными свойствами по отношению к человеку или животным.
           </AnswerText>
         </QABlock>
-        <QABlock title="кашель (сухой или с небольшим количеством мокроты)">
+        <QABlock title="Кашель" icon={coughtingIcon}>
           <AnswerText>
             COVID‑19 – инфекционное заболевание, вызванное последним из недавно
             открытых коронавирусов. До вспышки инфекции в Ухане, Китай, в
@@ -28,7 +32,7 @@ export default function SymptomsScreen() {
             известно.
           </AnswerText>
         </QABlock>
-        <QABlock title="одышка">
+        <QABlock title="Одышка" icon={lungsIcon}>
           <AnswerText>
             COVID‑19 – инфекционное заболевание, вызванное последним из недавно
             открытых коронавирусов. До вспышки инфекции в Ухане, Китай, в
@@ -36,7 +40,9 @@ export default function SymptomsScreen() {
             известно.
           </AnswerText>
         </QABlock>
-        <QABlock title="ощущения сдавленности в грудной клетке">
+        <QABlock
+          title="Ощущения сдавленности в грудной клетке"
+          icon={lungsIcon}>
           <AnswerText>
             COVID‑19 – инфекционное заболевание, вызванное последним из недавно
             открытых коронавирусов. До вспышки инфекции в Ухане, Китай, в
