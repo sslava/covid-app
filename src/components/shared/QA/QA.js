@@ -27,7 +27,6 @@ export function SubQuestion({children, title}) {
     </View>
   );
 }
-
 export function QABlock({title, children}) {
   const [expanded, setExpanded] = useState(false);
   const toggle = useCallback(() => setExpanded(e => !e), []);
