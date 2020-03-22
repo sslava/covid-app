@@ -32,12 +32,21 @@ function Root() {
         tabBarIcon: ({focused, color, size}) => (
           <Icon name={icons[route.name]} size={size} color={color} />
         ),
-      })}
-      tabBarOptions={{
-        showLabel: false,
-      }}>
-      <RootTabs.Screen name="Stats" component={StatsScreen} />
-      <RootTabs.Screen name="Info" component={InfoScreen} />
+      })}>
+      <RootTabs.Screen
+        name="Stats"
+        component={StatsScreen}
+        options={{
+          tabBarLabel: 'Статистика',
+        }}
+      />
+      <RootTabs.Screen
+        name="Info"
+        component={InfoScreen}
+        options={{
+          tabBarLabel: 'Информация',
+        }}
+      />
     </RootTabs.Navigator>
   );
 }
