@@ -33,7 +33,7 @@ export default StyleSheet.create({
     color: 'white',
   },
   cardDesc: {
-    marginTop: 4,
+    marginTop: 6,
     fontFamily: 'DM Sans',
     fontSize: 14,
     lineHeight: 20,
