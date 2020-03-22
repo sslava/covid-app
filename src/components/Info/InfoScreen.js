@@ -1,5 +1,7 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {useFocusEffect} from '@react-navigation/native';
+
+import {View, Text, ScrollView, StatusBar} from 'react-native';
 
 import Phones from './Phones/Phones';
 import symptoms from '../../assets/icons/symptom_yellow.png';
@@ -10,9 +12,13 @@ import Card, {CardContainer} from './Card';
 
 import styles from './InfoScreen.styles';
 
-export default function StatsScreen({navigation}) {
+export default function InfoScreen({navigation}) {
+  useFocusEffect(() => {
+    StatusBar.setBarStyle('light-content');
+  }, []);
   return (
     <ScrollView style={styles.scroll}>
+      <StatusBar barStyle="light-content" animated />
       <View style={styles.container}>
         <View style={styles.topBlock}>
           <View style={styles.header}>

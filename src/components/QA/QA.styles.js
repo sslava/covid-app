@@ -2,14 +2,24 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    color: 'white',
+    backgroundColor: '#003CBF',
   },
   block: {
-    marginTop: 20,
+    marginBottom: 16,
+  },
+  button: {
+    backgroundColor: '#265AD2',
+    padding: 16,
+    borderRadius: 5,
+    marginLeft: 24,
+    marginRight: 24,
   },
   question: {
-    fontSize: 22,
-    fontWeight: '800',
+    fontFamily: 'DM Sans',
+    fontSize: 16,
+    lineHeight: 24,
+    fontWeight: '500',
+    color: 'white',
   },
   answer: {
     marginTop: 14,
