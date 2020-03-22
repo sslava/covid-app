@@ -1,11 +1,17 @@
 import React from 'react';
-import {Text, ScrollView} from 'react-native';
+import {useFocusEffect} from '@react-navigation/native';
+
+import {Text, ScrollView, StatusBar} from 'react-native';
 
 import {QAContainer, QABlock, AnswerText, SubQuestion, Ul, Li} from './QA';
 
 import styles from './QAScreen.styles';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function QAScreen() {
+  useFocusEffect(() => {
+    StatusBar.setBarStyle('dark-content');
+  }, []);
   return (
     <ScrollView style={styles.scroll}>
       <QAContainer>
