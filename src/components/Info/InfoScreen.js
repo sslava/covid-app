@@ -4,7 +4,9 @@ import {useFocusEffect} from '@react-navigation/native';
 import {View, Text, ScrollView, StatusBar} from 'react-native';
 
 import Phones from './Phones/Phones';
-import symptoms from '../../assets/icons/symptom_yellow.png';
+
+import coughting from '../../assets/icons/coughting_yellow.png';
+import thermometer from '../../assets/icons/thermometer_yellow.png';
 import prevention from '../../assets/icons/prevent_yellow.png';
 import faq from '../../assets/icons/chat_yellow.png';
 
@@ -16,6 +18,7 @@ export default function InfoScreen({navigation}) {
   useFocusEffect(() => {
     StatusBar.setBarStyle('light-content');
   }, []);
+
   return (
     <ScrollView style={styles.scroll}>
       <StatusBar barStyle="light-content" animated />
@@ -26,25 +29,28 @@ export default function InfoScreen({navigation}) {
           </View>
           <CardContainer>
             <Card
-              icon={symptoms}
+              icon={thermometer}
               title="Симптомы"
-              desc="Signs identify the risk of infection"
+              desc="Самые частые симптомы"
+              onPress={() => navigation.navigate('Symptoms')}
             />
             <Card
               icon={prevention}
-              title="Защититься?"
-              desc="Меры предосторожностиы"
+              title="Профилактика"
+              desc="Как защититься"
+              onPress={() => navigation.navigate('Prevent')}
+            />
+            <Card
+              icon={coughting}
+              title="Как передается"
+              desc="Как вирус распространяется?"
+              onPress={() => navigation.navigate('Spread')}
             />
             <Card
               icon={faq}
               title="Вопросы"
-              desc="Data related to the disease"
-              onPress={() => navigation.navigate('Faq')}
-            />
-            <Card
-              icon={symptoms}
-              title="Countries"
-              desc="Infected countries by COVID - 19"
+              desc="Что такое коронавирус?"
+              onPress={() => navigation.navigate('WhoFaq')}
             />
           </CardContainer>
         </View>
