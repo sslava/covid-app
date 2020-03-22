@@ -1,7 +1,6 @@
 import React from 'react';
-import {useFocusEffect} from '@react-navigation/native';
 
-import {Text, ScrollView, StatusBar} from 'react-native';
+import {Text, ScrollView} from 'react-native';
 
 import {
   QAContainer,
@@ -11,15 +10,14 @@ import {
   Ul,
   Li,
 } from '../shared/QA/QA';
+import NavStatusBar from '../shared/NavStatusBar';
 
 import styles from './WhoFaqScreen.styles';
 
 export default function QAScreen() {
-  useFocusEffect(() => {
-    StatusBar.setBarStyle('dark-content');
-  }, []);
   return (
     <ScrollView style={styles.scroll}>
+      <NavStatusBar barStyle="light-content" />
       <QAContainer>
         <QABlock title="Что такое коронавирус?">
           <AnswerText>
