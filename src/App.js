@@ -1,8 +1,12 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 
+import {Image} from 'react-native';
+
+import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
+
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import StatsScreen from './components/Stats/StatsScreen';
 import WhoFaqScreen from './components/WhoFaq/WhoFaqScreen';
@@ -11,7 +15,7 @@ import SymptomsScreen from './components/Symptoms/SymptomsScreen';
 import SpreadScreen from './components/Spread/SpreadScreen';
 import PreventScreen from './components/Prevent/PreventScreen';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import backImage from './assets/icons/back_white.png';
 
 import {StatsDataProvider} from './components/shared/StatsDataContext';
 
@@ -45,7 +49,12 @@ export default function App() {
   return (
     <StatsDataProvider>
       <NavigationContainer>
-        <AppStack.Navigator headerMode="screen" screenOptions={() => ({})}>
+        <AppStack.Navigator
+          headerMode="screen"
+          screenOptions={() => ({
+            headerBackImage: () => <Image source={backImage} />,
+            headerBackTitle: null,
+          })}>
           <AppStack.Screen
             name="Root"
             component={Root}

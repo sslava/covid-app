@@ -1,22 +1,15 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {useFocusEffect} from '@react-navigation/native';
+import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 
-import {View, ScrollView, RefreshControl, StatusBar} from 'react-native';
-
-import RegionStats from './RegionStats';
-
+import NavStatusBar from '../shared/NavStatusBar';
 import {useStatsContext} from '../shared/StatsDataContext';
 
+import RegionStats from './RegionStats';
 import styles from './StatsScreen.styles';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function StatsScreen({navigation}) {
   const {state, refreshStats} = useStatsContext();
   const [refreshing, setRefreshing] = useState(false);
-
-  useFocusEffect(() => {
-    StatusBar.setBarStyle('dark-content');
-  }, []);
 
   const refresh = useCallback(() => {
     setRefreshing(true);
@@ -31,7 +24,7 @@ export default function StatsScreen({navigation}) {
 
   return (
     <SafeAreaView style={styles.SafeArea}>
-      <StatusBar barStyle="dark-content" animated />
+      <NavStatusBar barStyle="dark-content" />
       <ScrollView
         style={styles.scroll}
         refreshControl={
