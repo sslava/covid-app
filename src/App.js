@@ -26,10 +26,9 @@ function Root() {
   return (
     <RootTabs.Navigator
       screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color, size}) => {
-          const iconName = icons[route.name];
-          return <Icon name={iconName} size={size} color={color} />;
-        },
+        tabBarIcon: ({focused, color, size}) => (
+          <Icon name={icons[route.name]} size={size} color={color} />
+        ),
       })}
       tabBarOptions={{
         showLabel: false,
