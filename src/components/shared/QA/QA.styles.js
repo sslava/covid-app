@@ -10,9 +10,10 @@ export default StyleSheet.create({
     marginBottom: 16,
     backgroundColor: '#265AD2',
     borderRadius: 5,
+  },
+  button: {
     padding: 16,
   },
-  button: {},
   question: {
     fontFamily: 'DM Sans',
     fontSize: 16,
@@ -21,8 +22,10 @@ export default StyleSheet.create({
     color: 'white',
   },
   answer: {
-    paddingTop: 24,
+    paddingTop: 16,
     paddingBottom: 24,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
   subTitle: {
     fontFamily: 'DM Sans',
