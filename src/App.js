@@ -1,11 +1,15 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import StatsScreen from './components/Stats/StatsScreen';
-import QAScreen from './components/QA/QAScreen';
+import WhoFaqScreen from './components/WhoFaq/WhoFaqScreen';
 import InfoScreen from './components/Info/InfoScreen';
+import SymptomsScreen from './components/Symptoms/SymptomsScreen';
+import SpreadScreen from './components/Spread/SpreadScreen';
+import PreventScreen from './components/Prevent/PreventScreen';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -42,7 +46,7 @@ export default function App() {
   return (
     <StatsDataProvider>
       <NavigationContainer>
-        <AppStack.Navigator headerMode="screen">
+        <AppStack.Navigator headerMode="screen" screenOptions={() => ({})}>
           <AppStack.Screen
             name="Root"
             component={Root}
@@ -52,12 +56,31 @@ export default function App() {
             }}
           />
           <AppStack.Screen
-            name="Faq"
-            component={QAScreen}
-            headerMode="screen"
+            name="WhoFaq"
+            component={WhoFaqScreen}
             options={{
-              title: null,
-              headerBackTitle: 'Назад',
+              title: 'Вопросы и ответы',
+            }}
+          />
+          <AppStack.Screen
+            name="Symptoms"
+            component={SymptomsScreen}
+            options={{
+              title: 'Симптомы',
+            }}
+          />
+          <AppStack.Screen
+            name="Spread"
+            component={SpreadScreen}
+            options={{
+              title: 'Как передается',
+            }}
+          />
+          <AppStack.Screen
+            name="Prevent"
+            component={PreventScreen}
+            options={{
+              title: 'Профилактика',
             }}
           />
         </AppStack.Navigator>

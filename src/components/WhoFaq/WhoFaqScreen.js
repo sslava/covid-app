@@ -5,8 +5,7 @@ import {Text, ScrollView, StatusBar} from 'react-native';
 
 import {QAContainer, QABlock, AnswerText, SubQuestion, Ul, Li} from './QA';
 
-import styles from './QAScreen.styles';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import styles from './WhoFaqScreen.styles';
 
 export default function QAScreen() {
   useFocusEffect(() => {
