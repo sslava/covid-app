@@ -3,7 +3,14 @@ import {useFocusEffect} from '@react-navigation/native';
 
 import {Text, ScrollView, StatusBar} from 'react-native';
 
-import {QAContainer, QABlock, AnswerText, SubQuestion, Ul, Li} from './QA';
+import {
+  QAContainer,
+  QABlock,
+  AnswerText,
+  SubQuestion,
+  Ul,
+  Li,
+} from '../shared/QA/QA';
 
 import styles from './WhoFaqScreen.styles';
 
