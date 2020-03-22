@@ -3,17 +3,16 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     backgroundColor: '#003CBF',
+    paddingLeft: 24,
+    paddingRight: 24,
   },
   block: {
     marginBottom: 16,
-  },
-  button: {
     backgroundColor: '#265AD2',
-    padding: 16,
     borderRadius: 5,
-    marginLeft: 24,
-    marginRight: 24,
+    padding: 16,
   },
+  button: {},
   question: {
     fontFamily: 'DM Sans',
     fontSize: 16,
@@ -22,25 +21,29 @@ export default StyleSheet.create({
     color: 'white',
   },
   answer: {
-    marginTop: 14,
-    fontFamily: 'New York',
+    paddingTop: 24,
+    paddingBottom: 24,
   },
   subTitle: {
-    fontSize: 20,
-    fontFamily: 'Helvetica',
-    fontWeight: '800',
+    fontFamily: 'DM Sans',
+    fontWeight: '600',
+    fontSize: 14,
+    lineHeight: 24,
+    color: '#BFD6F6',
   },
   subAnswer: {
     marginTop: 10,
   },
   answerText: {
-    fontSize: 18,
-    fontFamily: 'Helvetica',
+    fontFamily: 'DM Sans',
+    color: '#BFD6F6',
+    fontSize: 14,
+    lineHeight: 24,
   },
   ul: {
     marginTop: 10,
     marginBottom: 10,
-    paddingLeft: 20,
+    paddingLeft: 10,
   },
   li: {
     marginTop: 10,
