@@ -12,9 +12,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
 
 const icons = {
-  stats: 'chart-line',
-  qa: 'cloud-question',
-  contacts: 'phone',
+  Stats: 'chart-line',
+  Info: 'cloud-question',
 };
 
 const RootTabs = createBottomTabNavigator();
@@ -29,13 +28,10 @@ function Root() {
         },
       })}
       tabBarOptions={{
-        safeAreaInset: {
-          bottom: 'always',
-        },
         showLabel: false,
       }}>
-      <RootTabs.Screen name="stats" component={StatsScreen} />
-      <RootTabs.Screen name="qa" component={InfoScreen} />
+      <RootTabs.Screen name="Stats" component={StatsScreen} />
+      <RootTabs.Screen name="Info" component={InfoScreen} />
     </RootTabs.Navigator>
   );
 }
@@ -62,7 +58,6 @@ export default function App() {
             options={{
               title: null,
               headerBackTitle: 'Назад',
-              headerTransparent: true,
             }}
           />
         </AppStack.Navigator>

@@ -31,9 +31,10 @@ export function SubQuestion({children, title}) {
 export function QABlock({title, children}) {
   const [expanded, setExpanded] = useState(false);
   const toggle = useCallback(() => setExpanded(e => !e), []);
+
   return (
     <View style={styles.block}>
-      <TouchableOpacity onPress={toggle}>
+      <TouchableOpacity style={styles.button} onPress={toggle}>
         <Text style={styles.question}>{title}</Text>
       </TouchableOpacity>
       {expanded && <View style={styles.answer}>{children}</View>}
