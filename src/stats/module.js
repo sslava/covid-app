@@ -40,20 +40,13 @@ export function fetchStatsSaga(dispatch, storage) {
 
       const payload = {
         top: countries.slice(0, 20),
-        // russia: countries.find(c => c.country_name_en === 'Russia'),
-        russia: {
-          country_name: 'Россия',
-          country_name_en: 'Russia',
-          deaths: '451',
-          alive: '1800',
-          total: '17400',
-        },
+        russia: countries.find(c => c.country_name_en === 'Russia'),
       };
-
       dispatch({type: statsActionTypes.FETCH_COMPLETE, payload});
       await storage.set(payload);
     } catch (error) {
       dispatch({type: statsActionTypes.FETCH_FAILED, payload: error});
+      console.log(error);
     }
   };
 }
