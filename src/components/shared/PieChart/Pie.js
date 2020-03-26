@@ -25,8 +25,6 @@ export default function Pie({
     }).start();
   }, [data, animDuration]);
 
-  let endAngle = Animated.multiply(anim.current, Math.PI);
-
   return (
     <Svg
       width={width}
@@ -38,9 +36,9 @@ export default function Pie({
         {data.map((item, index) => {
           return (
             <AnimatedSlice
-              key={'pie_shape_' + index}
+              key={`pie_shape_${index}`}
               index={index}
-              endAngle={endAngle}
+              endAngle={Animated.multiply(anim.current, Math.PI)}
               data={data}
             />
           );

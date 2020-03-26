@@ -23,19 +23,19 @@ function NumberBlock({number, total, title, color}) {
   );
 }
 
-const getPieData = (total, alive, death) => {
-  const active = total - death - alive;
+const getPieData = (total, recovered, death) => {
+  const active = total - death - recovered;
   return [
     {index: 0, number: active / total, fill: '#003cbf'},
     {index: 1, number: death / total, fill: '#ff5c4d'},
-    {index: 2, number: alive / total, fill: '#0ccafd'},
+    {index: 2, number: recovered / total, fill: '#0ccafd'},
   ];
 };
 
 export default function RegionStats({region}) {
   const data = useMemo(
-    () => getPieData(region.total, region.alive, region.deaths),
-    [region.total, region.alive, region.deaths],
+    () => getPieData(region.total, region.recovered, region.deaths),
+    [region.total, region.recovered, region.deaths],
   );
   return (
     <View style={styles.container}>
@@ -58,7 +58,7 @@ export default function RegionStats({region}) {
       <View style={styles.numberStats}>
         <NumberBlock
           title="Выздоровело"
-          number={region.alive}
+          number={region.recovered}
           color="#0ccafd"
           total={region.total}
         />
@@ -72,7 +72,7 @@ export default function RegionStats({region}) {
       <View style={styles.numberStats}>
         <NumberBlock
           title="Болеет"
-          number={region.total - region.deaths - region.alive}
+          number={region.total - region.deaths - region.recovered}
           color="#003cbf"
           total={region.total}
         />

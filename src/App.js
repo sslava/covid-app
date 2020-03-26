@@ -18,25 +18,18 @@ import {StatsDataProvider} from './components/shared/StatsDataContext';
 
 import styles from './components/shared/navigator.styles';
 
-const icons = {
-  Stats: 'chart-line',
-  Info: 'cloud-question',
-};
-
 const RootTabs = createBottomTabNavigator();
 
 function Root() {
   return (
-    <RootTabs.Navigator
-      screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color, size}) => (
-          <Icon name={icons[route.name]} size={size} color={color} />
-        ),
-      })}>
+    <RootTabs.Navigator>
       <RootTabs.Screen
         name="Stats"
         component={StatsScreen}
         options={{
+          tabBarIcon: ({focused, color, size}) => (
+            <Icon name="chart-line" size={size} color={color} />
+          ),
           tabBarLabel: 'Статистика',
         }}
       />
@@ -44,6 +37,9 @@ function Root() {
         name="Info"
         component={InfoScreen}
         options={{
+          tabBarIcon: ({focused, color, size}) => (
+            <Icon name="cloud-question" size={size} color={color} />
+          ),
           tabBarLabel: 'Информация',
         }}
       />
