@@ -8,7 +8,10 @@ import RegionStats from './RegionStats';
 import styles from './StatsScreen.styles';
 
 export default function StatsScreen({navigation}) {
-  const {state, refreshStats} = useStatsContext();
+  const {
+    state: {data, fetchState},
+    refreshStats,
+  } = useStatsContext();
   const [refreshing, setRefreshing] = useState(false);
 
   const refresh = useCallback(() => {
@@ -17,13 +20,15 @@ export default function StatsScreen({navigation}) {
   }, [refreshStats]);
 
   useEffect(() => {
-    if (state.fetchState !== 'Fetching') {
+    if (fetchState !== 'Fetching') {
       setRefreshing(false);
     }
-  }, [state.fetchState]);
+  }, [fetchState]);
+
+  console.log(JSON.stringify(data, undefined, 2));
 
   return (
-    <SafeAreaView style={styles.SafeArea}>
+    <SafeAreaView style={styles.safeArea}>
       <NavStatusBar barStyle="dark-content" />
       <ScrollView
         style={styles.scroll}
@@ -33,7 +38,7 @@ export default function StatsScreen({navigation}) {
         }>
         <View style={styles.container}>
           <View style={styles.stats}>
-            <RegionStats region={state.stats.russia} />
+            <RegionStats region={data.russia} />
           </View>
         </View>
       </ScrollView>
