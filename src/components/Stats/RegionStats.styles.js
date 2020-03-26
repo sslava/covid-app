@@ -2,9 +2,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 const {width} = Dimensions.get('window');
 
 export default StyleSheet.create({
-  container: {
-    paddingRight: 20,
-  },
+  container: {},
   pieStats: {
     flex: 1,
     justifyContent: 'center',

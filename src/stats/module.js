@@ -15,15 +15,43 @@ export const statsActionTypes = {
 };
 
 export const initialStatsState = {
-  stats: {
-    top: [],
+  data: {
     russia: {
-      country_name: 'Россия',
-      country_name_en: 'Russia',
-      deaths: '0',
-      alive: '0',
-      total: '0',
+      deaths: '3',
+      deaths_new: '1',
+      recovered: '20',
+      recovered_new: '4',
+      total: '820',
+      total_new: '182',
     },
+    cities: [
+      {
+        name: 'Москва',
+        deaths: '0',
+        recovered: '0',
+        total: '0',
+      },
+    ],
+    world: {
+      deaths: '0',
+      deaths_new: '0',
+      recovered: '0',
+      recovered_new: '0',
+      total: '0',
+      total_new: '0',
+    },
+    countries: [
+      {
+        country_name: 'Россия',
+        country_name_en: 'Russia',
+        deaths: '0',
+        deaths_new: '0',
+        recovered: '0',
+        recovered_new: '0',
+        total: '0',
+        total_new: '0',
+      },
+    ],
   },
   fetchState: 'NotFetched',
   error: null,
@@ -33,15 +61,8 @@ export function fetchStatsSaga(dispatch, storage) {
   return async () => {
     dispatch({type: statsActionTypes.FETCH});
     try {
-      const data = await apiFetchStats();
-      const countries = Reflect.ownKeys(data.countries)
-        .map(key => data.countries[key][0])
-        .sort((a, b) => b.total - a.total);
-
-      const payload = {
-        top: countries.slice(0, 20),
-        russia: countries.find(c => c.country_name_en === 'Russia'),
-      };
+      // const data = await apiFetchStats();
+      const payload = initialStatsState.data;
       dispatch({type: statsActionTypes.FETCH_COMPLETE, payload});
       await storage.set(payload);
     } catch (error) {
@@ -59,13 +80,13 @@ export function statsReducer(state = initialStatsState, action) {
       return {
         ...state,
         fetchState: 'Fetched',
-        stats: action.payload,
+        data: action.payload,
         error: null,
       };
     case statsActionTypes.FETCH_FAILED:
       return {...state, fetchState: 'Error', error: action.payload};
     case statsActionTypes.SET:
-      return {...state, stats: action.payload};
+      return {...state, data: action.payload};
   }
   return state;
 }
