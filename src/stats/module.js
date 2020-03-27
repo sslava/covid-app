@@ -16,11 +16,18 @@ export const statsActionTypes = {
 
 export const initialStatsState = {
   data: {
+    updateDate: '12.02.2020',
+    world: {
+      deaths: 24181,
+      deaths_new: 2766,
+      recovered: 119942,
+      total: 534375,
+      total_new: 60209,
+    },
     russia: {
       deaths: '3',
       deaths_new: '1',
       recovered: '20',
-      recovered_new: '4',
       total: '820',
       total_new: '182',
     },
@@ -32,14 +39,6 @@ export const initialStatsState = {
         total: '0',
       },
     ],
-    world: {
-      deaths: '0',
-      deaths_new: '0',
-      recovered: '0',
-      recovered_new: '0',
-      total: '0',
-      total_new: '0',
-    },
     countries: [
       {
         country_name: 'Россия',
