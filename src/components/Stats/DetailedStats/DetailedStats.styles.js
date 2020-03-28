@@ -28,8 +28,7 @@ export default StyleSheet.create({
     paddingBottom: 24,
   },
   legend: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    paddingHorizontal: 24,
   },
   cities: {
     margin: 24,

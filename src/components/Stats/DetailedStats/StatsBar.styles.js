@@ -2,11 +2,12 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    height: 24,
     flexDirection: 'row',
   },
-  item: {
-    height: 24,
-    borderRadius: 2,
+  bar: {
+    height: 26,
+    marginLeft: 1,
+    marginRight: 1,
+    borderRadius: 3,
   },
 });

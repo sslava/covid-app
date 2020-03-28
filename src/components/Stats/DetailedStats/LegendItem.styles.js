@@ -2,6 +2,31 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    width: '33%',
+    marginBottom: 8,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  left: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  color: {
+    width: 14,
+    height: 14,
+    marginRight: 8,
+  },
+  title: {
+    fontFamily: 'DM Sans',
+    fontSize: 14,
+    lineHeight: 20,
+    textTransform: 'uppercase',
+    color: '#00133D',
+  },
+  number: {
+    fontFamily: 'DM Sans',
+    fontSize: 16,
+    lineHeight: 24,
+    fontWeight: 'bold',
+    color: '#00133D',
   },
 });

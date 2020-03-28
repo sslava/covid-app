@@ -11,8 +11,8 @@ export default StyleSheet.create({
     paddingRight: 16,
     paddingTop: 16,
     paddingBottom: 16,
-    borderWidth: 2,
-    borderRadius: 5,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 3,
     borderColor: '#E2E5E7',
   },
   line: {
@@ -34,8 +34,10 @@ export default StyleSheet.create({
   title: {
     color: '#95A0B8',
     fontFamily: 'DM Sans',
+    fontWeight: '600',
     fontSize: 14,
     lineHeight: 20,
+    textTransform: 'uppercase',
   },
   delta: {
     fontFamily: 'DM Sans',

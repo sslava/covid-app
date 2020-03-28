@@ -8,7 +8,7 @@ export default function PercentCounter({title, number, color}) {
     <View style={styles.wc}>
       <View style={[styles.wcLine, {backgroundColor: color}]} />
       <Text style={styles.wcTitle}>{title}</Text>
-      <Text style={styles.wcNumber}>{number}%</Text>
+      <Text style={styles.wcNumber}>{(number * 100).toFixed(2)}%</Text>
     </View>
   );
 }
