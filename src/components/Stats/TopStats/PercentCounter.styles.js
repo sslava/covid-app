@@ -19,6 +19,7 @@ export default StyleSheet.create({
     lineHeight: 20,
     fontWeight: '500',
     color: '#95A0B8',
+    textTransform: 'uppercase',
   },
   wcNumber: {
     marginTop: 2,
