@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {legendColor} from '../../shared/uikit';
 
 export default StyleSheet.create({
   container: {
@@ -39,15 +40,10 @@ export default StyleSheet.create({
     lineHeight: 20,
     textTransform: 'uppercase',
   },
-  delta: {
+  today: {
     fontFamily: 'DM Sans',
     fontSize: 14,
     lineHeight: 20,
-    color: '#00133D',
-  },
-  deltaNumber: {
-    fontFamily: 'DM Sans',
-    fontSize: 14,
-    lineHeight: 20,
+    color: legendColor.Deaths,
   },
 });

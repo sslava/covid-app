@@ -55,12 +55,14 @@ export function fetchStatsSaga(dispatch, storage) {
     dispatch({type: statsActionTypes.FETCH});
     try {
       const {stats} = await apiFetchStats();
+      const countries = stats.countries.today
+        .filter(c => c.country_name_en !== 'Russia')
+        .sort((a, b) => b.total - a.total);
       const payload = {
         world: stats.world.today,
         russia: stats.countries.today.find(c => c.country_name_en === 'Russia'),
-        countries: stats.countries.today.filter(
-          c => c.country_name_en !== 'Russia',
-        ),
+        // countries,
+        top20: countries.slice(0, 20),
         cities: stats.cities.today,
       };
       dispatch({type: statsActionTypes.FETCH_COMPLETE, payload});
