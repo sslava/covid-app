@@ -1,12 +1,15 @@
 import React, {useMemo} from 'react';
-import {View, Text} from 'react-native';
+
+import {TouchableOpacity, View, Text, Image} from 'react-native';
 
 import LegendItem from './LegendItem';
 import StatsBar from './StatsBar';
+
+import {formatDate} from '../../../common/utils';
 import {legendColor} from '../../shared/uikit';
+import openIcon from '../../../assets/icons/open_grey.png';
 
 import styles from './DetailedStats.styles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default function DetailedStats({title, country}) {
   const active = country.total - country.recovered - country.deaths;
@@ -31,7 +34,10 @@ export default function DetailedStats({title, country}) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.updateDate}>Обновлено {country.updateDate}</Text>
+        <Text style={styles.updateDate}>
+          Обновлено{' '}
+          <Text style={styles.date}>{formatDate(country.updated)}</Text>
+        </Text>
       </View>
       <View style={styles.bar}>
         <StatsBar items={stats} />
@@ -42,11 +48,7 @@ export default function DetailedStats({title, country}) {
           title="Подтверждено"
           number={country.total}
         />
-        <LegendItem
-          color={legendColor.Recovered}
-          title="Болеет"
-          number={active}
-        />
+        <LegendItem color={legendColor.Active} title="Болеет" number={active} />
         <LegendItem
           color={legendColor.Recovered}
           title="Поправилось"
@@ -60,6 +62,7 @@ export default function DetailedStats({title, country}) {
       </View>
       <TouchableOpacity style={styles.cities}>
         <Text style={styles.citiesCaption}>Статистика по городам</Text>
+        <Image source={openIcon} style={styles.openIcon} />
       </TouchableOpacity>
     </View>
   );

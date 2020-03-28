@@ -2,20 +2,23 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    paddingTop: 22,
+    paddingTop: 24,
+    paddingBottom: 16,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '#E2E5E7',
   },
   header: {
     paddingHorizontal: 24,
   },
   title: {
     fontFamily: 'DM Sans',
-    fontSize: 24,
-    lineHeight: 36,
-    fontWeight: '500',
+    fontSize: 34,
+    lineHeight: 34 * 1.2,
+    letterSpacing: 0.011,
+    fontWeight: '700',
     color: '#00133D',
   },
   updateDate: {
-    marginTop: 2,
     fontFamily: 'DM Sans',
     fontSize: 15,
     lineHeight: 20,
@@ -31,8 +34,23 @@ export default StyleSheet.create({
     paddingHorizontal: 24,
   },
   cities: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     margin: 24,
-    height: 48,
-    width: '100%',
+    padding: 16,
+    backgroundColor: 'rgba(149, 160, 184, 0.1)',
+    borderRadius: 5,
+  },
+  openIcon: {
+    width: 20,
+    height: 20,
+  },
+  citiesCaption: {
+    fontFamily: 'DM Sans',
+    fontSize: 16,
+    lineHeight: 24,
+    fontWeight: '600',
+    color: '#00133D',
   },
 });

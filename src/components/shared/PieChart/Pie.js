@@ -7,8 +7,7 @@ const AnimatedSlice = Animated.createAnimatedComponent(Slice);
 
 export default function Pie({
   data,
-  width,
-  height,
+  size,
   style,
   innerRadius = 80,
   innerColor = 'white',
@@ -26,11 +25,7 @@ export default function Pie({
   }, [data, animDuration]);
 
   return (
-    <Svg
-      width={width}
-      height={height}
-      style={style}
-      viewBox={'-100 -100 200 200'}>
+    <Svg width={size} height={size} style={style} viewBox={'-100 -100 200 200'}>
       <Circle cx={0} cy={0} r={100} fill={blankColor} />
       <G>
         {data.map((item, index) => {

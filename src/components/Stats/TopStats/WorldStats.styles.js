@@ -1,20 +1,23 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const {width} = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
-    paddingBottom: 22,
-    borderBottomWidth: 1,
+    paddingBottom: 20,
+    borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: '#E2E5E7',
   },
   worldStats: {
+    marginTop: 10,
     marginLeft: 24,
-    marginBottom: 40,
+    marginBottom: 20,
     flex: 1,
     flexDirection: 'row',
   },
   pie: {
-    width: 220,
-    height: 220,
+    width: (width - 24) / 2,
+    height: (width - 24) / 2,
   },
   worldCounters: {
     flexGrow: 1,
