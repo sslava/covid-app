@@ -44,8 +44,8 @@ export default function StatsScreen({navigation}) {
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
         <View style={styles.header}>
-          <Text style={styles.title}>В мире</Text>
-          <Text style={styles.subtitle}>Обновлено {data.updateDate}</Text>
+          <Text style={styles.title}>Вcего в мире</Text>
+          <Text style={styles.subtitle}>Обновлено {data.world.updateDate}</Text>
         </View>
         <View style={styles.content}>
           <View style={styles.world}>

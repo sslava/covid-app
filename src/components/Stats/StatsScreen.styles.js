@@ -5,7 +5,6 @@ const {height} = Dimensions.get('window');
 export default StyleSheet.create({
   safeArea: {
     backgroundColor: 'white',
-    minHeight: height,
   },
   scrollContent: {
     backgroundColor: 'white',

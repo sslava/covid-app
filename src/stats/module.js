@@ -16,13 +16,13 @@ export const statsActionTypes = {
 
 export const initialStatsState = {
   data: {
-    updateDate: '12.02.2020',
     world: {
       deaths: 24181,
       deaths_new: 2766,
       recovered: 119942,
       total: 534375,
       total_new: 60209,
+      updateDate: '12.02.2020',
     },
     russia: {
       deaths: '3',
@@ -30,6 +30,7 @@ export const initialStatsState = {
       recovered: '20',
       total: '820',
       total_new: '182',
+      updateDate: '12.02.2020',
     },
     cities: [
       {
