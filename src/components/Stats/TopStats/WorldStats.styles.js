@@ -13,8 +13,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   pie: {
-    width: 200,
-    height: 200,
+    width: 220,
+    height: 220,
   },
   worldCounters: {
     flexGrow: 1,
