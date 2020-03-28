@@ -1,10 +1,13 @@
 import React, {useMemo} from 'react';
-import {View} from 'react-native';
+import {View, Dimensions} from 'react-native';
+
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
 
 import NumberBlock from './NumberBlock';
 import PercentCounter from './PercentCounter';
+
+const {width} = Dimensions.get('window');
 
 import styles from './WorldStats.styles';
 
@@ -28,15 +31,14 @@ export default function WorldStats({region}) {
       <View style={styles.worldStats}>
         <Pie
           data={data}
-          width={220}
-          height={220}
+          size={(width - 48) / 2}
           innerRadius={70}
           blankColor={legendColor.Confirmed}
         />
         <View style={styles.worldCounters}>
           <View style={styles.wcInner}>
             <PercentCounter
-              title="Болеет"
+              title="Активных"
               number={active / region.total}
               color={legendColor.Active}
             />
@@ -55,9 +57,10 @@ export default function WorldStats({region}) {
       </View>
       <View style={styles.numberStats}>
         <NumberBlock
-          title="Болеет"
-          number={active}
-          color={legendColor.Active}
+          title="Случаев всего"
+          number={region.total}
+          delta={region.total_new}
+          color={legendColor.Confirmed}
           deltaColor="#FF5C4D"
           total={region.total}
         />
@@ -71,18 +74,17 @@ export default function WorldStats({region}) {
       </View>
       <View style={styles.numberStats}>
         <NumberBlock
-          title="Умерло"
-          number={region.deaths}
-          delta={region.deaths_new}
-          color={legendColor.Deaths}
+          title="Болеет"
+          number={active}
+          color={legendColor.Active}
           deltaColor="#FF5C4D"
           total={region.total}
         />
         <NumberBlock
-          title="Случаев всего"
-          number={region.total}
-          delta={region.total_new}
-          color={legendColor.Confirmed}
+          title="Умерло"
+          number={region.deaths}
+          delta={region.deaths_new}
+          color={legendColor.Deaths}
           deltaColor="#FF5C4D"
           total={region.total}
         />

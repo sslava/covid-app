@@ -1,6 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
-
-const {height} = Dimensions.get('window');
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   safeArea: {
@@ -15,13 +13,13 @@ export default StyleSheet.create({
   },
   title: {
     fontFamily: 'DM Sans',
-    fontSize: 24,
-    lineHeight: 36,
-    fontWeight: '500',
+    fontSize: 34,
+    lineHeight: 34 * 1.2,
+    letterSpacing: 0.011,
+    fontWeight: '700',
     color: '#00133D',
   },
   subtitle: {
-    marginTop: 2,
     fontFamily: 'DM Sans',
     fontSize: 14,
     lineHeight: 20,

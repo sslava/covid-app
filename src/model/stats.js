@@ -17,41 +17,34 @@ export const statsActionTypes = {
 export const initialStatsState = {
   data: {
     world: {
-      deaths: 24181,
-      deaths_new: 2766,
-      recovered: 119942,
-      total: 534375,
-      total_new: 60209,
-      updateDate: '12.02.2020',
+      deaths: '0',
+      deaths_new: '0',
+      recovered: '0',
+      total: '0',
+      total_new: '0',
+      cases_1m: '0',
+      active: '0',
+      serious: '0',
+      mild: '0',
+      updated: '2020-03-28 19:39:00',
     },
     russia: {
-      deaths: '3',
-      deaths_new: '1',
-      recovered: '20',
-      total: '820',
-      total_new: '182',
-      updateDate: '12.02.2020',
+      deaths: '0',
+      deaths_new: '0',
+      recovered: '0',
+      total: '0',
+      total_new: '0',
+      cases_1m: '0',
+      active: '0',
+      serious: '0',
+      updated: '2020-03-28 19:39:00',
+      country_name: 'Russia',
+      country_name_en: 'Россия',
+      lng: '102,110178',
+      lat: '32,278826',
     },
-    cities: [
-      {
-        name: 'Москва',
-        deaths: '0',
-        recovered: '0',
-        total: '0',
-      },
-    ],
-    countries: [
-      {
-        country_name: 'Россия',
-        country_name_en: 'Russia',
-        deaths: '0',
-        deaths_new: '0',
-        recovered: '0',
-        recovered_new: '0',
-        total: '0',
-        total_new: '0',
-      },
-    ],
+    cities: [],
+    countries: [],
   },
   fetchState: 'NotFetched',
   error: null,
@@ -61,8 +54,15 @@ export function fetchStatsSaga(dispatch, storage) {
   return async () => {
     dispatch({type: statsActionTypes.FETCH});
     try {
-      // const data = await apiFetchStats();
-      const payload = initialStatsState.data;
+      const {stats} = await apiFetchStats();
+      const payload = {
+        world: stats.world.today,
+        russia: stats.countries.today.find(c => c.country_name_en === 'Russia'),
+        countries: stats.countries.today.filter(
+          c => c.country_name_en !== 'Russia',
+        ),
+        cities: stats.cities.today,
+      };
       dispatch({type: statsActionTypes.FETCH_COMPLETE, payload});
       await storage.set(payload);
     } catch (error) {

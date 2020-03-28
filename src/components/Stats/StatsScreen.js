@@ -7,6 +7,8 @@ import {
   Text,
 } from 'react-native';
 
+import {formatDate} from '../../common/utils';
+
 import NavStatusBar from '../shared/NavStatusBar';
 import {useStatsContext} from '../shared/StatsDataContext';
 
@@ -45,14 +47,20 @@ export default function StatsScreen({navigation}) {
         }>
         <View style={styles.header}>
           <Text style={styles.title}>Вcего в мире</Text>
-          <Text style={styles.subtitle}>Обновлено {data.world.updateDate}</Text>
+          <Text style={styles.subtitle}>
+            Обновлено{' '}
+            <Text style={styles.date}>{formatDate(data.world.updated)}</Text>
+          </Text>
         </View>
         <View style={styles.content}>
           <View style={styles.world}>
             <WorldStats region={data.world} />
           </View>
           <View style={styles.russia}>
-            <DetailedStats title="Россия" country={data.russia} />
+            <DetailedStats title="В России" country={data.russia} />
+          </View>
+          <View style={styles.countries}>
+            <Text style={styles.title}>Вcего в мире</Text>
           </View>
         </View>
       </ScrollView>
