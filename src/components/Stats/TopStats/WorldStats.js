@@ -27,9 +27,9 @@ export default function WorldStats({region}) {
       <View style={styles.worldStats}>
         <Pie
           data={data}
-          width={200}
-          height={200}
-          innerRadius={60}
+          width={220}
+          height={220}
+          innerRadius={70}
           blankColor="#eeeef3"
         />
         <View style={styles.worldCounters}>
