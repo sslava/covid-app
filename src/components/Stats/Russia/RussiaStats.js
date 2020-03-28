@@ -9,15 +9,14 @@ import {formatDate} from '../../../common/utils';
 import {legendColor} from '../../shared/uikit';
 import openIcon from '../../../assets/icons/open_grey.png';
 
-import styles from './DetailedStats.styles';
+import styles from './RussiaStats.styles';
 
-export default function DetailedStats({title, country}) {
-  const active = country.total - country.recovered - country.deaths;
+export default function RussiaStats({title, country}) {
   const stats = useMemo(() => {
     return [
       {
         color: legendColor.Active,
-        fraction: active / country.total,
+        fraction: country.active / country.total,
       },
       {
         color: legendColor.Recovered,
@@ -28,7 +27,7 @@ export default function DetailedStats({title, country}) {
         fraction: country.deaths / country.total,
       },
     ];
-  }, [country.total, country.recovered, country.deaths, active]);
+  }, [country.total, country.recovered, country.deaths, country.active]);
 
   return (
     <View style={styles.container}>
@@ -47,8 +46,14 @@ export default function DetailedStats({title, country}) {
           color={legendColor.Confirmed}
           title="Подтверждено"
           number={country.total}
+          today={+country.total_new}
+          bad
         />
-        <LegendItem color={legendColor.Active} title="Болеет" number={active} />
+        <LegendItem
+          color={legendColor.Active}
+          title="Болеет"
+          number={country.active}
+        />
         <LegendItem
           color={legendColor.Recovered}
           title="Поправилось"
@@ -58,6 +63,8 @@ export default function DetailedStats({title, country}) {
           color={legendColor.Deaths}
           title="Умерло"
           number={country.deaths}
+          today={+country.deaths_new}
+          bad
         />
       </View>
       <TouchableOpacity style={styles.cities}>

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {legendColor} from '../../shared/uikit';
 
 export default StyleSheet.create({
   container: {
@@ -28,5 +29,13 @@ export default StyleSheet.create({
     lineHeight: 24,
     fontWeight: 'bold',
     color: '#00133D',
+  },
+  today: {
+    fontSize: 14,
+    lineHeight: 20,
+    fontWeight: '500',
+  },
+  bad: {
+    color: legendColor.Deaths,
   },
 });

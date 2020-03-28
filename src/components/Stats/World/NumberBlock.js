@@ -5,14 +5,7 @@ import {formatNumber} from '../../../common/utils';
 
 import styles from './NumberBlock.styles';
 
-export default function NumberBlock({
-  number,
-  total,
-  title,
-  color,
-  delta,
-  deltaColor,
-}) {
+export default function NumberBlock({number, total, title, color, today}) {
   return (
     <View style={styles.container}>
       <View style={styles.line}>
@@ -21,13 +14,10 @@ export default function NumberBlock({
       </View>
       <Text style={styles.number}>
         {formatNumber(number)}
-        {delta && (
-          <Text style={styles.delta}>
-            {' ('}
-            <Text style={[styles.deltaNumber, {color: deltaColor}]}>
-              +{formatNumber(delta)}
-            </Text>
-            )
+        {today && (
+          <Text style={styles.today}>
+            {' (+'}
+            {formatNumber(today)})
           </Text>
         )}
       </Text>
