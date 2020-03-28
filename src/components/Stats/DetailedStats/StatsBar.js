@@ -6,10 +6,13 @@ import styles from './StatsBar.styles';
 export default function StatsBar({items}) {
   return (
     <View style={styles.container}>
-      {items.map(({color, width}) => (
+      {items.map(({color, fraction}) => (
         <View
           key={color}
-          style={[styles.item, {width, backgroundColor: color}]}
+          style={[
+            styles.bar,
+            {backgroundColor: color, width: `${(fraction * 100).toFixed(3)}%`},
+          ]}
         />
       ))}
     </View>

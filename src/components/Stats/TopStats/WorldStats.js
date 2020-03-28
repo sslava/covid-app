@@ -1,18 +1,19 @@
 import React, {useMemo} from 'react';
 import {View} from 'react-native';
 import Pie from '../../shared/PieChart/Pie';
+import {legendColor} from '../../shared/uikit';
 
 import NumberBlock from './NumberBlock';
 import PercentCounter from './PercentCounter';
 
 import styles from './WorldStats.styles';
 
-const getPieData = (total, recovered, death) => {
-  const active = total - death - recovered;
+const getPieData = (total, recovered, deaths) => {
+  const active = total - deaths - recovered;
   return [
-    {index: 0, number: active / total, fill: '#003cbf'},
-    {index: 1, number: death / total, fill: '#ff5c4d'},
-    {index: 2, number: recovered / total, fill: '#0ccafd'},
+    {index: 0, number: active / total, fill: legendColor.Active},
+    {index: 1, number: deaths / total, fill: legendColor.Deaths},
+    {index: 2, number: recovered / total, fill: legendColor.Recovered},
   ];
 };
 
@@ -30,24 +31,24 @@ export default function WorldStats({region}) {
           width={220}
           height={220}
           innerRadius={70}
-          blankColor="#eeeef3"
+          blankColor={legendColor.Confirmed}
         />
         <View style={styles.worldCounters}>
           <View style={styles.wcInner}>
             <PercentCounter
               title="Болеет"
-              number={((active / region.total) * 100).toFixed(2)}
-              color="#003cbf"
+              number={active / region.total}
+              color={legendColor.Active}
             />
             <PercentCounter
               title="Выздоровело"
-              number={((region.recovered / region.total) * 100).toFixed(2)}
-              color="#0ccafd"
+              number={region.recovered / region.total}
+              color={legendColor.Recovered}
             />
             <PercentCounter
               title="Умерло"
-              number={((region.deaths / region.total) * 100).toFixed(2)}
-              color="#ff5c4d"
+              number={region.deaths / region.total}
+              color={legendColor.Deaths}
             />
           </View>
         </View>
@@ -56,7 +57,7 @@ export default function WorldStats({region}) {
         <NumberBlock
           title="Болеет"
           number={active}
-          color="#003cbf"
+          color={legendColor.Active}
           deltaColor="#FF5C4D"
           total={region.total}
         />
@@ -64,7 +65,7 @@ export default function WorldStats({region}) {
           title="Выздоровело"
           number={region.recovered}
           deltaColor="#219653"
-          color="#0ccafd"
+          color={legendColor.Recovered}
           total={region.total}
         />
       </View>
@@ -73,7 +74,7 @@ export default function WorldStats({region}) {
           title="Умерло"
           number={region.deaths}
           delta={region.deaths_new}
-          color="#ff5c4d"
+          color={legendColor.Deaths}
           deltaColor="#FF5C4D"
           total={region.total}
         />
@@ -81,6 +82,7 @@ export default function WorldStats({region}) {
           title="Случаев всего"
           number={region.total}
           delta={region.total_new}
+          color={legendColor.Confirmed}
           deltaColor="#FF5C4D"
           total={region.total}
         />
