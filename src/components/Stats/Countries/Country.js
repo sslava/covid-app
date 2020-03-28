@@ -22,7 +22,7 @@ export default function Country({country}) {
         </View>
         <View style={styles.item}>
           <Text style={styles.number}>{formatNumber(country.deaths)}</Text>
-          <Text style={styles.caption}>Умерло</Text>
+          <Text style={styles.caption}>Смертей</Text>
         </View>
       </View>
     </View>

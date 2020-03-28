@@ -30,7 +30,6 @@ export default StyleSheet.create({
     flex: 1,
     width: '100%',
     flexDirection: 'row',
-    paddingLeft: 5,
-    paddingRight: 5,
+    paddingHorizontal: 14,
   },
 });

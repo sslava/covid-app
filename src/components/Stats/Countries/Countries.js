@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 
 import Country from './Country';
 
@@ -11,6 +11,7 @@ export default function Countries({countries}) {
   }
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>По странам</Text>
       {countries.map(c => (
         <Country key={c.country_name_en} country={c} />
       ))}
