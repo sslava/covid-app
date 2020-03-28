@@ -11,7 +11,7 @@ import {
   statsActionTypes,
   statsReducer,
   fetchStatsSaga,
-} from '../../stats/module';
+} from '../../model/stats';
 
 import ItemStore from '../../common/ItemStore';
 
