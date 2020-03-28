@@ -12,8 +12,9 @@ import {formatDate} from '../../common/utils';
 import NavStatusBar from '../shared/NavStatusBar';
 import {useStatsContext} from '../shared/StatsDataContext';
 
-import WorldStats from './TopStats/WorldStats';
-import DetailedStats from './DetailedStats/DetailedStats';
+import WorldStats from './World/WorldStats';
+import Russia from './Russia/RussiaStats';
+import Countries from './Countries/Countries';
 
 import styles from './StatsScreen.styles';
 
@@ -57,10 +58,10 @@ export default function StatsScreen({navigation}) {
             <WorldStats region={data.world} />
           </View>
           <View style={styles.russia}>
-            <DetailedStats title="В России" country={data.russia} />
+            <Russia title="В России" country={data.russia} />
           </View>
           <View style={styles.countries}>
-            <Text style={styles.title}>Вcего в мире</Text>
+            <Countries countries={data.top20} />
           </View>
         </View>
       </ScrollView>

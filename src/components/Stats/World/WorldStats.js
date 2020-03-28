@@ -11,8 +11,7 @@ const {width} = Dimensions.get('window');
 
 import styles from './WorldStats.styles';
 
-const getPieData = (total, recovered, deaths) => {
-  const active = total - deaths - recovered;
+const getPieData = (total, recovered, deaths, active) => {
   return [
     {index: 0, number: active / total, fill: legendColor.Active},
     {index: 1, number: deaths / total, fill: legendColor.Deaths},
@@ -22,10 +21,10 @@ const getPieData = (total, recovered, deaths) => {
 
 export default function WorldStats({region}) {
   const data = useMemo(
-    () => getPieData(region.total, region.recovered, region.deaths),
-    [region.total, region.recovered, region.deaths],
+    () =>
+      getPieData(region.total, region.recovered, region.deaths, region.active),
+    [region.total, region.recovered, region.deaths, region.active],
   );
-  const active = region.total - region.deaths - region.recovered;
   return (
     <View style={styles.container}>
       <View style={styles.worldStats}>
@@ -39,7 +38,7 @@ export default function WorldStats({region}) {
           <View style={styles.wcInner}>
             <PercentCounter
               title="Активных"
-              number={active / region.total}
+              number={region.active / region.total}
               color={legendColor.Active}
             />
             <PercentCounter
@@ -59,15 +58,13 @@ export default function WorldStats({region}) {
         <NumberBlock
           title="Случаев всего"
           number={region.total}
-          delta={region.total_new}
+          today={region.total_new}
           color={legendColor.Confirmed}
-          deltaColor="#FF5C4D"
           total={region.total}
         />
         <NumberBlock
           title="Выздоровело"
           number={region.recovered}
-          deltaColor="#219653"
           color={legendColor.Recovered}
           total={region.total}
         />
@@ -75,17 +72,15 @@ export default function WorldStats({region}) {
       <View style={styles.numberStats}>
         <NumberBlock
           title="Болеет"
-          number={active}
+          number={region.active}
           color={legendColor.Active}
-          deltaColor="#FF5C4D"
           total={region.total}
         />
         <NumberBlock
           title="Умерло"
           number={region.deaths}
-          delta={region.deaths_new}
+          today={region.deaths_new}
           color={legendColor.Deaths}
-          deltaColor="#FF5C4D"
           total={region.total}
         />
       </View>
