@@ -11,12 +11,13 @@ export default StyleSheet.create({
   },
   title: {
     fontFamily: 'DM Sans',
-    fontSize: 16,
+    fontSize: 20,
     lineHeight: 24,
     fontWeight: '800',
     color: '#00133D',
   },
   content: {
+    paddingHorizontal: 8,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -26,7 +27,7 @@ export default StyleSheet.create({
     borderBottomColor: '#E2E5E7',
   },
   item: {
-    paddingVertical: 24,
+    paddingVertical: 12,
     justifyContent: 'center',
     alignItems: 'center',
     width: '33%',
@@ -45,7 +46,7 @@ export default StyleSheet.create({
     color: '#00133D',
   },
   caption: {
-    marginTop: 2,
+    marginTop: 4,
     fontFamily: 'DM Sans',
     fontSize: 14,
     lineHeight: 20,

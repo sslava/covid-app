@@ -61,7 +61,7 @@ export default function RussiaStats({title, country}) {
         />
         <LegendItem
           color={legendColor.Deaths}
-          title="Умерло"
+          title="Смертей"
           number={country.deaths}
           today={+country.deaths_new}
           bad

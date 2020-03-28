@@ -47,7 +47,7 @@ export default function WorldStats({region}) {
               color={legendColor.Recovered}
             />
             <PercentCounter
-              title="Умерло"
+              title="Смертей"
               number={region.deaths / region.total}
               color={legendColor.Deaths}
             />
@@ -77,7 +77,7 @@ export default function WorldStats({region}) {
           total={region.total}
         />
         <NumberBlock
-          title="Умерло"
+          title="Смертей"
           number={region.deaths}
           today={region.deaths_new}
           color={legendColor.Deaths}
