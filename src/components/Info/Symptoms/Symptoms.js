@@ -9,8 +9,8 @@ import styles from './Symptoms.styles';
 export default function Symptoms() {
   return (
     <View style={styles.container}>
-      <View slyle={styles.header}>
-        <Text slyle={styles.title}>Симптомы</Text>
+      <View style={styles.header}>
+        <Text style={styles.title}>Симптомы</Text>
       </View>
       <ScrollView
         style={styles.list}
