@@ -23,7 +23,6 @@ export default StyleSheet.create({
     color: '#00133D',
   },
   content: {
-    paddingTop: 16,
     paddingBottom: 24,
     paddingHorizontal: 24,
   },
