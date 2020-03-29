@@ -3,21 +3,20 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../../shared/uikit';
 
 export default StyleSheet.create({
-  container: {
-    paddingVertical: 24,
-  },
+  container: {},
   header: {
     paddingHorizontal: 24,
+    paddingVertical: 16,
   },
   title: {
     fontFamily: 'Ubuntu',
-    fontSize: 34,
-    lineHeight: 34 * 1.2,
+    fontSize: 20,
+    lineHeight: 24 * 1.2,
     letterSpacing: 0.011,
-    fontWeight: '500',
+    fontWeight: '600',
     color: colors.DarkBlue,
   },
   list: {
-    paddingHorizontal: 8,
+    paddingHorizontal: 16,
   },
 });
