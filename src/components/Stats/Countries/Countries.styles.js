@@ -12,6 +12,6 @@ export default StyleSheet.create({
     fontWeight: '700',
     paddingLeft: 24,
     color: '#00133D',
-    marginBottom: 16,
+    marginBottom: 24,
   },
 });

@@ -1,16 +1,16 @@
 import React, {useMemo} from 'react';
-import {View, Dimensions} from 'react-native';
+import {View, Dimensions, Text} from 'react-native';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
+import {formatNumber, formatDate} from '../../../common/utils';
 
-import NumberBlock from './NumberBlock';
 import PercentCounter from './PercentCounter';
-
-const {width} = Dimensions.get('window');
+import SecondaryNumber from '../../shared/SecondaryNumber';
 
 import styles from './WorldStats.styles';
 
+const {width} = Dimensions.get('window');
 const getPieData = (total, recovered, deaths, active) => {
   return [
     {index: 0, number: active / total, fill: legendColor.Active},
@@ -27,6 +27,15 @@ export default function WorldStats({region}) {
   );
   return (
     <View style={styles.container}>
+      <View style={styles.banner}>
+        <Text style={styles.bannerNumber}>
+          {formatNumber(region.total)}
+          <SecondaryNumber num={region.total_new} style={styles.today} />
+        </Text>
+        <Text style={styles.bannerText}>
+          Случев заболевания {formatDate(region.updated)}
+        </Text>
+      </View>
       <View style={styles.worldStats}>
         <Pie
           data={data}
@@ -37,28 +46,28 @@ export default function WorldStats({region}) {
         <View style={styles.worldCounters}>
           <View style={styles.wcInner}>
             <PercentCounter
-              title="Активных"
-              number={region.active / region.total}
+              title="Болеет"
+              number={region.active}
               color={legendColor.Active}
             />
             <PercentCounter
               title="Выздоровело"
-              number={region.recovered / region.total}
+              number={region.recovered}
               color={legendColor.Recovered}
             />
             <PercentCounter
               title="Смертей"
-              number={region.deaths / region.total}
+              number={region.deaths}
+              today={region.deaths_new}
               color={legendColor.Deaths}
             />
           </View>
         </View>
       </View>
-      <View style={styles.numberStats}>
+      {/* <View style={styles.numberStats}>
         <NumberBlock
-          title="Случаев всего"
-          number={region.total}
-          today={region.total_new}
+          title="Cлучаев сегодня"
+          number={region.total_new}
           color={legendColor.Confirmed}
           total={region.total}
         />
@@ -83,7 +92,7 @@ export default function WorldStats({region}) {
           color={legendColor.Deaths}
           total={region.total}
         />
-      </View>
+      </View> */}
     </View>
   );
 }
