@@ -15,7 +15,7 @@ export default StyleSheet.create({
     fontSize: 34,
     lineHeight: 34 * 1.2,
     letterSpacing: 0.011,
-    fontWeight: '700',
+    fontWeight: '500',
     color: '#00133D',
   },
   banner: {
