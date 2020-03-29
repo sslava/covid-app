@@ -26,7 +26,7 @@ export default StyleSheet.create({
     marginRight: 8,
   },
   number: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 20,
     lineHeight: 28,
     fontWeight: '500',
@@ -34,14 +34,14 @@ export default StyleSheet.create({
   },
   title: {
     color: '#95A0B8',
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontWeight: '600',
     fontSize: 14,
     lineHeight: 20,
     textTransform: 'uppercase',
   },
   today: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 14,
     lineHeight: 20,
     color: legendColor.Deaths,

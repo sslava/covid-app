@@ -12,7 +12,7 @@ export default StyleSheet.create({
     paddingLeft: 24,
   },
   title: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 34,
     lineHeight: 34 * 1.2,
     letterSpacing: 0.011,
@@ -20,7 +20,7 @@ export default StyleSheet.create({
     color: '#00133D',
   },
   subtitle: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 14,
     lineHeight: 20,
     color: '#95A0B8',

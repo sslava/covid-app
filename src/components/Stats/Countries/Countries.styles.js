@@ -5,7 +5,7 @@ export default StyleSheet.create({
     paddingTop: 30,
   },
   title: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 34,
     lineHeight: 34 * 1.2,
     letterSpacing: 0.011,

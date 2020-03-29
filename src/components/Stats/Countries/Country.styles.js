@@ -10,7 +10,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 20,
     lineHeight: 24,
     fontWeight: '800',
@@ -39,7 +39,7 @@ export default StyleSheet.create({
     borderRightColor: '#E2E5E7',
   },
   number: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 16,
     lineHeight: 24,
     fontWeight: '800',
@@ -47,7 +47,7 @@ export default StyleSheet.create({
   },
   caption: {
     marginTop: 4,
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 14,
     lineHeight: 20,
     fontWeight: '400',

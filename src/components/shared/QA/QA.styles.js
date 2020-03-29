@@ -33,7 +33,7 @@ export default StyleSheet.create({
     height: 18,
   },
   question: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 16,
     lineHeight: 24,
     fontWeight: '500',
@@ -46,7 +46,7 @@ export default StyleSheet.create({
     paddingRight: 16,
   },
   subTitle: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontWeight: '600',
     fontSize: 14,
     lineHeight: 24,
@@ -56,7 +56,7 @@ export default StyleSheet.create({
     marginTop: 10,
   },
   answerText: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     color: '#BFD6F6',
     fontSize: 14,
     lineHeight: 24,

@@ -14,7 +14,7 @@ export default StyleSheet.create({
     borderRadius: 4,
   },
   wcTitle: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 14,
     lineHeight: 20,
     fontWeight: '500',
@@ -23,7 +23,7 @@ export default StyleSheet.create({
   },
   wcNumber: {
     marginTop: 2,
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 16,
     lineHeight: 24,
     color: '#00133D',
