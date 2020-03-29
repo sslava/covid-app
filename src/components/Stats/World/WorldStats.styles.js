@@ -36,6 +36,7 @@ export default StyleSheet.create({
     fontFamily: 'Ubuntu',
     fontSize: 16,
     fontWeight: '300',
+    textTransform: 'uppercase',
     color: '#95A0B8',
   },
   bannerNumber: {

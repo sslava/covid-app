@@ -28,11 +28,11 @@ export default function WorldStats({region}) {
   return (
     <View style={styles.container}>
       <View style={styles.banner}>
-        <Text style={styles.bannerText}>Случаев заболевания</Text>
         <Text style={styles.bannerNumber}>
           {formatNumber(region.total)}
           <SecondaryNumber num={region.total_new} style={styles.today} />
         </Text>
+        <Text style={styles.bannerText}>Случаев заболевания</Text>
       </View>
       <View style={styles.worldStats}>
         <Pie
