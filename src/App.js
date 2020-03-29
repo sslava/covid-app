@@ -50,14 +50,6 @@ function Root() {
 
 const AppStack = createStackNavigator();
 
-const titles = {
-  Root: null,
-  WhoFaq: 'Вопросы и ответы',
-  Symptoms: 'Симптомы',
-  Spread: 'Как передается',
-  Prevent: 'Профилактика',
-};
-
 export default function App() {
   return (
     <StatsDataProvider>
@@ -65,7 +57,6 @@ export default function App() {
         <AppStack.Navigator
           headerMode="screen"
           screenOptions={({route}) => ({
-            title: titles[route.name],
             headerBackTitle: ' ',
             headerStyle: styles.headerStyle,
             headerTitleStyle: styles.headerTitleStyle,
