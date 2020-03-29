@@ -38,6 +38,8 @@ export default StyleSheet.create({
     color: '#00133D',
   },
   bar: {
+    paddingTop: 8,
+    paddingBottom: 8,
     paddingHorizontal: 24,
   },
   today: {
