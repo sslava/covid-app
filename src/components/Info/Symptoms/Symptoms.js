@@ -1,16 +1,10 @@
 import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
 
-import styles from './Symptoms.styles';
 import Symptom from './Symptom';
+import symptoms from './list';
 
-const symptoms = [
-  {image: '', title: 'высокая температура тела'},
-  {image: '', title: 'кашель'},
-  {image: '', title: 'одышка'},
-  {image: '', title: 'боль в мышцах'},
-  {image: '', title: 'утомляемость'},
-];
+import styles from './Symptoms.styles';
 
 export default function Symptoms() {
   return (
@@ -18,7 +12,10 @@ export default function Symptoms() {
       <View slyle={styles.header}>
         <Text slyle={styles.title}>Симптомы</Text>
       </View>
-      <ScrollView slyle={styles.list} horizontal>
+      <ScrollView
+        style={styles.list}
+        horizontal
+        showsHorizontalScrollIndicator={false}>
         {symptoms.map((s, i) => (
           <Symptom key={i} symptom={s} />
         ))}

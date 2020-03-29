@@ -2,39 +2,9 @@ import React from 'react';
 import {View, Text} from 'react-native';
 
 import Recommendation from './Recommendation';
+import recommendations from './list';
 
 import styles from './Recommendation.styles';
-
-const recommendations = [
-  {
-    title: 'Постарайтесь остаться дома',
-    desc: 'Карантин — способ остановить распространение',
-  },
-  {
-    title: 'Ограничьте личные контакты с людьми',
-    desc: '',
-  },
-  {
-    title: 'Соблюдайте дистанцию',
-    desc: '',
-  },
-  {
-    title: 'Ещё чаще мойте руки',
-    desc: '',
-  },
-  {
-    title: 'Используйте средства защиты',
-    desc: '',
-  },
-  {
-    title: 'Сохраняйте спокойствие',
-    desc: '',
-  },
-  {
-    title: 'Оставайтесь на связи с близкими',
-    desc: '',
-  },
-];
 
 export default function Recommendations() {
   return (
