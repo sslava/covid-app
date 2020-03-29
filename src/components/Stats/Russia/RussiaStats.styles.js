@@ -33,26 +33,4 @@ export default StyleSheet.create({
   legend: {
     paddingHorizontal: 24,
   },
-  cities: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginHorizontal: 24,
-    marginVertical: 16,
-    paddingHorizontal: 16,
-    paddingVertical: 24,
-    backgroundColor: 'rgba(149, 160, 184, 0.1)',
-    borderRadius: 5,
-  },
-  openIcon: {
-    width: 20,
-    height: 20,
-  },
-  citiesCaption: {
-    fontFamily: 'Ubuntu',
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: '600',
-    color: '#00133D',
-  },
 });
