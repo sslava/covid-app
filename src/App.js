@@ -1,4 +1,5 @@
 import React from 'react';
+import {Image} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -14,7 +15,17 @@ import PreventScreen from './components/Prevent/PreventScreen';
 import HeaderBackImage from './components/shared/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
 
+import preventIcon from './assets/icons/prevent_black.png';
+import reportIcon from './assets/icons/report_black.png';
+
 import styles from './components/shared/navigator.styles';
+
+const TabIcon = ({color, size, source}) => (
+  <Image
+    source={source}
+    style={{width: size + 4, height: size + 4, tintColor: color}}
+  />
+);
 
 const RootTabs = createBottomTabNavigator();
 
@@ -25,16 +36,16 @@ function Root() {
         name="Stats"
         component={StatsScreen}
         options={{
-          tabBarIcon: ({focused, color, size}) => null,
-          tabBarLabel: 'Статистика',
+          tabBarIcon: props => <TabIcon source={reportIcon} {...props} />,
+          tabBarLabel: '',
         }}
       />
       <RootTabs.Screen
         name="Info"
         component={InfoScreen}
         options={{
-          tabBarIcon: ({focused, color, size}) => null,
-          tabBarLabel: 'Информация',
+          tabBarIcon: props => <TabIcon source={preventIcon} {...props} />,
+          tabBarLabel: '',
         }}
       />
     </RootTabs.Navigator>
