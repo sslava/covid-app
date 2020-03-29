@@ -3,10 +3,10 @@ import {View, Text} from 'react-native';
 
 import styles from './Symptom.styles';
 
-export default function Symptom({text, icon}) {
+export default function Symptom({symptom, icon}) {
   return (
     <View style={styles.container}>
-      <Text>{text}</Text>
+      <Text style={styles.name}>{symptom.title}</Text>
     </View>
   );
 }
