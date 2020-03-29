@@ -1,10 +1,10 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import {legendColor} from '../../shared/uikit';
 
 const {width} = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
-    paddingBottom: 20,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: '#E2E5E7',
   },
@@ -26,10 +26,33 @@ export default StyleSheet.create({
     marginLeft: 10,
     marginRight: 20,
   },
+  banner: {
+    paddingTop: 8,
+    paddingBottom: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bannerText: {
+    fontFamily: 'Ubuntu',
+    fontSize: 16,
+    fontWeight: '300',
+    color: '#95A0B8',
+  },
+  bannerNumber: {
+    fontFamily: 'Ubuntu',
+    fontSize: 56,
+    fontWeight: '300',
+    lineHeight: 56 * 1.2,
+    color: '#00133D',
+  },
+  today: {
+    fontSize: 24,
+    fontWeight: '300',
+    color: legendColor.Deaths,
+  },
   numberStats: {
     flex: 1,
     width: '100%',
     flexDirection: 'row',
-    paddingHorizontal: 14,
   },
 });

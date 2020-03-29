@@ -1,6 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+
 import {formatNumber} from '../../../common/utils';
+
+import SecondaryNumber from '../SecondaryNumber';
 
 import styles from './LegendItem.styles';
 
@@ -13,12 +16,7 @@ export default function LegendItem({color, title, number, today, bad}) {
       </View>
       <Text style={styles.number}>
         {formatNumber(number)}
-        {!!today && (
-          <Text style={[styles.today, bad && styles.bad]}>
-            {' (+'}
-            {formatNumber(today)})
-          </Text>
-        )}
+        <SecondaryNumber num={today} style={[styles.today, styles.bad]} />
       </Text>
     </View>
   );

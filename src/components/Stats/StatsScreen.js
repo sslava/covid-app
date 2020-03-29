@@ -7,8 +7,6 @@ import {
   Text,
 } from 'react-native';
 
-import {formatDate} from '../../common/utils';
-
 import NavStatusBar from '../shared/NavStatusBar';
 import {useStatsContext} from '../shared/StatsDataContext';
 
@@ -47,11 +45,11 @@ export default function StatsScreen({navigation}) {
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
         <View style={styles.header}>
-          <Text style={styles.title}>Вcего в мире</Text>
-          <Text style={styles.subtitle}>
+          <Text style={styles.title}>В мире</Text>
+          {/* <Text style={styles.subtitle}>
             Обновлено{' '}
             <Text style={styles.date}>{formatDate(data.world.updated)}</Text>
-          </Text>
+          </Text> */}
         </View>
         <View style={styles.content}>
           <View style={styles.world}>

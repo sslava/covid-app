@@ -2,11 +2,12 @@ import React, {useMemo} from 'react';
 
 import {TouchableOpacity, View, Text, Image} from 'react-native';
 
-import LegendItem from './LegendItem';
 import StatsBar from './StatsBar';
 
 import {formatDate} from '../../../common/utils';
 import {legendColor} from '../../shared/uikit';
+import LegendItem from '../../shared/Legend/LegendItem';
+
 import openIcon from '../../../assets/icons/open_grey.png';
 
 import styles from './RussiaStats.styles';
@@ -44,7 +45,7 @@ export default function RussiaStats({title, country}) {
       <View style={styles.legend}>
         <LegendItem
           color={legendColor.Confirmed}
-          title="Подтверждено"
+          title="Случаев заболевания"
           number={country.total}
           today={+country.total_new}
           bad
@@ -67,10 +68,10 @@ export default function RussiaStats({title, country}) {
           bad
         />
       </View>
-      <TouchableOpacity style={styles.cities}>
+      {/* <TouchableOpacity style={styles.cities}>
         <Text style={styles.citiesCaption}>Статистика по городам</Text>
         <Image source={openIcon} style={styles.openIcon} />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 }

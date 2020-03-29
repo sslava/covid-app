@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {legendColor} from '../../shared/uikit';
 
 export default StyleSheet.create({
   wc: {
@@ -6,14 +7,14 @@ export default StyleSheet.create({
     marginVertical: 8,
     paddingLeft: 24 + 8,
   },
-  wcLine: {
+  line: {
     position: 'absolute',
-    top: 8,
+    top: 7,
     width: 24,
     height: 8,
     borderRadius: 4,
   },
-  wcTitle: {
+  title: {
     fontFamily: 'Ubuntu',
     fontSize: 14,
     lineHeight: 20,
@@ -21,11 +22,17 @@ export default StyleSheet.create({
     color: '#95A0B8',
     textTransform: 'uppercase',
   },
-  wcNumber: {
+  number: {
     marginTop: 2,
     fontFamily: 'Ubuntu',
+    fontWeight: '600',
     fontSize: 16,
     lineHeight: 24,
     color: '#00133D',
+  },
+  today: {
+    fontSize: 14,
+    fontWeight: '300',
+    color: legendColor.Deaths,
   },
 });

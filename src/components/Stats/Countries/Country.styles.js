@@ -1,57 +1,50 @@
 import {StyleSheet} from 'react-native';
+import {legendColor} from '../../shared/uikit';
 
 export default StyleSheet.create({
   container: {
-    marginBottom: 8,
+    borderBottomColor: '#E2E5E7',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderTopColor: '#E2E5E7',
+    borderTopWidth: StyleSheet.hairlineWidth,
   },
-  header: {
+  button: {
     paddingHorizontal: 24,
-    paddingVertical: 8,
+    paddingVertical: 16,
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   title: {
     fontFamily: 'Ubuntu',
-    fontSize: 20,
+    fontWeight: '500',
+    fontSize: 18,
     lineHeight: 24,
-    fontWeight: '800',
     color: '#00133D',
   },
-  content: {
-    paddingHorizontal: 8,
+  legend: {
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+  },
+  numbers: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderTopColor: '#E2E5E7',
-    borderBottomColor: '#E2E5E7',
-  },
-  item: {
-    paddingVertical: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '33%',
-  },
-  central: {
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderLeftColor: '#E2E5E7',
-    borderRightColor: '#E2E5E7',
   },
   number: {
     fontFamily: 'Ubuntu',
     fontSize: 16,
     lineHeight: 24,
-    fontWeight: '800',
+    fontWeight: '600',
     color: '#00133D',
   },
-  caption: {
-    marginTop: 4,
-    fontFamily: 'Ubuntu',
+  today: {
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: '400',
-    color: '#95A0B8',
-    textTransform: 'uppercase',
+    fontWeight: '300',
+    color: legendColor.Deaths,
+  },
+  openIcon: {
+    width: 20,
+    height: 20,
+    marginLeft: 8,
   },
 });
