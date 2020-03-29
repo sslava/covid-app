@@ -1,34 +1,17 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 
-import {TouchableOpacity, View, Text, Image} from 'react-native';
-
-import StatsBar from './StatsBar';
+import {View, Text} from 'react-native';
 
 import {formatDate} from '../../../common/utils';
 import {legendColor} from '../../shared/uikit';
 import LegendItem from '../../shared/Legend/LegendItem';
-
-import openIcon from '../../../assets/icons/open_grey.png';
+import StatsBar from '../../shared/StatsBar/StatsBar';
+import useCountryStats from '../../shared/useCountryStats';
 
 import styles from './RussiaStats.styles';
 
 export default function RussiaStats({title, country}) {
-  const stats = useMemo(() => {
-    return [
-      {
-        color: legendColor.Active,
-        fraction: country.active / country.total,
-      },
-      {
-        color: legendColor.Recovered,
-        fraction: country.recovered / country.total,
-      },
-      {
-        color: legendColor.Deaths,
-        fraction: country.deaths / country.total,
-      },
-    ];
-  }, [country.total, country.recovered, country.deaths, country.active]);
+  const stats = useCountryStats(country);
 
   return (
     <View style={styles.container}>
