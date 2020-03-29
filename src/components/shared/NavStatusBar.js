@@ -11,6 +11,5 @@ export default function NavStatusBar({barStyle}: Props) {
   useFocusEffect(() => {
     StatusBar.setBarStyle(barStyle);
   }, [barStyle]);
-
   return <StatusBar barStyle={barStyle} animated />;
 }
