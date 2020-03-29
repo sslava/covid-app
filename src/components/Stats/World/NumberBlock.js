@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 
 import {formatNumber} from '../../../common/utils';
+import SecondaryNumer from '../../shared/SecondaryNumber';
 
 import styles from './NumberBlock.styles';
 
@@ -14,12 +15,7 @@ export default function NumberBlock({number, total, title, color, today}) {
       </View>
       <Text style={styles.number}>
         {formatNumber(number)}
-        {today && (
-          <Text style={styles.today}>
-            {' (+'}
-            {formatNumber(today)})
-          </Text>
-        )}
+        <SecondaryNumer num={today} style={styles.today} />
       </Text>
     </View>
   );
