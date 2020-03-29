@@ -18,13 +18,13 @@ export default function InfoScreen({navigation}) {
         style={styles.scroll}
         contentContainerStyle={styles.scrollContent}>
         <View style={styles.container}>
-          <View slyle={styles.symptons}>
+          <View style={styles.symptons}>
             <Symptoms />
           </View>
-          <View slyle={styles.recommendations}>
+          <View style={styles.recommendations}>
             <Recommendations />
           </View>
-          <View slyle={styles.resources}>
+          <View style={styles.resources}>
             <Resources />
           </View>
         </View>
