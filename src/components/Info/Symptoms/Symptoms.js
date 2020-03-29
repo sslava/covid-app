@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 
+import Subheader from '../Subheader';
 import Symptom from './Symptom';
 import symptoms from './list';
 
@@ -9,9 +10,7 @@ import styles from './Symptoms.styles';
 export default function Symptoms() {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Симптомы</Text>
-      </View>
+      <Subheader>Симптомы</Subheader>
       <ScrollView
         style={styles.list}
         horizontal
