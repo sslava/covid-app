@@ -17,7 +17,7 @@ export default StyleSheet.create({
   },
   title: {
     fontFamily: 'Ubuntu',
-    fontWeight: '500',
+    fontWeight: '400',
     fontSize: 18,
     lineHeight: 24,
     color: '#00133D',
