@@ -51,7 +51,7 @@ export default function RussiaStats({country}) {
       </View>
       <View style={styles.updated}>
         <Text style={styles.updatedText}>
-          По данным на {formatDate(country.updated)}
+          По состоянию на {formatDate(country.updated)}
         </Text>
       </View>
     </View>

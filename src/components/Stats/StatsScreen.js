@@ -13,7 +13,6 @@ import {useStatsContext} from '../shared/StatsDataContext';
 import WorldStats from './World/WorldStats';
 import Russia from './Russia/RussiaStats';
 import Countries from './Countries/Countries';
-import Sources from './Sources';
 
 import styles from './StatsScreen.styles';
 

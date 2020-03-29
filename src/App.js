@@ -8,9 +8,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import StatsScreen from './components/Stats/StatsScreen';
 import WhoFaqScreen from './components/WhoFaq/WhoFaqScreen';
 import InfoScreen from './components/Info/InfoScreen';
-import SymptomsScreen from './components/Symptoms/SymptomsScreen';
-import SpreadScreen from './components/Spread/SpreadScreen';
-import PreventScreen from './components/Prevent/PreventScreen';
 
 import HeaderBackImage from './components/shared/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
@@ -78,14 +75,9 @@ export default function App() {
           <AppStack.Screen
             name="Root"
             component={Root}
-            options={{
-              headerTransparent: true,
-            }}
+            options={{headerTransparent: true}}
           />
           <AppStack.Screen name="WhoFaq" component={WhoFaqScreen} />
-          <AppStack.Screen name="Symptoms" component={SymptomsScreen} />
-          <AppStack.Screen name="Spread" component={SpreadScreen} />
-          <AppStack.Screen name="Prevent" component={PreventScreen} />
         </AppStack.Navigator>
       </NavigationContainer>
     </StatsDataProvider>
