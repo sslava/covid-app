@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 
 import Country from './Country';
+import Sources from '../Sources';
 
 import styles from './Countries.styles';
 
@@ -15,6 +16,7 @@ export default function Countries({countries}) {
       {countries.map(c => (
         <Country key={c.country_name_en} country={c} />
       ))}
+      <Sources source="worldometers.info" date={countries[0].updated} />
     </View>
   );
 }

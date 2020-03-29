@@ -13,6 +13,7 @@ import {useStatsContext} from '../shared/StatsDataContext';
 import WorldStats from './World/WorldStats';
 import Russia from './Russia/RussiaStats';
 import Countries from './Countries/Countries';
+import Sources from './Sources';
 
 import styles from './StatsScreen.styles';
 
@@ -46,17 +47,13 @@ export default function StatsScreen({navigation}) {
         }>
         <View style={styles.header}>
           <Text style={styles.title}>В мире</Text>
-          {/* <Text style={styles.subtitle}>
-            Обновлено{' '}
-            <Text style={styles.date}>{formatDate(data.world.updated)}</Text>
-          </Text> */}
         </View>
         <View style={styles.content}>
           <View style={styles.world}>
             <WorldStats region={data.world} />
           </View>
           <View style={styles.russia}>
-            <Russia title="В России" country={data.russia} />
+            <Russia country={data.russia} />
           </View>
           <View style={styles.countries}>
             <Countries countries={data.top20} />
