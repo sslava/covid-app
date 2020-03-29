@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../shared/uikit';
 
 export default StyleSheet.create({
   container: {
@@ -11,7 +12,7 @@ export default StyleSheet.create({
     letterSpacing: 0.011,
     fontWeight: '500',
     paddingLeft: 24,
-    color: '#00133D',
+    color: colors.DarkBlue,
     marginBottom: 24,
   },
 });

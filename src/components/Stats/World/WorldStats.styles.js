@@ -1,12 +1,12 @@
 import {StyleSheet, Dimensions} from 'react-native';
-import {legendColor} from '../../shared/uikit';
+import {legendColor, colors} from '../../shared/uikit';
 
 const {width} = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#E2E5E7',
+    borderBottomColor: colors.BorderGrey,
   },
   worldStats: {
     marginTop: 10,
@@ -37,14 +37,14 @@ export default StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     textTransform: 'uppercase',
-    color: '#95A0B8',
+    color: colors.FillText,
   },
   bannerNumber: {
     fontFamily: 'Ubuntu',
     fontSize: 50,
     fontWeight: '300',
     lineHeight: 50 * 1.2,
-    color: '#00133D',
+    color: colors.DarkBlue,
   },
   today: {
     fontSize: 20,

@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {legendColor} from '../../shared/uikit';
+import {legendColor, colors} from '../../shared/uikit';
 
 export default StyleSheet.create({
   container: {
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#E2E5E7',
+    borderBottomColor: colors.BorderGrey,
     paddingVertical: 24,
   },
   header: {
@@ -16,7 +16,7 @@ export default StyleSheet.create({
     lineHeight: 34 * 1.2,
     letterSpacing: 0.011,
     fontWeight: '500',
-    color: '#00133D',
+    color: colors.DarkBlue,
   },
   banner: {
     paddingTop: 8,
@@ -29,14 +29,14 @@ export default StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     textTransform: 'uppercase',
-    color: '#95A0B8',
+    color: colors.FillText,
   },
   bannerNumber: {
     fontFamily: 'Ubuntu',
     fontSize: 50,
     fontWeight: '300',
     lineHeight: 50 * 1.2,
-    color: '#00133D',
+    color: colors.DarkBlue,
   },
   today: {
     fontSize: 20,

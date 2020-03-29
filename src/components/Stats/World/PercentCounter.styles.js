@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {legendColor} from '../../shared/uikit';
+import {legendColor, colors} from '../../shared/uikit';
 
 export default StyleSheet.create({
   wc: {
@@ -19,7 +19,7 @@ export default StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     fontWeight: '500',
-    color: '#95A0B8',
+    color: colors.FillText,
     textTransform: 'uppercase',
   },
   number: {
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     fontWeight: '600',
     fontSize: 16,
     lineHeight: 24,
-    color: '#00133D',
+    color: colors.DarkBlue,
   },
   today: {
     fontSize: 14,
