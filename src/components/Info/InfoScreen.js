@@ -1,12 +1,12 @@
 import React from 'react';
 
-import {View, Text, ScrollView, SafeAreaView} from 'react-native';
+import {View, ScrollView, SafeAreaView} from 'react-native';
 
 import NavStatusBar from '../shared/NavStatusBar';
 
 import Symptoms from './Symptoms/Symptoms';
 import Recommendations from './Recommendations/Recommendations';
-import Phones from './Phones/Phones';
+import Resources from './Resources/Resources';
 
 import styles from './InfoScreen.styles';
 
@@ -24,13 +24,9 @@ export default function InfoScreen({navigation}) {
           <View slyle={styles.recommendations}>
             <Recommendations />
           </View>
-          <View>
-            <Text>Ссылки</Text>
-            <View>
-              <Text>Телефоны</Text>
-            </View>
+          <View slyle={styles.resources}>
+            <Resources />
           </View>
-          <Phones />
         </View>
       </ScrollView>
     </SafeAreaView>
