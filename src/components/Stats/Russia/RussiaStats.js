@@ -12,13 +12,13 @@ import useCountryStats from '../../shared/useCountryStats';
 
 import styles from './RussiaStats.styles';
 
-export default function RussiaStats({title, country}) {
+export default function RussiaStats({country}) {
   const stats = useCountryStats(country);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>В России</Text>
       </View>
       <View style={styles.banner}>
         <Text style={styles.bannerNumber}>

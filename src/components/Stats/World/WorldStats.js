@@ -63,35 +63,6 @@ export default function WorldStats({region}) {
           </View>
         </View>
       </View>
-      {/* <View style={styles.numberStats}>
-        <NumberBlock
-          title="Cлучаев сегодня"
-          number={region.total_new}
-          color={legendColor.Confirmed}
-          total={region.total}
-        />
-        <NumberBlock
-          title="Выздоровело"
-          number={region.recovered}
-          color={legendColor.Recovered}
-          total={region.total}
-        />
-      </View>
-      <View style={styles.numberStats}>
-        <NumberBlock
-          title="Болеет"
-          number={region.active}
-          color={legendColor.Active}
-          total={region.total}
-        />
-        <NumberBlock
-          title="Смертей"
-          number={region.deaths}
-          today={region.deaths_new}
-          color={legendColor.Deaths}
-          total={region.total}
-        />
-      </View> */}
     </View>
   );
 }
