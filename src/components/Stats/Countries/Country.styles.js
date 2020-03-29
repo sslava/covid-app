@@ -1,11 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {legendColor} from '../../shared/uikit';
+import {legendColor, colors} from '../../shared/uikit';
 
 export default StyleSheet.create({
   container: {
-    borderBottomColor: '#E2E5E7',
+    borderBottomColor: colors.BorderGrey,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#E2E5E7',
+    borderTopColor: colors.BorderGrey,
     borderTopWidth: StyleSheet.hairlineWidth,
   },
   button: {
@@ -20,7 +20,7 @@ export default StyleSheet.create({
     fontWeight: '400',
     fontSize: 18,
     lineHeight: 24,
-    color: '#00133D',
+    color: colors.DarkBlue,
   },
   content: {
     paddingBottom: 24,
@@ -37,7 +37,7 @@ export default StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     fontWeight: '600',
-    color: '#00133D',
+    color: colors.DarkBlue,
   },
   today: {
     fontSize: 14,
