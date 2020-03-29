@@ -11,7 +11,7 @@ export default function Countries({countries}) {
   }
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>По странам</Text>
+      <Text style={styles.title}>В других странах</Text>
       {countries.map(c => (
         <Country key={c.country_name_en} country={c} />
       ))}
