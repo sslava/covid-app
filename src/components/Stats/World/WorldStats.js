@@ -3,7 +3,7 @@ import {View, Dimensions, Text} from 'react-native';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
-import {formatNumber, formatDate} from '../../../common/utils';
+import {formatNumber} from '../../../common/utils';
 
 import PercentCounter from './PercentCounter';
 import SecondaryNumber from '../../shared/SecondaryNumber';
@@ -11,6 +11,7 @@ import SecondaryNumber from '../../shared/SecondaryNumber';
 import styles from './WorldStats.styles';
 
 const {width} = Dimensions.get('window');
+
 const getPieData = (total, recovered, deaths, active) => {
   return [
     {index: 0, number: active / total, fill: legendColor.Active},

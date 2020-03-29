@@ -20,14 +20,12 @@ export default function RussiaStats({title, country}) {
       <View style={styles.header}>
         <Text style={styles.title}>{title}</Text>
       </View>
-      <View style={styles.hero}>
-        <Text style={styles.total}>
+      <View style={styles.banner}>
+        <Text style={styles.bannerNumber}>
           {country.total}
           <SecondaryNumber num={country.total_new} style={styles.today} />
         </Text>
-      </View>
-      <View style={styles.bar}>
-        <StatsBar items={stats} />
+        <Text style={styles.bannerText}>Случаев заболевания</Text>
       </View>
       <View style={styles.legend}>
         <LegendItem
@@ -47,6 +45,9 @@ export default function RussiaStats({title, country}) {
           today={+country.deaths_new}
           bad
         />
+      </View>
+      <View style={styles.bar}>
+        <StatsBar items={stats} />
       </View>
     </View>
   );
