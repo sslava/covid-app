@@ -17,14 +17,14 @@ export default StyleSheet.create({
     marginRight: 8,
   },
   title: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 14,
     lineHeight: 20,
     textTransform: 'uppercase',
     color: '#00133D',
   },
   number: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 16,
     lineHeight: 24,
     fontWeight: 'bold',

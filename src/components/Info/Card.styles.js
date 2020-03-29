@@ -26,7 +26,7 @@ export default StyleSheet.create({
     height: 36,
   },
   cardTitle: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontWeight: '500',
     fontSize: 18,
     lineHeight: 24,
@@ -34,7 +34,7 @@ export default StyleSheet.create({
   },
   cardDesc: {
     marginTop: 6,
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 14,
     lineHeight: 20,
     color: '#5B95EA',

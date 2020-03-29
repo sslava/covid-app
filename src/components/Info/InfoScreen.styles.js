@@ -22,7 +22,7 @@ export default StyleSheet.create({
     paddingLeft: 12,
   },
   title: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 24,
     lineHeight: 36,
     fontWeight: '500',
