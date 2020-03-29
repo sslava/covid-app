@@ -1,9 +1,10 @@
-import React, {useState, useCallback} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import React from 'react';
+import {View, Text, Animated, TouchableOpacity} from 'react-native';
 
 import {formatNumber} from '../../../common/utils';
 import {legendColor} from '../../shared/uikit';
 
+import useAnimatedToggle from '../../shared/useAnimatedToggle';
 import StatsBar from '../../shared/StatsBar/StatsBar';
 import LegendItem from '../../shared/Legend/LegendItem';
 import SecondaryNumber from '../../shared/SecondaryNumber';
@@ -15,20 +16,29 @@ import styles from './Country.styles';
 
 export default function Country({country}) {
   const stats = useCountryStats(country);
+  const [visible, toggle, value] = useAnimatedToggle();
 
-  const [visible, setVisible] = useState(false);
-  const toggle = useCallback(() => setVisible(s => !s), []);
+  const rotate = value.current.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '90deg'],
+  });
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={toggle} style={styles.button}>
+      <TouchableOpacity
+        onPress={toggle}
+        style={styles.button}
+        activeOpacity={0.5}>
         <Text style={styles.title}>{country.country_name}</Text>
         <View style={styles.numbers}>
           <Text style={styles.number}>
             {formatNumber(country.total)}
             <SecondaryNumber num={+country.total_new} style={styles.today} />
           </Text>
-          <Image source={openIcon} style={styles.openIcon} />
+          <Animated.Image
+            source={openIcon}
+            style={[styles.openIcon, {transform: [{rotate}]}]}
+          />
         </View>
       </TouchableOpacity>
       {visible && (
