@@ -3,7 +3,7 @@ import {View, Dimensions, Text} from 'react-native';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
-import {formatNumber} from '../../../common/utils';
+import {formatNumber, formatDate} from '../../../common/utils';
 
 import PercentCounter from './PercentCounter';
 import SecondaryNumber from '../../shared/SecondaryNumber';
@@ -62,6 +62,11 @@ export default function WorldStats({region}) {
             />
           </View>
         </View>
+      </View>
+      <View style={styles.updated}>
+        <Text style={styles.updatedText}>
+          По данным на {formatDate(region.updated)}
+        </Text>
       </View>
     </View>
   );
