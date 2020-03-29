@@ -6,7 +6,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import StatsScreen from './components/Stats/StatsScreen';
-import WhoFaqScreen from './components/WhoFaq/WhoFaqScreen';
 import InfoScreen from './components/Info/InfoScreen';
 
 import HeaderBackImage from './components/shared/HeaderBack';
@@ -77,7 +76,6 @@ export default function App() {
             component={Root}
             options={{headerTransparent: true}}
           />
-          <AppStack.Screen name="WhoFaq" component={WhoFaqScreen} />
         </AppStack.Navigator>
       </NavigationContainer>
     </StatsDataProvider>
