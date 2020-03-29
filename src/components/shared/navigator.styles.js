@@ -7,7 +7,7 @@ export default StyleSheet.create({
   },
   headerTitleStyle: {
     color: 'white',
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontWeight: '500',
     fontSize: 20,
   },

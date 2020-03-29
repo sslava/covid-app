@@ -11,7 +11,7 @@ export default StyleSheet.create({
     paddingHorizontal: 24,
   },
   title: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 34,
     lineHeight: 34 * 1.2,
     letterSpacing: 0.011,
@@ -19,7 +19,7 @@ export default StyleSheet.create({
     color: '#00133D',
   },
   updateDate: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 15,
     lineHeight: 20,
     fontWeight: '500',
@@ -49,7 +49,7 @@ export default StyleSheet.create({
     height: 20,
   },
   citiesCaption: {
-    fontFamily: 'DM Sans',
+    fontFamily: 'Ubuntu',
     fontSize: 16,
     lineHeight: 24,
     fontWeight: '600',
