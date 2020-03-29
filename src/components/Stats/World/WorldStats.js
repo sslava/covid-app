@@ -65,7 +65,7 @@ export default function WorldStats({region}) {
       </View>
       <View style={styles.updated}>
         <Text style={styles.updatedText}>
-          По данным на {formatDate(region.updated)}
+          По состоянию на {formatDate(region.updated)}
         </Text>
       </View>
     </View>
