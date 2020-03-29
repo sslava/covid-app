@@ -37,7 +37,7 @@ function Root() {
         component={StatsScreen}
         options={{
           tabBarIcon: props => <TabIcon source={reportIcon} {...props} />,
-          tabBarLabel: '',
+          tabBarLabel: 'Статистика',
         }}
       />
       <RootTabs.Screen
@@ -45,7 +45,7 @@ function Root() {
         component={InfoScreen}
         options={{
           tabBarIcon: props => <TabIcon source={preventIcon} {...props} />,
-          tabBarLabel: '',
+          tabBarLabel: 'Информация',
         }}
       />
     </RootTabs.Navigator>

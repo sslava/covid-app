@@ -4,8 +4,7 @@ import {Text} from 'react-native';
 
 import {formatNumber} from '../../common/utils';
 
-export const plusFormatter = (num: number): string =>
-  ` (+${formatNumber(num)})`;
+export const plusFormatter = (num: number): string => ` +${formatNumber(num)}`;
 
 export const percentFormatter = (num: number): string =>
   ` (${num.toFixed(2)}%)`;

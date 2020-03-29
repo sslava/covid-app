@@ -49,6 +49,11 @@ export default function RussiaStats({country}) {
       <View style={styles.bar}>
         <StatsBar items={stats} />
       </View>
+      <View style={styles.updated}>
+        <Text style={styles.updatedText}>
+          По данным на {formatDate(country.updated)}
+        </Text>
+      </View>
     </View>
   );
 }

@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 
 import styles from './PercentCounter.styles';
 import {formatNumber} from '../../../common/utils';
+import SecondaryNumber from '../../shared/SecondaryNumber';
 
 export default function PercentCounter({title, number, color, today}) {
   return (
@@ -11,12 +12,7 @@ export default function PercentCounter({title, number, color, today}) {
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.number}>
         {formatNumber(number)}
-        {today && (
-          <Text style={styles.today}>
-            {' (+'}
-            {formatNumber(today)})
-          </Text>
-        )}
+        <SecondaryNumber num={today} style={styles.today} />
       </Text>
     </View>
   );

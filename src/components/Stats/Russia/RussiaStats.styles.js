@@ -22,7 +22,7 @@ export default StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 24,
     justifyContent: 'center',
-    alignItems: 'center',
+    paddingHorizontal: 24,
   },
   bannerText: {
     fontFamily: 'Ubuntu',
@@ -50,5 +50,17 @@ export default StyleSheet.create({
   },
   legend: {
     paddingHorizontal: 24,
+  },
+  updated: {
+    paddingHorizontal: 24,
+    paddingBottom: 8,
+  },
+  updatedText: {
+    fontFamily: 'Ubuntu',
+    fontSize: 14,
+    lineHeight: 20,
+    fontWeight: '300',
+    opacity: 0.7,
+    color: colors.FillText,
   },
 });
