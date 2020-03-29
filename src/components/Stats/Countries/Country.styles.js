@@ -22,9 +22,13 @@ export default StyleSheet.create({
     lineHeight: 24,
     color: '#00133D',
   },
-  legend: {
-    paddingVertical: 16,
+  content: {
+    paddingTop: 16,
+    paddingBottom: 24,
     paddingHorizontal: 24,
+  },
+  legend: {
+    paddingBottom: 16,
   },
   numbers: {
     flexDirection: 'row',

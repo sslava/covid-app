@@ -27,7 +27,7 @@ export default StyleSheet.create({
     fontFamily: 'Ubuntu',
     fontSize: 16,
     lineHeight: 24,
-    fontWeight: 'bold',
+    fontWeight: '600',
     color: '#00133D',
   },
   today: {
