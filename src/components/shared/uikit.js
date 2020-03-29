@@ -1,8 +1,8 @@
 // @flow
 
 export const colors = {
-  PrimaryBlacK: '#26222C',
-  PrimaryBlacK2: '#393440',
+  PrimaryBlack: '#26222C',
+  PrimaryBlack2: '#393440',
   DarkBlue: '#00133D',
   DarkGrey1: '#8A8A8A',
   FillText: '#95A0B8',
