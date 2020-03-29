@@ -4,8 +4,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import StatsScreen from './components/Stats/StatsScreen';
 import WhoFaqScreen from './components/WhoFaq/WhoFaqScreen';
 import InfoScreen from './components/Info/InfoScreen';
@@ -27,9 +25,7 @@ function Root() {
         name="Stats"
         component={StatsScreen}
         options={{
-          tabBarIcon: ({focused, color, size}) => (
-            <Icon name="chart-line" size={size} color={color} />
-          ),
+          tabBarIcon: ({focused, color, size}) => null,
           tabBarLabel: 'Статистика',
         }}
       />
@@ -37,9 +33,7 @@ function Root() {
         name="Info"
         component={InfoScreen}
         options={{
-          tabBarIcon: ({focused, color, size}) => (
-            <Icon name="cloud-question" size={size} color={color} />
-          ),
+          tabBarIcon: ({focused, color, size}) => null,
           tabBarLabel: 'Информация',
         }}
       />
