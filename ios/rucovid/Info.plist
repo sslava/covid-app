@@ -43,27 +43,6 @@
 	<string>Your location is required to show actual data</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>AntDesign.ttf</string>
-		<string>Entypo.ttf</string>
-		<string>EvilIcons.ttf</string>
-		<string>Feather.ttf</string>
-		<string>FontAwesome.ttf</string>
-		<string>FontAwesome5_Brands.ttf</string>
-		<string>FontAwesome5_Regular.ttf</string>
-		<string>FontAwesome5_Solid.ttf</string>
-		<string>Foundation.ttf</string>
-		<string>Ionicons.ttf</string>
-		<string>MaterialIcons.ttf</string>
-		<string>MaterialCommunityIcons.ttf</string>
-		<string>SimpleLineIcons.ttf</string>
-		<string>Octicons.ttf</string>
-		<string>Zocial.ttf</string>
-		<string>DMSans-Bold.ttf</string>
-		<string>DMSans-BoldItalic.ttf</string>
-		<string>DMSans-Italic.ttf</string>
-		<string>DMSans-Medium.ttf</string>
-		<string>DMSans-MediumItalic.ttf</string>
-		<string>DMSans-Regular.ttf</string>
 		<string>Ubuntu-Bold.ttf</string>
 		<string>Ubuntu-BoldItalic.ttf</string>
 		<string>Ubuntu-Italic.ttf</string>

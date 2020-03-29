@@ -20,12 +20,6 @@
 		770B5114B4323CFC11406943 /* libPods-rucovid-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0D09A1E910996F3E7D26A2 /* libPods-rucovid-tvOS.a */; };
 		A32B501E9547FEB7A64576CC /* libPods-rucovid-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7EDAE5F4FF778E2D83FF86 /* libPods-rucovid-tvOSTests.a */; };
 		A6D0CB5E0C18F03D3085B65D /* libPods-rucovidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A998BA715500A75508AF21 /* libPods-rucovidTests.a */; };
-		F9033DD72425B87700DEB100 /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD12425B87700DEB100 /* DMSans-BoldItalic.ttf */; };
-		F9033DD82425B87700DEB100 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD22425B87700DEB100 /* DMSans-Bold.ttf */; };
-		F9033DD92425B87700DEB100 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD32425B87700DEB100 /* DMSans-Medium.ttf */; };
-		F9033DDA2425B87700DEB100 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD42425B87700DEB100 /* DMSans-MediumItalic.ttf */; };
-		F9033DDB2425B87700DEB100 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD52425B87700DEB100 /* DMSans-Regular.ttf */; };
-		F9033DDC2425B87700DEB100 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9033DD62425B87700DEB100 /* DMSans-Italic.ttf */; };
 		F9E3EF242430CF0800314CA2 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF1C2430CF0800314CA2 /* Ubuntu-Italic.ttf */; };
 		F9E3EF252430CF0800314CA2 /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF1D2430CF0800314CA2 /* Ubuntu-BoldItalic.ttf */; };
 		F9E3EF262430CF0800314CA2 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF1E2430CF0800314CA2 /* Ubuntu-LightItalic.ttf */; };
@@ -80,12 +74,6 @@
 		E51A7A911D21CB424E6A08F6 /* Pods-rucovidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovidTests.release.xcconfig"; path = "Target Support Files/Pods-rucovidTests/Pods-rucovidTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F9033DD12425B87700DEB100 /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-BoldItalic.ttf"; path = "../../assets/fonts/DMSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		F9033DD22425B87700DEB100 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Bold.ttf"; path = "../../assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; };
-		F9033DD32425B87700DEB100 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Medium.ttf"; path = "../../assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; };
-		F9033DD42425B87700DEB100 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-MediumItalic.ttf"; path = "../../assets/fonts/DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
-		F9033DD52425B87700DEB100 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Regular.ttf"; path = "../../assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; };
-		F9033DD62425B87700DEB100 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Italic.ttf"; path = "../../assets/fonts/DMSans-Italic.ttf"; sourceTree = "<group>"; };
 		F917CF382422A37100C4BA62 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F9E3EF1C2430CF0800314CA2 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Italic.ttf"; path = "../../assets/fonts/Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
 		F9E3EF1D2430CF0800314CA2 /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-BoldItalic.ttf"; path = "../../assets/fonts/Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -238,12 +226,6 @@
 		F9033DD02425B83900DEB100 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F9033DD22425B87700DEB100 /* DMSans-Bold.ttf */,
-				F9033DD12425B87700DEB100 /* DMSans-BoldItalic.ttf */,
-				F9033DD62425B87700DEB100 /* DMSans-Italic.ttf */,
-				F9033DD32425B87700DEB100 /* DMSans-Medium.ttf */,
-				F9033DD42425B87700DEB100 /* DMSans-MediumItalic.ttf */,
-				F9033DD52425B87700DEB100 /* DMSans-Regular.ttf */,
 				F9E3EF232430CF0800314CA2 /* Ubuntu-Bold.ttf */,
 				F9E3EF1D2430CF0800314CA2 /* Ubuntu-BoldItalic.ttf */,
 				F9E3EF1C2430CF0800314CA2 /* Ubuntu-Italic.ttf */,
@@ -288,7 +270,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				6DC5A17294F21858698C4C7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -400,8 +381,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9033DD92425B87700DEB100 /* DMSans-Medium.ttf in Resources */,
-				F9033DDB2425B87700DEB100 /* DMSans-Regular.ttf in Resources */,
 				F9E3EF272430CF0800314CA2 /* Ubuntu-Medium.ttf in Resources */,
 				F9E3EF262430CF0800314CA2 /* Ubuntu-LightItalic.ttf in Resources */,
 				F9E3EF282430CF0800314CA2 /* Ubuntu-MediumItalic.ttf in Resources */,
@@ -409,13 +388,9 @@
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				F9E3EF2A2430CF0800314CA2 /* Ubuntu-Light.ttf in Resources */,
 				F9E3EF242430CF0800314CA2 /* Ubuntu-Italic.ttf in Resources */,
-				F9033DDA2425B87700DEB100 /* DMSans-MediumItalic.ttf in Resources */,
 				F9E3EF252430CF0800314CA2 /* Ubuntu-BoldItalic.ttf in Resources */,
-				F9033DD72425B87700DEB100 /* DMSans-BoldItalic.ttf in Resources */,
 				F9E3EF2B2430CF0800314CA2 /* Ubuntu-Bold.ttf in Resources */,
-				F9033DDC2425B87700DEB100 /* DMSans-Italic.ttf in Resources */,
 				F9E3EF292430CF0800314CA2 /* Ubuntu-Regular.ttf in Resources */,
-				F9033DD82425B87700DEB100 /* DMSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,54 +483,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		6DC5A17294F21858698C4C7A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rucovid/Pods-rucovid-resources.sh",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rucovid/Pods-rucovid-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		B170A73C9C5F8886D47458BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
