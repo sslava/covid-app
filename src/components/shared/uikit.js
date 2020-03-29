@@ -5,6 +5,9 @@ export const colors = {
   PrimaryBlacK2: '#393440',
   DarkBlue: '#00133D',
   DarkGrey1: '#8A8A8A',
+  FillText: '#95A0B8',
+  FillBlue: '#003CBF',
+  BorderGrey: '#E2E5E7',
 };
 
 export const legendColor = {

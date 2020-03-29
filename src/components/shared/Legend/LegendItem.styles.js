@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {legendColor} from '../uikit';
+import {legendColor, colors} from '../uikit';
 
 export default StyleSheet.create({
   container: {
@@ -21,14 +21,14 @@ export default StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     textTransform: 'uppercase',
-    color: '#00133D',
+    color: colors.DarkBlue,
   },
   number: {
     fontFamily: 'Ubuntu',
     fontSize: 16,
     lineHeight: 24,
     fontWeight: '600',
-    color: '#00133D',
+    color: colors.DarkBlue,
   },
   today: {
     fontSize: 14,
