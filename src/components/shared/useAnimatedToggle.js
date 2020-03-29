@@ -12,7 +12,7 @@ export default function useAnimatedToggle(duration: number = 100) {
     Animated.timing(value.current, {
       toValue: visible ? 1 : 0,
       duration,
-      easing: Easing.linear,
+      easing: Easing.inOut(Easing.quad),
       useNativeDriver: true,
     }).start();
   }, [visible, duration]);
