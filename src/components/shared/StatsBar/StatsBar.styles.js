@@ -5,7 +5,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   bar: {
-    height: 26,
     marginLeft: 1,
     marginRight: 1,
     borderRadius: 3,

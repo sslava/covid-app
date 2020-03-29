@@ -52,7 +52,7 @@ export default function Country({country}) {
               bad
             />
           </View>
-          <StatsBar items={stats} />
+          <StatsBar items={stats} height={8} />
         </View>
       )}
     </View>
