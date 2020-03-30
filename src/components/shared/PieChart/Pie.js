@@ -22,6 +22,7 @@ export default function Pie({
       toValue: 2,
       duration: animDuration,
       easing: Easing.inOut(Easing.quad),
+      useNativeDriver: false,
     }).start();
   }, [data, animDuration]);
 
