@@ -63,7 +63,6 @@ export function fetchStatsSaga(dispatch, storage) {
         russia: stats.countries.today.find(
           (c) => c.country_name_en === 'Russia',
         ),
-        citites: stats.citites.today,
         countries,
         cities: stats.cities.today,
       };

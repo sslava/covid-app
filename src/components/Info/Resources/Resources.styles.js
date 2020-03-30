@@ -4,37 +4,38 @@ import {colors} from '../../shared/uikit';
 export default StyleSheet.create({
   container: {},
   list: {
-    paddingHorizontal: 24,
+    paddingHorizontal: 20,
   },
-  hotline: {
-    marginBottom: 16,
-    paddingVertical: 16,
-    paddingRight: 8,
-    paddingLeft: 56,
-    borderRadius: 10,
-    backgroundColor: 'rgba(38, 90, 210, 0.1)',
-    position: 'relative',
+  button: {
+    marginBottom: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+    backgroundColor: '#EFF1FF',
   },
-  hotlineIcon: {
-    position: 'absolute',
-    tintColor: colors.FillBlue,
-    left: 16,
-    top: 24,
-    width: 24,
-    height: 24,
-  },
-  hotlineText: {
+
+  buttonTitle: {
     fontFamily: 'Ubuntu',
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: '500',
-    color: colors.FillBlue,
+    fontSize: 15,
+    lineHeight: 20,
+    fontWeight: 'bold',
+    color: '#087ED9',
   },
-  hotlinePhone: {
+  buttonPhone: {
+    paddingTop: 5,
+    flexDirection: 'row',
+  },
+  buttonPhoneText: {
     fontFamily: 'Ubuntu',
-    fontSize: 24,
+    fontSize: 30,
     lineHeight: 30,
     fontWeight: '500',
-    color: colors.DarkBlue,
+    color: '#252A34',
+  },
+  buttonPhoneIcon: {
+    tintColor: '#087ED9',
+    marginLeft: 10,
+    width: 24,
+    height: 24,
   },
 });
