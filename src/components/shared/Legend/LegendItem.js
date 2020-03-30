@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {View, Text} from 'react-native';
 
 import {formatNumber} from '../../../common/utils';
@@ -7,7 +7,7 @@ import SecondaryNumber from '../SecondaryNumber';
 
 import styles from './LegendItem.styles';
 
-export default function LegendItem({color, title, number, today, bad}) {
+function LegendItem({color, title, number, today, bad}) {
   return (
     <View style={styles.container}>
       <View style={styles.left}>
@@ -21,3 +21,5 @@ export default function LegendItem({color, title, number, today, bad}) {
     </View>
   );
 }
+
+export default memo(LegendItem);
