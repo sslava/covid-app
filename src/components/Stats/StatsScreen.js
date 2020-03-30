@@ -56,7 +56,10 @@ export default function StatsScreen({navigation}) {
             <WorldStats region={data.world} />
           </View>
           <View style={styles.russia}>
-            <Russia country={data.russia} />
+            <Russia
+              russia={data.russia}
+              hasCities={!!(data.cities && data.cities.length)}
+            />
           </View>
           <View style={styles.countries}>
             <Countries countries={top} />
