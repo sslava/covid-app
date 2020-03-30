@@ -37,8 +37,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Your location is required to show actual data</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is required to show actual data</string>
 	<key>UIAppFonts</key>
@@ -46,11 +44,11 @@
 		<string>Ubuntu-Bold.ttf</string>
 		<string>Ubuntu-BoldItalic.ttf</string>
 		<string>Ubuntu-Italic.ttf</string>
-		<string>Ubuntu-LightItalic.ttf</string>
+		<string>Ubuntu-Light.ttf</string>
+		<string>Ubuntu-LighItalict.ttf</string>
 		<string>Ubuntu-Medium.ttf</string>
 		<string>Ubuntu-MediumItalic.ttf</string>
-		<string>Ubuntu-Regular.ttf</string>
-		<string></string>
+		<string>Ubuntu-Regular</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
