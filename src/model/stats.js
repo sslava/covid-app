@@ -3,7 +3,7 @@ import {apiRequest} from '../common/api';
 async function apiFetchStats() {
   return apiRequest(
     'GET',
-    'https://dev:mn17KRvc1Q@1koronavirus.ru/request/get_stat',
+    'http://dev:mn17KRvc1Q@1koronavirus.ru/request/get_stat',
   );
 }
 
@@ -56,11 +56,13 @@ export function fetchStatsSaga(dispatch, storage) {
     try {
       const {stats} = await apiFetchStats();
       const countries = stats.countries.today
-        .filter(c => c.country_name_en !== 'Russia')
+        .filter((c) => c.country_name_en !== 'Russia')
         .sort((a, b) => b.total - a.total);
       const payload = {
         world: stats.world.today,
-        russia: stats.countries.today.find(c => c.country_name_en === 'Russia'),
+        russia: stats.countries.today.find(
+          (c) => c.country_name_en === 'Russia',
+        ),
         countries,
         cities: stats.cities.today,
       };
