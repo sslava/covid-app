@@ -6,6 +6,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import StatsScreen from './components/Stats/StatsScreen';
 import InfoScreen from './components/Info/InfoScreen';
+import CountriesScreen from './components/Countries/CountriesScreen';
+import CitiesScreen from './components/Cities/CitiesScreen';
 
 import HeaderBackImage from './components/shared/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
@@ -48,13 +50,23 @@ export default function App() {
         <AppStack.Navigator
           headerMode="screen"
           screenOptions={({route}) => ({
-            headerBackTitle: '',
+            headerBackTitle: ' ',
             headerBackImage: HeaderBackImage,
           })}>
           <AppStack.Screen
             name="Root"
             component={Root}
             options={{headerTransparent: true, headerTitle: null}}
+          />
+          <AppStack.Screen
+            name="Countries"
+            component={CountriesScreen}
+            options={{headerTitle: 'Стратистика по странам'}}
+          />
+          <AppStack.Screen
+            name="Citites"
+            component={CitiesScreen}
+            options={{headerTitle: 'Стратистика по городам'}}
           />
         </AppStack.Navigator>
       </NavigationContainer>
