@@ -12,11 +12,10 @@ export default function SearchBar({onChange, value}) {
         style={styles.input}
         placeholder="Найти"
         value={value}
+        clearButtonMode="always"
         onChangeText={onChange}
       />
-      <View style={styles.search}>
-        <Image source={searchIcon} style={styles.icon} />
-      </View>
+      <Image style={styles.icon} source={searchIcon} />
     </View>
   );
 }
