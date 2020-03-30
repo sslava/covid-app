@@ -4,7 +4,7 @@ import {SafeAreaView, FlatList} from 'react-native';
 import {useStatsContext} from '../shared/StatsDataContext';
 
 import Country from './Country';
-import SearchBar from './SearchBar';
+import SearchBar from '../shared/SearchBar';
 
 import useDebouncedSearch from '../shared/useDebounceSearch';
 

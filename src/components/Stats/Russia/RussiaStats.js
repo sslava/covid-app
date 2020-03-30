@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useCallback} from 'react';
+import {useNavigation} from '@react-navigation/core';
 
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 import {formatDate} from '../../../common/utils';
 import {legendColor} from '../../shared/uikit';
+
+import openIcon from '../../../assets/icons/open_grey.png';
 
 import LegendItem from '../../shared/Legend/LegendItem';
 import StatsBar from '../../shared/StatsBar/StatsBar';
@@ -12,8 +15,11 @@ import useCountryStats from '../../shared/useCountryStats';
 
 import styles from './RussiaStats.styles';
 
-export default function RussiaStats({country}) {
-  const stats = useCountryStats(country);
+export default function RussiaStats({russia, hasCities}) {
+  const nav = useNavigation();
+  const stats = useCountryStats(russia);
+
+  const openCities = useCallback(() => nav.navigate('Cities'), [nav]);
 
   return (
     <View style={styles.container}>
@@ -22,8 +28,8 @@ export default function RussiaStats({country}) {
       </View>
       <View style={styles.banner}>
         <Text style={styles.bannerNumber}>
-          {country.total}
-          <SecondaryNumber num={country.total_new} style={styles.today} />
+          {russia.total}
+          <SecondaryNumber num={russia.total_new} style={styles.today} />
         </Text>
         <Text style={styles.bannerText}>Случаев заболевания</Text>
       </View>
@@ -31,18 +37,18 @@ export default function RussiaStats({country}) {
         <LegendItem
           color={legendColor.Active}
           title="Болеет"
-          number={country.active}
+          number={russia.active}
         />
         <LegendItem
           color={legendColor.Recovered}
           title="Поправилось"
-          number={country.recovered}
+          number={russia.recovered}
         />
         <LegendItem
           color={legendColor.Deaths}
           title="Смертей"
-          number={country.deaths}
-          today={+country.deaths_new}
+          number={russia.deaths}
+          today={+russia.deaths_new}
           bad
         />
       </View>
@@ -51,9 +57,20 @@ export default function RussiaStats({country}) {
       </View>
       <View style={styles.updated}>
         <Text style={styles.updatedText}>
-          По состоянию на {formatDate(country.updated)}
+          По состоянию на {formatDate(russia.updated)}
         </Text>
       </View>
+      {!!hasCities && (
+        <View style={styles.action}>
+          <TouchableOpacity
+            style={styles.all}
+            onPress={openCities}
+            activeOpacity={0.3}>
+            <Text style={styles.allCaption}>В регионах</Text>
+            <Image source={openIcon} style={styles.allIcon} />
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 }

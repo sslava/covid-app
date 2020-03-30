@@ -25,7 +25,7 @@ function Root() {
         name="Stats"
         component={StatsScreen}
         options={{
-          tabBarIcon: props => <TabIcon source={reportIcon} {...props} />,
+          tabBarIcon: (props) => <TabIcon source={reportIcon} {...props} />,
           tabBarLabel: 'Статистика',
         }}
       />
@@ -33,7 +33,7 @@ function Root() {
         name="Info"
         component={InfoScreen}
         options={{
-          tabBarIcon: props => <TabIcon source={preventIcon} {...props} />,
+          tabBarIcon: (props) => <TabIcon source={preventIcon} {...props} />,
           tabBarLabel: 'Информация',
         }}
       />
@@ -64,9 +64,9 @@ export default function App() {
             options={{headerTitle: 'Стратистика по странам'}}
           />
           <AppStack.Screen
-            name="Citites"
+            name="Cities"
             component={CitiesScreen}
-            options={{headerTitle: 'Стратистика по городам'}}
+            options={{headerTitle: 'Стратистика по регионам'}}
           />
         </AppStack.Navigator>
       </NavigationContainer>
