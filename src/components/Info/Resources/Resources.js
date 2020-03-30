@@ -12,8 +12,7 @@ export default function Resources() {
 
   return (
     <View style={styles.container}>
-      <Subheader>Полезные ресурсы</Subheader>
-
+      <Subheader>Полезные контакты</Subheader>
       <View style={styles.list}>
         <TouchableOpacity
           style={styles.hotline}
