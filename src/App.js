@@ -13,8 +13,8 @@ import HeaderBackImage from './components/shared/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
 import TabIcon from './components/shared/TabIcon';
 
-import preventIcon from './assets/icons/prevent_black.png';
-import reportIcon from './assets/icons/report_black.png';
+import infoIcon from './assets/icons/info.png';
+import statsIcon from './assets/icons/stats.png';
 
 const RootTabs = createBottomTabNavigator();
 
@@ -25,7 +25,7 @@ function Root() {
         name="Stats"
         component={StatsScreen}
         options={{
-          tabBarIcon: (props) => <TabIcon source={reportIcon} {...props} />,
+          tabBarIcon: (props) => <TabIcon icon={statsIcon} {...props} />,
           tabBarLabel: 'Статистика',
         }}
       />
@@ -33,7 +33,7 @@ function Root() {
         name="Info"
         component={InfoScreen}
         options={{
-          tabBarIcon: (props) => <TabIcon source={preventIcon} {...props} />,
+          tabBarIcon: (props) => <TabIcon icon={infoIcon} {...props} />,
           tabBarLabel: 'Информация',
         }}
       />

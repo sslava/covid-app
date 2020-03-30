@@ -1,11 +1,12 @@
 import React from 'react';
 import {Image} from 'react-native';
 
-export default function TabIcon({color, size, source}) {
+export default function TabIcon({focused, size, icon}) {
+  const tintColor = focused ? '#087ED9' : '#A0A2AF';
   return (
     <Image
-      source={source}
-      style={{width: size + 4, height: size + 4, tintColor: color}}
+      source={icon}
+      style={{width: size + 2, height: size + 2, tintColor}}
     />
   );
 }
