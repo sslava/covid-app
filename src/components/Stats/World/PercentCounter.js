@@ -8,7 +8,7 @@ import SecondaryNumber from '../../shared/SecondaryNumber';
 export default function PercentCounter({title, number, color, today}) {
   return (
     <View style={styles.wc}>
-      <View style={[styles.line, {backgroundColor: color}]} />
+      <View style={[styles.circle, {backgroundColor: color}]} />
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.number}>
         {formatNumber(number)}

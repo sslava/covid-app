@@ -1,70 +1,35 @@
 import {StyleSheet, Dimensions} from 'react-native';
-import {legendColor, colors} from '../../shared/uikit';
 
 const {width} = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: colors.BorderGrey,
+    paddingBottom: 30,
   },
-  worldStats: {
-    marginTop: 10,
+  stats: {
+    marginTop: 30,
     marginLeft: 20,
-    flex: 1,
     flexDirection: 'row',
   },
   pie: {
-    width: (width - 24) / 2,
-    height: (width - 24) / 2,
+    width: width / 2 - 40,
+    height: width / 2 - 40,
   },
-  worldCounters: {
-    flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: 10,
-    marginRight: 20,
-  },
-  banner: {
-    paddingTop: 8,
-    paddingBottom: 24,
-    paddingHorizontal: 24,
-    justifyContent: 'center',
-  },
-  bannerText: {
-    fontFamily: 'Ubuntu',
-    fontSize: 14,
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    color: colors.FillText,
-  },
-  bannerNumber: {
-    fontFamily: 'Ubuntu',
-    fontSize: 50,
-    fontWeight: '300',
-    lineHeight: 50 * 1.2,
-    color: colors.DarkBlue,
-  },
-  today: {
-    fontSize: 20,
-    fontWeight: '300',
-    color: legendColor.Deaths,
+  counters: {
+    marginLeft: 20,
   },
   numberStats: {
     flex: 1,
     width: '100%',
     flexDirection: 'row',
   },
-  updated: {
-    paddingHorizontal: 24,
-    paddingBottom: 8,
-  },
   updatedText: {
+    marginTop: 12,
+    paddingLeft: 20,
     fontFamily: 'Ubuntu',
-    fontSize: 14,
-    fontWeight: '300',
-    lineHeight: 20,
-    opacity: 0.7,
-    color: colors.FillText,
+    fontSize: 11,
+    fontWeight: '500',
+    lineHeight: 18,
+    color: '#8B8C9C',
   },
 });
