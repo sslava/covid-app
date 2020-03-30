@@ -15,8 +15,9 @@ const params = {
 export async function apiRequest(
   method: string,
   url: string,
+  paramsExt: (Object) => Object = (o) => o,
 ): Promise<?Object> {
-  const response = await fetch(url, {...params, method});
+  const response = await fetch(url, {...paramsExt(params), method});
   const text = await response.text();
   let json = null;
   try {

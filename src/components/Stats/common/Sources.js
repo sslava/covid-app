@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {Text, View} from 'react-native';
+import {formatDate} from '../../../common/utils';
 
 import styles from './Sources.styles';
-import {formatDate} from '../../common/utils';
 
 export default function Sources({date, source}) {
   return (
