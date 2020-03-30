@@ -16,18 +16,18 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* rucovidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rucovidTests.m */; };
-		5CECFFDFD08A23CD89CBB2C6 /* libPods-rucovid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B1D1E63492AD9019D453E3 /* libPods-rucovid.a */; };
-		770B5114B4323CFC11406943 /* libPods-rucovid-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0D09A1E910996F3E7D26A2 /* libPods-rucovid-tvOS.a */; };
-		A32B501E9547FEB7A64576CC /* libPods-rucovid-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7EDAE5F4FF778E2D83FF86 /* libPods-rucovid-tvOSTests.a */; };
-		A6D0CB5E0C18F03D3085B65D /* libPods-rucovidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A998BA715500A75508AF21 /* libPods-rucovidTests.a */; };
-		F9E3EF242430CF0800314CA2 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF1C2430CF0800314CA2 /* Ubuntu-Italic.ttf */; };
-		F9E3EF252430CF0800314CA2 /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF1D2430CF0800314CA2 /* Ubuntu-BoldItalic.ttf */; };
-		F9E3EF262430CF0800314CA2 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF1E2430CF0800314CA2 /* Ubuntu-LightItalic.ttf */; };
-		F9E3EF272430CF0800314CA2 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF1F2430CF0800314CA2 /* Ubuntu-Medium.ttf */; };
-		F9E3EF282430CF0800314CA2 /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF202430CF0800314CA2 /* Ubuntu-MediumItalic.ttf */; };
-		F9E3EF292430CF0800314CA2 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF212430CF0800314CA2 /* Ubuntu-Regular.ttf */; };
-		F9E3EF2A2430CF0800314CA2 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF222430CF0800314CA2 /* Ubuntu-Light.ttf */; };
-		F9E3EF2B2430CF0800314CA2 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E3EF232430CF0800314CA2 /* Ubuntu-Bold.ttf */; };
+		45101E385E1CBE662F0C4203 /* libPods-rucovid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E486B1959580E30A21920D70 /* libPods-rucovid.a */; };
+		6CAEEFB21FCA1DC2A83DE19D /* libPods-rucovid-rucovidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B82CC4E152506DF74A979CF /* libPods-rucovid-rucovidTests.a */; };
+		CCC50389BAC2629DC3AB2779 /* libPods-rucovid-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71384B8B9CE6D25633D9196D /* libPods-rucovid-tvOSTests.a */; };
+		ECB8ACBF1B1F3FF0A843DAEA /* libPods-rucovid-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B88DECB02C44512DAC2509 /* libPods-rucovid-tvOS.a */; };
+		F9FA6C98243226CB0030AC51 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C90243226CB0030AC51 /* Ubuntu-Bold.ttf */; };
+		F9FA6C99243226CB0030AC51 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C91243226CB0030AC51 /* Ubuntu-LightItalic.ttf */; };
+		F9FA6C9A243226CB0030AC51 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C92243226CB0030AC51 /* Ubuntu-Italic.ttf */; };
+		F9FA6C9B243226CB0030AC51 /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C93243226CB0030AC51 /* Ubuntu-MediumItalic.ttf */; };
+		F9FA6C9C243226CB0030AC51 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C94243226CB0030AC51 /* Ubuntu-Medium.ttf */; };
+		F9FA6C9D243226CB0030AC51 /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C95243226CB0030AC51 /* Ubuntu-BoldItalic.ttf */; };
+		F9FA6C9E243226CB0030AC51 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C96243226CB0030AC51 /* Ubuntu-Regular.ttf */; };
+		F9FA6C9F243226CB0030AC51 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C97243226CB0030AC51 /* Ubuntu-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,6 @@
 		00E356EE1AD99517003FC87E /* rucovidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rucovidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* rucovidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rucovidTests.m; sourceTree = "<group>"; };
-		051FC50C7087267D34202454 /* Pods-rucovid-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOSTests/Pods-rucovid-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* rucovid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rucovid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = rucovid/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = rucovid/AppDelegate.m; sourceTree = "<group>"; };
@@ -62,28 +61,29 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = rucovid/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* rucovid-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rucovid-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* rucovid-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "rucovid-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EFCD43DEFA47054D55FBCBB /* Pods-rucovid-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOSTests/Pods-rucovid-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		55620FB3CBCBBBD81C310B65 /* Pods-rucovidTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovidTests.debug.xcconfig"; path = "Target Support Files/Pods-rucovidTests/Pods-rucovidTests.debug.xcconfig"; sourceTree = "<group>"; };
-		597D8EFAE5EABEB5CBB28DED /* Pods-rucovid-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOS/Pods-rucovid-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		85599A99E85C75884173C548 /* Pods-rucovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid.debug.xcconfig"; path = "Target Support Files/Pods-rucovid/Pods-rucovid.debug.xcconfig"; sourceTree = "<group>"; };
-		9F7EDAE5F4FF778E2D83FF86 /* libPods-rucovid-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovid-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A998BA715500A75508AF21 /* libPods-rucovidTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovidTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B93F1C939F1809029482BE82 /* Pods-rucovid-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOS/Pods-rucovid-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		C0B1D1E63492AD9019D453E3 /* libPods-rucovid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E43DCC480A10FFFD56700ECD /* Pods-rucovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid.release.xcconfig"; path = "Target Support Files/Pods-rucovid/Pods-rucovid.release.xcconfig"; sourceTree = "<group>"; };
-		E51A7A911D21CB424E6A08F6 /* Pods-rucovidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovidTests.release.xcconfig"; path = "Target Support Files/Pods-rucovidTests/Pods-rucovidTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C99C7AC8E39183A93165C4A /* Pods-rucovid-rucovidTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-rucovidTests.debug.xcconfig"; path = "Target Support Files/Pods-rucovid-rucovidTests/Pods-rucovid-rucovidTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5748725B3AB4C5FC5237A21B /* Pods-rucovid-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOS/Pods-rucovid-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		71384B8B9CE6D25633D9196D /* libPods-rucovid-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovid-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		737236BE70357552A65C4503 /* Pods-rucovid-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOS/Pods-rucovid-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7B82CC4E152506DF74A979CF /* libPods-rucovid-rucovidTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovid-rucovidTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E10AC44E3AB2DFD1F2071EA /* Pods-rucovid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid.release.xcconfig"; path = "Target Support Files/Pods-rucovid/Pods-rucovid.release.xcconfig"; sourceTree = "<group>"; };
+		870D381BCB60E930377C249B /* Pods-rucovid-rucovidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-rucovidTests.release.xcconfig"; path = "Target Support Files/Pods-rucovid-rucovidTests/Pods-rucovid-rucovidTests.release.xcconfig"; sourceTree = "<group>"; };
+		87533D6B605F4366702BB360 /* Pods-rucovid-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOSTests/Pods-rucovid-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		D8B88DECB02C44512DAC2509 /* libPods-rucovid-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovid-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E486B1959580E30A21920D70 /* libPods-rucovid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F917CF382422A37100C4BA62 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		F9E3EF1C2430CF0800314CA2 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Italic.ttf"; path = "../../assets/fonts/Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
-		F9E3EF1D2430CF0800314CA2 /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-BoldItalic.ttf"; path = "../../assets/fonts/Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
-		F9E3EF1E2430CF0800314CA2 /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-LightItalic.ttf"; path = "../../assets/fonts/Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
-		F9E3EF1F2430CF0800314CA2 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Medium.ttf"; path = "../../assets/fonts/Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
-		F9E3EF202430CF0800314CA2 /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-MediumItalic.ttf"; path = "../../assets/fonts/Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
-		F9E3EF212430CF0800314CA2 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Regular.ttf"; path = "../../assets/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
-		F9E3EF222430CF0800314CA2 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Light.ttf"; path = "../../assets/fonts/Ubuntu-Light.ttf"; sourceTree = "<group>"; };
-		F9E3EF232430CF0800314CA2 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Bold.ttf"; path = "../../assets/fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
-		FB0D09A1E910996F3E7D26A2 /* libPods-rucovid-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rucovid-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5BEA140B0EA98FF37DE928E /* Pods-rucovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid.debug.xcconfig"; path = "Target Support Files/Pods-rucovid/Pods-rucovid.debug.xcconfig"; sourceTree = "<group>"; };
+		F8D5105B816F1AF9CB4DAEA5 /* Pods-rucovid-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOSTests/Pods-rucovid-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9F01815243229AA001C2EF5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F9FA6C90243226CB0030AC51 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		F9FA6C91243226CB0030AC51 /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
+		F9FA6C92243226CB0030AC51 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
+		F9FA6C93243226CB0030AC51 /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F9FA6C94243226CB0030AC51 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		F9FA6C95243226CB0030AC51 /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F9FA6C96243226CB0030AC51 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		F9FA6C97243226CB0030AC51 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6D0CB5E0C18F03D3085B65D /* libPods-rucovidTests.a in Frameworks */,
+				6CAEEFB21FCA1DC2A83DE19D /* libPods-rucovid-rucovidTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CECFFDFD08A23CD89CBB2C6 /* libPods-rucovid.a in Frameworks */,
+				45101E385E1CBE662F0C4203 /* libPods-rucovid.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				770B5114B4323CFC11406943 /* libPods-rucovid-tvOS.a in Frameworks */,
+				ECB8ACBF1B1F3FF0A843DAEA /* libPods-rucovid-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A32B501E9547FEB7A64576CC /* libPods-rucovid-tvOSTests.a in Frameworks */,
+				CCC50389BAC2629DC3AB2779 /* libPods-rucovid-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,12 +158,27 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				C0B1D1E63492AD9019D453E3 /* libPods-rucovid.a */,
-				FB0D09A1E910996F3E7D26A2 /* libPods-rucovid-tvOS.a */,
-				9F7EDAE5F4FF778E2D83FF86 /* libPods-rucovid-tvOSTests.a */,
-				A5A998BA715500A75508AF21 /* libPods-rucovidTests.a */,
+				E486B1959580E30A21920D70 /* libPods-rucovid.a */,
+				7B82CC4E152506DF74A979CF /* libPods-rucovid-rucovidTests.a */,
+				D8B88DECB02C44512DAC2509 /* libPods-rucovid-tvOS.a */,
+				71384B8B9CE6D25633D9196D /* libPods-rucovid-tvOSTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D5BE4E396E3484A5D7ADD4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5BEA140B0EA98FF37DE928E /* Pods-rucovid.debug.xcconfig */,
+				7E10AC44E3AB2DFD1F2071EA /* Pods-rucovid.release.xcconfig */,
+				3C99C7AC8E39183A93165C4A /* Pods-rucovid-rucovidTests.debug.xcconfig */,
+				870D381BCB60E930377C249B /* Pods-rucovid-rucovidTests.release.xcconfig */,
+				737236BE70357552A65C4503 /* Pods-rucovid-tvOS.debug.xcconfig */,
+				5748725B3AB4C5FC5237A21B /* Pods-rucovid-tvOS.release.xcconfig */,
+				F8D5105B816F1AF9CB4DAEA5 /* Pods-rucovid-tvOSTests.debug.xcconfig */,
+				87533D6B605F4366702BB360 /* Pods-rucovid-tvOSTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -176,14 +191,13 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				F9033DD02425B83900DEB100 /* Resources */,
+				F9FA6C8F243226A10030AC51 /* Resources */,
 				13B07FAE1A68108700A75B9A /* rucovid */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* rucovidTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				F9033DCF2425B80500DEB100 /* Resources */,
-				AD9C8EF0AA80696938B5DC40 /* Pods */,
+				5D5BE4E396E3484A5D7ADD4A /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -201,39 +215,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AD9C8EF0AA80696938B5DC40 /* Pods */ = {
+		F9FA6C8F243226A10030AC51 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				85599A99E85C75884173C548 /* Pods-rucovid.debug.xcconfig */,
-				E43DCC480A10FFFD56700ECD /* Pods-rucovid.release.xcconfig */,
-				B93F1C939F1809029482BE82 /* Pods-rucovid-tvOS.debug.xcconfig */,
-				597D8EFAE5EABEB5CBB28DED /* Pods-rucovid-tvOS.release.xcconfig */,
-				3EFCD43DEFA47054D55FBCBB /* Pods-rucovid-tvOSTests.debug.xcconfig */,
-				051FC50C7087267D34202454 /* Pods-rucovid-tvOSTests.release.xcconfig */,
-				55620FB3CBCBBBD81C310B65 /* Pods-rucovidTests.debug.xcconfig */,
-				E51A7A911D21CB424E6A08F6 /* Pods-rucovidTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		F9033DCF2425B80500DEB100 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		F9033DD02425B83900DEB100 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F9E3EF232430CF0800314CA2 /* Ubuntu-Bold.ttf */,
-				F9E3EF1D2430CF0800314CA2 /* Ubuntu-BoldItalic.ttf */,
-				F9E3EF1C2430CF0800314CA2 /* Ubuntu-Italic.ttf */,
-				F9E3EF222430CF0800314CA2 /* Ubuntu-Light.ttf */,
-				F9E3EF1E2430CF0800314CA2 /* Ubuntu-LightItalic.ttf */,
-				F9E3EF1F2430CF0800314CA2 /* Ubuntu-Medium.ttf */,
-				F9E3EF202430CF0800314CA2 /* Ubuntu-MediumItalic.ttf */,
-				F9E3EF212430CF0800314CA2 /* Ubuntu-Regular.ttf */,
+				F9FA6C90243226CB0030AC51 /* Ubuntu-Bold.ttf */,
+				F9FA6C95243226CB0030AC51 /* Ubuntu-BoldItalic.ttf */,
+				F9FA6C92243226CB0030AC51 /* Ubuntu-Italic.ttf */,
+				F9FA6C97243226CB0030AC51 /* Ubuntu-Light.ttf */,
+				F9FA6C91243226CB0030AC51 /* Ubuntu-LightItalic.ttf */,
+				F9FA6C94243226CB0030AC51 /* Ubuntu-Medium.ttf */,
+				F9FA6C93243226CB0030AC51 /* Ubuntu-MediumItalic.ttf */,
+				F9FA6C96243226CB0030AC51 /* Ubuntu-Regular.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -245,7 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "rucovidTests" */;
 			buildPhases = (
-				1D46642AAE956C6BEB24ED45 /* [CP] Check Pods Manifest.lock */,
+				6DFBBDD16F41969239E23AFA /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -264,7 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "rucovid" */;
 			buildPhases = (
-				25A880DFA2AB4CD0B1F5AC30 /* [CP] Check Pods Manifest.lock */,
+				0D2D15F617E505285F18886E /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -284,7 +276,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "rucovid-tvOS" */;
 			buildPhases = (
-				B170A73C9C5F8886D47458BB /* [CP] Check Pods Manifest.lock */,
+				A83D4B5F2807751495828F1C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -304,7 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "rucovid-tvOSTests" */;
 			buildPhases = (
-				E80A953810E5C25E5209DAD2 /* [CP] Check Pods Manifest.lock */,
+				3891AEFB9469C1EEAB5E2434 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -326,15 +318,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 86756PTUPS;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 86756PTUPS;
+						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -381,16 +371,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E3EF272430CF0800314CA2 /* Ubuntu-Medium.ttf in Resources */,
-				F9E3EF262430CF0800314CA2 /* Ubuntu-LightItalic.ttf in Resources */,
-				F9E3EF282430CF0800314CA2 /* Ubuntu-MediumItalic.ttf in Resources */,
+				F9FA6C9D243226CB0030AC51 /* Ubuntu-BoldItalic.ttf in Resources */,
+				F9FA6C99243226CB0030AC51 /* Ubuntu-LightItalic.ttf in Resources */,
+				F9FA6C9F243226CB0030AC51 /* Ubuntu-Light.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				F9FA6C9C243226CB0030AC51 /* Ubuntu-Medium.ttf in Resources */,
+				F9FA6C9B243226CB0030AC51 /* Ubuntu-MediumItalic.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				F9E3EF2A2430CF0800314CA2 /* Ubuntu-Light.ttf in Resources */,
-				F9E3EF242430CF0800314CA2 /* Ubuntu-Italic.ttf in Resources */,
-				F9E3EF252430CF0800314CA2 /* Ubuntu-BoldItalic.ttf in Resources */,
-				F9E3EF2B2430CF0800314CA2 /* Ubuntu-Bold.ttf in Resources */,
-				F9E3EF292430CF0800314CA2 /* Ubuntu-Regular.ttf in Resources */,
+				F9FA6C9E243226CB0030AC51 /* Ubuntu-Regular.ttf in Resources */,
+				F9FA6C9A243226CB0030AC51 /* Ubuntu-Italic.ttf in Resources */,
+				F9FA6C98243226CB0030AC51 /* Ubuntu-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,29 +416,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		1D46642AAE956C6BEB24ED45 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-rucovidTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		25A880DFA2AB4CD0B1F5AC30 /* [CP] Check Pods Manifest.lock */ = {
+		0D2D15F617E505285F18886E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -484,29 +452,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		B170A73C9C5F8886D47458BB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-rucovid-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E80A953810E5C25E5209DAD2 /* [CP] Check Pods Manifest.lock */ = {
+		3891AEFB9469C1EEAB5E2434 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -522,6 +468,50 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-rucovid-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DFBBDD16F41969239E23AFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rucovid-rucovidTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A83D4B5F2807751495828F1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rucovid-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -623,7 +613,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				13B07FB21A68108700A75B9A /* Base */,
-				F917CF382422A37100C4BA62 /* ru */,
+				F9F01815243229AA001C2EF5 /* ru */,
 			);
 			name = LaunchScreen.xib;
 			path = rucovid;
@@ -634,11 +624,9 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55620FB3CBCBBBD81C310B65 /* Pods-rucovidTests.debug.xcconfig */;
+			baseConfigurationReference = 3C99C7AC8E39183A93165C4A /* Pods-rucovid-rucovidTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				DEVELOPMENT_TEAM = 86756PTUPS;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -659,12 +647,10 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E51A7A911D21CB424E6A08F6 /* Pods-rucovidTests.release.xcconfig */;
+			baseConfigurationReference = 870D381BCB60E930377C249B /* Pods-rucovid-rucovidTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 86756PTUPS;
 				INFOPLIST_FILE = rucovidTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -681,12 +667,16 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85599A99E85C75884173C548 /* Pods-rucovid.debug.xcconfig */;
+			baseConfigurationReference = F5BEA140B0EA98FF37DE928E /* Pods-rucovid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 86756PTUPS;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FB_SONARKIT_ENABLED=1",
+				);
 				INFOPLIST_FILE = rucovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -696,17 +686,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.keepcalm.rucovid;
 				PRODUCT_NAME = rucovid;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E43DCC480A10FFFD56700ECD /* Pods-rucovid.release.xcconfig */;
+			baseConfigurationReference = 7E10AC44E3AB2DFD1F2071EA /* Pods-rucovid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 86756PTUPS;
 				INFOPLIST_FILE = rucovid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -716,13 +708,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.keepcalm.rucovid;
 				PRODUCT_NAME = rucovid;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B93F1C939F1809029482BE82 /* Pods-rucovid-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 737236BE70357552A65C4503 /* Pods-rucovid-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -740,7 +733,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.rucovid-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.rucovid-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -750,7 +743,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 597D8EFAE5EABEB5CBB28DED /* Pods-rucovid-tvOS.release.xcconfig */;
+			baseConfigurationReference = 5748725B3AB4C5FC5237A21B /* Pods-rucovid-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -768,7 +761,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.rucovid-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.rucovid-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -778,7 +771,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EFCD43DEFA47054D55FBCBB /* Pods-rucovid-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = F8D5105B816F1AF9CB4DAEA5 /* Pods-rucovid-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -795,7 +788,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.rucovid-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.rucovid-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rucovid-tvOS.app/rucovid-tvOS";
@@ -805,7 +798,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 051FC50C7087267D34202454 /* Pods-rucovid-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 87533D6B605F4366702BB360 /* Pods-rucovid-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -822,7 +815,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.rucovid-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.rucovid-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rucovid-tvOS.app/rucovid-tvOS";
@@ -878,6 +871,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -925,6 +924,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
