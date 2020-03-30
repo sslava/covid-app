@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
+
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 import openIcon from '../../../assets/icons/open_grey.png';
 
@@ -20,7 +21,7 @@ export default function Countries({countries}) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>В других странах</Text>
-      {countries.map(c => (
+      {countries.map((c) => (
         <Country key={c.country_name_en} country={c} />
       ))}
       <View style={styles.action}>
