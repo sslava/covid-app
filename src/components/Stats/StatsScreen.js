@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect, useCallback, useMemo} from 'react';
 import {
   View,
   ScrollView,
@@ -15,6 +15,8 @@ import Russia from './Russia/RussiaStats';
 import Countries from './Countries/Countries';
 
 import styles from './StatsScreen.styles';
+
+const topSize = 15;
 
 export default function StatsScreen({navigation}) {
   const {
@@ -33,6 +35,8 @@ export default function StatsScreen({navigation}) {
       setRefreshing(false);
     }
   }, [fetchState]);
+
+  const top = useMemo(() => data.countries.slice(0, topSize), [data.countries]);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -55,7 +59,7 @@ export default function StatsScreen({navigation}) {
             <Russia country={data.russia} />
           </View>
           <View style={styles.countries}>
-            <Countries countries={data.top20} />
+            <Countries countries={top} />
           </View>
         </View>
       </ScrollView>
