@@ -28,8 +28,10 @@ export function StatsDataProvider({children}) {
 
   useEffect(() => {
     async function init() {
-      const loaded = await statsStorage.load();
-      dispatch({type: statsActionTypes.SET, payload: loaded});
+      const payload = await statsStorage.load();
+      if (payload) {
+        dispatch({type: statsActionTypes.SET, payload});
+      }
       refreshStats();
     }
     init();
