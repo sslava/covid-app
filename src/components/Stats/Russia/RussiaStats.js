@@ -10,8 +10,12 @@ import openIcon from '../../../assets/icons/open_grey.png';
 
 import LegendItem from '../../shared/Legend/LegendItem';
 import StatsBar from '../../shared/StatsBar/StatsBar';
-import SecondaryNumber from '../../shared/SecondaryNumber';
 import useCountryStats from '../../shared/useCountryStats';
+
+import Subheader from '../common/Subheader';
+import HeroStats from '../common/HeroStats';
+
+import ruIcon from './ru.png';
 
 import styles from './RussiaStats.styles';
 
@@ -23,16 +27,8 @@ export default function RussiaStats({russia, hasCities}) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>В России</Text>
-      </View>
-      <View style={styles.banner}>
-        <Text style={styles.bannerNumber}>
-          {russia.total}
-          <SecondaryNumber num={russia.total_new} style={styles.today} />
-        </Text>
-        <Text style={styles.bannerText}>Случаев заболевания</Text>
-      </View>
+      <Subheader icon={ruIcon}>В России</Subheader>
+      <HeroStats number={russia.total} today={russia.total_new} />
       <View style={styles.legend}>
         <LegendItem
           color={legendColor.Active}

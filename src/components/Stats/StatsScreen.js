@@ -44,19 +44,17 @@ export default function StatsScreen({navigation}) {
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
         <LargeHeader title="Статистика" />
-        <View style={styles.content}>
-          <View style={styles.world}>
-            <WorldStats region={data.world} />
-          </View>
-          <View style={styles.russia}>
-            <Russia
-              russia={data.russia}
-              hasCities={!!(data.cities && data.cities.length)}
-            />
-          </View>
-          <View style={styles.countries}>
-            <Countries countries={top} />
-          </View>
+        <View style={styles.world}>
+          <WorldStats region={data.world} />
+        </View>
+        <View style={styles.russia}>
+          <Russia
+            russia={data.russia}
+            hasCities={!!(data.cities && data.cities.length)}
+          />
+        </View>
+        <View style={styles.countries}>
+          <Countries countries={top} />
         </View>
       </ScrollView>
     </SafeAreaView>

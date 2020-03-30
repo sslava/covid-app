@@ -1,9 +1,23 @@
 import {apiRequest} from '../common/api';
 
+const auth = (username, password) => (params) => {
+  let credentials = new global.Buffer(`${username}:${password}`).toString(
+    'base64',
+  );
+  return {
+    ...params,
+    headers: {
+      ...params.headers,
+      Authorization: `Basic ${credentials}`,
+    },
+  };
+};
+
 async function apiFetchStats() {
   return apiRequest(
     'GET',
-    'http://dev:mn17KRvc1Q@1koronavirus.ru/request/get_stat',
+    'https://1koronavirus.ru/request/get_stat',
+    auth('dev', 'mn17KRvc1Q'),
   );
 }
 

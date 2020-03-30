@@ -6,7 +6,7 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import openIcon from '../../../assets/icons/open_grey.png';
 
 import Country from './Country';
-import Sources from '../Sources';
+import Sources from '../common/Sources';
 
 import styles from './Countries.styles';
 
