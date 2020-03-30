@@ -33,39 +33,36 @@ export default function WorldStats({region}) {
     <View style={styles.container}>
       <Subheader icon={worldIcon}>В мире</Subheader>
       <HeroStats number={region.total} today={region.total_new} />
-      <View style={styles.worldStats}>
+      <View style={styles.stats}>
         <Pie
           data={data}
           size={width / 2 - 40}
-          innerRadius={70}
+          innerRadius={67}
           blankColor={legendColor.Confirmed}
         />
-        <View style={styles.worldCounters}>
-          <View style={styles.wcInner}>
-            <PercentCounter
-              title="Болеет"
-              number={region.active}
-              color={legendColor.Active}
-            />
-            <PercentCounter
-              title="Выздоровело"
-              number={region.recovered}
-              color={legendColor.Recovered}
-            />
-            <PercentCounter
-              title="Смертей"
-              number={region.deaths}
-              today={region.deaths_new}
-              color={legendColor.Deaths}
-            />
-          </View>
+        <View style={styles.counters}>
+          <PercentCounter
+            title="Болеет"
+            number={region.active}
+            color={legendColor.Active}
+          />
+          <PercentCounter
+            title="Выздоровело"
+            number={region.recovered}
+            color={legendColor.Recovered}
+          />
+          <PercentCounter
+            title="Смертей"
+            number={region.deaths}
+            today={region.deaths_new}
+            color={legendColor.Deaths}
+          />
         </View>
       </View>
-      <View style={styles.updated}>
-        <Text style={styles.updatedText}>
-          По состоянию на {formatDate(region.updated)}
-        </Text>
-      </View>
+      <Text style={styles.updatedText}>
+        По состоянию на {formatDate(region.updated)}, прирост за последние 24
+        часа
+      </Text>
     </View>
   );
 }
