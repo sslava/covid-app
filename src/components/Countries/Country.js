@@ -25,7 +25,9 @@ export default function Country({country}) {
         onPress={toggle}
         style={styles.button}
         activeOpacity={0.5}>
-        <Text style={styles.title}>{country.country_name}</Text>
+        <Text style={styles.title}>
+          {country.country_name || country.country_name_en}
+        </Text>
         <View style={styles.numbers}>
           <Text style={styles.number}>
             {formatNumber(country.total)}
