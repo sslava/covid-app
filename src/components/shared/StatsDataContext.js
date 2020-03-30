@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useContext,
   useCallback,
+  useRef,
 } from 'react';
 
 import {
@@ -16,19 +17,23 @@ import {
 import ItemStore from '../../common/ItemStore';
 
 const StatsContext = createContext(null);
-const statsStorage = new ItemStore('stats', initialStatsState.stats);
 
 export function useStatsContext() {
   return useContext(StatsContext);
 }
 
 export function StatsDataProvider({children}) {
+  const storage = useRef(new ItemStore('stats', initialStatsState.stats));
+
   const [state, dispatch] = useReducer(statsReducer, initialStatsState);
-  const refreshStats = useCallback(fetchStatsSaga(dispatch, statsStorage), []);
+  const refreshStats = useCallback(
+    fetchStatsSaga(dispatch, storage.current),
+    [],
+  );
 
   useEffect(() => {
     async function init() {
-      const payload = await statsStorage.load();
+      const payload = await storage.current.load();
       if (payload) {
         dispatch({type: statsActionTypes.SET, payload});
       }
