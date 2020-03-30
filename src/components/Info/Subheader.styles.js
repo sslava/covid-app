@@ -1,17 +1,13 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../shared/uikit';
+import {fontStyles} from '../shared/uikit';
 
 export default StyleSheet.create({
   header: {
-    paddingHorizontal: 24,
-    paddingVertical: 16,
+    paddingHorizontal: 20,
+    paddingBottom: 15,
   },
   title: {
-    fontFamily: 'Ubuntu',
-    fontSize: 20,
-    lineHeight: 24 * 1.2,
-    letterSpacing: 0.011,
-    fontWeight: '600',
-    color: colors.DarkBlue,
+    ...fontStyles.Subtitle,
+    color: '#252A34',
   },
 });

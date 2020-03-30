@@ -50,6 +50,7 @@ export default function App() {
         <AppStack.Navigator
           headerMode="screen"
           screenOptions={({route}) => ({
+            // cardOverlayEnabled: true,
             headerBackTitle: ' ',
             headerBackImage: HeaderBackImage,
           })}>

@@ -16,3 +16,18 @@ export const legendColor = {
   Recovered: '#28a745',
   Deaths: '#FF5C4D',
 };
+
+export const fontStyles = {
+  LargeTitle: {
+    fontFamily: 'Ubuntu',
+    fontSize: 36,
+    lineHeight: 40,
+    fontWeight: 'bold',
+  },
+  Subtitle: {
+    fontFamily: 'Ubuntu',
+    fontSize: 20,
+    lineHeight: 26,
+    fontWeight: 'bold',
+  },
+};

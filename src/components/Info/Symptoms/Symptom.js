@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 
 import styles from './Symptom.styles';
 
-export default function Symptom({symptom, icon}) {
+export default function Symptom({symptom}) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: symptom.bg}]}>
+      <Image source={symptom.image} style={styles.image} />
       <Text style={styles.name}>{symptom.title}</Text>
     </View>
   );

@@ -1,14 +1,9 @@
 import React, {useState, useEffect, useCallback, useMemo} from 'react';
-import {
-  View,
-  ScrollView,
-  RefreshControl,
-  SafeAreaView,
-  Text,
-} from 'react-native';
+import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 
 import NavStatusBar from '../shared/NavStatusBar';
 import {useStatsContext} from '../shared/StatsDataContext';
+import LargeHeader from '../shared/LargeHeader';
 
 import WorldStats from './World/WorldStats';
 import Russia from './Russia/RussiaStats';
@@ -48,9 +43,7 @@ export default function StatsScreen({navigation}) {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
-        <View style={styles.header}>
-          <Text style={styles.title}>В мире</Text>
-        </View>
+        <LargeHeader title="Статистика" />
         <View style={styles.content}>
           <View style={styles.world}>
             <WorldStats region={data.world} />
