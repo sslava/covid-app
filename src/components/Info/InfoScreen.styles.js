@@ -6,6 +6,7 @@ export default StyleSheet.create({
   },
   scrollContent: {
     backgroundColor: 'white',
+    paddingBottom: 30,
   },
   symptoms: {
     marginTop: 20,
@@ -14,6 +15,6 @@ export default StyleSheet.create({
     marginTop: 30,
   },
   resources: {
-    marginTop: 30,
+    marginTop: 20,
   },
 });
