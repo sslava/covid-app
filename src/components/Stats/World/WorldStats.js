@@ -3,10 +3,13 @@ import {View, Dimensions, Text} from 'react-native';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
-import {formatNumber, formatDate} from '../../../common/utils';
+import {formatDate} from '../../../common/utils';
 
 import PercentCounter from './PercentCounter';
-import SecondaryNumber from '../../shared/SecondaryNumber';
+import Subheader from '../common/Subheader';
+import HeroStats from '../common/HeroStats';
+
+import worldIcon from './world.png';
 
 import styles from './WorldStats.styles';
 
@@ -28,17 +31,12 @@ export default function WorldStats({region}) {
   );
   return (
     <View style={styles.container}>
-      <View style={styles.banner}>
-        <Text style={styles.bannerNumber}>
-          {formatNumber(region.total)}
-          <SecondaryNumber num={region.total_new} style={styles.today} />
-        </Text>
-        <Text style={styles.bannerText}>Случаев заболевания</Text>
-      </View>
+      <Subheader icon={worldIcon}>В мире</Subheader>
+      <HeroStats number={region.total} today={region.total_new} />
       <View style={styles.worldStats}>
         <Pie
           data={data}
-          size={(width - 48) / 2}
+          size={width / 2 - 40}
           innerRadius={70}
           blankColor={legendColor.Confirmed}
         />

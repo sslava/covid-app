@@ -12,9 +12,9 @@ export const colors = {
 
 export const legendColor = {
   Confirmed: '#E2E5E7',
-  Active: '#fdb15f',
-  Recovered: '#28a745',
-  Deaths: '#FF5C4D',
+  Active: '#FFB663',
+  Recovered: '#29A744',
+  Deaths: '#FC624D',
 };
 
 export const fontStyles = {

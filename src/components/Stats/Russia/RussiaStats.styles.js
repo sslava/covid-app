@@ -2,11 +2,7 @@ import {StyleSheet} from 'react-native';
 import {legendColor, colors} from '../../shared/uikit';
 
 export default StyleSheet.create({
-  container: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: colors.BorderGrey,
-    paddingVertical: 24,
-  },
+  container: {},
   header: {
     paddingHorizontal: 24,
   },

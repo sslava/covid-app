@@ -10,8 +10,7 @@ export default StyleSheet.create({
   },
   worldStats: {
     marginTop: 10,
-    marginLeft: 24,
-    marginBottom: 20,
+    marginLeft: 20,
     flex: 1,
     flexDirection: 'row',
   },
