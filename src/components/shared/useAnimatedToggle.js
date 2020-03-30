@@ -1,4 +1,5 @@
 // @flow
+
 import {useState, useCallback, useRef, useEffect} from 'react';
 import {Animated, Easing} from 'react-native';
 
@@ -16,5 +17,6 @@ export default function useAnimatedToggle(duration: number = 100) {
       useNativeDriver: true,
     }).start();
   }, [visible, duration]);
+
   return [visible, toggle, value];
 }
