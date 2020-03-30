@@ -14,8 +14,6 @@ import TabIcon from './components/shared/TabIcon';
 import preventIcon from './assets/icons/prevent_black.png';
 import reportIcon from './assets/icons/report_black.png';
 
-import styles from './components/shared/navigator.styles';
-
 const RootTabs = createBottomTabNavigator();
 
 function Root() {
@@ -50,15 +48,13 @@ export default function App() {
         <AppStack.Navigator
           headerMode="screen"
           screenOptions={({route}) => ({
-            headerBackTitle: ' ',
-            headerStyle: styles.headerStyle,
-            headerTitleStyle: styles.headerTitleStyle,
+            headerBackTitle: '',
             headerBackImage: HeaderBackImage,
           })}>
           <AppStack.Screen
             name="Root"
             component={Root}
-            options={{headerTransparent: true}}
+            options={{headerTransparent: true, headerTitle: null}}
           />
         </AppStack.Navigator>
       </NavigationContainer>
