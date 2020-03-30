@@ -1,5 +1,4 @@
 import React from 'react';
-import {Image} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -10,18 +9,12 @@ import InfoScreen from './components/Info/InfoScreen';
 
 import HeaderBackImage from './components/shared/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
+import TabIcon from './components/shared/TabIcon';
 
 import preventIcon from './assets/icons/prevent_black.png';
 import reportIcon from './assets/icons/report_black.png';
 
 import styles from './components/shared/navigator.styles';
-
-const TabIcon = ({color, size, source}) => (
-  <Image
-    source={source}
-    style={{width: size + 4, height: size + 4, tintColor: color}}
-  />
-);
 
 const RootTabs = createBottomTabNavigator();
 
