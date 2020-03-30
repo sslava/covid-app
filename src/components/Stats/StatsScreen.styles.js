@@ -9,5 +9,10 @@ export default StyleSheet.create({
   },
   world: {
     marginTop: 20,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '#F3F3F3',
+  },
+  russia: {
+    marginTop: 30,
   },
 });
