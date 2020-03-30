@@ -7,5 +7,13 @@ export default StyleSheet.create({
   scrollContent: {
     backgroundColor: 'white',
   },
-  container: {},
+  symptoms: {
+    marginTop: 20,
+  },
+  recommendations: {
+    marginTop: 30,
+  },
+  resources: {
+    marginTop: 30,
+  },
 });
