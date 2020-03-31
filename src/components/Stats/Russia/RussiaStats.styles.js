@@ -20,4 +20,7 @@ export default StyleSheet.create({
     lineHeight: 18,
     color: '#8B8C9C',
   },
+  numberStyle: {
+    fontSize: 18,
+  },
 });

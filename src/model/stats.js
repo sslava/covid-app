@@ -1,14 +1,12 @@
 import {apiRequest} from '../common/api';
+import {encode61} from '../common/base64';
 
 const auth = (username, password) => (params) => {
-  let credentials = new global.Buffer(`${username}:${password}`).toString(
-    'base64',
-  );
   return {
     ...params,
     headers: {
       ...params.headers,
-      Authorization: `Basic ${credentials}`,
+      Authorization: `Basic ${encode61(`${username}:${password}`)}`,
     },
   };
 };
@@ -69,9 +67,7 @@ export function fetchStatsSaga(dispatch, storage) {
     dispatch({type: statsActionTypes.FETCH});
     try {
       const {stats} = await apiFetchStats();
-      const countries = stats.countries.today
-        .filter((c) => c.country_name_en !== 'Russia')
-        .sort((a, b) => b.total - a.total);
+      const countries = stats.countries.today.sort((a, b) => b.total - a.total);
       const payload = {
         world: stats.world.today,
         russia: stats.countries.today.find(

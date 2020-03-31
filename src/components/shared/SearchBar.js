@@ -5,13 +5,14 @@ import searchIcon from '../../assets/icons/search_white.png';
 
 import styles from './SearchBar.styles';
 
-export default function SearchBar({onChange, value}) {
+export default function SearchBar({onChange, value, placeholder}) {
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Найти"
-        value={value}
+        placeholder={placeholder}
+        placeholderTextColor="#8B8C9C"
+        value={value ? value : ''}
         clearButtonMode="always"
         onChangeText={onChange}
       />
