@@ -1,12 +1,10 @@
 import React, {useCallback} from 'react';
 import {useNavigation} from '@react-navigation/core';
 
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 
 import {formatDate} from '../../../common/utils';
 import {legendColor} from '../../shared/uikit';
-
-import openIcon from '../../../assets/icons/open_grey.png';
 
 import LegendItem from '../../shared/Legend/LegendItem';
 import StatsBar from '../../shared/StatsBar/StatsBar';
@@ -51,11 +49,6 @@ export default function RussiaStats({russia, hasCities}) {
       <View style={styles.bar}>
         <StatsBar items={stats} />
       </View>
-      <View style={styles.updated}>
-        <Text style={styles.updatedText}>
-          По состоянию на {formatDate(russia.updated)}
-        </Text>
-      </View>
       {!!hasCities && (
         <View style={styles.action}>
           <TouchableOpacity
@@ -63,10 +56,12 @@ export default function RussiaStats({russia, hasCities}) {
             onPress={openCities}
             activeOpacity={0.3}>
             <Text style={styles.allCaption}>В регионах</Text>
-            <Image source={openIcon} style={styles.allIcon} />
           </TouchableOpacity>
         </View>
       )}
+      <Text style={styles.updatedText}>
+        По состоянию на {formatDate(russia.updated)}, прирост за последние 24
+      </Text>
     </View>
   );
 }

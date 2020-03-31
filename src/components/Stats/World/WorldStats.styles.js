@@ -8,7 +8,7 @@ export default StyleSheet.create({
   },
   stats: {
     marginTop: 30,
-    marginLeft: 20,
+    paddingLeft: 20,
     flexDirection: 'row',
   },
   pie: {
