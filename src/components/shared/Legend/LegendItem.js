@@ -14,10 +14,10 @@ function LegendItem({color, title, number, today, bad}) {
         <View style={[styles.color, {backgroundColor: color}]} />
         <Text style={styles.title}>{title}</Text>
       </View>
-      <Text style={styles.number}>
-        {formatNumber(number)}
-        <SecondaryNumber num={today} style={[styles.today, styles.bad]} />
-      </Text>
+      <View style={styles.right}>
+        <Text style={styles.number}>{formatNumber(number)}</Text>
+        <SecondaryNumber num={today} style={styles.today} />
+      </View>
     </View>
   );
 }
