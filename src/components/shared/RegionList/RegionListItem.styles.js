@@ -1,11 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../uikit';
 
 export default StyleSheet.create({
   container: {
-    borderBottomColor: colors.BorderGrey,
+    borderBottomColor: '#F3F3F3',
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderTopColor: colors.BorderGrey,
+    borderTopColor: '#F3F3F3',
     borderTopWidth: StyleSheet.hairlineWidth,
   },
   button: {

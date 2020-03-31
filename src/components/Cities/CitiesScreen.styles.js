@@ -5,13 +5,9 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
+  search: {
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
   },
 });
