@@ -26,7 +26,11 @@ export default function CountriesScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <SearchBar value={query} onChange={setQuery} />
+      <SearchBar
+        value={query}
+        onChange={setQuery}
+        placeholder="Поиск по стране"
+      />
       <FlatList
         style={styles.flatList}
         data={countries}

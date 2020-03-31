@@ -21,7 +21,11 @@ export default function CitiesScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <SearchBar value={query} onChange={setQuery} />
+      <SearchBar
+        value={query}
+        onChange={setQuery}
+        placeholder="Поиск по региону"
+      />
       <FlatList
         style={styles.flatList}
         data={cities}

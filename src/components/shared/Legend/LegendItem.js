@@ -7,7 +7,7 @@ import SecondaryNumber from '../SecondaryNumber';
 
 import styles from './LegendItem.styles';
 
-function LegendItem({color, title, number, today}) {
+function LegendItem({color, title, number, today, numberStyle}) {
   return (
     <View style={styles.container}>
       <View style={styles.left}>
@@ -15,7 +15,7 @@ function LegendItem({color, title, number, today}) {
         <Text style={styles.title}>{title}</Text>
       </View>
       <View style={styles.right}>
-        <Text style={styles.number}>{formatNumber(number)}</Text>
+        <Text style={[styles.number, numberStyle]}>{formatNumber(number)}</Text>
         <SecondaryNumber num={today} style={styles.today} />
       </View>
     </View>
