@@ -22,4 +22,10 @@ export default StyleSheet.create({
     width: 21,
     height: 21,
   },
+  placeholder: {
+    fontFamily: 'Ubuntu',
+    fontSize: 13,
+    color: '#8B8C9C',
+    lineHeight: 44,
+  },
 });
