@@ -14,5 +14,11 @@ export default StyleSheet.create({
   },
   russia: {
     marginTop: 30,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '#F3F3F3',
+  },
+  countries: {
+    marginTop: 30,
+    marginBottom: 20,
   },
 });

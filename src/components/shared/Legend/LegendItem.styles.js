@@ -1,40 +1,45 @@
 import {StyleSheet} from 'react-native';
-import {legendColor, colors} from '../uikit';
 
 export default StyleSheet.create({
   container: {
+    marginBottom: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   left: {
+    width: '50%',
     flexDirection: 'row',
     alignItems: 'center',
   },
   color: {
-    width: 14,
-    height: 14,
-    marginRight: 8,
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    marginRight: 5,
   },
   title: {
     fontFamily: 'Ubuntu',
-    fontSize: 14,
-    lineHeight: 20,
+    fontSize: 13,
+    lineHeight: 18,
+    fontWeight: '600',
     textTransform: 'uppercase',
-    color: colors.DarkBlue,
+    color: '#252A34',
+  },
+  right: {
+    paddingLeft: 15,
+    flexDirection: 'row',
   },
   number: {
     fontFamily: 'Ubuntu',
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: 18,
+    lineHeight: 20,
     fontWeight: '600',
-    color: colors.DarkBlue,
+    color: '#252A34',
   },
   today: {
-    fontSize: 14,
+    fontSize: 13,
     lineHeight: 20,
-    fontWeight: '300',
-  },
-  bad: {
-    color: legendColor.Deaths,
+    fontWeight: '600',
+    color: '#FC624D',
   },
 });

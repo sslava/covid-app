@@ -3,7 +3,7 @@ import {View} from 'react-native';
 
 import styles from './StatsBar.styles';
 
-export default function StatsBar({items, height = 26}) {
+export default function StatsBar({items, height = 20}) {
   return (
     <View style={styles.container}>
       {items.map(({color, fraction}) => (
