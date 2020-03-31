@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextInput, View, Image} from 'react-native';
 
-import searchIcon from '../../assets/icons/search_white.png';
+import searchIcon from '../../assets/icons/search.png';
 
 import styles from './SearchBar.styles';
 

@@ -32,7 +32,7 @@ export default function WorldStats({region}) {
   return (
     <View style={styles.container}>
       <Subheader icon={worldIcon}>В мире</Subheader>
-      <HeroStats number={region.total} today={region.total_new} />
+      <HeroStats number={region.total} today={+region.total_new} />
       <View style={styles.stats}>
         <Pie
           data={data}
