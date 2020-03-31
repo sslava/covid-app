@@ -9,7 +9,7 @@ import InfoScreen from './components/Info/InfoScreen';
 import CountriesScreen from './components/Countries/CountriesScreen';
 import CitiesScreen from './components/Cities/CitiesScreen';
 
-import HeaderBackImage from './components/shared/HeaderBack';
+import HeaderBackImage from './components/shared/Header/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
 import TabIcon from './components/shared/TabIcon';
 
