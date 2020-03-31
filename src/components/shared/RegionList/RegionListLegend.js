@@ -25,20 +25,20 @@ export default function RegionListLegend({
           color={legendColor.Active}
           title="Болеет"
           number={active}
-          skipToday
+          skipToday={skipToday}
         />
         <LegendItem
           color={legendColor.Recovered}
           title="Поправилось"
           number={recovered}
-          skipToday
+          skipToday={skipToday}
         />
         <LegendItem
           color={legendColor.Deaths}
           title="Смертей"
           number={deaths}
           today={+deaths_new}
-          skipToday
+          skipToday={skipToday}
         />
       </View>
       <StatsBar items={stats} height={10} />
