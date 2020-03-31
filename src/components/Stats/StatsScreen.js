@@ -1,9 +1,9 @@
 import React, {useMemo} from 'react';
 import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 
-import {useStatsContext} from '../shared/StatsDataContext';
 import LargeHeader from '../shared/Header/LargeHeader';
 import useRefresh from '../shared/useRefresh';
+import {useStatsContext} from '../shared/StatsDataContext';
 
 import WorldStats from './World/WorldStats';
 import Russia from './Russia/RussiaStats';
