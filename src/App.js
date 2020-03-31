@@ -52,6 +52,12 @@ export default function App() {
           screenOptions={({route}) => ({
             // cardOverlayEnabled: true,
             headerBackTitle: ' ',
+            headerTitleStyle: {
+              fontFamily: 'Ubuntu',
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: '#252A34',
+            },
             headerBackImage: HeaderBackImage,
           })}>
           <AppStack.Screen

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, FlatList} from 'react-native';
+import {SafeAreaView, FlatList, View} from 'react-native';
 
 import {useStatsContext} from '../shared/StatsDataContext';
 
@@ -26,11 +26,13 @@ export default function CountriesScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <SearchBar
-        value={query}
-        onChange={setQuery}
-        placeholder="Поиск по стране"
-      />
+      <View style={styles.search}>
+        <SearchBar
+          value={query}
+          onChange={setQuery}
+          placeholder="Поиск по стране"
+        />
+      </View>
       <FlatList
         style={styles.flatList}
         data={countries}

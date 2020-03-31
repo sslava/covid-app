@@ -1,28 +1,25 @@
 import {StyleSheet} from 'react-native';
-import {colors} from './uikit';
 
 export default StyleSheet.create({
   container: {
-    paddingVertical: 24,
-    paddingHorizontal: 24,
     position: 'relative',
   },
   input: {
-    height: 48,
-    borderRadius: 24,
-    backgroundColor: '#F0F2F3',
-    paddingLeft: 40,
-    paddingRight: 24,
-    color: colors.DarkBlue,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: '#F3F3F3',
+    paddingLeft: 45,
+    paddingRight: 15,
+    color: '#252A34',
     fontFamily: 'Ubuntu',
-    fontSize: 16,
+    fontSize: 13,
   },
   icon: {
     position: 'absolute',
-    left: 36,
-    top: 36,
-    tintColor: colors.FillText,
-    width: 24,
-    height: 24,
+    top: 12,
+    left: 15,
+    tintColor: '#8B8C9C',
+    width: 21,
+    height: 21,
   },
 });

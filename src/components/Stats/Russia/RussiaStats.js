@@ -28,7 +28,7 @@ export default function RussiaStats({russia, hasCities}) {
   return (
     <View style={styles.container}>
       <Subheader icon={ruIcon}>В России</Subheader>
-      <HeroStats number={russia.total} today={russia.total_new} />
+      <HeroStats number={russia.total} today={+russia.total_new} />
       <View style={styles.legend}>
         <LegendItem
           color={legendColor.Active}
