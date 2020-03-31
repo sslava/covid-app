@@ -13,6 +13,10 @@ export function Left({children}) {
   return <View style={styles.left}>{children}</View>;
 }
 
-export function Right({children}) {
-  return <View style={styles.right}>{children}</View>;
+export function Right({children, skipToday}) {
+  return (
+    <View style={[styles.right, skipToday && styles.skipToday]}>
+      {children}
+    </View>
+  );
 }
