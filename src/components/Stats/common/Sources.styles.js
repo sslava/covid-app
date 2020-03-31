@@ -1,18 +1,17 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../shared/uikit';
 
 export default StyleSheet.create({
   container: {
-    padding: 24,
+    padding: 20,
   },
   text: {
     fontFamily: 'Ubuntu',
-    fontSize: 14,
-    fontWeight: '500',
-    lineHeight: 20,
-    color: colors.FillText,
+    fontSize: 11,
+    fontWeight: '600',
+    lineHeight: 18,
+    color: '#8B8C9C',
   },
   source: {
-    fontWeight: '800',
+    color: '#087ED9',
   },
 });

@@ -11,7 +11,7 @@ import Countries from './Countries/Countries';
 
 import styles from './StatsScreen.styles';
 
-const topSize = 15;
+const topSize = 7;
 
 export default function StatsScreen({navigation}) {
   const {
