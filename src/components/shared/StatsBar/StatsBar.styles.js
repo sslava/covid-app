@@ -7,6 +7,6 @@ export default StyleSheet.create({
   bar: {
     marginLeft: 1,
     marginRight: 1,
-    borderRadius: 3,
+    borderRadius: 2,
   },
 });

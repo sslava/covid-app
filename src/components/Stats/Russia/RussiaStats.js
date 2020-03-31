@@ -1,7 +1,7 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {useNavigation} from '@react-navigation/core';
 
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text} from 'react-native';
 
 import {formatDate} from '../../../common/utils';
 import {legendColor} from '../../shared/uikit';
@@ -12,6 +12,7 @@ import useCountryStats from '../../shared/useCountryStats';
 
 import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';
+import PageLink from '../common/PageLink';
 
 import ruIcon from './ru.png';
 
@@ -20,8 +21,6 @@ import styles from './RussiaStats.styles';
 export default function RussiaStats({russia, hasCities}) {
   const nav = useNavigation();
   const stats = useCountryStats(russia);
-
-  const openCities = useCallback(() => nav.navigate('Cities'), [nav]);
 
   return (
     <View style={styles.container}>
@@ -43,24 +42,14 @@ export default function RussiaStats({russia, hasCities}) {
           title="Смертей"
           number={russia.deaths}
           today={+russia.deaths_new}
-          bad
         />
       </View>
       <View style={styles.bar}>
         <StatsBar items={stats} />
       </View>
-      {!!hasCities && (
-        <View style={styles.action}>
-          <TouchableOpacity
-            style={styles.all}
-            onPress={openCities}
-            activeOpacity={0.3}>
-            <Text style={styles.allCaption}>В регионах</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+      {!!hasCities && <PageLink route="Cities">В регионах</PageLink>}
       <Text style={styles.updatedText}>
-        По состоянию на {formatDate(russia.updated)}, прирост за последние 24
+        По состоянию на {formatDate(russia.updated)}
       </Text>
     </View>
   );

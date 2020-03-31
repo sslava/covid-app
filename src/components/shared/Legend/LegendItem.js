@@ -7,7 +7,7 @@ import SecondaryNumber from '../SecondaryNumber';
 
 import styles from './LegendItem.styles';
 
-function LegendItem({color, title, number, today, bad}) {
+function LegendItem({color, title, number, today}) {
   return (
     <View style={styles.container}>
       <View style={styles.left}>
