@@ -33,28 +33,20 @@ export function RegionListToggle({name, total, today, onPress, expanded}) {
       activeOpacity={0.5}>
       <Text style={styles.title}>{name}</Text>
       <View style={styles.numbers}>
-        <Text style={styles.number}>
-          {formatNumber(total)}
-          <SecondaryNumber num={+today} style={styles.today} />
-        </Text>
-        <Animated.Image
-          source={openIcon}
-          style={[styles.openIcon, {transform: [{rotate}]}]}
-        />
+        <Text style={styles.number}>{formatNumber(total)}</Text>
+        <SecondaryNumber num={+today} style={styles.today} />
       </View>
+      <Animated.Image
+        source={openIcon}
+        style={[styles.openIcon, {transform: [{rotate}]}]}
+      />
     </TouchableOpacity>
   );
 }
 
 export function RegionListItem({children, expanded}) {
   return (
-    <View
-      style={[
-        styles.container,
-        {
-          backgroundColor: expanded ? '#FFF5F3' : '#ffffff',
-        },
-      ]}>
+    <View style={[styles.container, expanded && styles.expanded]}>
       {children}
     </View>
   );
