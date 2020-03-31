@@ -7,15 +7,15 @@ export default StyleSheet.create({
   number: {
     fontFamily: 'Ubuntu',
     fontSize: 48,
-    fontWeight: '500',
     lineHeight: 54,
+    fontWeight: '500',
     color: '#252A34',
   },
   today: {
     marginLeft: 10,
     fontFamily: 'Ubuntu',
     fontSize: 18,
-    lineHeight: 26,
+    lineHeight: 54,
     fontWeight: '500',
     color: '#FFB663',
   },
