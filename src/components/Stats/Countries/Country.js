@@ -13,7 +13,7 @@ export default function Country({country}) {
   return (
     <RegionListItem expanded={expanded}>
       <RegionListToggle
-        name={country.country_name}
+        name={country.country_name || country.country_name_en}
         total={country.total}
         today={country.total_new}
         expanded={expanded}
