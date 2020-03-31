@@ -6,16 +6,23 @@ import SecondaryNumber from '../SecondaryNumber';
 
 import styles from './LegendItem.styles';
 
-export default function LegendItem({color, title, number, today, numberStyle}) {
+export default function LegendItem({
+  color,
+  title,
+  number,
+  today,
+  numberStyle,
+  skipToday,
+}) {
   return (
     <View style={styles.container}>
       <Left style={styles.left}>
         <View style={[styles.color, {backgroundColor: color}]} />
         <Text style={styles.title}>{title}</Text>
       </Left>
-      <Right style={styles.right}>
+      <Right skipToday={skipToday}>
         <PrimaryNumber value={number} style={numberStyle} />
-        <SecondaryNumber num={today} style={styles.today} />
+        {!skipToday && <SecondaryNumber num={today} style={styles.today} />}
       </Right>
     </View>
   );

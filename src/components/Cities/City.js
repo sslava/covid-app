@@ -20,6 +20,7 @@ function City({city}) {
         total={city.total}
         expanded={expanded}
         onPress={toggle}
+        skipToday
       />
       {expanded && (
         <RegionListLegend
@@ -27,6 +28,7 @@ function City({city}) {
           total={city.total}
           recovered={city.recovered}
           deaths={city.deaths}
+          skipToday
         />
       )}
     </RegionListItem>
