@@ -13,17 +13,17 @@ const getDomain = (domain: number[]) => [
 
 export default function Graph({data, width, height}) {
   const scaleX = scaleTime()
-    .domain(getDomain(data.map(d => d.date)))
+    .domain(getDomain(data.map((d) => d.date)))
     .range([0, width]);
 
   const scaleY = scaleLinear()
-    .domain(getDomain(data.map(d => d.value)))
+    .domain(getDomain(data.map((d) => d.value)))
     .range([height - 2, 2]);
 
   const d = shape
     .line()
-    .x(p => scaleX(p.date))
-    .y(p => scaleY(p.value))
+    .x((p) => scaleX(p.date))
+    .y((p) => scaleY(p.value))
     .curve(shape.curveBasis)(data);
 
   return (

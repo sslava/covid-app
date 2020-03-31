@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {fontStyles} from './uikit';
+import {fontStyles} from '../uikit';
 
 export default StyleSheet.create({
   container: {
