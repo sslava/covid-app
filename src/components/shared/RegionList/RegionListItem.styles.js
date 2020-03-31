@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {legendColor, colors} from '../../shared/uikit';
+import {colors} from '../uikit';
 
 export default StyleSheet.create({
   container: {
@@ -9,43 +9,37 @@ export default StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
   },
   button: {
-    paddingHorizontal: 24,
-    paddingVertical: 16,
+    paddingHorizontal: 20,
+    height: 64,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   title: {
     fontFamily: 'Ubuntu',
-    fontWeight: '400',
-    fontSize: 18,
-    lineHeight: 24,
-    color: colors.DarkBlue,
-  },
-  content: {
-    paddingBottom: 24,
-    paddingHorizontal: 24,
-  },
-  legend: {
-    paddingBottom: 16,
+    fontWeight: '600',
+    fontSize: 15,
+    lineHeight: 20,
+    color: '#252A34',
   },
   numbers: {
     flexDirection: 'row',
   },
   number: {
     fontFamily: 'Ubuntu',
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: '600',
-    color: colors.DarkBlue,
+    fontSize: 15,
+    lineHeight: 20,
+    fontWeight: 'bold',
+    color: '#252A34',
   },
   today: {
-    fontSize: 14,
+    fontSize: 13,
     lineHeight: 20,
-    fontWeight: '300',
-    color: legendColor.Deaths,
+    fontWeight: '600',
+    color: '#FFB663',
   },
   openIcon: {
+    tintColor: '#A0A2AF',
     width: 20,
     height: 20,
     marginLeft: 8,

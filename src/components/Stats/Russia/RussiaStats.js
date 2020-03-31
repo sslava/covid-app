@@ -1,5 +1,4 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/core';
 
 import {View, Text} from 'react-native';
 
@@ -8,7 +7,7 @@ import {legendColor} from '../../shared/uikit';
 
 import LegendItem from '../../shared/Legend/LegendItem';
 import StatsBar from '../../shared/StatsBar/StatsBar';
-import useCountryStats from '../../shared/useCountryStats';
+import useRegionStats from '../../shared/useRegionStats';
 
 import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';
@@ -19,8 +18,12 @@ import ruIcon from './ru.png';
 import styles from './RussiaStats.styles';
 
 export default function RussiaStats({russia, hasCities}) {
-  const nav = useNavigation();
-  const stats = useCountryStats(russia);
+  const stats = useRegionStats(
+    russia.total,
+    russia.recovered,
+    russia.deaths,
+    russia.active,
+  );
 
   return (
     <View style={styles.container}>
@@ -30,17 +33,20 @@ export default function RussiaStats({russia, hasCities}) {
         <LegendItem
           color={legendColor.Active}
           title="Болеет"
+          numberStyle={styles.numberStyle}
           number={russia.active}
         />
         <LegendItem
           color={legendColor.Recovered}
           title="Поправилось"
+          numberStyle={styles.numberStyle}
           number={russia.recovered}
         />
         <LegendItem
           color={legendColor.Deaths}
           title="Смертей"
           number={russia.deaths}
+          numberStyle={styles.numberStyle}
           today={+russia.deaths_new}
         />
       </View>

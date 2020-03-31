@@ -31,7 +31,7 @@ export default StyleSheet.create({
   },
   number: {
     fontFamily: 'Ubuntu',
-    fontSize: 18,
+    fontSize: 15,
     lineHeight: 20,
     fontWeight: '600',
     color: '#252A34',
