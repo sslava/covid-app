@@ -6,11 +6,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  left: {
-    width: '50%',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   color: {
     width: 12,
     height: 12,
@@ -25,20 +20,10 @@ export default StyleSheet.create({
     textTransform: 'uppercase',
     color: '#252A34',
   },
-  right: {
-    paddingLeft: 15,
-    flexDirection: 'row',
-  },
-  number: {
-    fontFamily: 'Ubuntu',
-    fontSize: 15,
-    lineHeight: 20,
-    fontWeight: '600',
-    color: '#252A34',
-  },
   today: {
+    marginLeft: 3,
     fontSize: 13,
-    lineHeight: 20,
+    lineHeight: 24,
     fontWeight: '600',
     color: '#FC624D',
   },

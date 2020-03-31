@@ -22,5 +22,6 @@ export default StyleSheet.create({
   },
   numberStyle: {
     fontSize: 18,
+    fontWeight: '600',
   },
 });
