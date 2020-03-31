@@ -4,9 +4,8 @@ import {SafeAreaView, FlatList, View} from 'react-native';
 import {useStatsContext} from '../shared/StatsDataContext';
 
 import Country from './Country';
-import SearchBar from '../shared/SearchBar';
-
-import useDebouncedSearch from '../shared/useDebounceSearch';
+import SearchBar from '../shared/Search/SearchBar';
+import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
 import styles from './CountriesScreen.styles';
 
@@ -23,7 +22,6 @@ export default function CountriesScreen() {
     data.countries,
     filterCountry,
   );
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.search}>

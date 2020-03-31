@@ -4,9 +4,8 @@ import {SafeAreaView, FlatList, View} from 'react-native';
 import {useStatsContext} from '../shared/StatsDataContext';
 
 import City from './City';
-import SearchBar from '../shared/SearchBar';
-
-import useDebouncedSearch from '../shared/useDebounceSearch';
+import SearchBar from '../shared/Search/SearchBar';
+import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
 import styles from './CitiesScreen.styles';
 
