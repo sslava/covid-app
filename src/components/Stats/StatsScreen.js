@@ -1,17 +1,14 @@
 import React, {useState, useEffect, useCallback, useMemo} from 'react';
 import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 
-import NavStatusBar from '../shared/NavStatusBar';
 import {useStatsContext} from '../shared/StatsDataContext';
-import LargeHeader from '../shared/LargeHeader';
+import LargeHeader from '../shared/Header/LargeHeader';
 
 import WorldStats from './World/WorldStats';
 import Russia from './Russia/RussiaStats';
 import Countries from './Countries/Countries';
 
 import styles from './StatsScreen.styles';
-
-const topSize = 7;
 
 export default function StatsScreen({navigation}) {
   const {
@@ -31,11 +28,10 @@ export default function StatsScreen({navigation}) {
     }
   }, [fetchState]);
 
-  const top = useMemo(() => data.countries.slice(0, topSize), [data.countries]);
+  const top = useMemo(() => data.countries.slice(0, 7), [data.countries]);
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <NavStatusBar barStyle="dark-content" />
       <ScrollView
         style={styles.scroll}
         contentContainerStyle={styles.scrollContent}
