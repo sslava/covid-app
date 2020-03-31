@@ -7,12 +7,16 @@ export default StyleSheet.create({
     borderTopColor: '#F3F3F3',
     borderTopWidth: StyleSheet.hairlineWidth,
   },
+  expanded: {
+    backgroundColor: '#FFF5F3',
+  },
   button: {
     paddingHorizontal: 20,
-    height: 64,
+    height: 44,
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    position: 'relative',
   },
   title: {
     fontFamily: 'Ubuntu',
@@ -20,9 +24,12 @@ export default StyleSheet.create({
     fontSize: 15,
     lineHeight: 20,
     color: '#252A34',
+    width: '50%',
   },
   numbers: {
     flexDirection: 'row',
+    marginLeft: 10,
+    marginRight: 30,
   },
   number: {
     fontFamily: 'Ubuntu',
@@ -38,6 +45,9 @@ export default StyleSheet.create({
     color: '#FFB663',
   },
   openIcon: {
+    position: 'absolute',
+    right: 20,
+    top: 14,
     tintColor: '#A0A2AF',
     width: 20,
     height: 20,
