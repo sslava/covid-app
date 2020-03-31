@@ -8,7 +8,14 @@ import {Left, Right, PrimaryNumber} from '../Legend/controls';
 
 import styles from './RegionListItem.styles';
 
-export function RegionListToggle({name, total, today, onPress, expanded}) {
+export function RegionListToggle({
+  name,
+  total,
+  today,
+  onPress,
+  expanded,
+  skipToday,
+}) {
   const value = useRef(new Animated.Value(0));
 
   useEffect(() => {
@@ -33,9 +40,9 @@ export function RegionListToggle({name, total, today, onPress, expanded}) {
       <Left>
         <Text style={styles.title}>{name}</Text>
       </Left>
-      <Right>
+      <Right skipToday={skipToday}>
         <PrimaryNumber value={total} style={styles.number} />
-        <SecondaryNumber num={+today} style={styles.today} />
+        {!skipToday && <SecondaryNumber num={+today} style={styles.today} />}
       </Right>
       <Animated.Image
         source={openIcon}

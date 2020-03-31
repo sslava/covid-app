@@ -11,6 +11,9 @@ export default StyleSheet.create({
     marginLeft: 10,
     width: 135,
   },
+  skipToday: {
+    width: 75,
+  },
   number: {
     fontFamily: 'Ubuntu',
     fontSize: 15,

@@ -15,23 +15,30 @@ export default function RegionListLegend({
   recovered,
   deaths,
   deaths_new,
+  skipToday,
 }) {
   const stats = useRegionStats(total, recovered, deaths, active);
   return (
     <View style={styles.content}>
       <View style={styles.legend}>
-        <LegendItem color={legendColor.Active} title="Болеет" number={active} />
+        <LegendItem
+          color={legendColor.Active}
+          title="Болеет"
+          number={active}
+          skipToday
+        />
         <LegendItem
           color={legendColor.Recovered}
           title="Поправилось"
           number={recovered}
+          skipToday
         />
         <LegendItem
           color={legendColor.Deaths}
           title="Смертей"
           number={deaths}
           today={+deaths_new}
-          bad
+          skipToday
         />
       </View>
       <StatsBar items={stats} height={10} />
