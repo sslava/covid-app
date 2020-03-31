@@ -1,8 +1,9 @@
-import React, {useState, useEffect, useCallback, useMemo} from 'react';
+import React, {useMemo} from 'react';
 import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 
 import {useStatsContext} from '../shared/StatsDataContext';
 import LargeHeader from '../shared/Header/LargeHeader';
+import useRefresh from '../shared/useRefresh';
 
 import WorldStats from './World/WorldStats';
 import Russia from './Russia/RussiaStats';
@@ -15,18 +16,8 @@ export default function StatsScreen({navigation}) {
     state: {data, fetchState},
     refreshStats,
   } = useStatsContext();
-  const [refreshing, setRefreshing] = useState(false);
 
-  const refresh = useCallback(() => {
-    setRefreshing(true);
-    refreshStats();
-  }, [refreshStats]);
-
-  useEffect(() => {
-    if (fetchState !== 'Fetching') {
-      setRefreshing(false);
-    }
-  }, [fetchState]);
+  const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
 
   const top = useMemo(() => data.countries.slice(0, 7), [data.countries]);
 
