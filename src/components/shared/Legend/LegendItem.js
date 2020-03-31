@@ -1,25 +1,22 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {View, Text} from 'react-native';
 
-import {formatNumber} from '../../../common/utils';
-
+import {Left, Right, PrimaryNumber} from './controls';
 import SecondaryNumber from '../SecondaryNumber';
 
 import styles from './LegendItem.styles';
 
-function LegendItem({color, title, number, today, numberStyle}) {
+export default function LegendItem({color, title, number, today, numberStyle}) {
   return (
     <View style={styles.container}>
-      <View style={styles.left}>
+      <Left style={styles.left}>
         <View style={[styles.color, {backgroundColor: color}]} />
         <Text style={styles.title}>{title}</Text>
-      </View>
-      <View style={styles.right}>
-        <Text style={[styles.number, numberStyle]}>{formatNumber(number)}</Text>
+      </Left>
+      <Right style={styles.right}>
+        <PrimaryNumber value={number} style={numberStyle} />
         <SecondaryNumber num={today} style={styles.today} />
-      </View>
+      </Right>
     </View>
   );
 }
-
-export default memo(LegendItem);

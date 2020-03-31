@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, memo, useCallback} from 'react';
 
 import {
   RegionListToggle,
@@ -6,14 +6,14 @@ import {
 } from '../shared/RegionList/RegionListItem';
 import RegionListLegend from '../shared/RegionList/RegionListLegend';
 
-export default function Country({country}) {
+function Country({country}) {
   const [expanded, setExpanded] = useState(false);
   const toggle = useCallback(() => setExpanded((s) => !s), []);
 
   return (
     <RegionListItem expanded={expanded}>
       <RegionListToggle
-        name={country.country_name}
+        name={country.country_name || country.country_name_en}
         total={country.total}
         today={country.total_new}
         expanded={expanded}
@@ -31,3 +31,5 @@ export default function Country({country}) {
     </RegionListItem>
   );
 }
+
+export default memo(Country);

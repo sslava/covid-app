@@ -1,11 +1,10 @@
 import React, {useRef, useEffect} from 'react';
 import {View, Text, Animated, Easing, TouchableOpacity} from 'react-native';
 
-import {formatNumber} from '../../../common/utils';
-
 import SecondaryNumber from '../SecondaryNumber';
 
 import openIcon from '../../../assets/icons/open_grey.png';
+import {Left, Right, PrimaryNumber} from '../Legend/controls';
 
 import styles from './RegionListItem.styles';
 
@@ -31,11 +30,13 @@ export function RegionListToggle({name, total, today, onPress, expanded}) {
       onPress={onPress}
       style={styles.button}
       activeOpacity={0.5}>
-      <Text style={styles.title}>{name}</Text>
-      <View style={styles.numbers}>
-        <Text style={styles.number}>{formatNumber(total)}</Text>
+      <Left>
+        <Text style={styles.title}>{name}</Text>
+      </Left>
+      <Right>
+        <PrimaryNumber value={total} style={styles.number} />
         <SecondaryNumber num={+today} style={styles.today} />
-      </View>
+      </Right>
       <Animated.Image
         source={openIcon}
         style={[styles.openIcon, {transform: [{rotate}]}]}
