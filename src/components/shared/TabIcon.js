@@ -6,8 +6,7 @@ const imgSyles = {
   top: 2,
 };
 
-export default function TabIcon({focused, size, icon}) {
-  const tintColor = focused ? '#087ED9' : '#A0A2AF';
+export default function TabIcon({color, size, icon}) {
   return (
     <Image
       source={icon}
@@ -16,7 +15,7 @@ export default function TabIcon({focused, size, icon}) {
         {
           width: size + 1,
           height: size + 1,
-          tintColor,
+          tintColor: color,
         },
       ]}
     />
