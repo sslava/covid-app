@@ -1,9 +1,9 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useRef} from 'react';
 import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
+import {useScrollToTop} from '@react-navigation/native';
 
 import LargeHeader from '../shared/Header/LargeHeader';
 import useRefresh from '../shared/useRefresh';
-import useTabClickScroll from '../shared/useTabClickScroll';
 import {useStatsContext} from '../shared/StatsDataContext';
 
 import WorldStats from './World/WorldStats';
@@ -18,7 +18,8 @@ export default function StatsScreen({navigation}) {
     refreshStats,
   } = useStatsContext();
 
-  const scrollRef = useTabClickScroll();
+  const scrollRef = useRef();
+  useScrollToTop(scrollRef);
   const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
 
   const top = useMemo(() => data.countries.slice(0, 7), [data.countries]);

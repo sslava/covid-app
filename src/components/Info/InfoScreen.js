@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useRef} from 'react';
+import {useScrollToTop} from '@react-navigation/native';
 
 import {View, ScrollView, SafeAreaView} from 'react-native';
 
 import LargeHeader from '../shared/Header/LargeHeader';
-import useTabClickScroll from '../shared/useTabClickScroll';
 import Symptoms from './Symptoms/Symptoms';
 import Recommendations from './Recommendations/Recommendations';
 import Resources from './Resources/Resources';
@@ -11,7 +11,8 @@ import Resources from './Resources/Resources';
 import styles from './InfoScreen.styles';
 
 export default function InfoScreen({navigation}) {
-  const scrollRef = useTabClickScroll();
+  const scrollRef = useRef();
+  useScrollToTop(scrollRef);
 
   return (
     <SafeAreaView style={styles.safeArea}>
