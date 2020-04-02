@@ -20,7 +20,11 @@ const RootTabs = createBottomTabNavigator();
 
 function Root() {
   return (
-    <RootTabs.Navigator>
+    <RootTabs.Navigator
+      tabBarOptions={{
+        activeTintColor: '#087ED9',
+        inactiveTintColor: '#A0A2AF',
+      }}>
       <RootTabs.Screen
         name="Stats"
         component={StatsScreen}
