@@ -3,6 +3,7 @@ import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 
 import LargeHeader from '../shared/Header/LargeHeader';
 import useRefresh from '../shared/useRefresh';
+import useTabClickScroll from '../shared/useTabClickScroll';
 import {useStatsContext} from '../shared/StatsDataContext';
 
 import WorldStats from './World/WorldStats';
@@ -17,6 +18,7 @@ export default function StatsScreen({navigation}) {
     refreshStats,
   } = useStatsContext();
 
+  const scrollRef = useTabClickScroll();
   const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
 
   const top = useMemo(() => data.countries.slice(0, 7), [data.countries]);
@@ -24,6 +26,7 @@ export default function StatsScreen({navigation}) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView
+        ref={scrollRef}
         style={styles.scroll}
         contentContainerStyle={styles.scrollContent}
         indicatorStyle="black"
