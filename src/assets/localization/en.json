@@ -70,7 +70,8 @@
     "contacts": {
       "title": "Emergency contacts",
       "list": {
-        "emergency": "Emergency"
+        "emergency": "Emergency",
+        "ru-hotline": "Горячая линия Минздрава России"
       }
     },
     "links": {
