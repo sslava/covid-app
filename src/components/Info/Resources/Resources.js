@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {t} from 'i18n-js';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 import usePhoneCall from '../../shared/usePhoneCall';
 import useBrowserLink from '../../shared/useBrowserLink';
+import {useI18n} from '../../shared/I18n';
 import Subheader from '../Subheader';
+
+import {getPhones, getLinks} from './list';
 
 import callIcon from './call.png';
 import linkIcon from './link.png';
@@ -41,26 +44,38 @@ function Link({url, text, children}) {
   );
 }
 
+const country = 'Russia';
+
 export default function Resources() {
+  const phones = useMemo(() => getPhones(t, country), []);
+  const links = useMemo(() => getLinks(t, country), []);
+
   return (
     <View style={styles.container}>
-      <Subheader>{t('info.contacts.title')}</Subheader>
-      <View style={styles.list}>
-        <Phone dialNumber="+7(800)2000112" phone="8 800 2000 112">
-          Горячая линия Минздрава России
-        </Phone>
-        <Phone dialNumber="112" phone="112">
-          Скорая помощь
-        </Phone>
-      </View>
-      <Subheader>{t('info.links.title')}</Subheader>
-      <View style={styles.list}>
-        <Link
-          url="https://www.who.int/ru/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses"
-          text="Официальный сайт ВОЗ">
-          Вопросы и ответы о коронавирусной инфекции COVID-19
-        </Link>
-      </View>
+      {phones.length !== 0 && (
+        <>
+          <Subheader>{t('info.contacts.title')}</Subheader>
+          <View style={styles.list}>
+            {phones.map((p) => (
+              <Phone key={p.name} dialNumber={p.dialNumber} phone={p.phone}>
+                {p.name}
+              </Phone>
+            ))}
+          </View>
+        </>
+      )}
+      {links.length !== 0 && (
+        <>
+          <Subheader>{t('info.links.title')}</Subheader>
+          <View style={styles.list}>
+            {links.map((link) => (
+              <Link key={link.url} url={link.url} text={link.title}>
+                {link.desc}
+              </Link>
+            ))}
+          </View>
+        </>
+      )}
     </View>
   );
 }
