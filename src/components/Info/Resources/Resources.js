@@ -1,4 +1,5 @@
 import React from 'react';
+import {t} from 'i18n-js';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 import usePhoneCall from '../../shared/usePhoneCall';
@@ -43,7 +44,7 @@ function Link({url, text, children}) {
 export default function Resources() {
   return (
     <View style={styles.container}>
-      <Subheader>Полезные контакты</Subheader>
+      <Subheader>{t('info.contacts.title')}</Subheader>
       <View style={styles.list}>
         <Phone dialNumber="+7(800)2000112" phone="8 800 2000 112">
           Горячая линия Минздрава России
@@ -52,7 +53,7 @@ export default function Resources() {
           Скорая помощь
         </Phone>
       </View>
-      <Subheader>Полезные ссылки</Subheader>
+      <Subheader>{t('info.links.title')}</Subheader>
       <View style={styles.list}>
         <Link
           url="https://www.who.int/ru/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses"

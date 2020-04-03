@@ -1,33 +1,55 @@
 {
   "stats": {
     "title": "Statistics",
-    "global": "World",
+    "global":{
+      "title": "World",
+      "updatedAt": "Updated at %{date}"
+    },
     "cases": "Total cases",
     "active": "Active",
     "recovered": "Recovered",
     "deaths": "Deaths",
-    "russia": {
-      "title": "Russia",
-      "regionsButton": "States",
-      "updatedAt": "Updated at  %{date}"
+    "country": {
+      "regionsButton": "Stats by region",
+      "updatedAt": "Updated at %{date}"
     },
     "countries": {
       "title": "Rest of the world",
-      "search": "Search by country",
       "all": "All countries"
+    },
+    "source": {
+      "source": "Source ",
+      "updatedAt": ", updated at %{date}"
     }
   },
   "info": {
     "title": "Information",
     "symptoms": {
-      "title": "Symptoms"
+      "title": "Symptoms",
+      "list": {
+        "s1": "Fever",
+        "s2": "Cough",
+        "s3": "Fatigue",
+        "s4": "Shortness of breath",
+        "s5": "Aches & Pains"
+      }
     },
     "recommentations": {
       "title": "Recommentations"
+    },
+    "contacts": {
+      "title": "Emergency contacts"
+    },
+    "links": {
+      "title": "Useful links"
     }
   },
   "cities": {
+    "title": "Regions stats",
+    "search": "Search by region"
   },
   "countries": {
+    "title": "Countries stats",
+    "search": "Search by country"
   }
 }

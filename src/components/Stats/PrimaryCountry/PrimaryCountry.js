@@ -8,6 +8,7 @@ import {legendColor} from '../../shared/uikit';
 import LegendItem from '../../shared/Legend/LegendItem';
 import StatsBar from '../../shared/StatsBar/StatsBar';
 import useRegionStats from '../../shared/useRegionStats';
+import {countryName} from '../../shared/I18n';
 
 import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';
@@ -15,49 +16,48 @@ import PageLink from '../common/PageLink';
 
 import ruIcon from './ru.png';
 
-import styles from './RussiaStats.styles';
+import styles from './PrimaryCountry.styles';
 
-export default function RussiaStats({russia, hasCities}) {
+export default function PrimaryCountry({country, hasCities}) {
   const stats = useRegionStats(
-    russia.total,
-    russia.recovered,
-    russia.deaths,
-    russia.active,
+    country.total,
+    country.recovered,
+    country.deaths,
+    country.active,
   );
-
   return (
     <View style={styles.container}>
-      <Subheader icon={ruIcon}>{t('stats.russia.title')}</Subheader>
-      <HeroStats number={russia.total} today={+russia.total_new} />
+      <Subheader icon={ruIcon}>{countryName(country)}</Subheader>
+      <HeroStats number={country.total} today={+country.total_new} />
       <View style={styles.legend}>
         <LegendItem
           color={legendColor.Active}
           title={t('stats.active')}
           numberStyle={styles.numberStyle}
-          number={russia.active}
+          number={country.active}
         />
         <LegendItem
           color={legendColor.Recovered}
           title={t('stats.recovered')}
           numberStyle={styles.numberStyle}
-          number={russia.recovered}
+          number={country.recovered}
         />
         <LegendItem
           color={legendColor.Deaths}
           title={t('stats.deaths')}
-          number={russia.deaths}
+          number={country.deaths}
           numberStyle={styles.numberStyle}
-          today={+russia.deaths_new}
+          today={+country.deaths_new}
         />
       </View>
       <View style={styles.bar}>
         <StatsBar items={stats} />
       </View>
       {!!hasCities && (
-        <PageLink route="Cities">{t('stats.russia.regionsButton')}</PageLink>
+        <PageLink route="Cities">{t('stats.country.regionsButton')}</PageLink>
       )}
       <Text style={styles.updatedText}>
-        По состоянию на {formatDate(russia.updated)}
+        {t('stats.country.updatedAt', {date: formatDate(country.updated)})}
       </Text>
     </View>
   );

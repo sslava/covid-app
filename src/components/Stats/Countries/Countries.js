@@ -25,10 +25,7 @@ export default function Countries({countries}) {
     <View style={styles.container}>
       <Subheader>{t('stats.countries.title')}</Subheader>
       <View style={styles.search}>
-        <SearchButton
-          placeholder={t('stats.countries.search')}
-          onPress={open}
-        />
+        <SearchButton placeholder={t('countries.search')} onPress={open} />
       </View>
       <View style={styles.list}>
         {countries.map((c) => (

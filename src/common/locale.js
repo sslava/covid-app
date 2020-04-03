@@ -1,25 +1,19 @@
 import {I18nManager} from 'react-native';
+
 import {findBestAvailableLanguage} from 'react-native-localize';
 import i18n from 'i18n-js';
 
-const translationGetters = {
-  ru: () => require('../assets/localization/ru.json'),
-  en: () => require('../assets/localization/en.json'),
-};
-
-// const translate = memoize(
-//   (key, config) => i18n.t(key, config),
-//   (key, config) => (config ? key + JSON.stringify(config) : key),
-// );
+import ru from '../assets/localization/ru.json';
+import en from '../assets/localization/en.json';
 
 const eng = {languageTag: 'en', isRTL: false};
 
-export function setI18nConfig() {
-  const langKeys = Object.keys(translationGetters);
-  const {isRTL, languageTag} = findBestAvailableLanguage(langKeys) || eng;
+export function initI18nConfig() {
+  const {isRTL, languageTag} = findBestAvailableLanguage(['en', 'ru']) || eng;
   // translate.cache.clear();
   I18nManager.forceRTL(isRTL);
   i18n.fallbacks = true;
-  i18n.translations = {[languageTag]: translationGetters[languageTag]()};
+  i18n.defaultLocale = 'ru';
+  i18n.translations = {en, ru};
   i18n.locale = languageTag;
 }

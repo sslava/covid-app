@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+import {t} from 'i18n-js';
 import {View, ScrollView} from 'react-native';
 
 import Subheader from '../Subheader';
 import Symptom from './Symptom';
-import symptoms from './list';
+import symptomsFn from './list';
 
 import styles from './Symptoms.styles';
-import {t} from 'i18n-js';
 
 export default function Symptoms() {
+  const symptoms = useMemo(() => symptomsFn(t), []);
   return (
     <View style={styles.container}>
       <Subheader>{t('info.symptoms.title')}</Subheader>
