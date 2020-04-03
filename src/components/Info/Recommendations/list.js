@@ -6,42 +6,40 @@ import mask from './icons/mask.png';
 import talk from './icons/talk.png';
 import wash from './icons/wash.png';
 
-export default [
+export default (t) => [
   {
     icon: home,
-    title: 'Оставайтесь дома',
-    desc: 'Карантин — способ остановить распространение коронавируса',
+    title: t('info.recommentations.list.home.title'),
+    desc: t('info.recommentations.list.home.desc'),
   },
   {
     icon: alone,
-    title: 'Ограничьте личные контакты с людьми',
-    desc: 'Меньше контактов — меньше вероятность заражения',
+    title: t('info.recommentations.list.alone.title'),
+    desc: t('info.recommentations.list.alone.desc'),
   },
   {
     icon: distance,
-    title: 'Соблюдайте дистанцию',
-    desc:
-      'Ну улице постарайтесь держаться на расстоянии 2 метров от окружающих',
+    title: t('info.recommentations.list.distance.title'),
+    desc: t('info.recommentations.list.distance.desc'),
   },
   {
     icon: wash,
-    title: 'Ещё чаще мойте руки',
-    desc:
-      'После каждого выхода на улицу обрабатывайте телефон, ключи и банковскую карту',
+    title: t('info.recommentations.list.wash.title'),
+    desc: t('info.recommentations.list.wash.desc'),
   },
   {
     icon: mask,
-    title: 'Используйте средства защиты',
-    desc: 'Надевайте маску, если вы чувствуетесебя заболевшим',
+    title: t('info.recommentations.list.mask.title'),
+    desc: t('info.recommentations.list.mask.desc'),
   },
   {
     icon: calm,
-    title: 'Сохраняйте спокойствие',
-    desc: 'Высыпайтесь, ешьте полезноеи занимайтесь спортом дома',
+    title: t('info.recommentations.list.calm.title'),
+    desc: t('info.recommentations.list.calm.desc'),
   },
   {
     icon: talk,
-    title: 'Будьте на связи с близкими',
-    desc: 'Говорите с друзьями и близкими,сохраняйте с ними контакт',
+    title: t('info.recommentations.list.talk.title'),
+    desc: t('info.recommentations.list.talk.desc'),
   },
 ];
