@@ -1,5 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
+import {t} from 'i18n-js';
 
 import {legendColor} from '../../shared/uikit';
 import useRegionStats from '../../shared/useRegionStats';
@@ -23,19 +24,19 @@ export default function RegionListLegend({
       <View style={styles.legend}>
         <LegendItem
           color={legendColor.Active}
-          title="Болеет"
+          title={t('stats.active')}
           number={active}
           skipToday={skipToday}
         />
         <LegendItem
           color={legendColor.Recovered}
-          title="Поправилось"
+          title={t('stats.recovered')}
           number={recovered}
           skipToday={skipToday}
         />
         <LegendItem
           color={legendColor.Deaths}
-          title="Смертей"
+          title={t('stats.deaths')}
           number={deaths}
           today={+deaths_new}
           skipToday={skipToday}

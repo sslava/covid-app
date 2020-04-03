@@ -1,0 +1,33 @@
+{
+  "stats": {
+    "title": "Статистика",
+    "global": "В мире",
+    "cases": "Случаев заболевания",
+    "active": "Болеет",
+    "recovered": "Поправилось",
+    "deaths": "Смертей",
+    "russia": {
+      "title": "В России",
+      "regionsButton": "В регионах",
+      "updatedAt": "По состоянию на %{date}"
+    },
+    "countries": {
+      "title": "В других странах",
+      "search": "Поиск по стране",
+      "all": "Все страны"
+    }
+  },
+  "info": {
+    "title": "Информация",
+    "symptoms": {
+      "title": "Симптомы"
+    },
+    "recommentations": {
+      "title": "Рекоммендации"
+    }
+  },
+  "cities": {
+  },
+  "countries": {
+  }
+}

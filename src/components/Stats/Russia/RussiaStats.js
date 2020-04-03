@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {t} from 'i18n-js';
 import {View, Text} from 'react-native';
 
 import {formatDate} from '../../../common/utils';
@@ -27,24 +27,24 @@ export default function RussiaStats({russia, hasCities}) {
 
   return (
     <View style={styles.container}>
-      <Subheader icon={ruIcon}>В России</Subheader>
+      <Subheader icon={ruIcon}>{t('stats.russia.title')}</Subheader>
       <HeroStats number={russia.total} today={+russia.total_new} />
       <View style={styles.legend}>
         <LegendItem
           color={legendColor.Active}
-          title="Болеет"
+          title={t('stats.active')}
           numberStyle={styles.numberStyle}
           number={russia.active}
         />
         <LegendItem
           color={legendColor.Recovered}
-          title="Поправилось"
+          title={t('stats.recovered')}
           numberStyle={styles.numberStyle}
           number={russia.recovered}
         />
         <LegendItem
           color={legendColor.Deaths}
-          title="Смертей"
+          title={t('stats.deaths')}
           number={russia.deaths}
           numberStyle={styles.numberStyle}
           today={+russia.deaths_new}
@@ -53,7 +53,9 @@ export default function RussiaStats({russia, hasCities}) {
       <View style={styles.bar}>
         <StatsBar items={stats} />
       </View>
-      {!!hasCities && <PageLink route="Cities">В регионах</PageLink>}
+      {!!hasCities && (
+        <PageLink route="Cities">{t('stats.russia.regionsButton')}</PageLink>
+      )}
       <Text style={styles.updatedText}>
         По состоянию на {formatDate(russia.updated)}
       </Text>

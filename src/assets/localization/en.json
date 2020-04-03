@@ -1,0 +1,33 @@
+{
+  "stats": {
+    "title": "Statistics",
+    "global": "World",
+    "cases": "Total cases",
+    "active": "Active",
+    "recovered": "Recovered",
+    "deaths": "Deaths",
+    "russia": {
+      "title": "Russia",
+      "regionsButton": "States",
+      "updatedAt": "Updated at  %{date}"
+    },
+    "countries": {
+      "title": "Rest of the world",
+      "search": "Search by country",
+      "all": "All countries"
+    }
+  },
+  "info": {
+    "title": "Information",
+    "symptoms": {
+      "title": "Symptoms"
+    },
+    "recommentations": {
+      "title": "Recommentations"
+    }
+  },
+  "cities": {
+  },
+  "countries": {
+  }
+}

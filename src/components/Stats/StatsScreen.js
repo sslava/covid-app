@@ -1,4 +1,6 @@
 import React, {useMemo, useRef} from 'react';
+import {t} from 'i18n-js';
+
 import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
@@ -34,7 +36,7 @@ export default function StatsScreen({navigation}) {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
-        <LargeHeader title="Статистика" />
+        <LargeHeader title={t('stats.title')} />
         <View style={styles.world}>
           <WorldStats region={data.world} />
         </View>
