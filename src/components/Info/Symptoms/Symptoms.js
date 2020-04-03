@@ -6,11 +6,12 @@ import Symptom from './Symptom';
 import symptoms from './list';
 
 import styles from './Symptoms.styles';
+import {t} from 'i18n-js';
 
 export default function Symptoms() {
   return (
     <View style={styles.container}>
-      <Subheader>Симптомы</Subheader>
+      <Subheader>{t('info.symptoms.title')}</Subheader>
       <ScrollView
         style={styles.list}
         horizontal

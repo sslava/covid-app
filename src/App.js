@@ -1,8 +1,11 @@
 import React from 'react';
+import {t} from 'i18n-js';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
+
+import {setI18nConfig} from './common/locale';
 
 import StatsScreen from './components/Stats/StatsScreen';
 import InfoScreen from './components/Info/InfoScreen';
@@ -30,7 +33,7 @@ function Root() {
         component={StatsScreen}
         options={{
           tabBarIcon: (props) => <TabIcon icon={statsIcon} {...props} />,
-          tabBarLabel: 'Статистика',
+          tabBarLabel: t('stats.title'),
         }}
       />
       <RootTabs.Screen
@@ -38,7 +41,7 @@ function Root() {
         component={InfoScreen}
         options={{
           tabBarIcon: (props) => <TabIcon icon={infoIcon} {...props} />,
-          tabBarLabel: 'Информация',
+          tabBarLabel: t('info.title'),
         }}
       />
     </RootTabs.Navigator>
@@ -46,6 +49,8 @@ function Root() {
 }
 
 const AppStack = createStackNavigator();
+
+setI18nConfig();
 
 export default function App() {
   return (
