@@ -1,5 +1,6 @@
 import React, {useMemo} from 'react';
 import {View, Dimensions, Text} from 'react-native';
+import {t} from 'i18n-js';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
@@ -31,7 +32,7 @@ export default function WorldStats({region}) {
   );
   return (
     <View style={styles.container}>
-      <Subheader icon={worldIcon}>В мире</Subheader>
+      <Subheader icon={worldIcon}>{t('stats.global')}</Subheader>
       <HeroStats number={region.total} today={+region.total_new} />
       <View style={styles.stats}>
         <Pie
@@ -42,17 +43,17 @@ export default function WorldStats({region}) {
         />
         <View style={styles.counters}>
           <PercentCounter
-            title="Болеет"
+            title={t('stats.active')}
             number={region.active}
             color={legendColor.Active}
           />
           <PercentCounter
-            title="Выздоровело"
+            title={t('stats.recovered')}
             number={region.recovered}
             color={legendColor.Recovered}
           />
           <PercentCounter
-            title="Смертей"
+            title={t('stats.deaths')}
             number={region.deaths}
             today={region.deaths_new}
             color={legendColor.Deaths}
