@@ -39,18 +39,18 @@
       "list": {
         "home": {
           "title": "Stay at home",
-          "desc": "Карантин — способ остановить распространение коронавируса"
+          "desc": "Quarantine - a way to stop the spread of coronavirus"
         },
         "alone": {
-          "title": "Ограничьте личные контакты с людьми",
-          "desc": "Меньше контактов — меньше вероятность заражения"
+          "title": "Limit personal meetings",
+          "desc": "Fewer contacts - less chance of infection"
         },
         "distance": {
-          "title": "Keep distance",
-          "desc": "Ну улице постарайтесь держаться на расстоянии 2 метров от окружающих"
+          "title": "Maintain social distancing",
+          "desc": "Maintain at least 2 meters (6 feet) distance between yourself and anyone who is coughing or sneezing."
         },
         "wash": {
-          "title": "Ещё чаще мойте руки",
+          "title": "Wash your hands frequently",
           "desc": "После каждого выхода на улицу обрабатывайте телефон, ключи и банковскую карту"
         },
         "mask":  {
@@ -58,12 +58,12 @@
           "desc": "Надевайте маску, если вы чувствуете себя заболевшим"
         },
         "calm": {
-          "title": "Сохраняйте спокойствие",
-          "desc": "Высыпайтесь, ешьте полезное и занимайтесь спортом дома"
+          "title": "Keep calm",
+          "desc": "Get enough sleep, eat healthy and exercise at home"
         },
         "talk": {
-          "title": "Будьте на связи с близкими",
-          "desc": "Говорите с друзьями и близкими, сохраняйте с ними контакт"
+          "title": "Keep in touch with loved ones",
+          "desc": "Talk with friends and family, keep in touch with them"
         }
       }
     },
