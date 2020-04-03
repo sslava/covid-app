@@ -1,9 +1,10 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-import styles from './PercentCounter.styles';
-import {formatNumber} from '../../../common/utils';
+import {formatNumber} from '../../../common/locale';
 import SecondaryNumber from '../../shared/SecondaryNumber';
+
+import styles from './PercentCounter.styles';
 
 export default function PercentCounter({title, number, color, today}) {
   return (

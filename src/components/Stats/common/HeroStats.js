@@ -3,7 +3,7 @@ import {t} from 'i18n-js';
 
 import {View, Text} from 'react-native';
 
-import {formatNumber} from '../../../common/utils';
+import {formatNumber} from '../../../common/locale';
 
 import SecondaryNumber from '../../shared/SecondaryNumber';
 
