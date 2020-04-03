@@ -4,7 +4,7 @@ import {t} from 'i18n-js';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
-import {formatDate} from '../../../common/utils';
+import {formatDate} from '../../../common/locale';
 
 import PercentCounter from './PercentCounter';
 import Subheader from '../common/Subheader';

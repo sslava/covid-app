@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Text, View} from 'react-native';
-import {formatDate} from '../../../common/utils';
+import {formatDate} from '../../../common/locale';
 
 import styles from './Sources.styles';
 import {t} from 'i18n-js';

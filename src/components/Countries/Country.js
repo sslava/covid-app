@@ -5,7 +5,7 @@ import {
   RegionListItem,
 } from '../shared/RegionList/RegionListItem';
 import RegionListLegend from '../shared/RegionList/RegionListLegend';
-import {countryName} from '../shared/I18n';
+import {countryName} from '../../common/locale';
 
 function Country({country}) {
   const [expanded, setExpanded] = useState(false);
