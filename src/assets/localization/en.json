@@ -68,10 +68,17 @@
       }
     },
     "contacts": {
-      "title": "Emergency contacts"
+      "title": "Emergency contacts",
+      "list": {
+        "emergency": "Emergency"
+      }
     },
     "links": {
-      "title": "Useful links"
+      "title": "Useful links",
+      "list": {
+        "whotitle": "World health organization",
+        "whodesc": "Coronavirus disease (COVID-19) advice for the public"
+      }
     }
   },
   "cities": {
