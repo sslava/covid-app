@@ -4,7 +4,6 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 import usePhoneCall from '../../shared/usePhoneCall';
 import useBrowserLink from '../../shared/useBrowserLink';
-import {useI18n} from '../../shared/I18n';
 import Subheader from '../Subheader';
 
 import {getPhones, getLinks} from './list';

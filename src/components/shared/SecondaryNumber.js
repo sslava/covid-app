@@ -2,7 +2,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 
-import {formatNumber} from '../../common/utils';
+import {formatNumber} from '../../common/locale';
 
 export const plusFormatter = (num: number): string => ` +${formatNumber(num)}`;
 

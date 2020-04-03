@@ -2,13 +2,12 @@ import React from 'react';
 import {t} from 'i18n-js';
 import {View, Text} from 'react-native';
 
-import {formatDate} from '../../../common/utils';
+import {formatDate, countryName} from '../../../common/locale';
 import {legendColor} from '../../shared/uikit';
 
 import LegendItem from '../../shared/Legend/LegendItem';
 import StatsBar from '../../shared/StatsBar/StatsBar';
 import useRegionStats from '../../shared/useRegionStats';
-import {countryName} from '../../shared/I18n';
 
 import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';
