@@ -9,7 +9,7 @@ import useRefresh from '../shared/useRefresh';
 import {useStatsContext} from '../shared/StatsDataContext';
 
 import WorldStats from './World/WorldStats';
-import Russia from './Russia/RussiaStats';
+import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
 import Countries from './Countries/Countries';
 
 import styles from './StatsScreen.styles';
@@ -38,11 +38,11 @@ export default function StatsScreen({navigation}) {
         }>
         <LargeHeader title={t('stats.title')} />
         <View style={styles.world}>
-          <WorldStats region={data.world} />
+          <WorldStats world={data.world} />
         </View>
         <View style={styles.russia}>
-          <Russia
-            russia={data.russia}
+          <PrimaryCountry
+            country={data.russia}
             hasCities={!!(data.cities && data.cities.length)}
           />
         </View>

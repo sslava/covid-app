@@ -5,6 +5,7 @@ import {
   RegionListItem,
 } from '../shared/RegionList/RegionListItem';
 import RegionListLegend from '../shared/RegionList/RegionListLegend';
+import {countryName} from '../shared/I18n';
 
 function Country({country}) {
   const [expanded, setExpanded] = useState(false);
@@ -13,7 +14,7 @@ function Country({country}) {
   return (
     <RegionListItem expanded={expanded}>
       <RegionListToggle
-        name={country.country_name || country.country_name_en}
+        name={countryName(country)}
         total={country.total}
         today={country.total_new}
         expanded={expanded}

@@ -1,4 +1,5 @@
 import React from 'react';
+import {t} from 'i18n-js';
 import {SafeAreaView, FlatList, View, RefreshControl} from 'react-native';
 
 import City from './City';
@@ -28,7 +29,7 @@ export default function CitiesScreen() {
         <SearchBar
           value={query}
           onChange={setQuery}
-          placeholder="Поиск по региону"
+          placeholder={t('cities.search')}
         />
       </View>
       <FlatList

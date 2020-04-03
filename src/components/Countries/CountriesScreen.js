@@ -1,4 +1,5 @@
 import React from 'react';
+import {t} from 'i18n-js';
 import {SafeAreaView, FlatList, View, RefreshControl} from 'react-native';
 
 import {useStatsContext} from '../shared/StatsDataContext';
@@ -34,7 +35,7 @@ export default function CountriesScreen() {
         <SearchBar
           value={query}
           onChange={setQuery}
-          placeholder="Поиск по стране"
+          placeholder={t('countries.search')}
         />
       </View>
       <FlatList

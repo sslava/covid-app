@@ -24,16 +24,15 @@ const getPieData = (total, recovered, deaths, active) => {
   ];
 };
 
-export default function WorldStats({region}) {
+export default function WorldStats({world}) {
   const data = useMemo(
-    () =>
-      getPieData(region.total, region.recovered, region.deaths, region.active),
-    [region.total, region.recovered, region.deaths, region.active],
+    () => getPieData(world.total, world.recovered, world.deaths, world.active),
+    [world.total, world.recovered, world.deaths, world.active],
   );
   return (
     <View style={styles.container}>
-      <Subheader icon={worldIcon}>{t('stats.global')}</Subheader>
-      <HeroStats number={region.total} today={+region.total_new} />
+      <Subheader icon={worldIcon}>{t('stats.global.title')}</Subheader>
+      <HeroStats number={world.total} today={+world.total_new} />
       <View style={styles.stats}>
         <Pie
           data={data}
@@ -44,25 +43,24 @@ export default function WorldStats({region}) {
         <View style={styles.counters}>
           <PercentCounter
             title={t('stats.active')}
-            number={region.active}
+            number={world.active}
             color={legendColor.Active}
           />
           <PercentCounter
             title={t('stats.recovered')}
-            number={region.recovered}
+            number={world.recovered}
             color={legendColor.Recovered}
           />
           <PercentCounter
             title={t('stats.deaths')}
-            number={region.deaths}
-            today={region.deaths_new}
+            number={world.deaths}
+            today={world.deaths_new}
             color={legendColor.Deaths}
           />
         </View>
       </View>
       <Text style={styles.updatedText}>
-        По состоянию на {formatDate(region.updated)}, прирост за последние 24
-        часа
+        {t('stats.global.updatedAt', {date: formatDate(world.updated)})}
       </Text>
     </View>
   );
