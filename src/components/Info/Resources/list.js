@@ -11,7 +11,7 @@ export function getPhones(t, country) {
       {
         dialNumber: '+7(800)2000112',
         phone: '8 800 2000 112',
-        name: t('info.contacts.list.ru-hotLine'),
+        name: t('info.contacts.list.ru-hotline'),
       },
       ...common,
     ];
