@@ -12,7 +12,7 @@ export default StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: '#F3F3F3',
   },
-  russia: {
+  primary: {
     marginTop: 30,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: '#F3F3F3',
