@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
-import {View, Dimensions, Text} from 'react-native';
 import {t} from 'i18n-js';
+import {View, Dimensions, Text, Image} from 'react-native';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
@@ -31,7 +31,10 @@ export default function WorldStats({world}) {
   );
   return (
     <View style={styles.container}>
-      <Subheader icon={worldIcon} title={t('stats.global.title')} />
+      <Subheader
+        icon={<Image source={worldIcon} style={styles.worldIcon} />}
+        title={t('stats.global.title')}
+      />
       <HeroStats number={world.total} today={+world.total_new} />
       <View style={styles.stats}>
         <Pie
