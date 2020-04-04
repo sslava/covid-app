@@ -31,7 +31,7 @@ export default function WorldStats({world}) {
   );
   return (
     <View style={styles.container}>
-      <Subheader icon={worldIcon}>{t('stats.global.title')}</Subheader>
+      <Subheader icon={worldIcon} title={t('stats.global.title')} />
       <HeroStats number={world.total} today={+world.total_new} />
       <View style={styles.stats}>
         <Pie

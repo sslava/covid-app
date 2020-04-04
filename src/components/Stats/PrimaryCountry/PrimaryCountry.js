@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {t} from 'i18n-js';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 
 import {formatDate, countryName} from '../../../common/locale';
 import {legendColor} from '../../shared/uikit';
@@ -14,6 +14,7 @@ import HeroStats from '../common/HeroStats';
 import PageLink from '../common/PageLink';
 
 import ruIcon from './ru.png';
+import changeIcon from './change.png';
 
 import styles from './PrimaryCountry.styles';
 
@@ -24,9 +25,17 @@ export default function PrimaryCountry({country, hasCities}) {
     country.deaths,
     country.active,
   );
+
+  const changeCountry = useCallback(() => {}, []);
   return (
     <View style={styles.container}>
-      <Subheader icon={ruIcon}>{countryName(country)}</Subheader>
+      <Subheader
+        icon={ruIcon}
+        title={countryName(country)}
+        activeOpacity={0.5}
+        onPress={changeCountry}>
+        <Image source={changeIcon} style={styles.changeIcon} />
+      </Subheader>
       <HeroStats number={country.total} today={+country.total_new} />
       <View style={styles.legend}>
         <LegendItem

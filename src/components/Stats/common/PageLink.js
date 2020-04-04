@@ -14,7 +14,7 @@ export default function PageLink({children, route, style}) {
       <TouchableOpacity
         style={styles.button}
         onPress={open}
-        activeOpacity={0.3}>
+        activeOpacity={0.5}>
         <Text style={styles.caption}>{children}</Text>
       </TouchableOpacity>
     </View>

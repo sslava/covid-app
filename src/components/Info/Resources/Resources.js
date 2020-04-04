@@ -17,7 +17,7 @@ function Phone({phone, dialNumber, children}) {
   const call = usePhoneCall(dialNumber);
 
   return (
-    <TouchableOpacity style={styles.button} onPress={call} activeOpacity={0.6}>
+    <TouchableOpacity style={styles.button} onPress={call} activeOpacity={0.5}>
       <Text style={styles.buttonTitle}>{children}</Text>
       <View style={styles.buttonSubtitle}>
         <Text style={styles.buttonPhoneText}>{phone}</Text>
@@ -33,7 +33,7 @@ function Link({url, text, children}) {
     <TouchableOpacity
       style={[styles.button, styles.link]}
       onPress={open}
-      activeOpacity={0.6}>
+      activeOpacity={0.5}>
       <Text style={styles.linkTitle}>{children}</Text>
       <View style={styles.buttonSubtitle}>
         <Text style={styles.linkUrlText}>{text}</Text>
