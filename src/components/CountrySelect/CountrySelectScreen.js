@@ -1,6 +1,6 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 
 export default function CountrySelectScreen() {
-  return <View />;
+  return <SafeAreaView />;
 }
