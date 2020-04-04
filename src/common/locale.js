@@ -1,5 +1,5 @@
 import {I18nManager} from 'react-native';
-import {findBestAvailableLanguage} from 'react-native-localize';
+import {findBestAvailableLanguage, getLocales} from 'react-native-localize';
 import i18n from 'i18n-js';
 
 import ru from '../assets/localization/ru.json';
@@ -8,6 +8,7 @@ import en from '../assets/localization/en.json';
 const eng = {languageTag: 'en', isRTL: false};
 
 export function initI18nConfig() {
+  console.log(getLocales());
   const {isRTL, languageTag} = findBestAvailableLanguage(['en', 'ru']) || eng;
   I18nManager.forceRTL(isRTL);
   i18n.fallbacks = true;
