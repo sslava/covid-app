@@ -16,7 +16,7 @@ export default function Subheader({
         style={styles.header}
         activeOpacity={activeOpacity}
         {...rest}>
-        {icon && <Image source={icon} style={styles.icon} />}
+        {icon}
         <Text style={styles.title}>{title}</Text>
         <View style={styles.children}>{children}</View>
       </TouchableOpacity>

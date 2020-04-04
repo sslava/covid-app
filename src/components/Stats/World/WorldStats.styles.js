@@ -18,6 +18,11 @@ export default StyleSheet.create({
   counters: {
     marginLeft: 20,
   },
+  worldIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 10,
+  },
   numberStats: {
     flex: 1,
     width: '100%',

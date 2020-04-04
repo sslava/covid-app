@@ -15,6 +15,7 @@ import HeroStats from '../common/HeroStats';
 import PageLink from '../common/PageLink';
 
 import changeIcon from './change.png';
+import countryIcons from '../../shared/countryIcons';
 
 import styles from './PrimaryCountry.styles';
 
@@ -34,7 +35,7 @@ export default function PrimaryCountry({country, hasCities}) {
   return (
     <View style={styles.container}>
       <Subheader
-        // icon={ruIcon}
+        icon={<Image style={styles.icon} source={countryIcons[country.code]} />}
         title={countryName(country)}
         activeOpacity={0.5}
         onPress={changeCountry}>

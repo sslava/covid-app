@@ -11,11 +11,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  icon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
   title: {
     ...fontStyles.Subtitle,
     color: '#252A34',
