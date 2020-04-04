@@ -9,6 +9,7 @@ import StatsScreen from './components/Stats/StatsScreen';
 import InfoScreen from './components/Info/InfoScreen';
 import CountriesScreen from './components/Countries/CountriesScreen';
 import CitiesScreen from './components/Cities/CitiesScreen';
+import CountrySelectScreen from './components/CountrySelect/CountrySelectScreen';
 
 import HeaderBackImage from './components/shared/Header/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
@@ -82,6 +83,10 @@ export default function App() {
             name="Cities"
             component={CitiesScreen}
             options={{headerTitle: t('cities.title')}}
+          />
+          <AppStack.Screen
+            name="CountrySelect"
+            component={CountrySelectScreen}
           />
         </AppStack.Navigator>
       </NavigationContainer>
