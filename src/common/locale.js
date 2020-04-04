@@ -14,6 +14,7 @@ export function initI18nConfig() {
   i18n.defaultLocale = 'en';
   i18n.translations = {en, ru};
   i18n.locale = languageTag;
+  console.log('initI18nConfig');
 }
 
 export function countryName(country) {
