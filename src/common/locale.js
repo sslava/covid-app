@@ -9,6 +9,7 @@ import en from '../assets/localization/en.json';
 
 i18n.fallbacks = true;
 i18n.defaultLocale = 'en';
+i18n.missingTranslation = () => null;
 
 const eng = {languageTag: 'en', isRTL: false};
 
@@ -20,8 +21,7 @@ export function initI18nConfig() {
 }
 
 const codeNameGetter = (c) => {
-  const scope = i18n.locale === 'ru' ? ru.alpha2 : en.alpha2;
-  return scope[c.code] || c.country_name_en;
+  return i18n.t(c.code, {scope: 'alpha2'}) || c.country_name_en;
 };
 
 export function countryName(country) {
