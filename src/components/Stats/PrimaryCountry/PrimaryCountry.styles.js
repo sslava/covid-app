@@ -24,4 +24,11 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
   },
+  changeIcon: {
+    marginLeft: 9,
+    position: 'relative',
+    top: 1,
+    width: 10,
+    height: 8,
+  },
 });

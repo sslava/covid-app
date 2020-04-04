@@ -23,7 +23,7 @@ export default function Countries({countries}) {
 
   return (
     <View style={styles.container}>
-      <Subheader>{t('stats.countries.title')}</Subheader>
+      <Subheader title={t('stats.countries.title')} />
       <View style={styles.search}>
         <SearchButton placeholder={t('countries.search')} onPress={open} />
       </View>
