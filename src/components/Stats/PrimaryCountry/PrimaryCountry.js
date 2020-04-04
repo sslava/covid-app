@@ -1,5 +1,6 @@
 import React, {useCallback} from 'react';
 import {t} from 'i18n-js';
+import {useNavigation} from '@react-navigation/native';
 import {View, Text, Image} from 'react-native';
 
 import {formatDate, countryName} from '../../../common/locale';
@@ -19,6 +20,7 @@ import changeIcon from './change.png';
 import styles from './PrimaryCountry.styles';
 
 export default function PrimaryCountry({country, hasCities}) {
+  const nav = useNavigation();
   const stats = useRegionStats(
     country.total,
     country.recovered,
@@ -26,7 +28,10 @@ export default function PrimaryCountry({country, hasCities}) {
     country.active,
   );
 
-  const changeCountry = useCallback(() => {}, []);
+  const changeCountry = useCallback(() => {
+    nav.navigate('CountrySelect');
+  }, [nav]);
+
   return (
     <View style={styles.container}>
       <Subheader
