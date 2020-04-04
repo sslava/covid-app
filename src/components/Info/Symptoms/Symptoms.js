@@ -9,7 +9,7 @@ import symptomsFn from './list';
 import styles from './Symptoms.styles';
 
 export default function Symptoms() {
-  const symptoms = useMemo(() => symptomsFn(t), []);
+  const symptoms = useMemo(symptomsFn, []);
   return (
     <View style={styles.container}>
       <Subheader>{t('info.symptoms.title')}</Subheader>

@@ -1,3 +1,5 @@
+import {t} from 'i18n-js';
+
 import alone from './icons/alone.png';
 import calm from './icons/calm.png';
 import distance from './icons/distance.png';
@@ -6,7 +8,7 @@ import mask from './icons/mask.png';
 import talk from './icons/talk.png';
 import wash from './icons/wash.png';
 
-export default (t) => [
+export default () => [
   {
     icon: home,
     title: t('info.recommentations.list.home.title'),
