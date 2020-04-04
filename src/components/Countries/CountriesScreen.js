@@ -2,13 +2,12 @@ import React from 'react';
 import {t} from 'i18n-js';
 import {SafeAreaView, FlatList, View, RefreshControl} from 'react-native';
 
-import {useStatsContext} from '../shared/StatsDataContext';
-
 import Country from './Country';
 import SearchBar from '../shared/Search/SearchBar';
 
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 import useRefresh from '../shared/useRefresh';
+import {useStatsContext} from '../shared/StatsDataContext';
 
 import styles from './CountriesScreen.styles';
 

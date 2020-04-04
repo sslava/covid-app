@@ -8,7 +8,6 @@ import en from '../assets/localization/en.json';
 const eng = {languageTag: 'en', isRTL: false};
 
 export function initI18nConfig() {
-  console.log(getLocales());
   const {isRTL, languageTag} = findBestAvailableLanguage(['en', 'ru']) || eng;
   I18nManager.forceRTL(isRTL);
   i18n.fallbacks = true;
@@ -24,6 +23,21 @@ export function countryName(country) {
   return i18n.locale === 'ru'
     ? country.country_name || country.country_name_en
     : country.country_name_en;
+}
+
+export function objectSort(list, fieldGetter) {
+  return list.sort((item1, item2) => {
+    const a = fieldGetter(item1);
+    const b = fieldGetter(item2);
+
+    if (a < b) {
+      return -1;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return 0;
+  });
 }
 
 export const formatNumber = (num: number): string =>

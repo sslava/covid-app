@@ -14,7 +14,6 @@ import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';
 import PageLink from '../common/PageLink';
 
-// import ruIcon from './ru.png';
 import changeIcon from './change.png';
 
 import styles from './PrimaryCountry.styles';
