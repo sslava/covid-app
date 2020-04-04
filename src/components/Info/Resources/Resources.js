@@ -46,8 +46,8 @@ function Link({url, text, children}) {
 const country = 'Russia';
 
 export default function Resources() {
-  const phones = useMemo(() => getPhones(t, country), []);
-  const links = useMemo(() => getLinks(t, country), []);
+  const phones = useMemo(() => getPhones(country), []);
+  const links = useMemo(() => getLinks(country), []);
 
   return (
     <View style={styles.container}>

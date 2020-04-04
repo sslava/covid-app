@@ -1,4 +1,6 @@
-export function getPhones(t, country) {
+import {t} from 'i18n-js';
+
+export function getPhones(country) {
   const common = [
     {
       dialNumber: '112',
@@ -19,7 +21,7 @@ export function getPhones(t, country) {
   return common;
 }
 
-export function getLinks(t, country) {
+export function getLinks(country) {
   if (country === 'Russia') {
     return [
       {
