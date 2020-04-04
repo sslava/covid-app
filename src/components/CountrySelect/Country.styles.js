@@ -20,4 +20,10 @@ export default StyleSheet.create({
     lineHeight: 20,
     color: '#252A34',
   },
+  selected: {
+    marginRight: 10,
+    tintColor: '#087ED9',
+    width: 16,
+    height: 16,
+  },
 });
