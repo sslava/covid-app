@@ -14,7 +14,7 @@ import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';
 import PageLink from '../common/PageLink';
 
-import ruIcon from './ru.png';
+// import ruIcon from './ru.png';
 import changeIcon from './change.png';
 
 import styles from './PrimaryCountry.styles';
@@ -35,7 +35,7 @@ export default function PrimaryCountry({country, hasCities}) {
   return (
     <View style={styles.container}>
       <Subheader
-        icon={ruIcon}
+        // icon={ruIcon}
         title={countryName(country)}
         activeOpacity={0.5}
         onPress={changeCountry}>

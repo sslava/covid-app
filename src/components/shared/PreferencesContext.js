@@ -4,6 +4,7 @@ import React, {
   createContext,
   useState,
   useEffect,
+  useCallback,
 } from 'react';
 
 import i18n from 'i18n-js';
@@ -34,27 +35,29 @@ function getFromLocale() {
 
 export function PreferencesProvider({children}) {
   useWillMount(initI18nConfig);
-  const storage = useRef(new ItemStore('preferences', defaultPrefs));
-  const state = useState(defaultPrefs);
 
-  const [, setPreferences] = state;
+  const storage = useRef(new ItemStore('preferences', defaultPrefs));
+  const [preferences, setPreferences] = useState(defaultPrefs);
+
+  const updatePrefences = useCallback((prefs) => {
+    setPreferences(prefs);
+    storage.current.set(prefs);
+  }, []);
 
   useEffect(() => {
     async function init() {
-      const stored = await storage.current.load();
-      if (stored) {
-        setPreferences(stored);
+      const loaded = await storage.current.load();
+      if (loaded) {
+        setPreferences(loaded);
       } else {
-        const fromLocale = getFromLocale();
-        setPreferences(fromLocale);
-        await storage.current.set(fromLocale);
+        updatePrefences(getFromLocale());
       }
     }
     init();
-  }, [setPreferences]);
+  }, [updatePrefences]);
 
   return (
-    <PreferencesContext.Provider value={state}>
+    <PreferencesContext.Provider value={[preferences, updatePrefences]}>
       {children}
     </PreferencesContext.Provider>
   );
