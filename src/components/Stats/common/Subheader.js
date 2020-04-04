@@ -11,13 +11,15 @@ export default function Subheader({
   ...rest
 }) {
   return (
-    <TouchableOpacity
-      style={styles.header}
-      activeOpacity={activeOpacity}
-      {...rest}>
-      {icon && <Image source={icon} style={styles.icon} />}
-      <Text style={styles.title}>{title}</Text>
-      <View style={styles.children}>{children}</View>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.header}
+        activeOpacity={activeOpacity}
+        {...rest}>
+        {icon && <Image source={icon} style={styles.icon} />}
+        <Text style={styles.title}>{title}</Text>
+        <View style={styles.children}>{children}</View>
+      </TouchableOpacity>
+    </View>
   );
 }
