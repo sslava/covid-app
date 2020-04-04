@@ -3,7 +3,7 @@ import {t} from 'i18n-js';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 
 import StatsScreen from './components/Stats/StatsScreen';
 import InfoScreen from './components/Info/InfoScreen';
@@ -11,17 +11,17 @@ import CountriesScreen from './components/Countries/CountriesScreen';
 import CitiesScreen from './components/Cities/CitiesScreen';
 import CountrySelectScreen from './components/CountrySelect/CountrySelectScreen';
 
+import {initI18nConfig} from './common/locale';
+
 import HeaderBackImage from './components/shared/Header/HeaderBack';
 import {StatsDataProvider} from './components/shared/StatsDataContext';
 import TabIcon from './components/shared/TabIcon';
-import {initI18nConfig} from './common/locale';
+import useWillMount from './components/shared/useWillMount';
 
 import infoIcon from './assets/icons/info.png';
 import statsIcon from './assets/icons/stats.png';
 
 const RootTabs = createBottomTabNavigator();
-
-initI18nConfig();
 
 function Root() {
   return (
@@ -53,13 +53,13 @@ function Root() {
 const AppStack = createStackNavigator();
 
 export default function App() {
+  useWillMount(initI18nConfig);
   return (
     <StatsDataProvider>
       <NavigationContainer>
         <AppStack.Navigator
           headerMode="screen"
           screenOptions={({route}) => ({
-            // cardOverlayEnabled: true,
             headerBackTitle: ' ',
             headerTitleStyle: {
               fontFamily: 'Ubuntu',
@@ -72,7 +72,7 @@ export default function App() {
           <AppStack.Screen
             name="Root"
             component={Root}
-            options={{headerTransparent: true, headerTitle: null}}
+            options={{headerShown: false}}
           />
           <AppStack.Screen
             name="Countries"
@@ -87,6 +87,11 @@ export default function App() {
           <AppStack.Screen
             name="CountrySelect"
             component={CountrySelectScreen}
+            options={{
+              headerShown: false,
+              gestureEnabled: true,
+              ...TransitionPresets.ModalTransition,
+            }}
           />
         </AppStack.Navigator>
       </NavigationContainer>
