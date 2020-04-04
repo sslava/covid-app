@@ -1,6 +1,8 @@
 import {I18nManager} from 'react-native';
-import {findBestAvailableLanguage, getLocales} from 'react-native-localize';
+import {findBestAvailableLanguage} from 'react-native-localize';
 import i18n from 'i18n-js';
+
+import {objectSort} from './utils';
 
 import ru from '../assets/localization/ru.json';
 import en from '../assets/localization/en.json';
@@ -16,28 +18,24 @@ export function initI18nConfig() {
   i18n.locale = languageTag;
 }
 
+const defaultNameGetter = (c) => c.country_name_en;
+
+const ruNameGetter = (c) => c.country_name || c.country_name_en;
+
+function localizedNameGetter() {
+  return i18n.locale === 'ru' ? ruNameGetter : defaultNameGetter;
+}
+
 export function countryName(country) {
   if (!country) {
     return '';
   }
-  return i18n.locale === 'ru'
-    ? country.country_name || country.country_name_en
-    : country.country_name_en;
+  const getter = localizedNameGetter();
+  return getter(country);
 }
 
-export function objectSort(list, fieldGetter) {
-  return list.sort((item1, item2) => {
-    const a = fieldGetter(item1);
-    const b = fieldGetter(item2);
-
-    if (a < b) {
-      return -1;
-    }
-    if (a > b) {
-      return 1;
-    }
-    return 0;
-  });
+export function sortCountries(countries) {
+  return objectSort(countries, localizedNameGetter());
 }
 
 export const formatNumber = (num: number): string =>

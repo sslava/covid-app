@@ -1,6 +1,8 @@
 import React, {useCallback, memo} from 'react';
 import {TouchableOpacity, Image, View, Text} from 'react-native';
 
+import checkboxImage from '../../assets/icons/checkmark.png';
+
 import styles from './Country.styles';
 
 function Country({countryName, id, selected, onSelect}) {
@@ -14,7 +16,7 @@ function Country({countryName, id, selected, onSelect}) {
       <View style={styles.left}>
         <Text style={styles.title}>{countryName}</Text>
       </View>
-      {selected && <Image style={styles.selected} />}
+      {selected && <Image style={styles.selected} source={checkboxImage} />}
     </TouchableOpacity>
   );
 }
