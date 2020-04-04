@@ -11,7 +11,7 @@ import CountriesScreen from './Countries/CountriesScreen';
 import CitiesScreen from './Cities/CitiesScreen';
 import CountrySelectScreen from './CountrySelect/CountrySelectScreen';
 
-import HeaderBackImage from './shared/Header/HeaderBack';
+import {HeaderBack, HeaderClose} from './shared/Header/HeaderBack';
 import TabIcon from './shared/TabIcon';
 
 import infoIcon from '../assets/icons/info.png';
@@ -53,14 +53,14 @@ export default function App() {
       <AppStack.Navigator
         headerMode="screen"
         screenOptions={({route}) => ({
-          headerBackTitle: ' ',
+          headerBackTitleVisible: false,
           headerTitleStyle: {
             fontFamily: 'Ubuntu',
             fontSize: 20,
             fontWeight: 'bold',
             color: '#252A34',
           },
-          headerBackImage: HeaderBackImage,
+          headerBackImage: HeaderBack,
         })}>
         <AppStack.Screen
           name="Root"
@@ -81,7 +81,9 @@ export default function App() {
           name="CountrySelect"
           component={CountrySelectScreen}
           options={{
-            headerShown: false,
+            headerBackTitleVisible: false,
+            headerBackImage: HeaderClose,
+            headerTitle: t('countryselect.title'),
             gestureEnabled: true,
             ...TransitionPresets.ModalTransition,
           }}

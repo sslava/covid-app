@@ -89,5 +89,8 @@
   "countries": {
     "title": "Countries stats",
     "search": "Search by country"
+  },
+  "countryselect": {
+    "title": "Select country"
   }
 }
