@@ -7,35 +7,29 @@ import {objectSort} from './utils';
 import ru from '../assets/localization/ru.json';
 import en from '../assets/localization/en.json';
 
+i18n.fallbacks = true;
+i18n.defaultLocale = 'en';
+
 const eng = {languageTag: 'en', isRTL: false};
 
 export function initI18nConfig() {
   const {isRTL, languageTag} = findBestAvailableLanguage(['en', 'ru']) || eng;
   I18nManager.forceRTL(isRTL);
-  i18n.fallbacks = true;
-  i18n.defaultLocale = 'en';
   i18n.translations = {en, ru};
   i18n.locale = languageTag;
 }
 
-const defaultNameGetter = (c) => c.country_name_en;
-
-const ruNameGetter = (c) => c.country_name || c.country_name_en;
-
-function localizedNameGetter() {
-  return i18n.locale === 'ru' ? ruNameGetter : defaultNameGetter;
-}
+const codeNameGetter = (c) => {
+  const scope = i18n.locale === 'ru' ? ru.alpha2 : en.alpha2;
+  return scope[c.code] || c.country_name_en;
+};
 
 export function countryName(country) {
-  if (!country) {
-    return '';
-  }
-  const getter = localizedNameGetter();
-  return getter(country);
+  return !country ? '' : codeNameGetter(country);
 }
 
 export function sortCountries(countries) {
-  return objectSort(countries, localizedNameGetter());
+  return objectSort(countries, codeNameGetter);
 }
 
 export const formatNumber = (num: number): string =>

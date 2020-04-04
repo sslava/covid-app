@@ -54,6 +54,7 @@ export default function CountrySelectScreen({navigation}) {
         renderItem={({item}) => (
           <Country
             countryName={countryName(item)}
+            code={item.code}
             id={item.country_name_en}
             onSelect={select}
             selected={item.country_name_en === prefs.primary}
