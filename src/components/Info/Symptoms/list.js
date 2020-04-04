@@ -1,10 +1,12 @@
+import {t} from 'i18n-js';
 import breath from './icons/breath.png';
+
 import cought from './icons/cought.png';
 import lowenergy from './icons/lowenergy.png';
 import pain from './icons/pain.png';
 import temp from './icons/temp.png';
 
-export default (t) => [
+export default () => [
   {bg: '#FC624D', image: temp, title: t('info.symptoms.list.s1')},
   {bg: '#FC9F4D', image: cought, title: t('info.symptoms.list.s2')},
   {bg: '#4D70FC', image: lowenergy, title: t('info.symptoms.list.s3')},
