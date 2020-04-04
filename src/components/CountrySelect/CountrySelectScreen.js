@@ -2,7 +2,7 @@ import React, {useCallback, useMemo} from 'react';
 import {t} from 'i18n-js';
 import {View, SafeAreaView, FlatList} from 'react-native';
 
-import {objectSort, countryName} from '../../common/locale';
+import {sortCountries, countryName} from '../../common/locale';
 
 import SearchBar from '../shared/Search/SearchBar';
 import Country from './Country';
@@ -24,10 +24,7 @@ export default function CountrySelectScreen({navigation}) {
     state: {data},
   } = useStatsContext();
 
-  const sorted = useMemo(
-    () => objectSort(data.countries, (c) => c.country_name_en),
-    [data.countries],
-  );
+  const sorted = useMemo(() => sortCountries(data.countries), [data.countries]);
 
   const [countries, query, setQuery] = useDebouncedSearch(
     sorted,

@@ -9,7 +9,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 10,
-    width: 135,
+    width: 140,
   },
   skipToday: {
     width: 75,
