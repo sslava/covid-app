@@ -12,6 +12,7 @@ const auth = (username, password) => (params) => {
 };
 
 async function apiFetchStats() {
+  // return apiRequest('GET', 'https://api.covidum.com/request/get_stat');
   return apiRequest(
     'GET',
     'https://1koronavirus.ru/request/get_stat',
@@ -40,7 +41,6 @@ export const initialStatsState = {
       mild: '0',
       updated: '2020-03-28 19:39:00',
     },
-    cities: [],
     countries: [],
   },
   fetchState: 'NotFetched',
