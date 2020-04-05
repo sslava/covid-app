@@ -43,7 +43,7 @@ export default function CountriesScreen() {
         style={styles.flatList}
         data={countries}
         renderItem={({item}) => <Country country={item} />}
-        keyExtractor={(item) => item.country_name_en}
+        keyExtractor={(item) => item.code}
       />
     </SafeAreaView>
   );

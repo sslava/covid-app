@@ -27,15 +27,15 @@ function localeName(c: Object) {
   return c.country_name_en;
 }
 
-const codeNameGetter = (c: Object) =>
+const translateCountryName = (c: Object) =>
   i18n.t(c.code, {scope: 'alpha2'}) || localeName(c);
 
 export function countryName(country: Object) {
-  return !country ? '' : codeNameGetter(country);
+  return !country ? '' : translateCountryName(country);
 }
 
 export function sortCountries(countries: Array<Object>) {
-  return objectSort(countries, codeNameGetter);
+  return objectSort(countries, translateCountryName);
 }
 
 export const formatNumber = (num: number): string =>
