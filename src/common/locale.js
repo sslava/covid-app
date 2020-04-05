@@ -1,0 +1,49 @@
+import {I18nManager} from 'react-native';
+import {findBestAvailableLanguage} from 'react-native-localize';
+import i18n from 'i18n-js';
+
+import {objectSort} from './utils';
+
+import ru from '../assets/localization/ru.json';
+import en from '../assets/localization/en.json';
+
+i18n.fallbacks = true;
+i18n.defaultLocale = 'en';
+i18n.missingTranslation = () => null;
+
+const eng = {languageTag: 'en', isRTL: false};
+
+export function initI18nConfig() {
+  const {isRTL, languageTag} = findBestAvailableLanguage(['en', 'ru']) || eng;
+  I18nManager.forceRTL(isRTL);
+  i18n.translations = {en, ru};
+  i18n.locale = languageTag;
+}
+
+function localeName(c: Object) {
+  if (i18n.locale === 'ru') {
+    return c.country_name || c.country_name_en;
+  }
+  return c.country_name_en;
+}
+
+const codeNameGetter = (c: Object) =>
+  i18n.t(c.code, {scope: 'alpha2'}) || localeName(c);
+
+export function countryName(country: Object) {
+  return !country ? '' : codeNameGetter(country);
+}
+
+export function sortCountries(countries: Array<Object>) {
+  return objectSort(countries, codeNameGetter);
+}
+
+export const formatNumber = (num: number): string =>
+  num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+export const formatDate = (date: string): string =>
+  new Date(date.replace(' ', 'T') + 'Z').toLocaleDateString('ru');
+
+export const matchCountry = (query: srting, c: Object) =>
+  countryName(c).toLowerCase().indexOf(query) !== -1 ||
+  c.country_name.toLowerCase().indexOf(query) !== -1;

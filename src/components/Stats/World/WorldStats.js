@@ -1,9 +1,10 @@
 import React, {useMemo} from 'react';
-import {View, Dimensions, Text} from 'react-native';
+import {t} from 'i18n-js';
+import {View, Dimensions, Text, Image} from 'react-native';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
-import {formatDate} from '../../../common/utils';
+import {formatDate} from '../../../common/locale';
 
 import PercentCounter from './PercentCounter';
 import Subheader from '../common/Subheader';
@@ -23,16 +24,18 @@ const getPieData = (total, recovered, deaths, active) => {
   ];
 };
 
-export default function WorldStats({region}) {
+export default function WorldStats({world}) {
   const data = useMemo(
-    () =>
-      getPieData(region.total, region.recovered, region.deaths, region.active),
-    [region.total, region.recovered, region.deaths, region.active],
+    () => getPieData(world.total, world.recovered, world.deaths, world.active),
+    [world.total, world.recovered, world.deaths, world.active],
   );
   return (
     <View style={styles.container}>
-      <Subheader icon={worldIcon}>В мире</Subheader>
-      <HeroStats number={region.total} today={+region.total_new} />
+      <Subheader
+        icon={<Image source={worldIcon} style={styles.worldIcon} />}
+        title={t('stats.global.title')}
+      />
+      <HeroStats number={world.total} today={+world.total_new} />
       <View style={styles.stats}>
         <Pie
           data={data}
@@ -42,26 +45,25 @@ export default function WorldStats({region}) {
         />
         <View style={styles.counters}>
           <PercentCounter
-            title="Болеет"
-            number={region.active}
+            title={t('stats.active')}
+            number={world.active}
             color={legendColor.Active}
           />
           <PercentCounter
-            title="Выздоровело"
-            number={region.recovered}
+            title={t('stats.recovered')}
+            number={world.recovered}
             color={legendColor.Recovered}
           />
           <PercentCounter
-            title="Смертей"
-            number={region.deaths}
-            today={region.deaths_new}
+            title={t('stats.deaths')}
+            number={world.deaths}
+            today={world.deaths_new}
             color={legendColor.Deaths}
           />
         </View>
       </View>
       <Text style={styles.updatedText}>
-        По состоянию на {formatDate(region.updated)}, прирост за последние 24
-        часа
+        {t('stats.global.updatedAt', {date: formatDate(world.updated)})}
       </Text>
     </View>
   );

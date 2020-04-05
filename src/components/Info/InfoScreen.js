@@ -1,4 +1,6 @@
 import React, {useRef} from 'react';
+import {t} from 'i18n-js';
+
 import {useScrollToTop} from '@react-navigation/native';
 
 import {View, ScrollView, SafeAreaView} from 'react-native';
@@ -20,7 +22,7 @@ export default function InfoScreen({navigation}) {
         ref={scrollRef}
         style={styles.scroll}
         contentContainerStyle={styles.scrollContent}>
-        <LargeHeader title="Информация" />
+        <LargeHeader title={t('info.title')} />
         <View style={styles.symptoms}>
           <Symptoms />
         </View>

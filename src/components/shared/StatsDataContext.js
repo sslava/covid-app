@@ -41,6 +41,7 @@ export function StatsDataProvider({children}) {
     }
     init();
   }, [refreshStats]);
+
   return (
     <StatsContext.Provider value={{state, refreshStats}}>
       {children}

@@ -1,6 +1,14 @@
-// @flow
-export const formatNumber = (num: number): string =>
-  num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+export function objectSort(list, fieldGetter) {
+  return [...list].sort((item1, item2) => {
+    const a = fieldGetter(item1);
+    const b = fieldGetter(item2);
 
-export const formatDate = (date: string): string =>
-  new Date(date.replace(' ', 'T') + 'Z').toLocaleDateString('ru');
+    if (a < b) {
+      return -1;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return 0;
+  });
+}

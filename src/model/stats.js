@@ -12,6 +12,7 @@ const auth = (username, password) => (params) => {
 };
 
 async function apiFetchStats() {
+  // return apiRequest('GET', 'https://api.covidum.com/request/get_stat');
   return apiRequest(
     'GET',
     'https://1koronavirus.ru/request/get_stat',
@@ -40,22 +41,6 @@ export const initialStatsState = {
       mild: '0',
       updated: '2020-03-28 19:39:00',
     },
-    russia: {
-      deaths: '0',
-      deaths_new: '0',
-      recovered: '0',
-      total: '0',
-      total_new: '0',
-      cases_1m: '0',
-      active: '0',
-      serious: '0',
-      updated: '2020-03-28 19:39:00',
-      country_name: 'Россия',
-      country_name_en: 'Russia',
-      lng: '102,110178',
-      lat: '32,278826',
-    },
-    cities: [],
     countries: [],
   },
   fetchState: 'NotFetched',
@@ -67,14 +52,10 @@ export function fetchStatsSaga(dispatch, storage) {
     dispatch({type: statsActionTypes.FETCH});
     try {
       const {stats} = await apiFetchStats();
-      const countries = stats.countries.today.sort((a, b) => b.total - a.total);
+      const ordered = stats.countries.sort((a, b) => b.total - a.total);
       const payload = {
-        world: stats.world.today,
-        russia: stats.countries.today.find(
-          (c) => c.country_name_en === 'Russia',
-        ),
-        countries,
-        cities: stats.cities.today,
+        world: stats.world,
+        countries: ordered,
       };
       dispatch({type: statsActionTypes.FETCH_COMPLETE, payload});
       await storage.set(payload);

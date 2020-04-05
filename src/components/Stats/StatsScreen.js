@@ -1,28 +1,48 @@
 import React, {useMemo, useRef} from 'react';
+import {t} from 'i18n-js';
+
 import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
 import LargeHeader from '../shared/Header/LargeHeader';
 import useRefresh from '../shared/useRefresh';
 import {useStatsContext} from '../shared/StatsDataContext';
+import {usePrefences} from '../shared/PreferencesContext';
 
 import WorldStats from './World/WorldStats';
-import Russia from './Russia/RussiaStats';
+import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
 import Countries from './Countries/Countries';
 
 import styles from './StatsScreen.styles';
 
-export default function StatsScreen({navigation}) {
+function findPrimary(countries, primary) {
+  if (!primary) {
+    return null;
+  }
+  return countries.find((c) => c.country_name_en === primary);
+}
+
+function getTop(countries) {
+  return countries.slice(0, 9);
+}
+
+export default function StatsScreen({}) {
+  const scrollRef = useRef();
+  useScrollToTop(scrollRef);
+
   const {
     state: {data, fetchState},
     refreshStats,
   } = useStatsContext();
 
-  const scrollRef = useRef();
-  useScrollToTop(scrollRef);
+  const [prefs] = usePrefences();
   const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
 
-  const top = useMemo(() => data.countries.slice(0, 7), [data.countries]);
+  const primary = useMemo(() => findPrimary(data.countries, prefs.primary), [
+    data.countries,
+    prefs.primary,
+  ]);
+  const top = useMemo(() => getTop(data.countries), [data.countries]);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -34,16 +54,15 @@ export default function StatsScreen({navigation}) {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
-        <LargeHeader title="Статистика" />
+        <LargeHeader title={t('stats.title')} />
         <View style={styles.world}>
-          <WorldStats region={data.world} />
+          <WorldStats world={data.world} />
         </View>
-        <View style={styles.russia}>
-          <Russia
-            russia={data.russia}
-            hasCities={!!(data.cities && data.cities.length)}
-          />
-        </View>
+        {primary && (
+          <View style={styles.primary}>
+            <PrimaryCountry country={primary} />
+          </View>
+        )}
         <View style={styles.countries}>
           <Countries countries={top} />
         </View>
