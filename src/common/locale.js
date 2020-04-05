@@ -41,16 +41,16 @@ export function sortCountries(countries: Array<Object>) {
 }
 
 export const formatNumber = (num: number): string =>
-  num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  i18n.toNumber(+num, {precision: 0, delimiter: ' '});
 
 export const formatDate = (date: string): string =>
-  new Date(date.replace(' ', 'T') + 'Z').toLocaleDateString('ru');
+  new Date(date.replace(' ', 'T') + 'Z').toLocaleDateString(i18n.locale);
 
 export const matchCountry = (query: srting, c: Object) =>
   countryName(c).toLowerCase().indexOf(query) !== -1 ||
   c.country_name.toLowerCase().indexOf(query) !== -1;
 
-const localeAlpha2Map = {
+const alpha2Map = {
   ru: 'RU',
   en: 'US',
 };
@@ -60,5 +60,5 @@ export function getCurrentCountryCode() {
   if (en.alpha2[code]) {
     return code;
   }
-  return localeAlpha2Map[i18n.locale] || 'US';
+  return alpha2Map[i18n.locale] || 'US';
 }
