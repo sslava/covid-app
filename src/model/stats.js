@@ -4,11 +4,11 @@ async function apiFetchStats() {
   return apiRequest('GET', 'https://covidum.com/request/get_stat');
 }
 
-export const statsActionTypes = {
-  FETCH: 'stats/FETCH',
-  FETCH_COMPLETE: 'stats/FETCH_COMPLETE',
-  FETCH_FAILED: 'stats/FETCH_FAILED',
-  SET: 'stats/SET',
+export const actionTypes = {
+  FETCH: 'FETCH',
+  FETCH_COMPLETE: 'FETCH_COMPLETE',
+  FETCH_FAILED: 'FETCH_FAILED',
+  SET: 'SET',
 };
 
 export const initialStatsState = {
@@ -33,18 +33,21 @@ export const initialStatsState = {
 
 export function fetchStatsSaga(dispatch, storage) {
   return async () => {
-    dispatch({type: statsActionTypes.FETCH});
+    dispatch({type: actionTypes.FETCH});
     try {
       const {stats} = await apiFetchStats();
-      const ordered = stats.countries.sort((a, b) => b.total - a.total);
+      const ordered = stats.countries
+        .filter((c) => !!c.code)
+        .sort((a, b) => b.total - a.total);
+
       const payload = {
         world: stats.world,
         countries: ordered,
       };
-      dispatch({type: statsActionTypes.FETCH_COMPLETE, payload});
-      await storage.set(payload);
+      dispatch({type: actionTypes.FETCH_COMPLETE, payload});
+      storage.set(payload);
     } catch (error) {
-      dispatch({type: statsActionTypes.FETCH_FAILED, payload: error});
+      dispatch({type: actionTypes.FETCH_FAILED, payload: error});
       console.log(error);
     }
   };
@@ -52,18 +55,18 @@ export function fetchStatsSaga(dispatch, storage) {
 
 export function statsReducer(state = initialStatsState, action) {
   switch (action.type) {
-    case statsActionTypes.FETCH:
+    case actionTypes.FETCH:
       return {...state, fetchState: 'Fetching', error: null};
-    case statsActionTypes.FETCH_COMPLETE:
+    case actionTypes.FETCH_COMPLETE:
       return {
         ...state,
         fetchState: 'Fetched',
         data: action.payload,
         error: null,
       };
-    case statsActionTypes.FETCH_FAILED:
+    case actionTypes.FETCH_FAILED:
       return {...state, fetchState: 'Error', error: action.payload};
-    case statsActionTypes.SET:
+    case actionTypes.SET:
       return {...state, data: action.payload};
   }
   return state;
