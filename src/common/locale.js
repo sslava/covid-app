@@ -20,15 +20,21 @@ export function initI18nConfig() {
   i18n.locale = languageTag;
 }
 
-const codeNameGetter = (c) => {
-  return i18n.t(c.code, {scope: 'alpha2'}) || c.country_name_en;
-};
+function localeName(c: Object) {
+  if (i18n.locale === 'ru') {
+    return c.country_name || c.country_name_en;
+  }
+  return c.country_name_en;
+}
 
-export function countryName(country) {
+const codeNameGetter = (c: Object) =>
+  i18n.t(c.code, {scope: 'alpha2'}) || localeName(c);
+
+export function countryName(country: Object) {
   return !country ? '' : codeNameGetter(country);
 }
 
-export function sortCountries(countries) {
+export function sortCountries(countries: Array<Object>) {
   return objectSort(countries, codeNameGetter);
 }
 
