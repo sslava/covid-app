@@ -43,3 +43,7 @@ export const formatNumber = (num: number): string =>
 
 export const formatDate = (date: string): string =>
   new Date(date.replace(' ', 'T') + 'Z').toLocaleDateString('ru');
+
+export const matchCountry = (query: srting, c: Object) =>
+  countryName(c).toLowerCase().indexOf(query) !== -1 ||
+  c.country_name.toLowerCase().indexOf(query) !== -1;
