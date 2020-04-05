@@ -7,29 +7,21 @@ import React, {
   useCallback,
 } from 'react';
 
-import i18n from 'i18n-js';
-
-import {initI18nConfig} from '../../common/locale';
+import {initI18nConfig, getCurrentCountryCode} from '../../common/locale';
 import ItemStore from '../../common/ItemStore';
 
 import useWillMount from './useWillMount';
 
-const localeCountriesMap = {
-  ru: 'RU',
-  en: 'US',
-};
-
 const PreferencesContext = createContext(null);
 
-const defaultPrefs = {
+const emptyPrefs = {
   primary: null,
 };
 
-function getFromLocale() {
-  const locale = i18n.locale;
+function getDefaultPrefences() {
   return {
-    ...defaultPrefs,
-    primary: localeCountriesMap[locale] || localeCountriesMap.en,
+    ...emptyPrefs,
+    primary: getCurrentCountryCode(),
   };
 }
 
@@ -40,8 +32,8 @@ function isInitied(prefs) {
 export function PreferencesProvider({children}) {
   useWillMount(initI18nConfig);
 
-  const storage = useRef(new ItemStore('preferences', defaultPrefs));
-  const [preferences, setPreferences] = useState(defaultPrefs);
+  const storage = useRef(new ItemStore('preferences', emptyPrefs));
+  const [preferences, setPreferences] = useState(emptyPrefs);
 
   const updatePrefences = useCallback((prefs) => {
     setPreferences(prefs);
@@ -54,7 +46,7 @@ export function PreferencesProvider({children}) {
       if (isInitied(loaded)) {
         setPreferences(loaded);
       } else {
-        updatePrefences(getFromLocale());
+        updatePrefences(getDefaultPrefences());
       }
     }
     init();
