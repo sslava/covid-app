@@ -52,7 +52,7 @@
 		00E356EE1AD99517003FC87E /* rucovidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rucovidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* rucovidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rucovidTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Covid RU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid RU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Coronavirus-Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coronavirus-Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = rucovid/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = rucovid/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Covid RU.app */,
+				13B07F961A680F5B00A75B9A /* Coronavirus-Monitor.app */,
 				00E356EE1AD99517003FC87E /* rucovidTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* rucovid-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* rucovid-tvOSTests.xctest */,
@@ -269,7 +269,7 @@
 			);
 			name = rucovid;
 			productName = rucovid;
-			productReference = 13B07F961A680F5B00A75B9A /* Covid RU.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Coronavirus-Monitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* rucovid-tvOS */ = {
@@ -693,7 +693,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.verbaclinic.covid19;
-				PRODUCT_NAME = "Covid RU";
+				PRODUCT_NAME = "Coronavirus-Monitor";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -719,7 +719,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.verbaclinic.covid19;
-				PRODUCT_NAME = "Covid RU";
+				PRODUCT_NAME = "Coronavirus-Monitor";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
