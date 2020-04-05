@@ -19,7 +19,7 @@ function findPrimary(countries, primary) {
   if (!primary) {
     return null;
   }
-  return countries.find((c) => c.country_name_en === primary);
+  return countries.find((c) => c.code === primary);
 }
 
 function getTop(countries) {

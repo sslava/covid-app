@@ -29,7 +29,7 @@ export default function Countries({countries}) {
       </View>
       <View style={styles.list}>
         {countries.map((c) => (
-          <Country key={c.country_name_en} country={c} />
+          <Country key={c.code} country={c} />
         ))}
       </View>
       <PageLink route="Countries">{t('stats.countries.all')}</PageLink>

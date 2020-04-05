@@ -48,12 +48,11 @@ export default function CountrySelectScreen({navigation}) {
           <Country
             countryName={countryName(item)}
             code={item.code}
-            id={item.country_name_en}
+            selected={item.code === prefs.primary}
             onSelect={select}
-            selected={item.country_name_en === prefs.primary}
           />
         )}
-        keyExtractor={(item) => item.country_name_en}
+        keyExtractor={(item) => item.code}
       />
     </SafeAreaView>
   );
