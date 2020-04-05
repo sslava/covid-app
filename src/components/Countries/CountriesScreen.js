@@ -5,15 +5,13 @@ import {SafeAreaView, FlatList, View, RefreshControl} from 'react-native';
 import Country from './Country';
 import SearchBar from '../shared/Search/SearchBar';
 
+import {matchCountry} from '../../common/locale';
+
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 import useRefresh from '../shared/useRefresh';
 import {useStatsContext} from '../shared/StatsDataContext';
 
 import styles from './CountriesScreen.styles';
-
-const filterCountry = (q, c) =>
-  c.country_name.toLowerCase().indexOf(q) !== -1 ||
-  c.country_name_en.toLowerCase().indexOf(q) !== -1;
 
 export default function CountriesScreen() {
   const {
@@ -25,7 +23,7 @@ export default function CountriesScreen() {
 
   const [countries, query, setQuery] = useDebouncedSearch(
     data.countries,
-    filterCountry,
+    matchCountry,
   );
 
   return (
