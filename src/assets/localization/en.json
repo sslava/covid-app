@@ -51,7 +51,7 @@
         },
         "wash": {
           "title": "Wash your hands frequently",
-          "desc": "После каждого выхода на улицу обрабатывайте телефон, ключи и банковскую карту"
+          "desc": "Clean your phone, keys and bank card after each exit to the street"
         },
         "mask":  {
           "title": "Используйте средства защиты",
@@ -71,14 +71,18 @@
       "title": "Emergency contacts",
       "list": {
         "emergency": "Emergency",
-        "ru-hotline": "Горячая линия Минздрава России"
+        "ru-hotline": "Ministry of Health of the Russian Federation hotline",
+        "ru-stopcovid": "Стопкоронавирус hotline"
       }
     },
     "links": {
       "title": "Useful links",
       "list": {
         "whotitle": "World health organization",
-        "whodesc": "Coronavirus disease (COVID-19) advice for the public"
+        "whodesc": "Coronavirus disease (COVID-19) advice for the public",
+        "minzdravtitle": "Ministry of Health of the Russian Federation",
+        "minzdravdesc": "COVID-19 – symptoms, general info, faq",
+        "ru-regionhotline": "Hotlines of regional executive authorities"
       }
     }
   },
