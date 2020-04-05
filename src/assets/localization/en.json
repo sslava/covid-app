@@ -54,8 +54,8 @@
           "desc": "Clean your phone, keys and bank card after each exit to the street"
         },
         "mask":  {
-          "title": "Используйте средства защиты",
-          "desc": "Надевайте маску, если вы чувствуете себя заболевшим"
+          "title": "When to use mask?",
+          "desc": "Wear a mask if you feel sick"
         },
         "calm": {
           "title": "Keep calm",
