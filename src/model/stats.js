@@ -1,23 +1,7 @@
 import {apiRequest} from '../common/api';
-import {encode61} from '../common/base64';
-
-const auth = (username, password) => (params) => {
-  return {
-    ...params,
-    headers: {
-      ...params.headers,
-      Authorization: `Basic ${encode61(`${username}:${password}`)}`,
-    },
-  };
-};
 
 async function apiFetchStats() {
-  // return apiRequest('GET', 'https://api.covidum.com/request/get_stat');
-  return apiRequest(
-    'GET',
-    'https://1koronavirus.ru/request/get_stat',
-    auth('dev', 'mn17KRvc1Q'),
-  );
+  return apiRequest('GET', 'https://covidum.com/request/get_stat');
 }
 
 export const statsActionTypes = {
