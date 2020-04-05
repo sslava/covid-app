@@ -15,11 +15,15 @@ import Countries from './Countries/Countries';
 
 import styles from './StatsScreen.styles';
 
-function findPrimary(countries, primary) {
-  if (!primary) {
+function findPrimary(countries, code) {
+  if (!code) {
     return null;
   }
-  return countries.find((c) => c.code === primary);
+  const primary = countries.find((c) => c.code === code);
+  if (!primary) {
+    return countries.find((c) => c.code === 'US');
+  }
+  return primary;
 }
 
 function getTop(countries) {
