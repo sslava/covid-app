@@ -2,7 +2,7 @@ import React, {useCallback, useMemo} from 'react';
 import {t} from 'i18n-js';
 import {View, SafeAreaView, FlatList} from 'react-native';
 
-import {sortCountries, countryName} from '../../common/locale';
+import {sortCountries, matchCountry, countryName} from '../../common/locale';
 
 import SearchBar from '../shared/Search/SearchBar';
 import Country from './Country';
@@ -13,10 +13,6 @@ import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
 import styles from './CountrySelectScreen.styles';
 
-const filterCountry = (q, c) =>
-  c.country_name.toLowerCase().indexOf(q) !== -1 ||
-  c.country_name_en.toLowerCase().indexOf(q) !== -1;
-
 export default function CountrySelectScreen({navigation}) {
   const [prefs, updatePrefs] = usePrefences();
 
@@ -26,10 +22,7 @@ export default function CountrySelectScreen({navigation}) {
 
   const sorted = useMemo(() => sortCountries(data.countries), [data.countries]);
 
-  const [countries, query, setQuery] = useDebouncedSearch(
-    sorted,
-    filterCountry,
-  );
+  const [countries, query, setQuery] = useDebouncedSearch(sorted, matchCountry);
 
   const select = useCallback(
     (primary) => {
