@@ -42,6 +42,10 @@ const normalize = (payload) => {
   };
 };
 
+async function fetchStats() {
+  return apiRequest('GET', 'https://covidum.com/request/get_stat');
+}
+
 export function useStatsContext() {
   return useContext(StatsContext);
 }
@@ -54,10 +58,7 @@ export function StatsDataProvider({children}) {
   const refreshStats = useCallback(async () => {
     dispatch({type: actionTypes.FETCH});
     try {
-      const responseJson = await apiRequest(
-        'GET',
-        'https://covidum.com/request/get_stat',
-      );
+      const responseJson = await fetchStats();
 
       const payload = normalize(responseJson);
       dispatch({type: actionTypes.FETCH_COMPLETE, payload});
