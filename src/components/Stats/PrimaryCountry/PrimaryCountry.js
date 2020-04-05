@@ -32,10 +32,12 @@ export default function PrimaryCountry({country}) {
     nav.navigate('CountrySelect');
   }, [nav]);
 
+  const icon = countryIcons[country.code];
+
   return (
     <View style={styles.container}>
       <Subheader
-        icon={<Image style={styles.icon} source={countryIcons[country.code]} />}
+        icon={icon && <Image style={styles.icon} source={icon} />}
         title={countryName(country)}
         activeOpacity={0.5}
         onPress={changeCountry}>
