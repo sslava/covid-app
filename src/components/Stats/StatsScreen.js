@@ -60,10 +60,7 @@ export default function StatsScreen({}) {
         </View>
         {primary && (
           <View style={styles.primary}>
-            <PrimaryCountry
-              country={primary}
-              hasCities={!!(data.cities && data.cities.length)}
-            />
+            <PrimaryCountry country={primary} />
           </View>
         )}
         <View style={styles.countries}>
