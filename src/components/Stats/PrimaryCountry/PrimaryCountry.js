@@ -19,7 +19,7 @@ import countryIcons from '../../shared/countryIcons';
 
 import styles from './PrimaryCountry.styles';
 
-export default function PrimaryCountry({country, hasCities}) {
+export default function PrimaryCountry({country}) {
   const nav = useNavigation();
   const stats = useRegionStats(
     country.total,
@@ -66,8 +66,10 @@ export default function PrimaryCountry({country, hasCities}) {
       <View style={styles.bar}>
         <StatsBar items={stats} />
       </View>
-      {!!hasCities && (
-        <PageLink route="Cities">{t('stats.country.regionsButton')}</PageLink>
+      {!!country.cities && (
+        <PageLink route="Cities" params={{country: country.code}}>
+          {t('stats.country.regionsButton')}
+        </PageLink>
       )}
       <Text style={styles.updatedText}>
         {t('stats.country.updatedAt', {date: formatDate(country.updated)})}

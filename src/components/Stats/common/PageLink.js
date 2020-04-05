@@ -5,9 +5,14 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 import styles from './PageLink.styles';
 
-export default function PageLink({children, route, style}) {
+export default function PageLink({children, route, params, style}) {
   const nav = useNavigation();
-  const open = useCallback(() => nav.navigate(route), [nav, route]);
+
+  const open = useCallback(() => nav.navigate(route, params), [
+    nav,
+    params,
+    route,
+  ]);
 
   return (
     <View style={[styles.container, style]}>
