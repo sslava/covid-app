@@ -9,7 +9,7 @@ import React, {
 
 import {
   initialStatsState,
-  statsActionTypes,
+  actionTypes,
   statsReducer,
   fetchStatsSaga,
 } from '../../model/stats';
@@ -35,7 +35,7 @@ export function StatsDataProvider({children}) {
     async function init() {
       const payload = await storage.current.load();
       if (payload) {
-        dispatch({type: statsActionTypes.SET, payload});
+        dispatch({type: actionTypes.SET, payload});
       }
       refreshStats();
     }
