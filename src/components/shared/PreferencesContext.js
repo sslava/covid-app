@@ -15,8 +15,8 @@ import ItemStore from '../../common/ItemStore';
 import useWillMount from './useWillMount';
 
 const localeCountriesMap = {
-  ru: 'Russia',
-  en: 'USA',
+  ru: 'RU',
+  en: 'US',
 };
 
 const PreferencesContext = createContext(null);

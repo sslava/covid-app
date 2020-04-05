@@ -36,9 +36,25 @@ export function fetchStatsSaga(dispatch, storage) {
     dispatch({type: actionTypes.FETCH});
     try {
       const {stats} = await apiFetchStats();
+
       const ordered = stats.countries
         .filter((c) => !!c.code)
         .sort((a, b) => b.total - a.total);
+
+      // const m = new Map();
+      // console.log('----------------------------');
+      // ordered.forEach((c) => {
+      //   if (m.has(c.code)) {
+      //     console.log(
+      //       `code: ${c.code}:  ${m.get(c.code).country_name_en}, ${
+      //         m.get(c.code).total
+      //       }; ${c.country_name_en}, ${c.total}`,
+      //     );
+      //   } else {
+      //     m.set(c.code, c);
+      //   }
+      // });
+      // console.log('----------------------------');
 
       const payload = {
         world: stats.world,

@@ -6,8 +6,8 @@ import countryIcons from '../shared/countryIcons';
 
 import styles from './Country.styles';
 
-function Country({countryName, id, code, selected, onSelect}) {
-  const press = useCallback(() => onSelect(id), [id, onSelect]);
+function Country({countryName, code, selected, onSelect}) {
+  const press = useCallback(() => onSelect(code), [code, onSelect]);
   const image = countryIcons[code];
   return (
     <TouchableOpacity
