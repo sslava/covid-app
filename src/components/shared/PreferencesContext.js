@@ -33,6 +33,10 @@ function getFromLocale() {
   };
 }
 
+function isInitied(prefs) {
+  return !!prefs && !!prefs.primary;
+}
+
 export function PreferencesProvider({children}) {
   useWillMount(initI18nConfig);
 
@@ -47,7 +51,7 @@ export function PreferencesProvider({children}) {
   useEffect(() => {
     async function init() {
       const loaded = await storage.current.load();
-      if (loaded) {
+      if (isInitied(loaded)) {
         setPreferences(loaded);
       } else {
         updatePrefences(getFromLocale());
