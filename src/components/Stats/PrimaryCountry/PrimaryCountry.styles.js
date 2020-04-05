@@ -26,6 +26,8 @@ export default StyleSheet.create({
     borderRadius: 12,
     marginRight: 10,
     resizeMode: 'cover',
+    borderColor: '#F3F3F3',
+    borderWidth: 1,
   },
   numberStyle: {
     fontSize: 18,
