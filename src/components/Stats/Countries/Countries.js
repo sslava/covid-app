@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react';
+import {t} from 'i18n-js';
 import {useNavigation} from '@react-navigation/core';
 import {View} from 'react-native';
 
@@ -22,16 +23,16 @@ export default function Countries({countries}) {
 
   return (
     <View style={styles.container}>
-      <Subheader>В других странах</Subheader>
+      <Subheader title={t('stats.countries.title')} />
       <View style={styles.search}>
-        <SearchButton placeholder="Поиск по стране" onPress={open} />
+        <SearchButton placeholder={t('countries.search')} onPress={open} />
       </View>
       <View style={styles.list}>
         {countries.map((c) => (
           <Country key={c.country_name_en} country={c} />
         ))}
       </View>
-      <PageLink route="Countries">Все страны</PageLink>
+      <PageLink route="Countries">{t('stats.countries.all')}</PageLink>
       <Sources source="worldometers.info" date={countries[0].updated} />
     </View>
   );
