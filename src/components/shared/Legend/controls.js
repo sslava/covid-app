@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-import {formatNumber} from '../../../common/utils';
+import {formatNumber} from '../../../common/locale';
 
 import styles from './controls.styles';
 
