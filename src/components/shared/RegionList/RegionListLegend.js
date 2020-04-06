@@ -1,9 +1,10 @@
 import React from 'react';
 import {View} from 'react-native';
-import {t} from 'i18n-js';
 
 import {legendColor} from '../../shared/uikit';
 import useRegionStats from '../../shared/useRegionStats';
+
+import {t} from '../../../common/locale';
 
 import StatsBar from '../StatsBar/StatsBar';
 import LegendItem from '../Legend/LegendItem';

@@ -2,6 +2,7 @@ import {I18nManager} from 'react-native';
 
 import i18n from 'i18n-js';
 import * as RNLocalize from 'react-native-localize';
+import memoize from './memoize';
 
 import {objectSort} from './utils';
 
@@ -22,6 +23,11 @@ export function initI18nConfig() {
   i18n.locale = languageTag;
 }
 
+export const t = memoize(
+  (key, config) => i18n.t(key, config),
+  (key, config) => (config ? key + JSON.stringify(config) : key),
+);
+
 function localeName(c: Object) {
   if (i18n.locale === 'ru') {
     return c.country_name || c.country_name_en;
@@ -30,7 +36,7 @@ function localeName(c: Object) {
 }
 
 const translateCountryName = (c: Object) =>
-  i18n.t(c.code, {scope: 'alpha2'}) || localeName(c);
+  t(c.code, {scope: 'alpha2'}) || localeName(c);
 
 export function countryName(country: Object) {
   return !country ? '' : translateCountryName(country);

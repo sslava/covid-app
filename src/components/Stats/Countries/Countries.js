@@ -1,7 +1,9 @@
 import React, {useCallback} from 'react';
-import {t} from 'i18n-js';
-import {useNavigation} from '@react-navigation/core';
 import {View} from 'react-native';
+
+import {useNavigation} from '@react-navigation/core';
+
+import {t} from '../../../common/locale';
 
 import Country from './Country';
 import Subheader from '../common/Subheader';

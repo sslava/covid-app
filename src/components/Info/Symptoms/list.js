@@ -1,6 +1,6 @@
-import {t} from 'i18n-js';
-import breath from './icons/breath.png';
+import {t} from '../../../common/locale';
 
+import breath from './icons/breath.png';
 import cought from './icons/cought.png';
 import lowenergy from './icons/lowenergy.png';
 import pain from './icons/pain.png';

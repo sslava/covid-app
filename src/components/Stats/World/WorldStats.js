@@ -1,10 +1,9 @@
 import React, {useMemo} from 'react';
-import {t} from 'i18n-js';
 import {View, Dimensions, Text, Image} from 'react-native';
 
 import Pie from '../../shared/PieChart/Pie';
 import {legendColor} from '../../shared/uikit';
-import {formatDate} from '../../../common/locale';
+import {formatDate, t} from '../../../common/locale';
 
 import PercentCounter from './PercentCounter';
 import Subheader from '../common/Subheader';

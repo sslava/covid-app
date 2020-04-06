@@ -1,9 +1,8 @@
 import React from 'react';
-import {t} from 'i18n-js';
 
 import {View, Text} from 'react-native';
 
-import {formatNumber} from '../../../common/locale';
+import {formatNumber, t} from '../../../common/locale';
 
 import SecondaryNumber from '../../shared/SecondaryNumber';
 
