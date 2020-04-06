@@ -35,7 +35,7 @@ export default function Countries({countries}) {
         ))}
       </View>
       <PageLink route="Countries">{t('stats.countries.all')}</PageLink>
-      <Sources source="worldometers.info" date={countries[0].updated} />
+      <Sources date={countries[0].updated} />
     </View>
   );
 }
