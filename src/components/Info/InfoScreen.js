@@ -9,6 +9,7 @@ import LargeHeader from '../shared/Header/LargeHeader';
 import Symptoms from './Symptoms/Symptoms';
 import Recommendations from './Recommendations/Recommendations';
 import Resources from './Resources/Resources';
+import VerbaLink from './VerbaLink';
 
 import styles from './InfoScreen.styles';
 
@@ -32,6 +33,7 @@ export default function InfoScreen({navigation}) {
         <View style={styles.resources}>
           <Resources />
         </View>
+        <VerbaLink />
       </ScrollView>
     </SafeAreaView>
   );
