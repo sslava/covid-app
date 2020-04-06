@@ -1,7 +1,8 @@
 import React, {useMemo} from 'react';
-import {t} from 'i18n-js';
+
 import {View} from 'react-native';
 
+import {t} from '../../../common/locale';
 import {usePrefences} from '../../shared/PreferencesContext';
 
 import Subheader from '../Subheader';

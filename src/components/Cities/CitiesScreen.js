@@ -1,5 +1,5 @@
 import React from 'react';
-import {t} from 'i18n-js';
+import {t} from '../../common/locale';
 import {SafeAreaView, FlatList, View, RefreshControl} from 'react-native';
 
 import City from './City';

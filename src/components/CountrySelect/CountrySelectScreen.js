@@ -1,8 +1,7 @@
 import React, {useCallback, useMemo} from 'react';
-import {t} from 'i18n-js';
 import {View, SafeAreaView, FlatList} from 'react-native';
 
-import {sortCountries, matchCountry, countryName} from '../../common/locale';
+import {sortCountries, matchCountry, countryName, t} from '../../common/locale';
 
 import SearchBar from '../shared/Search/SearchBar';
 import Country from './Country';

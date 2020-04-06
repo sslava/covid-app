@@ -1,10 +1,10 @@
 import React, {useRef} from 'react';
-import {t} from 'i18n-js';
 
 import {useScrollToTop} from '@react-navigation/native';
 
 import {View, ScrollView, SafeAreaView} from 'react-native';
 
+import {t} from '../../common/locale';
 import LargeHeader from '../shared/Header/LargeHeader';
 import Symptoms from './Symptoms/Symptoms';
 import Recommendations from './Recommendations/Recommendations';

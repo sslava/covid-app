@@ -1,9 +1,10 @@
 import React from 'react';
-import {t} from 'i18n-js';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
+
+import {t} from '../common/locale';
 
 import StatsScreen from './Stats/StatsScreen';
 import InfoScreen from './Info/InfoScreen';

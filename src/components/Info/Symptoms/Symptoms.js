@@ -1,6 +1,8 @@
 import React, {useMemo} from 'react';
-import {t} from 'i18n-js';
+
 import {View, ScrollView} from 'react-native';
+
+import {t} from '../../../common/locale';
 
 import Subheader from '../Subheader';
 import Symptom from './Symptom';

@@ -1,10 +1,9 @@
 import React from 'react';
 
 import {Text, View} from 'react-native';
-import {formatDate} from '../../../common/locale';
+import {formatDate, t} from '../../../common/locale';
 
 import styles from './Sources.styles';
-import {t} from 'i18n-js';
 
 export default function Sources({date, source}) {
   return (
