@@ -84,6 +84,10 @@
         "minzdravdesc": "COVID-19 – symptoms, general info, faq",
         "ru-regionhotline": "Hotlines of regional executive authorities"
       }
+    },
+    "verba": {
+      "text": "Clinic ",
+      "link": "verbaclinic.ru"
     }
   },
   "cities": {
