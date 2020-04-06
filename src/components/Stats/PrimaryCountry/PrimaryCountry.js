@@ -1,9 +1,8 @@
 import React, {useCallback} from 'react';
-import {t} from 'i18n-js';
 import {useNavigation} from '@react-navigation/native';
 import {View, Text, Image} from 'react-native';
 
-import {formatDate, countryName} from '../../../common/locale';
+import {formatDate, countryName, t} from '../../../common/locale';
 import {legendColor} from '../../shared/uikit';
 
 import LegendItem from '../../shared/Legend/LegendItem';

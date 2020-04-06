@@ -1,9 +1,10 @@
 import React, {useMemo} from 'react';
-import {t} from 'i18n-js';
 import {View} from 'react-native';
 
 import Recommendation from './Recommendation';
 import recommendationsFn from './list';
+
+import {t} from '../../../common/locale';
 
 import Subheader from '../Subheader';
 

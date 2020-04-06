@@ -1,9 +1,9 @@
 import React, {useMemo, useRef} from 'react';
-import {t} from 'i18n-js';
 
 import {View, ScrollView, RefreshControl, SafeAreaView} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
+import {t} from '../../common/locale';
 import LargeHeader from '../shared/Header/LargeHeader';
 import useRefresh from '../shared/useRefresh';
 import {useStatsContext} from '../shared/StatsDataContext';
