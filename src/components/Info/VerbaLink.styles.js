@@ -7,9 +7,9 @@ export default StyleSheet.create({
   },
   text: {
     fontFamily: 'Ubuntu',
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: '600',
-    lineHeight: 18,
+    lineHeight: 20,
     textAlign: 'right',
     color: '#8B8C9C',
   },
