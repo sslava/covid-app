@@ -10,9 +10,7 @@ export default function Sources({date, source}) {
     <View style={styles.container}>
       <Text style={styles.text}>
         {t('stats.source.source')}
-        <Text style={styles.source}>
-          CSSE at JHU (github.com/CSSEGISandData)
-        </Text>
+        <Text style={styles.source}>JHU (github.com/CSSEGISandData)</Text>
         {t('stats.source.updatedAt', {date: formatDate(date)})}
       </Text>
     </View>
