@@ -16,6 +16,7 @@ import ItemStore from '../../common/ItemStore';
 const StatsContext = createContext(null);
 
 const initialState = getInitialFetchState({
+  nodata: false,
   world: {
     deaths: '0',
     deaths_new: '0',
@@ -32,11 +33,19 @@ const initialState = getInitialFetchState({
 });
 
 const normalize = (payload) => {
+  if (payload.nodata === true) {
+    return {
+      nodata: payload.nodata,
+      ...initialState,
+    };
+  }
+
   const ordered = payload.stats.countries
     .filter((c) => !!c.code)
     .sort((a, b) => b.total - a.total);
 
   return {
+    nodata: false,
     world: payload.stats.world,
     countries: ordered,
   };
