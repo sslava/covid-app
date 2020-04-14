@@ -20,6 +20,13 @@
 		6CAEEFB21FCA1DC2A83DE19D /* libPods-rucovid-rucovidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B82CC4E152506DF74A979CF /* libPods-rucovid-rucovidTests.a */; };
 		CCC50389BAC2629DC3AB2779 /* libPods-rucovid-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71384B8B9CE6D25633D9196D /* libPods-rucovid-tvOSTests.a */; };
 		ECB8ACBF1B1F3FF0A843DAEA /* libPods-rucovid-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B88DECB02C44512DAC2509 /* libPods-rucovid-tvOS.a */; };
+		F92C6F3B2444E74D00A3DA73 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F92C6F3A2444E74D00A3DA73 /* NotificationCenter.framework */; };
+		F92C6F3E2444E74D00A3DA73 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92C6F3D2444E74D00A3DA73 /* TodayViewController.swift */; };
+		F92C6F412444E74D00A3DA73 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92C6F3F2444E74D00A3DA73 /* MainInterface.storyboard */; };
+		F92C6F452444E74D00A3DA73 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F92C6F392444E74D00A3DA73 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F92C6F4B2444E79F00A3DA73 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92C6F4A2444E79F00A3DA73 /* BarView.swift */; };
+		F92C6F4D2445090E00A3DA73 /* LabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92C6F4C2445090E00A3DA73 /* LabelsView.swift */; };
+		F92C6F4F2445130D00A3DA73 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92C6F4E2445130D00A3DA73 /* Column.swift */; };
 		F9FA6C98243226CB0030AC51 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C90243226CB0030AC51 /* Ubuntu-Bold.ttf */; };
 		F9FA6C99243226CB0030AC51 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C91243226CB0030AC51 /* Ubuntu-LightItalic.ttf */; };
 		F9FA6C9A243226CB0030AC51 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C92243226CB0030AC51 /* Ubuntu-Italic.ttf */; };
@@ -45,7 +52,28 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "rucovid-tvOS";
 		};
+		F92C6F432444E74D00A3DA73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F92C6F382444E74D00A3DA73;
+			remoteInfo = Today;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F92C6F462444E74D00A3DA73 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F92C6F452444E74D00A3DA73 /* Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -75,6 +103,14 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F5BEA140B0EA98FF37DE928E /* Pods-rucovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid.debug.xcconfig"; path = "Target Support Files/Pods-rucovid/Pods-rucovid.debug.xcconfig"; sourceTree = "<group>"; };
 		F8D5105B816F1AF9CB4DAEA5 /* Pods-rucovid-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOSTests/Pods-rucovid-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F92C6F392444E74D00A3DA73 /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F92C6F3A2444E74D00A3DA73 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		F92C6F3D2444E74D00A3DA73 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		F92C6F402444E74D00A3DA73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		F92C6F422444E74D00A3DA73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F92C6F4A2444E79F00A3DA73 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		F92C6F4C2445090E00A3DA73 /* LabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsView.swift; sourceTree = "<group>"; };
+		F92C6F4E2445130D00A3DA73 /* Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
 		F9F01815243229AA001C2EF5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F9FA6C90243226CB0030AC51 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 		F9FA6C91243226CB0030AC51 /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -116,6 +152,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC50389BAC2629DC3AB2779 /* libPods-rucovid-tvOSTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F92C6F362444E74D00A3DA73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F92C6F3B2444E74D00A3DA73 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +206,7 @@
 				7B82CC4E152506DF74A979CF /* libPods-rucovid-rucovidTests.a */,
 				D8B88DECB02C44512DAC2509 /* libPods-rucovid-tvOS.a */,
 				71384B8B9CE6D25633D9196D /* libPods-rucovid-tvOSTests.a */,
+				F92C6F3A2444E74D00A3DA73 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,6 +240,7 @@
 				13B07FAE1A68108700A75B9A /* rucovid */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* rucovidTests */,
+				F92C6F3C2444E74D00A3DA73 /* Today */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				5D5BE4E396E3484A5D7ADD4A /* Pods */,
@@ -211,8 +257,22 @@
 				00E356EE1AD99517003FC87E /* rucovidTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* rucovid-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* rucovid-tvOSTests.xctest */,
+				F92C6F392444E74D00A3DA73 /* Today.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F92C6F3C2444E74D00A3DA73 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				F92C6F3D2444E74D00A3DA73 /* TodayViewController.swift */,
+				F92C6F3F2444E74D00A3DA73 /* MainInterface.storyboard */,
+				F92C6F422444E74D00A3DA73 /* Info.plist */,
+				F92C6F4A2444E79F00A3DA73 /* BarView.swift */,
+				F92C6F4C2445090E00A3DA73 /* LabelsView.swift */,
+				F92C6F4E2445130D00A3DA73 /* Column.swift */,
+			);
+			path = Today;
 			sourceTree = "<group>";
 		};
 		F9FA6C8F243226A10030AC51 /* Resources */ = {
@@ -262,10 +322,12 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				F92C6F462444E74D00A3DA73 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F92C6F442444E74D00A3DA73 /* PBXTargetDependency */,
 			);
 			name = rucovid;
 			productName = rucovid;
@@ -311,12 +373,30 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* rucovid-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F92C6F382444E74D00A3DA73 /* Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F92C6F492444E74D00A3DA73 /* Build configuration list for PBXNativeTarget "Today" */;
+			buildPhases = (
+				F92C6F352444E74D00A3DA73 /* Sources */,
+				F92C6F362444E74D00A3DA73 /* Frameworks */,
+				F92C6F372444E74D00A3DA73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Today;
+			productName = Today;
+			productReference = F92C6F392444E74D00A3DA73 /* Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +418,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
+					F92C6F382444E74D00A3DA73 = {
+						CreatedOnToolsVersion = 11.4;
+						DevelopmentTeam = P26HBG5KBQ;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "rucovid" */;
@@ -358,6 +443,7 @@
 				00E356ED1AD99517003FC87E /* rucovidTests */,
 				2D02E47A1E0B4A5D006451C7 /* rucovid-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* rucovid-tvOSTests */,
+				F92C6F382444E74D00A3DA73 /* Today */,
 			);
 		};
 /* End PBXProject section */
@@ -399,6 +485,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F92C6F372444E74D00A3DA73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F92C6F412444E74D00A3DA73 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +690,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F92C6F352444E74D00A3DA73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F92C6F4B2444E79F00A3DA73 /* BarView.swift in Sources */,
+				F92C6F4F2445130D00A3DA73 /* Column.swift in Sources */,
+				F92C6F4D2445090E00A3DA73 /* LabelsView.swift in Sources */,
+				F92C6F3E2444E74D00A3DA73 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -609,6 +714,11 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* rucovid-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
+		F92C6F442444E74D00A3DA73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F92C6F382444E74D00A3DA73 /* Today */;
+			targetProxy = F92C6F432444E74D00A3DA73 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -620,6 +730,14 @@
 			);
 			name = LaunchScreen.xib;
 			path = rucovid;
+			sourceTree = "<group>";
+		};
+		F92C6F3F2444E74D00A3DA73 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F92C6F402444E74D00A3DA73 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -674,6 +792,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5BEA140B0EA98FF37DE928E /* Pods-rucovid.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -706,6 +825,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E10AC44E3AB2DFD1F2071EA /* Pods-rucovid.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -951,6 +1071,63 @@
 			};
 			name = Release;
 		};
+		F92C6F472444E74D00A3DA73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = P26HBG5KBQ;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.verbaclinic.covid19.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F92C6F482444E74D00A3DA73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = P26HBG5KBQ;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.verbaclinic.covid19.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -995,6 +1172,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F92C6F492444E74D00A3DA73 /* Build configuration list for PBXNativeTarget "Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F92C6F472444E74D00A3DA73 /* Debug */,
+				F92C6F482444E74D00A3DA73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
