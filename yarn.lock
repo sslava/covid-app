@@ -1146,6 +1146,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.7.tgz#a65ce0702f55cb67fd777995de6fc7b3e5781903"
   integrity sha512-9KbP7LTLFz9dx1heURJbO6nuVMdSjDez8znlrUzaB1nUwKVsTTwlKRuHxGUYIIkReLWrJQeCv9tidy+84z2eCw==
 
+"@react-native-community/segmented-control@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/segmented-control/-/segmented-control-1.2.1.tgz#c1b101609f6daee6f192693cd8c7467e767a1bc5"
+  integrity sha512-1aXfR/KIjIzihO2OG2/VHEvFeTPSGXVmbuWuOtiPpjVEcsqXzSo8fz/bZ+fcfmpweMo6hdnZOCV6Bet8oVc5JQ==
+
 "@react-navigation/bottom-tabs@^5.2.4":
   version "5.2.4"
   resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.2.4.tgz#c514d6262f0a6726394238f006f8a07adc1fd620"
