@@ -18,7 +18,6 @@ export const Circle = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 13px;
   line-height: 18px;
   font-weight: 600;
@@ -28,7 +27,6 @@ export const Title = styled.Text`
 
 export const Num = styled.Text`
   margin-top: 5px;
-  font-family: 'Ubuntu';
   font-weight: 600;
   font-size: 18px;
   line-height: 20px;
@@ -36,7 +34,6 @@ export const Num = styled.Text`
 `;
 
 export const Today = styled(SecondaryNumber)`
-  font-family: 'Ubuntu';
   font-size: 13px;
   line-height: 20px;
   font-weight: 600;

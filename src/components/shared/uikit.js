@@ -1,7 +1,6 @@
 // @flow
 
 export const lightTheme = {
-  fontFamily: 'Ubuntu',
   primaryBackground: 'white',
   secondaryBackground: '#F2F2F7',
   primaryTextColor: '#1C1C1E',
@@ -18,7 +17,6 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  fontFamily: 'Ubuntu',
   primaryBackground: '#1C1C1E',
   secondaryBackground: '#2C2C2E',
   primaryTextColor: '#F2F2F7',

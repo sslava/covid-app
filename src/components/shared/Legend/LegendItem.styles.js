@@ -18,7 +18,6 @@ export const Color = styled.View`
 
 export const Title = styled.Text`
   line-height: 18px;
-  font-family: 'Ubuntu';
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;

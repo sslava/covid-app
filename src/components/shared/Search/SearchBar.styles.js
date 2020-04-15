@@ -13,7 +13,6 @@ const inputStyles = css`
   padding-left: 45px;
   padding-right: 15px;
   border-radius: 22px;
-  font-family: 'Ubuntu';
   font-size: 13px;
   background-color: ${(p) => p.theme.secondaryBackground};
   color: ${(p) => p.theme.primaryTextColor};
@@ -38,7 +37,6 @@ export const Icon = styled.Image`
 
 export const Placeholder = styled.Text`
   line-height: 44px;
-  font-family: 'Ubuntu';
   font-size: 13px;
   color: ${(p) => p.theme.secondaryTextColor};
 `;

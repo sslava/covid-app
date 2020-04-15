@@ -69,7 +69,7 @@ export default function App() {
         screenOptions={({route}) => ({
           headerBackTitleVisible: false,
           headerTitleStyle: {
-            fontFamily: 'Ubuntu',
+            fontFamily: 'System',
             fontSize: 20,
             fontWeight: 'bold',
             color: theme.primaryTextColor,
