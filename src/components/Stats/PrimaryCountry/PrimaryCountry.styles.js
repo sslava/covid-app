@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   padding-bottom: 30px;
+  background-color: ${(p) => p.theme.primaryBackground};
 `;
 
 export const Legend = styled.View`

@@ -8,6 +8,7 @@ import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
 import Countries from './Countries/Countries';
 
 import {
+  Container,
   WorldContainer,
   PrimaryContainer,
   CountriesContainer,
@@ -36,7 +37,7 @@ export default function Stats({data, prefs}) {
 
   const top = useMemo(() => getTop(data.countries), [data.countries]);
   return (
-    <>
+    <Container>
       <LargeHeader title={t('stats.title')} />
       <WorldContainer>
         <WorldStats world={data.world} />
@@ -49,6 +50,6 @@ export default function Stats({data, prefs}) {
       <CountriesContainer>
         <Countries countries={top} />
       </CountriesContainer>
-    </>
+    </Container>
   );
 }
