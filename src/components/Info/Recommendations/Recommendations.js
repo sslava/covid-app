@@ -8,18 +8,18 @@ import {t} from '../../../common/locale';
 
 import Subheader from '../Subheader';
 
-import styles from './Recommendations.styles';
+import {List} from './Recommendations.styles';
 
 export default function Recommendations() {
   const recommendations = useMemo(recommendationsFn, []);
   return (
-    <View style={styles.container}>
+    <View>
       <Subheader>{t('info.recommentations.title')}</Subheader>
-      <View style={styles.list}>
+      <List>
         {recommendations.map((r, i) => (
           <Recommendation key={i} recommendation={r} />
         ))}
-      </View>
+      </List>
     </View>
   );
 }

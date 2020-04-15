@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 
-import {View, ScrollView} from 'react-native';
+import {View} from 'react-native';
 
 import {t} from '../../../common/locale';
 
@@ -8,21 +8,18 @@ import Subheader from '../Subheader';
 import Symptom from './Symptom';
 import symptomsFn from './list';
 
-import styles from './Symptoms.styles';
+import {ListScroll} from './Symptoms.styles';
 
 export default function Symptoms() {
   const symptoms = useMemo(symptomsFn, []);
   return (
-    <View style={styles.container}>
+    <View>
       <Subheader>{t('info.symptoms.title')}</Subheader>
-      <ScrollView
-        style={styles.list}
-        horizontal
-        showsHorizontalScrollIndicator={false}>
+      <ListScroll horizontal showsHorizontalScrollIndicator={false}>
         {symptoms.map((s, i) => (
           <Symptom key={i} symptom={s} />
         ))}
-      </ScrollView>
+      </ListScroll>
     </View>
   );
 }

@@ -1,44 +1,48 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
+import {StyleSheet, Animated} from 'react-native';
 
-export default StyleSheet.create({
-  container: {
-    borderBottomColor: '#F3F3F3',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#F3F3F3',
-    borderTopWidth: StyleSheet.hairlineWidth,
-  },
-  expanded: {
-    backgroundColor: '#FFF5F3',
-  },
-  button: {
-    paddingHorizontal: 20,
-    height: 44,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    position: 'relative',
-  },
-  title: {
-    fontFamily: 'Ubuntu',
-    fontWeight: '600',
-    fontSize: 15,
-    lineHeight: 20,
-    color: '#252A34',
-  },
-  today: {
-    marginLeft: 3,
-    fontSize: 13,
-    lineHeight: 24,
-    fontWeight: '600',
-    color: '#FFB663',
-  },
-  openIcon: {
-    position: 'absolute',
-    right: 20,
-    top: 14,
-    tintColor: '#A0A2AF',
-    width: 20,
-    height: 20,
-    marginLeft: 8,
-  },
-});
+import SecondaryNumber from '../SecondaryNumber';
+
+export const Container = styled.View`
+  border-bottom-color: ${(p) => p.theme.borderLightColor};
+  border-top-color: ${(p) => p.theme.borderLightColor};
+  border-bottom-width: ${StyleSheet.hairlineWidth}px;
+  border-top-width: ${StyleSheet.hairlineWidth}px;
+  background-color: ${(p) =>
+    p.expanded ? p.theme.expandedRegionColor : 'transparent'};
+`;
+
+export const Button = styled.TouchableOpacity`
+  position: relative;
+  padding-horizontal: 20px;
+  height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const Title = styled.Text`
+  font-family: 'Ubuntu';
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: ${(p) => p.theme.primaryTextColor};
+`;
+
+export const Today = styled(SecondaryNumber)`
+  margin-left: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 24px;
+  color: ${(p) => p.theme.activeColor};
+`;
+
+export const Icon = styled(Animated.Image)`
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  tint-color: #8e8e93;
+`;

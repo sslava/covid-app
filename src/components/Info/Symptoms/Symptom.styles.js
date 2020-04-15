@@ -1,26 +1,27 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    width: 135,
-    height: 165,
-    borderRadius: 5,
-    marginRight: 15,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  image: {
-    width: 96,
-    height: 96,
-  },
-  name: {
-    width: '100%',
-    fontFamily: 'Ubuntu',
-    fontSize: 14,
-    lineHeight: 17,
-    fontWeight: '500',
-    color: 'white',
-  },
-});
+export const Container = styled.View`
+  width: 135px;
+  height: 165px;
+  border-radius: 5px;
+  margin-right: 15px;
+  padding-horizontal: 10px;
+  padding-vertical: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: ${(p) => p.bg};
+`;
+
+export const Img = styled.Image`
+  width: 96px;
+  height: 96px;
+`;
+
+export const Name = styled.Text`
+  width: 100%;
+  font-family: 'Ubuntu';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  color: white;
+`;

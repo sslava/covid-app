@@ -1,9 +1,8 @@
 import React, {useCallback} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {View, Text, Image} from 'react-native';
+import {useTheme} from 'styled-components/native';
 
 import {formatDate, countryName, t} from '../../../common/locale';
-import {legendColor} from '../../shared/uikit';
 
 import LegendItem from '../../shared/Legend/LegendItem';
 import StatsBar from '../../shared/StatsBar/StatsBar';
@@ -16,7 +15,14 @@ import PageLink from '../common/PageLink';
 import changeIcon from './change.png';
 import countryIcons from '../../shared/countryIcons';
 
-import styles from './PrimaryCountry.styles';
+import {
+  Container,
+  Legend,
+  Bar,
+  Icon,
+  ChangeIcon,
+  UpdatedText,
+} from './PrimaryCountry.styles';
 
 export default function PrimaryCountry({country}) {
   const nav = useNavigation();
@@ -32,49 +38,50 @@ export default function PrimaryCountry({country}) {
   }, [nav]);
 
   const icon = countryIcons[country.code];
+  const theme = useTheme();
 
   return (
-    <View style={styles.container}>
+    <Container>
       <Subheader
-        icon={icon && <Image style={styles.icon} source={icon} />}
+        icon={icon && <Icon source={icon} />}
         title={countryName(country)}
         activeOpacity={0.5}
         onPress={changeCountry}>
-        <Image source={changeIcon} style={styles.changeIcon} />
+        <ChangeIcon source={changeIcon} />
       </Subheader>
       <HeroStats number={country.total} today={+country.total_new} />
-      <View style={styles.legend}>
+      <Legend>
         <LegendItem
-          color={legendColor.Active}
+          large
+          color={theme.activeColor}
           title={t('stats.active')}
-          numberStyle={styles.numberStyle}
           number={country.active}
         />
         <LegendItem
-          color={legendColor.Recovered}
+          large
+          color={theme.recoveredColor}
           title={t('stats.recovered')}
-          numberStyle={styles.numberStyle}
           number={country.recovered}
         />
         <LegendItem
-          color={legendColor.Deaths}
+          large
+          color={theme.deathsColor}
           title={t('stats.deaths')}
           number={country.deaths}
-          numberStyle={styles.numberStyle}
           today={+country.deaths_new}
         />
-      </View>
-      <View style={styles.bar}>
+      </Legend>
+      <Bar>
         <StatsBar items={stats} />
-      </View>
+      </Bar>
       {!!country.cities && (
         <PageLink route="Cities" params={{country: country.code}}>
           {t('stats.country.regionsButton')}
         </PageLink>
       )}
-      <Text style={styles.updatedText}>
+      <UpdatedText>
         {t('stats.country.updatedAt', {date: formatDate(country.updated)})}
-      </Text>
-    </View>
+      </UpdatedText>
+    </Container>
   );
 }

@@ -1,11 +1,10 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  content: {
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-  },
-  legend: {
-    paddingTop: 13,
-  },
-});
+export const Content = styled.View`
+  padding-horizontal: 20px;
+  padding-bottom: 20px;
+`;
+
+export const Legend = styled.View`
+  padding-top: 13px;
+`;
