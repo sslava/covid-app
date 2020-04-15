@@ -1,13 +1,12 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  search: {
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 10,
-  },
-});
+export const Container = styled.SafeAreaView`
+  flex: 1;
+  background-color: ${(p) => p.theme.primaryBackground};
+`;
+
+export const Search = styled.View`
+  padding-horizontal: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+`;

@@ -1,21 +1,22 @@
 import {useMemo} from 'react';
-import {legendColor} from './uikit';
+import {useTheme} from 'styled-components/native';
 
 export default function useRegionStats(total, recovered, deaths, active) {
+  const theme = useTheme();
   return useMemo(() => {
     return [
       {
-        color: legendColor.Active,
+        color: theme.activeColor,
         fraction: active / total,
       },
       {
-        color: legendColor.Recovered,
+        color: theme.recoveredColor,
         fraction: recovered / total,
       },
       {
-        color: legendColor.Deaths,
+        color: theme.deathsColor,
         fraction: deaths / total,
       },
     ];
-  }, [total, recovered, deaths, active]);
+  }, [total, recovered, deaths, active, theme]);
 }
