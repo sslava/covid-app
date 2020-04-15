@@ -1,25 +1,20 @@
 import React from 'react';
-
-import {Image} from 'react-native';
+import styled from 'styled-components/native';
 
 import backImage from '../../../assets/icons/back_white.png';
 import closeImage from '../../../assets/icons/close.png';
 
-import styles from './HeaderBack.styles';
+const StyledImage = styled.Image`
+  margin-left: 24px;
+  width: 24px;
+  height: 24px;
+  tint-color: ${(p) => p.theme.secondaryTextColor};
+`;
 
 export function HeaderBack() {
-  return (
-    <Image source={backImage} width={24} height={24} style={styles.backImage} />
-  );
+  return <StyledImage source={backImage} width={24} height={24} />;
 }
 
 export function HeaderClose() {
-  return (
-    <Image
-      source={closeImage}
-      width={24}
-      height={24}
-      style={styles.backImage}
-    />
-  );
+  return <StyledImage source={closeImage} width={24} height={24} />;
 }

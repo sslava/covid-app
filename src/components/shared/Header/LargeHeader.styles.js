@@ -1,13 +1,14 @@
-import {StyleSheet} from 'react-native';
-import {fontStyles} from '../uikit';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    paddingLeft: 20,
-    paddingTop: 10,
-  },
-  title: {
-    ...fontStyles.LargeTitle,
-    color: '#252A34',
-  },
-});
+export const Container = styled.View`
+  padding-left: 20px;
+  padding-top: 10px;
+`;
+
+export const Title = styled.Text`
+  font-family: 'Ubuntu';
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: bold;
+  color: ${(p) => p.theme.primaryTextColor};
+`;

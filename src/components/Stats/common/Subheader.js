@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
 
-import styles from './Subheader.styles';
+import {View} from 'react-native';
+import {Container, Header, Title} from './Subheader.styles';
 
 export default function Subheader({
   icon,
@@ -11,15 +11,12 @@ export default function Subheader({
   ...rest
 }) {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.header}
-        activeOpacity={activeOpacity}
-        {...rest}>
+    <Container>
+      <Header activeOpacity={activeOpacity} {...rest}>
         {icon}
-        <Text style={styles.title}>{title}</Text>
-        <View style={styles.children}>{children}</View>
-      </TouchableOpacity>
-    </View>
+        <Title>{title}</Title>
+        <View>{children}</View>
+      </Header>
+    </Container>
   );
 }

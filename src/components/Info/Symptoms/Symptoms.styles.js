@@ -1,7 +1,5 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  list: {
-    paddingHorizontal: 20,
-  },
-});
+export const ListScroll = styled.ScrollView`
+  padding-horizontal: 20px;
+`;

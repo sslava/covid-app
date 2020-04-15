@@ -11,7 +11,7 @@ import Sources from '../common/Sources';
 import PageLink from '../common/PageLink';
 import SearchButton from '../../shared/Search/SearchButton';
 
-import styles from './Countries.styles';
+import {Search} from './Countries.styles';
 
 export default function Countries({countries}) {
   const nav = useNavigation();
@@ -24,12 +24,12 @@ export default function Countries({countries}) {
   }
 
   return (
-    <View style={styles.container}>
+    <View>
       <Subheader title={t('stats.countries.title')} />
-      <View style={styles.search}>
+      <Search>
         <SearchButton placeholder={t('countries.search')} onPress={open} />
-      </View>
-      <View style={styles.list}>
+      </Search>
+      <View>
         {countries.map((c) => (
           <Country key={c.code} country={c} />
         ))}

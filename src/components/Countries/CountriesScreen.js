@@ -1,6 +1,7 @@
 import React from 'react';
+import {FlatList, RefreshControl} from 'react-native';
+
 import {t} from '../../common/locale';
-import {SafeAreaView, FlatList, View, RefreshControl} from 'react-native';
 
 import Country from './Country';
 import SearchBar from '../shared/Search/SearchBar';
@@ -11,7 +12,7 @@ import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 import useRefresh from '../shared/useRefresh';
 import {useStatsContext} from '../shared/StatsDataContext';
 
-import styles from './CountriesScreen.styles';
+import {Container, Search} from './CountriesScreen.styles';
 
 export default function CountriesScreen() {
   const {
@@ -27,24 +28,22 @@ export default function CountriesScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.search}>
+    <Container>
+      <Search>
         <SearchBar
           value={query}
           onChange={setQuery}
           placeholder={t('countries.search')}
         />
-      </View>
+      </Search>
       <FlatList
-        indicatorStyle="black"
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }
-        style={styles.flatList}
         data={countries}
         renderItem={({item}) => <Country country={item} />}
         keyExtractor={(item) => item.code}
       />
-    </SafeAreaView>
+    </Container>
   );
 }
