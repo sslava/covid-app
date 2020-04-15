@@ -1,7 +1,6 @@
 import React from 'react';
-import {View} from 'react-native';
+import {useTheme} from 'styled-components/native';
 
-import {legendColor} from '../../shared/uikit';
 import useRegionStats from '../../shared/useRegionStats';
 
 import {t} from '../../../common/locale';
@@ -9,7 +8,7 @@ import {t} from '../../../common/locale';
 import StatsBar from '../StatsBar/StatsBar';
 import LegendItem from '../Legend/LegendItem';
 
-import styles from './RegionListLegend.styles';
+import {Content, Legend} from './RegionListLegend.styles';
 
 export default function RegionListLegend({
   total,
@@ -19,31 +18,32 @@ export default function RegionListLegend({
   deaths_new,
   skipToday,
 }) {
+  const theme = useTheme();
   const stats = useRegionStats(total, recovered, deaths, active);
   return (
-    <View style={styles.content}>
-      <View style={styles.legend}>
+    <Content>
+      <Legend>
         <LegendItem
-          color={legendColor.Active}
+          color={theme.activeColor}
           title={t('stats.active')}
           number={active}
           skipToday={skipToday}
         />
         <LegendItem
-          color={legendColor.Recovered}
+          color={theme.recoveredColor}
           title={t('stats.recovered')}
           number={recovered}
           skipToday={skipToday}
         />
         <LegendItem
-          color={legendColor.Deaths}
+          color={theme.deathsColor}
           title={t('stats.deaths')}
           number={deaths}
           today={+deaths_new}
           skipToday={skipToday}
         />
-      </View>
+      </Legend>
       <StatsBar items={stats} height={10} />
-    </View>
+    </Content>
   );
 }

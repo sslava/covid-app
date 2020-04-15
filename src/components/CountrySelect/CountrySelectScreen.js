@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo} from 'react';
-import {View, SafeAreaView, FlatList} from 'react-native';
+import {FlatList} from 'react-native';
 
 import {sortCountries, matchCountry, countryName, t} from '../../common/locale';
 
@@ -10,7 +10,7 @@ import {usePrefences} from '../shared/PreferencesContext';
 import {useStatsContext} from '../shared/StatsDataContext';
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
-import styles from './CountrySelectScreen.styles';
+import {Container, Search} from './CountrySelectScreen.styles';
 
 export default function CountrySelectScreen({navigation}) {
   const [prefs, updatePrefs] = usePrefences();
@@ -32,16 +32,15 @@ export default function CountrySelectScreen({navigation}) {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.search}>
+    <Container>
+      <Search>
         <SearchBar
           placeholder={t('countries.search')}
           value={query}
           onChange={setQuery}
         />
-      </View>
+      </Search>
       <FlatList
-        style={styles.flatList}
         data={countries}
         renderItem={({item}) => (
           <Country
@@ -53,6 +52,6 @@ export default function CountrySelectScreen({navigation}) {
         )}
         keyExtractor={(item) => item.code}
       />
-    </SafeAreaView>
+    </Container>
   );
 }

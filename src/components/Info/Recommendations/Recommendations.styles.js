@@ -1,8 +1,5 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {},
-  list: {
-    paddingHorizontal: 20,
-  },
-});
+export const List = styled.View`
+  padding-horizontal: 20px;
+`;

@@ -1,43 +1,42 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    paddingBottom: 30,
-  },
-  legend: {
-    marginTop: 30,
-    paddingHorizontal: 20,
-  },
-  bar: {
-    paddingHorizontal: 20,
-  },
-  updatedText: {
-    marginTop: 20,
-    paddingLeft: 20,
-    fontFamily: 'Ubuntu',
-    fontSize: 11,
-    fontWeight: '500',
-    lineHeight: 18,
-    color: '#8B8C9C',
-  },
-  icon: {
-    height: 26,
-    width: 26,
-    borderRadius: 12,
-    marginRight: 10,
-    resizeMode: 'cover',
-    borderColor: '#F3F3F3',
-    borderWidth: 1,
-  },
-  numberStyle: {
-    fontSize: 18,
-    fontWeight: '600',
-  },
-  changeIcon: {
-    marginLeft: 9,
-    position: 'relative',
-    top: 1,
-    width: 10,
-    height: 8,
-  },
-});
+export const Container = styled.View`
+  padding-bottom: 30px;
+`;
+
+export const Legend = styled.View`
+  margin-top: 30px;
+  padding-horizontal: 20px;
+`;
+
+export const Bar = styled.View`
+  padding-horizontal: 20px;
+`;
+
+export const UpdatedText = styled.Text`
+  margin-top: 20px;
+  padding-left: 20px;
+  font-family: 'Ubuntu';
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 18px;
+  color: ${(p) => p.theme.secondaryTextColor};
+`;
+
+export const Icon = styled.Image`
+  height: 26px;
+  width: 26px;
+  border-radius: 12px;
+  margin-right: 10px;
+  resize-mode: cover;
+  border-color: ${(p) => p.theme.secondaryBackground};
+  border-width: 1px;
+`;
+
+export const ChangeIcon = styled.Image`
+  margin-left: 9px;
+  position: relative;
+  top: 1px;
+  width: 10px;
+  height: 8px;
+`;

@@ -13,7 +13,14 @@ import VerbaLink from './VerbaLink';
 
 import {useStatsContext} from '../shared/StatsDataContext';
 
-import styles from './InfoScreen.styles';
+import {
+  SafeArea,
+  CSymptoms,
+  CResources,
+  CRecommendations,
+} from './InfoScreen.styles';
+
+const contentStyle = {paddingBottom: 30};
 
 export default function InfoScreen({navigation}) {
   const scrollRef = useRef();
@@ -24,25 +31,22 @@ export default function InfoScreen({navigation}) {
   } = useStatsContext();
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeArea>
       {!data.nodata && (
-        <ScrollView
-          ref={scrollRef}
-          style={styles.scroll}
-          contentContainerStyle={styles.scrollContent}>
+        <ScrollView ref={scrollRef} contentContainerStyle={contentStyle}>
           <LargeHeader title={t('info.title')} />
-          <View style={styles.symptoms}>
+          <CSymptoms>
             <Symptoms />
-          </View>
-          <View style={styles.recommendations}>
+          </CSymptoms>
+          <CRecommendations>
             <Recommendations />
-          </View>
-          <View style={styles.resources}>
+          </CRecommendations>
+          <CResources>
             <Resources />
-          </View>
+          </CResources>
           <VerbaLink />
         </ScrollView>
       )}
-    </SafeAreaView>
+    </SafeArea>
   );
 }

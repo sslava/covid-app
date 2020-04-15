@@ -1,12 +1,23 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import styled from 'styled-components/native';
 
-import styles from './Subheader.styles';
+const Header = styled.View`
+  padding-horizontal: 20px;
+  padding-bottom: 15px;
+`;
+
+const Title = styled.Text`
+  font-family: 'Ubuntu';
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
+  color: ${(p) => p.theme.primaryTextColor};
+`;
 
 export default function Subheader({children}) {
   return (
-    <View style={styles.header}>
-      <Text style={styles.title}>{children}</Text>
-    </View>
+    <Header>
+      <Title>{children}</Title>
+    </Header>
   );
 }

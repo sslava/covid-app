@@ -1,12 +1,14 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-  },
-  bar: {
-    marginLeft: 1,
-    marginRight: 1,
-    borderRadius: 2,
-  },
-});
+export const Container = styled.View`
+  flex-direction: row;
+`;
+
+export const Bar = styled.View`
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 2px;
+  height: ${(p) => p.height}px;
+  width: ${(p) => (p.fraction * 100).toFixed(3)}%;
+  background-color: ${(p) => p.color};
+`;

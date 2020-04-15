@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {useTheme} from 'styled-components/native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
@@ -22,11 +23,22 @@ const RootTabs = createBottomTabNavigator();
 const AppStack = createStackNavigator();
 
 function Root() {
+  const theme = useTheme();
+
   return (
     <RootTabs.Navigator
       tabBarOptions={{
-        activeTintColor: '#087ED9',
-        inactiveTintColor: '#A0A2AF',
+        safeAreaInsets: {
+          top: 10,
+          bottom: 15,
+        },
+        style: {
+          paddingTop: 10,
+          backgroundColor: theme.primaryBackground,
+          shadowColor: theme.borderLightColor,
+        },
+        activeTintColor: '#007AFF',
+        inactiveTintColor: theme.secondaryTextColor,
       }}>
       <RootTabs.Screen
         name="Stats"
@@ -49,6 +61,7 @@ function Root() {
 }
 
 export default function App() {
+  const theme = useTheme();
   return (
     <NavigationContainer>
       <AppStack.Navigator
@@ -59,7 +72,12 @@ export default function App() {
             fontFamily: 'Ubuntu',
             fontSize: 20,
             fontWeight: 'bold',
-            color: '#252A34',
+            color: theme.primaryTextColor,
+          },
+          headerStyle: {
+            backgroundColor: theme.primaryBackground,
+            elevation: 0,
+            shadowOpacity: 0,
           },
           headerBackImage: HeaderBack,
         })}>
