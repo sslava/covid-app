@@ -1,6 +1,10 @@
 import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
+export const Container = styled.View`
+  background-color: ${(p) => p.theme.primaryBackground};
+`;
+
 export const WorldContainer = styled.View`
   margin-top: 20px;
   border-bottom-width: ${StyleSheet.hairlineWidth}px;
