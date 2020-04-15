@@ -19,7 +19,6 @@ export const Icon = styled.Image`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 15px;
   line-height: 20px;
   font-weight: bold;
@@ -28,7 +27,6 @@ export const Title = styled.Text`
 
 export const Desc = styled.Text`
   margin-top: 4px;
-  font-family: 'Ubuntu';
   font-size: 13px;
   line-height: 18px;
   color: ${(p) => p.theme.secondaryTextColor};

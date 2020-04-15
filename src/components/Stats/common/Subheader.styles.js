@@ -12,7 +12,6 @@ export const Header = styled.TouchableOpacity`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 20px;
   line-height: 26px;
   font-weight: bold;

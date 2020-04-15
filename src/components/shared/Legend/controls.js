@@ -4,7 +4,6 @@ import styled from 'styled-components/native';
 import {formatNumber} from '../../../common/locale';
 
 const Num = styled.Text`
-  font-family: 'Ubuntu';
   line-height: 20px;
   font-size: ${(p) => (p.large ? 18 : 15)}px;
   font-weight: ${(p) => (p.large ? 600 : 'bold')};

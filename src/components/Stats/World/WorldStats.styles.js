@@ -21,7 +21,6 @@ export const WorldIcon = styled.Image`
 `;
 
 export const UpdatedText = styled.Text`
-  font-family: 'Ubuntu';
   margin-top: 12px;
   padding-left: 20px;
   font-size: 11px;

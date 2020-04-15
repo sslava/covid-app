@@ -6,7 +6,6 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 36px;
   line-height: 40px;
   font-weight: bold;

@@ -14,7 +14,6 @@ export const Btn = styled.TouchableOpacity`
 `;
 
 export const Caption = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;

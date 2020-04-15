@@ -20,7 +20,6 @@ export const Left = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Ubuntu';
   font-weight: 600;
   font-size: 15px;
   line-height: 20px;

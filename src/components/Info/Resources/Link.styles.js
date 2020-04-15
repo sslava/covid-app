@@ -14,7 +14,6 @@ export const Subtitle = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 15px;
   line-height: 20px;
   font-weight: bold;
@@ -23,7 +22,6 @@ export const Title = styled.Text`
 `;
 
 export const UrlText = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 13px;
   line-height: 18px;
   font-weight: bold;
