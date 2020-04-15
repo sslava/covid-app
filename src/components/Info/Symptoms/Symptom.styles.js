@@ -19,7 +19,6 @@ export const Img = styled.Image`
 
 export const Name = styled.Text`
   width: 100%;
-  font-family: 'Ubuntu';
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;

@@ -7,7 +7,6 @@ export const Container = styled.View`
 `;
 
 export const Num = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 48px;
   line-height: 54px;
   font-weight: 500;
@@ -16,7 +15,6 @@ export const Num = styled.Text`
 
 export const Cases = styled.Text`
   margin-top: 3px;
-  font-family: 'Ubuntu';
   font-size: 13px;
   line-height: 18px;
   font-weight: 500;
@@ -26,7 +24,6 @@ export const Cases = styled.Text`
 
 export const Today = styled(SecondaryNumber)`
   margin-left: 10px;
-  font-family: 'Ubuntu';
   font-size: 18px;
   line-height: 54px;
   font-weight: 500;

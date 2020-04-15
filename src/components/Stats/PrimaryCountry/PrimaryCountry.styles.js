@@ -17,7 +17,6 @@ export const Bar = styled.View`
 export const UpdatedText = styled.Text`
   margin-top: 20px;
   padding-left: 20px;
-  font-family: 'Ubuntu';
   font-size: 11px;
   font-weight: 500;
   line-height: 18px;

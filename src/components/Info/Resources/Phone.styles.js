@@ -9,7 +9,6 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const Title = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 15px;
   line-height: 20px;
   font-weight: bold;
@@ -22,7 +21,6 @@ export const Subtitle = styled.View`
 `;
 
 export const PhoneText = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 30px;
   line-height: 30px;
   font-weight: 600;

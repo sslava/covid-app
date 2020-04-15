@@ -14,7 +14,6 @@ const Container = styled.View`
 `;
 
 const T = styled.Text`
-  font-family: 'Ubuntu';
   padding-left: 20px;
   font-size: 15px;
   font-weight: 600;

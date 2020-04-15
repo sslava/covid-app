@@ -5,7 +5,6 @@ export const Container = styled.View`
 `;
 
 export const SourceText = styled.Text`
-  font-family: 'Ubuntu';
   font-size: 11px;
   font-weight: 600;
   line-height: 18px;
