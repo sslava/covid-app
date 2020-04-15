@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useCallback} from 'react';
 import {FlatList, RefreshControl} from 'react-native';
 
 import {t} from '../../common/locale';
@@ -12,7 +12,17 @@ import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 import useRefresh from '../shared/useRefresh';
 import {useStatsContext} from '../shared/StatsDataContext';
 
-import {Container, Search} from './CountriesScreen.styles';
+import {Container, Top, SortControl} from './CountriesScreen.styles';
+
+function sortActive(arr) {
+  return [...arr].sort((a, b) => b.active - a.active);
+}
+
+function sortDeaths(arr) {
+  return [...arr].sort((a, b) => b.deaths - a.deaths);
+}
+
+const sortFns = [(a) => a, sortActive, sortDeaths];
 
 export default function CountriesScreen() {
   const {
@@ -20,22 +30,38 @@ export default function CountriesScreen() {
     refreshStats,
   } = useStatsContext();
 
+  const [sort, setSort] = useState(0);
+  const changeSort = useCallback(
+    (e) => setSort(e.nativeEvent.selectedSegmentIndex),
+    [],
+  );
+
   const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
 
   const [countries, query, setQuery] = useDebouncedSearch(
     data.countries,
     matchCountry,
+    sortFns[sort],
   );
 
   return (
     <Container>
-      <Search>
+      <Top>
         <SearchBar
           value={query}
           onChange={setQuery}
           placeholder={t('countries.search')}
         />
-      </Search>
+        <SortControl
+          selectedIndex={sort}
+          onChange={changeSort}
+          values={[
+            t('countries.sort.total'),
+            t('countries.sort.active'),
+            t('countries.sort.deaths'),
+          ]}
+        />
+      </Top>
       <FlatList
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />

@@ -96,7 +96,12 @@
   },
   "countries": {
     "title": "Countries stats",
-    "search": "Search by country"
+    "search": "Search by country",
+    "sort": {
+      "active": "Active cases",
+      "total": "Total cases",
+      "deaths": "Deaths"
+    }
   },
   "countryselect": {
     "title": "Select country"
