@@ -1,40 +1,31 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import styled from 'styled-components/native';
 
-const {width} = Dimensions.get('window');
+export const Container = styled.View`
+  padding-bottom: 30px;
+`;
 
-export default StyleSheet.create({
-  container: {
-    paddingBottom: 30,
-  },
-  stats: {
-    marginTop: 30,
-    paddingLeft: 20,
-    flexDirection: 'row',
-  },
-  pie: {
-    width: width / 2 - 40,
-    height: width / 2 - 40,
-  },
-  counters: {
-    marginLeft: 20,
-  },
-  worldIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
-  numberStats: {
-    flex: 1,
-    width: '100%',
-    flexDirection: 'row',
-  },
-  updatedText: {
-    marginTop: 12,
-    paddingLeft: 20,
-    fontFamily: 'Ubuntu',
-    fontSize: 11,
-    fontWeight: '500',
-    lineHeight: 18,
-    color: '#8B8C9C',
-  },
-});
+export const Stats = styled.View`
+  margin-top: 30px;
+  padding-left: 20px;
+  flex-direction: row;
+`;
+
+export const Counters = styled.View`
+  margin-left: 20px;
+`;
+
+export const WorldIcon = styled.Image`
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+`;
+
+export const UpdatedText = styled.Text`
+  font-family: 'Ubuntu';
+  margin-top: 12px;
+  padding-left: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 18px;
+  color: ${(p) => p.theme.secondaryTextColor};
+`;

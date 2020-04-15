@@ -1,9 +1,6 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {},
-  search: {
-    paddingBottom: 10,
-    paddingHorizontal: 20,
-  },
-});
+export const Search = styled.View`
+  padding-bottom: 10px;
+  padding-horizontal: 20px;
+`;

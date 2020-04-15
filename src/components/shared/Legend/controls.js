@@ -1,22 +1,28 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import styled from 'styled-components/native';
 
 import {formatNumber} from '../../../common/locale';
 
-import styles from './controls.styles';
+const Num = styled.Text`
+  font-family: 'Ubuntu';
+  line-height: 20px;
+  font-size: ${(p) => (p.large ? 18 : 15)}px;
+  font-weight: ${(p) => (p.large ? 600 : 'bold')};
+  color: ${(p) => p.theme.primaryTextColor};
+`;
 
-export function PrimaryNumber({value, style}) {
-  return <Text style={[styles.number, style]}>{formatNumber(value)}</Text>;
+export function PrimaryNumber({value, ...rest}) {
+  return <Num {...rest}>{formatNumber(value)}</Num>;
 }
 
-export function Left({children}) {
-  return <View style={styles.left}>{children}</View>;
-}
+export const Left = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
 
-export function Right({children, skipToday}) {
-  return (
-    <View style={[styles.right, skipToday && styles.skipToday]}>
-      {children}
-    </View>
-  );
-}
+export const Right = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+  width: ${(p) => (p.skipToday ? 75 : 140)}px;
+`;

@@ -1,8 +1,8 @@
 import React, {useMemo} from 'react';
-import {View, Dimensions, Text, Image} from 'react-native';
+import {Dimensions} from 'react-native';
+import {useTheme} from 'styled-components/native';
 
 import Pie from '../../shared/PieChart/Pie';
-import {legendColor} from '../../shared/uikit';
 import {formatDate, t} from '../../../common/locale';
 
 import PercentCounter from './PercentCounter';
@@ -11,59 +11,75 @@ import HeroStats from '../common/HeroStats';
 
 import worldIcon from './world.png';
 
-import styles from './WorldStats.styles';
+import {
+  Container,
+  Stats,
+  Counters,
+  UpdatedText,
+  WorldIcon,
+} from './WorldStats.styles';
 
 const {width} = Dimensions.get('window');
 
-const getPieData = (total, recovered, deaths, active) => {
+const getPieData = (total, recovered, deaths, active, theme) => {
   return [
-    {index: 0, number: active / total, fill: legendColor.Active},
-    {index: 1, number: deaths / total, fill: legendColor.Deaths},
-    {index: 2, number: recovered / total, fill: legendColor.Recovered},
+    {index: 0, number: active / total, fill: theme.activeColor},
+    {index: 1, number: deaths / total, fill: theme.deathsColor},
+    {index: 2, number: recovered / total, fill: theme.recoveredColor},
   ];
 };
 
 export default function WorldStats({world}) {
+  const theme = useTheme();
+
   const data = useMemo(
-    () => getPieData(world.total, world.recovered, world.deaths, world.active),
-    [world.total, world.recovered, world.deaths, world.active],
+    () =>
+      getPieData(
+        world.total,
+        world.recovered,
+        world.deaths,
+        world.active,
+        theme,
+      ),
+    [world.total, world.recovered, world.deaths, world.active, theme],
   );
   return (
-    <View style={styles.container}>
+    <Container>
       <Subheader
-        icon={<Image source={worldIcon} style={styles.worldIcon} />}
+        icon={<WorldIcon source={worldIcon} />}
         title={t('stats.global.title')}
       />
       <HeroStats number={world.total} today={+world.total_new} />
-      <View style={styles.stats}>
+      <Stats>
         <Pie
           data={data}
           size={width / 2 - 40}
           innerRadius={67}
-          blankColor={legendColor.Confirmed}
+          blankColor={theme.secondaryBackground}
+          innerColor={theme.primaryBackground}
         />
-        <View style={styles.counters}>
+        <Counters>
           <PercentCounter
             title={t('stats.active')}
             number={world.active}
-            color={legendColor.Active}
+            color={theme.activeColor}
           />
           <PercentCounter
             title={t('stats.recovered')}
             number={world.recovered}
-            color={legendColor.Recovered}
+            color={theme.recoveredColor}
           />
           <PercentCounter
             title={t('stats.deaths')}
             number={world.deaths}
             today={world.deaths_new}
-            color={legendColor.Deaths}
+            color={theme.deathsColor}
           />
-        </View>
-      </View>
-      <Text style={styles.updatedText}>
+        </Counters>
+      </Stats>
+      <UpdatedText>
         {t('stats.global.updatedAt', {date: formatDate(world.updated)})}
-      </Text>
-    </View>
+      </UpdatedText>
+    </Container>
   );
 }

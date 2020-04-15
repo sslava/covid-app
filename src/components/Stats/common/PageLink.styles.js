@@ -1,22 +1,22 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    paddingTop: 20,
-    paddingHorizontal: 20,
-  },
-  button: {
-    borderRadius: 5,
-    height: 44,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F3F3F3',
-  },
-  caption: {
-    color: '#252A34',
-    fontFamily: 'Ubuntu',
-    fontSize: 16,
-    lineHeight: 20,
-    fontWeight: '500',
-  },
-});
+export const Container = styled.View`
+  padding-top: 20px;
+  padding-horizontal: 20px;
+`;
+
+export const Btn = styled.TouchableOpacity`
+  border-radius: 5px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(p) => p.theme.secondaryBackground};
+`;
+
+export const Caption = styled.Text`
+  font-family: 'Ubuntu';
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: ${(p) => p.theme.primaryTextColor};
+`;

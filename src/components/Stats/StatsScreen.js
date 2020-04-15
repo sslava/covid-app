@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 
-import {ScrollView, RefreshControl, SafeAreaView} from 'react-native';
+import {RefreshControl} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
 import useRefresh from '../shared/useRefresh';
@@ -9,7 +9,7 @@ import {usePrefences} from '../shared/PreferencesContext';
 
 import Stats from './Stats';
 
-import styles from './StatsScreen.styles';
+import {Safe, Scroll} from './StatsScreen.styles';
 
 export default function StatsScreen({}) {
   const scrollRef = useRef();
@@ -24,17 +24,14 @@ export default function StatsScreen({}) {
   const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <ScrollView
+    <Safe>
+      <Scroll
         ref={scrollRef}
-        style={styles.scroll}
-        contentContainerStyle={styles.scrollContent}
-        indicatorStyle="black"
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
         {!data.nodata && <Stats prefs={prefs} data={data} />}
-      </ScrollView>
-    </SafeAreaView>
+      </Scroll>
+    </Safe>
   );
 }

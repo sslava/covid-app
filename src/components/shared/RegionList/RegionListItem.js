@@ -1,12 +1,11 @@
 import React, {useRef, useEffect} from 'react';
-import {View, Text, Animated, Easing, TouchableOpacity} from 'react-native';
+import {Animated, Easing} from 'react-native';
 
-import SecondaryNumber from '../SecondaryNumber';
-
-import openIcon from '../../../assets/icons/open_grey.png';
 import {Left, Right, PrimaryNumber} from '../Legend/controls';
 
-import styles from './RegionListItem.styles';
+import openIcon from '../../../assets/icons/open_grey.png';
+
+import {Container, Button, Title, Today, Icon} from './RegionListItem.styles';
 
 export function RegionListToggle({
   name,
@@ -33,29 +32,19 @@ export function RegionListToggle({
   });
 
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={styles.button}
-      activeOpacity={0.5}>
+    <Button onPress={onPress} activeOpacity={0.5}>
       <Left>
-        <Text style={styles.title}>{name}</Text>
+        <Title>{name}</Title>
       </Left>
       <Right skipToday={skipToday}>
-        <PrimaryNumber value={total} style={styles.number} />
-        {!skipToday && <SecondaryNumber num={+today} style={styles.today} />}
+        <PrimaryNumber value={total} />
+        {!skipToday && <Today num={+today} />}
       </Right>
-      <Animated.Image
-        source={openIcon}
-        style={[styles.openIcon, {transform: [{rotate}]}]}
-      />
-    </TouchableOpacity>
+      <Icon source={openIcon} style={{transform: [{rotate}]}} />
+    </Button>
   );
 }
 
 export function RegionListItem({children, expanded}) {
-  return (
-    <View style={[styles.container, expanded && styles.expanded]}>
-      {children}
-    </View>
-  );
+  return <Container expanded={expanded}>{children}</Container>;
 }

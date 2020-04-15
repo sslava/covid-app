@@ -7,9 +7,9 @@ import pain from './icons/pain.png';
 import temp from './icons/temp.png';
 
 export default () => [
-  {bg: '#FC624D', image: temp, title: t('info.symptoms.list.s1')},
-  {bg: '#FC9F4D', image: cought, title: t('info.symptoms.list.s2')},
-  {bg: '#4D70FC', image: lowenergy, title: t('info.symptoms.list.s3')},
-  {bg: '#FC9F4D', image: breath, title: t('info.symptoms.list.s4')},
-  {bg: '#FC624D', image: pain, title: t('info.symptoms.list.s5')},
+  {bg: '#FF3B30', image: temp, title: t('info.symptoms.list.s1')},
+  {bg: '#FF9500', image: cought, title: t('info.symptoms.list.s2')},
+  {bg: '#007AFF', image: lowenergy, title: t('info.symptoms.list.s3')},
+  {bg: '#FF9500', image: breath, title: t('info.symptoms.list.s4')},
+  {bg: '#FF3B30', image: pain, title: t('info.symptoms.list.s5')},
 ];

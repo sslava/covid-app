@@ -1,14 +1,13 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    padding: 20,
-  },
-  text: {
-    fontFamily: 'Ubuntu',
-    fontSize: 11,
-    fontWeight: '600',
-    lineHeight: 18,
-    color: '#8B8C9C',
-  },
-});
+export const Container = styled.View`
+  padding: 20px;
+`;
+
+export const SourceText = styled.Text`
+  font-family: 'Ubuntu';
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  color: ${(p) => p.theme.secondaryTextColor};
+`;
