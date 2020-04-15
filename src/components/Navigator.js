@@ -35,7 +35,7 @@ function Root() {
         style: {
           paddingTop: 10,
           backgroundColor: theme.primaryBackground,
-          shadowColor: theme.borderLightColor,
+          borderTopColor: 'transparent',
         },
         activeTintColor: '#007AFF',
         inactiveTintColor: theme.secondaryTextColor,
