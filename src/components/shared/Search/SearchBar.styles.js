@@ -1,31 +1,44 @@
-import {StyleSheet} from 'react-native';
+import styled, {css} from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    position: 'relative',
-  },
-  input: {
-    height: 44,
-    borderRadius: 22,
-    backgroundColor: '#F3F3F3',
-    paddingLeft: 45,
-    paddingRight: 15,
-    color: '#252A34',
-    fontFamily: 'Ubuntu',
-    fontSize: 13,
-  },
-  icon: {
-    position: 'absolute',
-    top: 12,
-    left: 15,
-    tintColor: '#8B8C9C',
-    width: 21,
-    height: 21,
-  },
-  placeholder: {
-    fontFamily: 'Ubuntu',
-    fontSize: 13,
-    color: '#8B8C9C',
-    lineHeight: 44,
-  },
-});
+export const Container = styled.View`
+  position: relative;
+`;
+
+export const Button = styled.TouchableOpacity`
+  position: relative;
+`;
+
+const inputStyles = css`
+  height: 44px;
+  padding-left: 45px;
+  padding-right: 15px;
+  border-radius: 22px;
+  font-family: 'Ubuntu';
+  font-size: 13px;
+  background-color: ${(p) => p.theme.secondaryBackground};
+  color: ${(p) => p.theme.primaryTextColor};
+`;
+
+export const InputContainer = styled.View`
+  ${inputStyles}
+`;
+
+export const Input = styled.TextInput`
+  ${inputStyles}
+`;
+
+export const Icon = styled.Image`
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  width: 21px;
+  height: 21px;
+  tint-color: ${(p) => p.theme.secondaryTextColor};
+`;
+
+export const Placeholder = styled.Text`
+  line-height: 44px;
+  font-family: 'Ubuntu';
+  font-size: 13px;
+  color: ${(p) => p.theme.secondaryTextColor};
+`;

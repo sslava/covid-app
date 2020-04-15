@@ -1,18 +1,17 @@
 import React from 'react';
 
-import {Text, View} from 'react-native';
 import {formatDate, t} from '../../../common/locale';
 
-import styles from './Sources.styles';
+import {Container, SourceText} from './Sources.styles';
 
 export default function Sources({date, source}) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
+    <Container>
+      <SourceText>
         {t('stats.source.source')}
-        <Text style={styles.source}>JHU (github.com/CSSEGISandData)</Text>
+        JHU (github.com/CSSEGISandData)
         {t('stats.source.updatedAt', {date: formatDate(date)})}
-      </Text>
-    </View>
+      </SourceText>
+    </Container>
   );
 }

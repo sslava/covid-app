@@ -11,7 +11,7 @@ import Link from './Link';
 
 import {getResources, phonesMap, linksMap} from './list';
 
-import styles from './Resources.styles';
+import {List} from './Resources.styles';
 
 export default function Resources() {
   const [prefs] = usePrefences();
@@ -24,29 +24,29 @@ export default function Resources() {
   ]);
 
   return (
-    <View style={styles.container}>
+    <View>
       {phones.length !== 0 && (
         <>
           <Subheader>{t('info.contacts.title')}</Subheader>
-          <View style={styles.list}>
+          <List>
             {phones.map((p) => (
               <Phone key={p.name} dialNumber={p.dialNumber} phone={p.phone}>
                 {p.name}
               </Phone>
             ))}
-          </View>
+          </List>
         </>
       )}
       {links.length !== 0 && (
         <>
           <Subheader>{t('info.links.title')}</Subheader>
-          <View style={styles.list}>
+          <List>
             {links.map((link) => (
               <Link key={link.url} url={link.url} text={link.title}>
                 {link.desc}
               </Link>
             ))}
-          </View>
+          </List>
         </>
       )}
     </View>

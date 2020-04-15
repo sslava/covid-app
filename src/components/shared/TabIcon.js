@@ -3,7 +3,6 @@ import {Image} from 'react-native';
 
 const imgSyles = {
   position: 'relative',
-  top: 2,
 };
 
 export default function TabIcon({color, size, icon}) {

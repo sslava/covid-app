@@ -1,31 +1,34 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    paddingLeft: 20,
-  },
-  number: {
-    fontFamily: 'Ubuntu',
-    fontSize: 48,
-    lineHeight: 54,
-    fontWeight: '500',
-    color: '#252A34',
-  },
-  today: {
-    marginLeft: 10,
-    fontFamily: 'Ubuntu',
-    fontSize: 18,
-    lineHeight: 54,
-    fontWeight: '500',
-    color: '#FFB663',
-  },
-  text: {
-    marginTop: 3,
-    fontFamily: 'Ubuntu',
-    fontSize: 13,
-    lineHeight: 18,
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    color: '#8B8C9C',
-  },
-});
+import SecondaryNumber from '../../shared/SecondaryNumber';
+
+export const Container = styled.View`
+  padding-left: 20px;
+`;
+
+export const Num = styled.Text`
+  font-family: 'Ubuntu';
+  font-size: 48px;
+  line-height: 54px;
+  font-weight: 500;
+  color: ${(p) => p.theme.primaryTextColor};
+`;
+
+export const Cases = styled.Text`
+  margin-top: 3px;
+  font-family: 'Ubuntu';
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: ${(p) => p.theme.secondaryTextColor};
+`;
+
+export const Today = styled(SecondaryNumber)`
+  margin-left: 10px;
+  font-family: 'Ubuntu';
+  font-size: 18px;
+  line-height: 54px;
+  font-weight: 500;
+  color: ${(p) => p.theme.activeColor};
+`;

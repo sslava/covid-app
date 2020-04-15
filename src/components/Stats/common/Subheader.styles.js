@@ -1,18 +1,20 @@
-import {StyleSheet} from 'react-native';
-import {fontStyles} from '../../shared/uikit';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-  },
-  header: {
-    paddingHorizontal: 20,
-    paddingBottom: 15,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  title: {
-    ...fontStyles.Subtitle,
-    color: '#252A34',
-  },
-});
+export const Container = styled.View`
+  flex-direction: row;
+`;
+
+export const Header = styled.TouchableOpacity`
+  padding-horizontal: 20px;
+  padding-bottom: 15px;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Title = styled.Text`
+  font-family: 'Ubuntu';
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
+  color: ${(p) => p.theme.primaryTextColor};
+`;

@@ -1,29 +1,26 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 
 import {Left, Right, PrimaryNumber} from './controls';
-import SecondaryNumber from '../SecondaryNumber';
-
-import styles from './LegendItem.styles';
+import {Container, Color, Title, Today} from './LegendItem.styles';
 
 export default function LegendItem({
   color,
   title,
   number,
   today,
-  numberStyle,
+  large,
   skipToday,
 }) {
   return (
-    <View style={styles.container}>
-      <Left style={styles.left}>
-        <View style={[styles.color, {backgroundColor: color}]} />
-        <Text style={styles.title}>{title}</Text>
+    <Container>
+      <Left>
+        <Color color={color} />
+        <Title>{title}</Title>
       </Left>
       <Right skipToday={skipToday}>
-        <PrimaryNumber value={number} style={numberStyle} />
-        {!skipToday && <SecondaryNumber num={today} style={styles.today} />}
+        <PrimaryNumber value={number} large={large} />
+        {!skipToday && <Today num={today} />}
       </Right>
-    </View>
+    </Container>
   );
 }

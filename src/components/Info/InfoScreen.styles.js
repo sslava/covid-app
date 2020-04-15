@@ -1,20 +1,17 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  safeArea: {
-    backgroundColor: 'white',
-  },
-  scrollContent: {
-    backgroundColor: 'white',
-    paddingBottom: 30,
-  },
-  symptoms: {
-    marginTop: 20,
-  },
-  recommendations: {
-    marginTop: 30,
-  },
-  resources: {
-    marginTop: 20,
-  },
-});
+export const SafeArea = styled.SafeAreaView`
+  background-color: ${(p) => p.theme.primaryBackground};
+`;
+
+export const CSymptoms = styled.View`
+  margin-top: 20px;
+`;
+
+export const CRecommendations = styled.View`
+  margin-top: 30px;
+`;
+
+export const CResources = styled.View`
+  margin-top: 20px;
+`;

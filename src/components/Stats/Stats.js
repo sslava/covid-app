@@ -1,7 +1,5 @@
 import React, {useMemo} from 'react';
 
-import {View} from 'react-native';
-
 import {t} from '../../common/locale';
 import LargeHeader from '../shared/Header/LargeHeader';
 
@@ -9,7 +7,12 @@ import WorldStats from './World/WorldStats';
 import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
 import Countries from './Countries/Countries';
 
-import styles from './StatsScreen.styles';
+import {
+  Container,
+  WorldContainer,
+  PrimaryContainer,
+  CountriesContainer,
+} from './Stats.styles';
 
 function findPrimary(countries, code) {
   if (!code) {
@@ -34,19 +37,19 @@ export default function Stats({data, prefs}) {
 
   const top = useMemo(() => getTop(data.countries), [data.countries]);
   return (
-    <>
+    <Container>
       <LargeHeader title={t('stats.title')} />
-      <View style={styles.world}>
+      <WorldContainer>
         <WorldStats world={data.world} />
-      </View>
+      </WorldContainer>
       {primary && (
-        <View style={styles.primary}>
+        <PrimaryContainer>
           <PrimaryCountry country={primary} />
-        </View>
+        </PrimaryContainer>
       )}
-      <View style={styles.countries}>
+      <CountriesContainer>
         <Countries countries={top} />
-      </View>
-    </>
+      </CountriesContainer>
+    </Container>
   );
 }

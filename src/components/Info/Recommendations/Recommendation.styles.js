@@ -1,35 +1,35 @@
-import {StyleSheet} from 'react-native';
-import {colors} from '../../shared/uikit';
+import styled from 'styled-components/native';
 
-export default StyleSheet.create({
-  container: {
-    marginBottom: 10,
-    paddingVertical: 15,
-    paddingRight: 15,
-    paddingLeft: 70,
-    borderRadius: 5,
-    backgroundColor: '#FFF5F3',
-    position: 'relative',
-  },
-  icon: {
-    position: 'absolute',
-    left: 15,
-    top: 15,
-    width: 40,
-    height: 40,
-  },
-  title: {
-    fontFamily: 'Ubuntu',
-    fontSize: 15,
-    lineHeight: 20,
-    fontWeight: 'bold',
-    color: '#252A34',
-  },
-  desc: {
-    marginTop: 4,
-    fontFamily: 'Ubuntu',
-    fontSize: 13,
-    lineHeight: 18,
-    color: '#A0A2AF',
-  },
-});
+export const Container = styled.View`
+  position: relative;
+  margin-bottom: 10px;
+  padding-vertical: 15px;
+  padding-right: 15px;
+  padding-left: 70px;
+  border-radius: 5px;
+  background-color: ${(p) => p.theme.recommendationBackground};
+`;
+
+export const Icon = styled.Image`
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+`;
+
+export const Title = styled.Text`
+  font-family: 'Ubuntu';
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: bold;
+  color: ${(p) => p.theme.primaryTextColor};
+`;
+
+export const Desc = styled.Text`
+  margin-top: 4px;
+  font-family: 'Ubuntu';
+  font-size: 13px;
+  line-height: 18px;
+  color: ${(p) => p.theme.secondaryTextColor};
+`;
