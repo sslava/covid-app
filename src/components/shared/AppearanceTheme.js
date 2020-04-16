@@ -3,7 +3,7 @@ import React from 'react';
 import {useColorScheme} from 'react-native';
 import {ThemeProvider} from 'styled-components/native';
 
-import {darkTheme, lightTheme} from './uikit';
+import {darkTheme, lightTheme} from './themes';
 
 export default function AppearanceTheme({children}) {
   const scheme = useColorScheme();
