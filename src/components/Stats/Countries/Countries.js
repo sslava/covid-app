@@ -11,7 +11,7 @@ import Sources from '../common/Sources';
 import PageLink from '../common/PageLink';
 import SearchButton from '../../shared/Search/SearchButton';
 
-import {Search} from './Countries.styles';
+import {Search, All} from './Countries.styles';
 
 export default function Countries({countries}) {
   const nav = useNavigation();
@@ -34,7 +34,9 @@ export default function Countries({countries}) {
           <Country key={c.code} country={c} />
         ))}
       </View>
-      <PageLink route="Countries">{t('stats.countries.all')}</PageLink>
+      <All>
+        <PageLink route="Countries">{t('stats.countries.all')}</PageLink>
+      </All>
       <Sources date={countries[0].updated} />
     </View>
   );

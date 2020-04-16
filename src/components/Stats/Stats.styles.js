@@ -6,18 +6,19 @@ export const Container = styled.View`
 `;
 
 export const WorldContainer = styled.View`
-  margin-top: 20px;
+  padding-top: 18px;
   border-bottom-width: ${StyleSheet.hairlineWidth}px;
   border-bottom-color: ${(p) => p.theme.borderLightColor};
 `;
 
 export const PrimaryContainer = styled.View`
-  margin-top: 20px;
+  padding-top: 16px;
+  padding-bottom: 30px;
   border-bottom-width: ${StyleSheet.hairlineWidth}px;
   border-bottom-color: ${(p) => p.theme.borderLightColor};
 `;
 
 export const CountriesContainer = styled.View`
-  margin-top: 30px;
-  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 20px;
 `;

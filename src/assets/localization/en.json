@@ -10,7 +10,9 @@
     "recovered": "Recovered",
     "deaths": "Deaths",
     "country": {
+      "total": "Total cases",
       "regionsButton": "Stats by region",
+      "share": "Share",
       "updatedAt": "Updated at %{date}"
     },
     "countries": {

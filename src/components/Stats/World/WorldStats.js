@@ -17,6 +17,7 @@ import {
   Counters,
   UpdatedText,
   WorldIcon,
+  Hero,
 } from './WorldStats.styles';
 
 const {width} = Dimensions.get('window');
@@ -49,7 +50,9 @@ export default function WorldStats({world}) {
         icon={<WorldIcon source={worldIcon} />}
         title={t('stats.global.title')}
       />
-      <HeroStats number={world.total} today={+world.total_new} />
+      <Hero>
+        <HeroStats number={world.total} today={+world.total_new} />
+      </Hero>
       <Stats>
         <Pie
           data={data}
