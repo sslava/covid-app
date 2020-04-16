@@ -41,7 +41,8 @@ export default function NumberBlock({
         {children}
       </Caption>
       <Number right={right} numberOfLines={1}>
-        {formatNumber(number)} <Today num={today} color={color} />
+        {formatNumber(number)}
+        <Today num={today} color={color} />
       </Number>
     </View>
   );
