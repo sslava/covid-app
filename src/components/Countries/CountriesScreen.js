@@ -67,7 +67,7 @@ export default function CountriesScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }
         data={countries}
-        renderItem={({item}) => <Country country={item} />}
+        renderItem={({item}) => <Country sort={sort} country={item} />}
         keyExtractor={(item) => item.code}
       />
     </Container>

@@ -14,6 +14,7 @@ export function RegionListToggle({
   onPress,
   expanded,
   skipToday,
+  deaths,
 }) {
   const value = useRef(new Animated.Value(0));
 
@@ -38,7 +39,7 @@ export function RegionListToggle({
       </Left>
       <Right skipToday={skipToday}>
         <PrimaryNumber value={total} />
-        {!skipToday && <Today num={+today} />}
+        {!skipToday && <Today num={+today} deaths={deaths} />}
       </Right>
       <Icon source={openIcon} style={{transform: [{rotate}]}} />
     </Button>
