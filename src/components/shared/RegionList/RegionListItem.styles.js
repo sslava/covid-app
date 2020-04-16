@@ -33,7 +33,7 @@ export const Today = styled(SecondaryNumber)`
   font-size: 13px;
   font-weight: 600;
   line-height: 24px;
-  color: ${(p) => p.theme.activeColor};
+  color: ${(p) => (p.deaths ? p.theme.deathsColor : p.theme.activeColor)};
 `;
 
 export const Icon = styled(Animated.Image)`
