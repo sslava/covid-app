@@ -6,7 +6,6 @@ export const Container = styled.View`
 
 export const Header = styled.TouchableOpacity`
   padding-horizontal: 20px;
-  padding-bottom: 15px;
   flex-direction: row;
   align-items: center;
 `;

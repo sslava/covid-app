@@ -7,10 +7,12 @@
     },
     "cases": "Случаев заболевания",
     "active": "Болеет",
-    "recovered": "Поправилось",
+    "recovered": "Выздоровело",
     "deaths": "Смертей",
     "country": {
+      "total": "Всего случаев",
       "regionsButton": "В регионах",
+      "share": "Поделиться",
       "updatedAt": "По состоянию на %{date}"
     },
     "countries": {
