@@ -6,8 +6,10 @@ export const Container = styled.View`
 
 export const Daily = styled.View`
   padding-top: 23px;
+  padding-bottom: 14px;
   padding-horizontal: 20px;
 `;
+
 export const Icon = styled.Image`
   height: 26px;
   width: 26px;
