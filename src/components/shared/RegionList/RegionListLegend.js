@@ -24,15 +24,15 @@ export default function RegionListLegend({
     <Content>
       <Legend>
         <LegendItem
-          color={theme.activeColor}
-          title={t('stats.active')}
-          number={active}
-          skipToday={skipToday}
-        />
-        <LegendItem
           color={theme.recoveredColor}
           title={t('stats.recovered')}
           number={recovered}
+          skipToday={skipToday}
+        />
+        <LegendItem
+          color={theme.activeColor}
+          title={t('stats.active')}
+          number={active}
           skipToday={skipToday}
         />
         <LegendItem

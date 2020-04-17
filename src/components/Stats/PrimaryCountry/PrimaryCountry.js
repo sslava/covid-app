@@ -5,9 +5,12 @@ import {formatDate, countryName, t} from '../../../common/locale';
 
 import Subheader from '../common/Subheader';
 import PageLink from '../common/PageLink';
+import Button from '../../shared/Button';
+
 import shareIcon from '../../../assets/icons/share.png';
 
 import TotalStats from './TotalStats';
+import Dynamic from './Dynamic';
 
 import changeIcon from './change.png';
 import countryIcons from '../../shared/countryIcons';
@@ -17,10 +20,8 @@ import {
   Icon,
   ChangeIcon,
   UpdatedText,
-  Daily,
   Actions,
 } from './PrimaryCountry.styles';
-import Button from '../../shared/Button';
 
 export default function PrimaryCountry({country}) {
   const nav = useNavigation();
@@ -40,7 +41,7 @@ export default function PrimaryCountry({country}) {
         onPress={changeCountry}>
         <ChangeIcon source={changeIcon} />
       </Subheader>
-      <Daily />
+      <Dynamic country={country} />
       <TotalStats country={country} />
       <Actions>
         {!!country.cities && (
