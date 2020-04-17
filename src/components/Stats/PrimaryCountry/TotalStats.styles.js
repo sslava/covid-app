@@ -27,5 +27,6 @@ export const Left = styled.View`
 `;
 
 export const GrowingBlock = styled(NumberBlock)`
+  margin-right: 5px;
   flex-grow: ${(p) => p.fraction};
 `;

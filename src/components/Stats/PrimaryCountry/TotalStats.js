@@ -24,12 +24,10 @@ export default function TotalStats({country}) {
       <Bar items={stats} height={10} />
       <Numbers>
         <Left>
-          <GrowingBlock fraction={stats[0].fraction} number={country.active}>
-            {t('stats.active')}
-          </GrowingBlock>
-          <NumberBlock number={country.recovered}>
+          <GrowingBlock fraction={stats[0].fraction} number={country.recovered}>
             {t('stats.recovered')}
-          </NumberBlock>
+          </GrowingBlock>
+          <NumberBlock number={country.active}>{t('stats.active')}</NumberBlock>
         </Left>
         <NumberBlock
           number={country.deaths}
