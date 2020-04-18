@@ -39,6 +39,8 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is required to show actual data</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need an access to photo library to save an image</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ubuntu-Bold.ttf</string>
