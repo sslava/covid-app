@@ -4,7 +4,6 @@ import {useNavigation} from '@react-navigation/native';
 import {formatDate, countryName, t} from '../../../common/locale';
 
 import Subheader from '../common/Subheader';
-import PageLink from '../common/PageLink';
 import Button from '../../shared/Button';
 
 import shareIcon from '../../../assets/icons/share.png';
@@ -22,6 +21,24 @@ import {
   UpdatedText,
   Actions,
 } from './PrimaryCountry.styles';
+
+const data = [
+  {value: 20, label: '2'},
+  {value: 400, label: '3'},
+  {value: 500, label: '6'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 800, label: '6'},
+  {value: 50, label: '4'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 20, label: '4'},
+  {value: 500, label: '4'},
+  {value: 750, label: '5'},
+];
 
 export default function PrimaryCountry({country}) {
   const nav = useNavigation();
@@ -41,14 +58,9 @@ export default function PrimaryCountry({country}) {
         onPress={changeCountry}>
         <ChangeIcon source={changeIcon} />
       </Subheader>
-      <Dynamic country={country} />
+      <Dynamic country={country} data={data} />
       <TotalStats country={country} />
       <Actions>
-        {!!country.cities && (
-          <PageLink route="Cities" params={{country: country.code}}>
-            {t('stats.country.regionsButton')}
-          </PageLink>
-        )}
         <Button icon={shareIcon}>{t('stats.country.share')}</Button>
       </Actions>
       <UpdatedText>
