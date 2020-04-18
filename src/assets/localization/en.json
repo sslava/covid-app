@@ -10,11 +10,12 @@
     "recovered": "Recovered",
     "deaths": "Deaths",
     "country": {
-      "todayCases": "New COVID-19 cases\nregister on %{date}",
+      "todayCases": "New COVID-19 cases\nregistered on %{date}",
       "total": "Total cases",
       "lastX": "last %{days} days",
       "yesterday": "The day before",
       "share": "Share",
+      "shareTitle": "COVID-19 stats for %{country}",
       "updatedAt": "Updated at %{date}",
       "regionsButton": "Stats by region"
     },
