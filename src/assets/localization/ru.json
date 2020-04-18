@@ -7,11 +7,17 @@
     },
     "cases": "Случаев заболевания",
     "active": "Болеет",
-    "recovered": "Поправилось",
+    "recovered": "Выздоровело",
     "deaths": "Смертей",
     "country": {
-      "regionsButton": "В регионах",
-      "updatedAt": "По состоянию на %{date}"
+      "todayCases": "Выявлено новых случаев\nCOVID-19 за %{date}",
+      "total": "Всего случаев",
+      "lastX": "за %{days} дней",
+      "yesterday": "В предыдущий день",
+      "share": "Поделиться",
+      "shareTitle": "%{country}: cтатистика COVID-19",
+      "updatedAt": "По состоянию на %{date}",
+      "regionsButton": "В регионах"
     },
     "countries": {
       "title": "В других странах",

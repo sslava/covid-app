@@ -1,26 +1,12 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  padding-bottom: 30px;
   background-color: ${(p) => p.theme.primaryBackground};
 `;
 
-export const Legend = styled.View`
-  margin-top: 30px;
+export const Content = styled.View`
   padding-horizontal: 20px;
-`;
-
-export const Bar = styled.View`
-  padding-horizontal: 20px;
-`;
-
-export const UpdatedText = styled.Text`
-  margin-top: 20px;
-  padding-left: 20px;
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 18px;
-  color: ${(p) => p.theme.secondaryTextColor};
+  padding-top: 23px;
 `;
 
 export const Icon = styled.Image`
@@ -39,4 +25,17 @@ export const ChangeIcon = styled.Image`
   top: 1px;
   width: 10px;
   height: 8px;
+`;
+
+export const Actions = styled.View`
+  padding-top: 30px;
+`;
+
+export const UpdatedText = styled.Text`
+  margin-top: 10px;
+  padding-left: 18px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 18px;
+  color: ${(p) => p.theme.secondaryTextColor};
 `;

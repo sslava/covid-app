@@ -1,9 +1,9 @@
 import React, {useCallback} from 'react';
 import {useNavigation} from '@react-navigation/core';
 
-import {Container, Btn, Caption} from './PageLink.styles';
+import Button from '../../shared/Button';
 
-export default function PageLink({children, route, params}) {
+export default function PageLink({children, style, route, params}) {
   const nav = useNavigation();
   const open = useCallback(() => nav.navigate(route, params), [
     nav,
@@ -12,10 +12,8 @@ export default function PageLink({children, route, params}) {
   ]);
 
   return (
-    <Container>
-      <Btn onPress={open} activeOpacity={0.5}>
-        <Caption>{children}</Caption>
-      </Btn>
-    </Container>
+    <Button style={style} onPress={open}>
+      {children}
+    </Button>
   );
 }
