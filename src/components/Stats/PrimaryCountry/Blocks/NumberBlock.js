@@ -43,7 +43,7 @@ export default function NumberBlock({
       </Caption>
       <Number right={right} numberOfLines={1} color={color}>
         {formatNumber(number)}
-        <Today num={today} color={todayColor} />
+        <Today num={+today} color={todayColor} />
       </Number>
     </View>
   );
