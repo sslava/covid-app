@@ -1,9 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  padding-top: 23px;
   padding-bottom: 14px;
-  padding-horizontal: 20px;
 `;
 
 export const Content = styled.View`
@@ -17,8 +15,9 @@ export const Today = styled.View``;
 export const TodayCaption = styled.Text`
   font-size: 13px;
   line-height: 18px;
-  color: ${(p) => p.theme.primaryTextColor};
+  color: ${(p) => p.color || p.theme.primaryTextColor};
 `;
+
 export const TodayContent = styled.View`
   flex-direction: row;
   justify-content: space-between;
@@ -31,7 +30,7 @@ export const TodayNumber = styled.Text`
   font-weight: 500;
   font-size: 54px;
   line-height: 64px;
-  color: ${(p) => p.theme.primaryTextColor};
+  color: ${(p) => p.color || p.theme.primaryTextColor};
 `;
 
 export const UpDown = styled.Image`
@@ -47,20 +46,23 @@ export const GraphCaption = styled.Text`
   font-size: 13px;
   line-height: 18px;
   margin-bottom: 19px;
-  color: ${(p) => p.theme.primaryTextColor};
+  text-align: right;
+  color: ${(p) => p.color || p.theme.primaryTextColor};
 `;
 
-export const Yesterday = styled.View``;
+export const Yesterday = styled.View`
+  opacity: ${(p) => (p.color ? 0.7 : 1)};
+`;
 
 export const YesterdayCaption = styled.Text`
   font-size: 13px;
   line-height: 18px;
-  color: ${(p) => p.theme.secondaryTextColor};
+  color: ${(p) => p.color || p.theme.secondaryTextColor};
 `;
 
 export const YesterdayNumber = styled.Text`
   font-weight: 500;
   font-size: 18px;
   line-height: 26px;
-  color: ${(p) => p.theme.secondaryTextColor};
+  color: ${(p) => p.color || p.theme.secondaryTextColor};
 `;

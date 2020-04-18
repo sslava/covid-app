@@ -9,15 +9,25 @@ const range = (count) => [...Array(count).keys()];
 
 const R = Animated.createAnimatedComponent(Rect);
 
-function BarChanrt({style, data, color, width, height, padding = 0.5}) {
-  const anim = useRef(new Animated.Value(0.0));
+function BarChanrt({
+  style,
+  data,
+  color,
+  width,
+  height,
+  padding = 0.5,
+  animated = false,
+}) {
+  const anim = useRef(new Animated.Value(animated ? 0 : 1));
   useEffect(() => {
-    Animated.timing(anim.current, {
-      toValue: 1,
-      duration: 500,
-      easing: Easing.inOut(Easing.quad),
-      useNativeDriver: false,
-    }).start();
+    if (animated) {
+      Animated.timing(anim.current, {
+        toValue: 1,
+        duration: 500,
+        easing: Easing.inOut(Easing.quad),
+        useNativeDriver: false,
+      }).start();
+    }
   }, []);
 
   const maxValue = Math.max(...data.map((d) => d.value));

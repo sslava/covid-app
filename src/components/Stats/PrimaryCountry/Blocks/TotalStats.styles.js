@@ -1,11 +1,10 @@
 import styled from 'styled-components/native';
 
 import NumberBlock from './NumberBlock';
-import StatsBar from '../../shared/StatsBar/StatsBar';
+import StatsBar from '../../../shared/StatsBar/StatsBar';
 
 export const Container = styled.View`
   padding-top: 13px;
-  padding-horizontal: 20px;
   border-top-width: 1px;
   border-top-color: ${(p) => p.theme.borderLightColor};
 `;
