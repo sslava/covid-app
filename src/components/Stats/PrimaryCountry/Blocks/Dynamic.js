@@ -1,12 +1,12 @@
 import React from 'react';
 import {useTheme} from 'styled-components/native';
 
-import {formatNumber, t, formatDate} from '../../../common/locale';
+import {formatNumber, t, formatDate} from '../../../../common/locale';
 
-import BarChart from '../../shared/BarChart';
+import BarChart from '../../../shared/BarChart';
 
-import upIcon from './up.png';
-import downIcon from './down.png';
+import upIcon from '../assets/up.png';
+import downIcon from '../assets/down.png';
 
 import {
   Container,
@@ -23,7 +23,7 @@ import {
   UpDown,
 } from './Dynamic.styles';
 
-export default function Dynamic({country, data}) {
+export default function Dynamic({country, data, animated, color}) {
   const theme = useTheme();
 
   const prev = 3000;
@@ -31,31 +31,36 @@ export default function Dynamic({country, data}) {
     <Container>
       <Content>
         <Today>
-          <TodayCaption>
+          <TodayCaption color={color}>
             {t('stats.country.todayCases', {date: formatDate(country.updated)})}
           </TodayCaption>
           <TodayContent>
-            <TodayNumber>+{formatNumber(country.total_new)}</TodayNumber>
+            <TodayNumber color={color}>
+              +{formatNumber(country.total_new)}
+            </TodayNumber>
             <UpDown source={+country.total_new > prev ? upIcon : downIcon} />
           </TodayContent>
         </Today>
         {data && (
           <GraphContainer>
-            <GraphCaption>
+            <GraphCaption color={color}>
               {t('stats.country.lastX', {days: data.length})}
             </GraphCaption>
             <BarChart
-              color={theme.secondaryTextColor}
+              color={color || theme.secondaryTextColor}
               width={90}
               height={50}
               data={data}
+              animated={animated}
             />
           </GraphContainer>
         )}
       </Content>
-      <Yesterday>
-        <YesterdayCaption>{t('stats.country.yesterday')}</YesterdayCaption>
-        <YesterdayNumber>+{formatNumber(prev)}</YesterdayNumber>
+      <Yesterday color={color}>
+        <YesterdayCaption color={color}>
+          {t('stats.country.yesterday')}
+        </YesterdayCaption>
+        <YesterdayNumber color={color}>+{formatNumber(prev)}</YesterdayNumber>
       </Yesterday>
     </Container>
   );
