@@ -10,10 +10,13 @@
     "recovered": "Выздоровело",
     "deaths": "Смертей",
     "country": {
+      "todayCases": "Выявлено новых случаев\nCOVID-19 за %{date}",
       "total": "Всего случаев",
-      "regionsButton": "В регионах",
+      "lastX": "за %{days} дней",
+      "yesterday": "В предыдущий день",
       "share": "Поделиться",
-      "updatedAt": "По состоянию на %{date}"
+      "updatedAt": "По состоянию на %{date}",
+      "regionsButton": "В регионах"
     },
     "countries": {
       "title": "В других странах",
