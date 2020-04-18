@@ -9,6 +9,7 @@ export const Container = styled.View`
 export const Content = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
 `;
 
 export const Today = styled.View``;
@@ -17,6 +18,11 @@ export const TodayCaption = styled.Text`
   font-size: 13px;
   line-height: 18px;
   color: ${(p) => p.theme.primaryTextColor};
+`;
+export const TodayContent = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const TodayNumber = styled.Text`
@@ -28,9 +34,14 @@ export const TodayNumber = styled.Text`
   color: ${(p) => p.theme.primaryTextColor};
 `;
 
-export const GraphContainer = styled.View`
-  margin-top: 19px;
+export const UpDown = styled.Image`
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  margin-right: 5px;
 `;
+
+export const GraphContainer = styled.View``;
 
 export const GraphCaption = styled.Text`
   font-size: 13px;
