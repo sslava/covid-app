@@ -5,7 +5,7 @@ export const Container = styled.View`
 `;
 
 export const Stats = styled.View`
-  margin-top: 30px;
+  padding-top: 30px;
   padding-left: 20px;
   flex-direction: row;
 `;
@@ -27,4 +27,8 @@ export const UpdatedText = styled.Text`
   font-weight: 500;
   line-height: 18px;
   color: ${(p) => p.theme.secondaryTextColor};
+`;
+
+export const Hero = styled.View`
+  padding-top: 13px;
 `;

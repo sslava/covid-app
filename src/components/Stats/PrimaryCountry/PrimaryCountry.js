@@ -1,87 +1,87 @@
 import React, {useCallback} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from 'styled-components/native';
-
 import {formatDate, countryName, t} from '../../../common/locale';
 
-import LegendItem from '../../shared/Legend/LegendItem';
-import StatsBar from '../../shared/StatsBar/StatsBar';
-import useRegionStats from '../../shared/useRegionStats';
+import Button from '../../shared/Button';
 
 import Subheader from '../common/Subheader';
-import HeroStats from '../common/HeroStats';
-import PageLink from '../common/PageLink';
+import TotalStats from './Blocks/TotalStats';
+import Dynamic from './Blocks/Dynamic';
+import ShareCountry from './Share/ShareCountry';
 
-import changeIcon from './change.png';
+import {useOffscreenViewShot} from '../../shared/OffscreenViewshot';
+
+import shareIcon from '../../../assets/icons/share.png';
+import changeIcon from './assets/change.png';
+
 import countryIcons from '../../shared/countryIcons';
+import shareImage from '../../shared/shareImage';
 
 import {
   Container,
-  Legend,
-  Bar,
+  Content,
   Icon,
   ChangeIcon,
   UpdatedText,
+  Actions,
 } from './PrimaryCountry.styles';
+
+const data = [
+  {value: 20, label: '2'},
+  {value: 400, label: '3'},
+  {value: 800, label: '4'},
+  {value: 500, label: '4'},
+  {value: 800, label: '6'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 500, label: '4'},
+  {value: 750, label: '5'},
+];
 
 export default function PrimaryCountry({country}) {
   const nav = useNavigation();
-  const stats = useRegionStats(
-    country.total,
-    country.recovered,
-    country.deaths,
-    country.active,
-  );
 
   const changeCountry = useCallback(() => {
     nav.navigate('CountrySelect');
   }, [nav]);
 
-  const icon = countryIcons[country.code];
-  const theme = useTheme();
+  const name = countryName(country);
+  const captured = useCallback(
+    (tmp) => shareImage(tmp, t('stats.country.shareTitle', {country: name})),
+    [name],
+  );
+  const [sharing, onShare, onCapture] = useOffscreenViewShot(captured);
 
+  const countryIcon = countryIcons[country.code];
   return (
     <Container>
       <Subheader
-        icon={icon && <Icon source={icon} />}
-        title={countryName(country)}
+        title={name}
+        icon={countryIcon && <Icon source={countryIcon} />}
         activeOpacity={0.5}
         onPress={changeCountry}>
         <ChangeIcon source={changeIcon} />
       </Subheader>
-      <HeroStats number={country.total} today={+country.total_new} />
-      <Legend>
-        <LegendItem
-          large
-          color={theme.activeColor}
-          title={t('stats.active')}
-          number={country.active}
-        />
-        <LegendItem
-          large
-          color={theme.recoveredColor}
-          title={t('stats.recovered')}
-          number={country.recovered}
-        />
-        <LegendItem
-          large
-          color={theme.deathsColor}
-          title={t('stats.deaths')}
-          number={country.deaths}
-          today={+country.deaths_new}
-        />
-      </Legend>
-      <Bar>
-        <StatsBar items={stats} />
-      </Bar>
-      {!!country.cities && (
-        <PageLink route="Cities" params={{country: country.code}}>
-          {t('stats.country.regionsButton')}
-        </PageLink>
-      )}
-      <UpdatedText>
-        {t('stats.country.updatedAt', {date: formatDate(country.updated)})}
-      </UpdatedText>
+      <Content>
+        <Dynamic country={country} data={data} animated />
+        <TotalStats country={country} />
+        <Actions>
+          <Button onPress={onShare} icon={shareIcon}>
+            {t('stats.country.share')}
+          </Button>
+        </Actions>
+        <UpdatedText>
+          {t('stats.country.updatedAt', {date: formatDate(country.updated)})}
+        </UpdatedText>
+      </Content>
+      <ShareCountry
+        sharing={sharing}
+        onCapture={onCapture}
+        country={country}
+        data={data}
+      />
     </Container>
   );
 }
