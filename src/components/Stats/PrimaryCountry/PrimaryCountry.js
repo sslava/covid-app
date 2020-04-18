@@ -47,15 +47,19 @@ export default function PrimaryCountry({country}) {
     nav.navigate('CountrySelect');
   }, [nav]);
 
-  const captured = useCallback((tmp) => shareImage(tmp, 'test'), []);
+  const name = countryName(country);
+  const captured = useCallback(
+    (tmp) => shareImage(tmp, t('stats.country.shareTitle', {country: name})),
+    [name],
+  );
   const [sharing, onShare, onCapture] = useOffscreenViewShot(captured);
 
   const countryIcon = countryIcons[country.code];
   return (
     <Container>
       <Subheader
+        title={name}
         icon={countryIcon && <Icon source={countryIcon} />}
-        title={countryName(country)}
         activeOpacity={0.5}
         onPress={changeCountry}>
         <ChangeIcon source={changeIcon} />
