@@ -4,10 +4,9 @@ export const Container = styled.View`
   background-color: ${(p) => p.theme.primaryBackground};
 `;
 
-export const Daily = styled.View`
-  padding-top: 23px;
-  padding-bottom: 14px;
+export const Content = styled.View`
   padding-horizontal: 20px;
+  padding-top: 23px;
 `;
 
 export const Icon = styled.Image`
@@ -30,7 +29,6 @@ export const ChangeIcon = styled.Image`
 
 export const Actions = styled.View`
   padding-top: 30px;
-  padding-horizontal: 20px;
 `;
 
 export const UpdatedText = styled.Text`

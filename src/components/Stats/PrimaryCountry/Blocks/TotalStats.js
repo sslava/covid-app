@@ -1,39 +1,46 @@
 import React from 'react';
 import {useTheme} from 'styled-components/native';
 
-import {t} from '../../../common/locale';
-import useRegionStats from '../../shared/useRegionStats';
+import {t} from '../../../../common/locale';
+import useRegionStats from '../../../shared/useRegionStats';
 
 import NumberBlock from './NumberBlock';
 
 import {Container, Bar, Numbers, Left, GrowingBlock} from './TotalStats.styles';
 
-export default function TotalStats({country}) {
+export default function TotalStats({country, color}) {
+  const theme = useTheme();
+
   const stats = useRegionStats(
     country.total,
     country.recovered,
     country.deaths,
     country.active,
   );
-  const theme = useTheme();
   return (
     <Container>
-      <NumberBlock number={country.total}>
+      <NumberBlock number={country.total} color={color}>
         {t('stats.country.total')}
       </NumberBlock>
       <Bar items={stats} height={10} />
       <Numbers>
         <Left>
-          <GrowingBlock fraction={stats[0].fraction} number={country.recovered}>
+          <GrowingBlock
+            fraction={stats[0].fraction}
+            number={country.recovered}
+            color={color}>
             {t('stats.recovered')}
           </GrowingBlock>
-          <NumberBlock number={country.active}>{t('stats.active')}</NumberBlock>
+          <NumberBlock number={country.active} color={color}>
+            {t('stats.active')}
+          </NumberBlock>
         </Left>
         <NumberBlock
           number={country.deaths}
           today={country.deaths_new}
           right
-          color={theme.deathsColor}>
+          color={color}
+          todayColor={theme.deathsColor}>
           {t('stats.deaths')}
         </NumberBlock>
       </Numbers>

@@ -1,8 +1,17 @@
 import React from 'react';
-
+import styled from 'styled-components/native';
 import {formatDate, t} from '../../../common/locale';
 
-import {Container, SourceText} from './Sources.styles';
+const Container = styled.View`
+  padding: 20px;
+`;
+
+const SourceText = styled.Text`
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  color: ${(p) => p.theme.secondaryTextColor};
+`;
 
 export default function Sources({date, source}) {
   return (
