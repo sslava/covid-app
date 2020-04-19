@@ -65,6 +65,22 @@ export const worldSelector = (state) => state.stats.data.world;
 export const nodataSelector = (state) => state.stats.data.nodata;
 export const countriesSelector = (state) => state.stats.data.countries;
 
+export const makeCountrySelector = () =>
+  createSelector(
+    countriesSelector,
+    (state, code) => code,
+    (countries, code) => {
+      if (!code) {
+        return null;
+      }
+      const primary = countries.find((c) => c.code === code);
+      if (!primary) {
+        return countries.find((c) => c.code === 'US');
+      }
+      return primary;
+    },
+  );
+
 export const countriesByTotalSelector = createSelector(
   countriesSelector,
   (countries) => {
