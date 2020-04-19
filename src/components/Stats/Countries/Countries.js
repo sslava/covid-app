@@ -1,9 +1,11 @@
 import React, {useCallback} from 'react';
 import {View} from 'react-native';
+import {useSelector} from 'react-redux';
 
 import {useNavigation} from '@react-navigation/core';
 
 import {t} from '../../../common/locale';
+import {topCountriesSelector} from '../../../app/statsModule';
 
 import Country from './Country';
 import Subheader from '../common/Subheader';
@@ -13,7 +15,9 @@ import SearchButton from '../../shared/Search/SearchButton';
 
 import {Search, All} from './Countries.styles';
 
-export default function Countries({countries}) {
+export default function Countries() {
+  const countries = useSelector(topCountriesSelector);
+
   const nav = useNavigation();
   const open = useCallback(() => nav.navigate('Countries', {search: true}), [
     nav,

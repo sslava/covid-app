@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 
 import {initI18nConfig, getCurrentCountryCode} from '../../common/locale';
-import ItemStore from '../../common/ItemStore';
+import {ItemStore} from '../../common/ItemStore';
 
 import useWillMount from './useWillMount';
 

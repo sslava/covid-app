@@ -24,7 +24,7 @@ import {
 import {countryName, formatDate} from '../../../../common/locale';
 import countryIcons from '../../../shared/countryIcons';
 
-function CountryView({sharing, onCapture, country, data}) {
+function CountryView({sharing, onCapture, country, history}) {
   const viewshotRef = useRef();
   const [loaded, setLoaded] = useState(false);
   const loadEnd = useCallback(() => setLoaded(true), []);
@@ -52,7 +52,7 @@ function CountryView({sharing, onCapture, country, data}) {
           <Updated>{formatDate(country.updated)}</Updated>
         </Header>
         <Content>
-          <Dynamic country={country} data={data} color="white" />
+          <Dynamic country={country} history={history} color="white" />
           <TotalStats country={country} color="white" />
           <Footer>
             <AppIcon source={favicon} />
