@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import {FlatList, RefreshControl} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
 
 import {t} from '../../common/locale';
 
@@ -8,33 +9,23 @@ import SearchBar from '../shared/Search/SearchBar';
 
 import {matchCountry} from '../../common/locale';
 
-import useDebouncedSearch from '../shared/Search/useDebounceSearch';
+import useSortedSearch from './useSortedSearch';
 import useRefresh from '../shared/useRefresh';
 
 import {Container, Top, SortControl} from './CountriesScreen.styles';
-import {useDispatch, useSelector} from 'react-redux';
 import {
   fetchStats,
   fetchingStatsSelector,
-  countriesByTotalSelector,
+  countriesSelector,
 } from '../../app/statsModule';
-
-function sortActive(arr) {
-  return [...arr].sort((a, b) => b.active - a.active);
-}
-
-function sortDeaths(arr) {
-  return [...arr].sort((a, b) => b.deaths - a.deaths);
-}
-
-const sortFns = [(a) => a, sortActive, sortDeaths];
 
 export default function CountriesScreen() {
   const dispatch = useDispatch();
-  const sortedCountries = useSelector(countriesByTotalSelector);
+  const all = useSelector(countriesSelector);
 
   const isFetching = useSelector(fetchingStatsSelector);
   const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
+  const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
   const [sort, setSort] = useState(0);
   const changeSort = useCallback(
@@ -42,13 +33,7 @@ export default function CountriesScreen() {
     [],
   );
 
-  const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
-
-  const [countries, query, setQuery] = useDebouncedSearch(
-    sortedCountries,
-    matchCountry,
-    sortFns[sort],
-  );
+  const [countries, query, setQuery] = useSortedSearch(all, matchCountry, sort);
 
   return (
     <Container>

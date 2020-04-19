@@ -30,7 +30,7 @@ function Root() {
       tabBarOptions={{
         safeAreaInsets: {
           top: 10,
-          bottom: 15,
+          // bottom: 15,
         },
         style: {
           paddingTop: 10,
@@ -60,7 +60,7 @@ function Root() {
   );
 }
 
-export default function App() {
+export default function Navigator() {
   const theme = useTheme();
   return (
     <NavigationContainer>

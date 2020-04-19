@@ -5,9 +5,17 @@ import {Left, Right, PrimaryNumber} from '../Legend/controls';
 
 import openIcon from '../../../assets/icons/open_grey.png';
 
-import {Container, Button, Title, Today, Icon} from './RegionListItem.styles';
+import {
+  Container,
+  Button,
+  Title,
+  Today,
+  Icon,
+  Index,
+} from './RegionListItem.styles';
 
 export function RegionListToggle({
+  index,
   name,
   total,
   today,
@@ -35,6 +43,7 @@ export function RegionListToggle({
   return (
     <Button onPress={onPress} activeOpacity={0.5}>
       <Left>
+        {!!index && <Index>{index}</Index>}
         <Title>{name}</Title>
       </Left>
       <Right skipToday={skipToday}>
