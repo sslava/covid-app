@@ -1,17 +1,18 @@
 import React, {useRef} from 'react';
 
+import {useSelector} from 'react-redux';
+
+import {ScrollView} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
-import {View, ScrollView, SafeAreaView} from 'react-native';
-
 import {t} from '../../common/locale';
+import {nodataSelector} from '../../app/statsModule';
+
 import LargeHeader from '../shared/Header/LargeHeader';
 import Symptoms from './Symptoms/Symptoms';
 import Recommendations from './Recommendations/Recommendations';
 import Resources from './Resources/Resources';
 import VerbaLink from './VerbaLink';
-
-import {useStatsContext} from '../shared/StatsDataContext';
 
 import {
   SafeArea,
@@ -25,14 +26,11 @@ const contentStyle = {paddingBottom: 30};
 export default function InfoScreen({navigation}) {
   const scrollRef = useRef();
   useScrollToTop(scrollRef);
-
-  const {
-    state: {data},
-  } = useStatsContext();
+  const nodata = useSelector(nodataSelector);
 
   return (
     <SafeArea>
-      {!data.nodata && (
+      {!nodata && (
         <ScrollView ref={scrollRef} contentContainerStyle={contentStyle}>
           <LargeHeader title={t('info.title')} />
           <CSymptoms>

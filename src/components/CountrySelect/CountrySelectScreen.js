@@ -1,25 +1,24 @@
 import React, {useCallback, useMemo} from 'react';
+import {useSelector} from 'react-redux';
+
 import {FlatList} from 'react-native';
 
 import {sortCountries, matchCountry, countryName, t} from '../../common/locale';
+import {countriesSelector} from '../../app/statsModule';
 
 import SearchBar from '../shared/Search/SearchBar';
 import Country from './Country';
 
-import {usePrefences} from '../shared/PreferencesContext';
-import {useStatsContext} from '../shared/StatsDataContext';
+import {usePrefences} from '../shared/Preferences';
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
 import {Container, Search} from './CountrySelectScreen.styles';
 
 export default function CountrySelectScreen({navigation}) {
   const [prefs, updatePrefs] = usePrefences();
+  const all = useSelector(countriesSelector);
 
-  const {
-    state: {data},
-  } = useStatsContext();
-
-  const sorted = useMemo(() => sortCountries(data.countries), [data.countries]);
+  const sorted = useMemo(() => sortCountries(all), [all]);
 
   const [countries, query, setQuery] = useDebouncedSearch(sorted, matchCountry);
 

@@ -7,21 +7,18 @@ import SearchBar from '../shared/Search/SearchBar';
 
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 import useRefresh from '../shared/useRefresh';
-import {useStatsContext} from '../shared/StatsDataContext';
 
 import {Container, Search} from './CitiesScreen.styles';
 
 const filterCity = (q, c) => c.name.toLowerCase().indexOf(q) !== -1;
 
+const refreshCities = () => {};
+const isFetching = false;
+const allcities = [];
+
 export default function CitiesScreen() {
-  const {
-    state: {data, isFetching},
-    refreshStats,
-  } = useStatsContext();
-
-  const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
-
-  const [cities, query, setQuery] = useDebouncedSearch(data.cities, filterCity);
+  const [refresh, refreshing] = useRefresh(refreshCities, isFetching);
+  const [cities, query, setQuery] = useDebouncedSearch(allcities, filterCity);
 
   return (
     <Container>

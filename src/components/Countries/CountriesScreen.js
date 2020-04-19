@@ -10,9 +10,14 @@ import {matchCountry} from '../../common/locale';
 
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 import useRefresh from '../shared/useRefresh';
-import {useStatsContext} from '../shared/StatsDataContext';
 
 import {Container, Top, SortControl} from './CountriesScreen.styles';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  fetchStats,
+  fetchingStatsSelector,
+  countriesByTotalSelector,
+} from '../../app/statsModule';
 
 function sortActive(arr) {
   return [...arr].sort((a, b) => b.active - a.active);
@@ -25,10 +30,11 @@ function sortDeaths(arr) {
 const sortFns = [(a) => a, sortActive, sortDeaths];
 
 export default function CountriesScreen() {
-  const {
-    state: {data, isFetching},
-    refreshStats,
-  } = useStatsContext();
+  const dispatch = useDispatch();
+  const sortedCountries = useSelector(countriesByTotalSelector);
+
+  const isFetching = useSelector(fetchingStatsSelector);
+  const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
 
   const [sort, setSort] = useState(0);
   const changeSort = useCallback(
@@ -39,7 +45,7 @@ export default function CountriesScreen() {
   const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
   const [countries, query, setQuery] = useDebouncedSearch(
-    data.countries,
+    sortedCountries,
     matchCountry,
     sortFns[sort],
   );
