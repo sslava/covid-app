@@ -1,10 +1,10 @@
 import React, {useMemo} from 'react';
 import {useTheme} from 'styled-components/native';
 
-import {formatNumber, t, formatDate} from '../../../../common/locale';
+import {formatNumber, t} from '../../../../common/locale';
+import {getDynamicStats} from './model';
 
 import BarChart from '../../../shared/BarChart';
-
 import upIcon from '../assets/up.png';
 import downIcon from '../assets/down.png';
 
@@ -23,52 +23,59 @@ import {
   UpDown,
 } from './Dynamic.styles';
 
+export const plusFormatter = (num) => `${num ? '+' : ''}${formatNumber(num)}`;
+
 export default function Dynamic({country, history, animated, color}) {
   const theme = useTheme();
 
-  const data = useMemo(() => {
-    return history.slice(history.length - 15, history.length - 1).map((h) => ({
-      label: h.report_date_string,
-      value: +h.delta_confirmed,
-    }));
-  }, [history]);
+  const {today, yesterday, graph} = useMemo(
+    () => getDynamicStats(history, country),
+    [history, country],
+  );
 
-  const prev = 3000;
   return (
     <Container>
       <Content>
         <Today>
           <TodayCaption color={color}>
-            {t('stats.country.todayCases', {date: formatDate(country.updated)})}
+            {t('stats.country.todayCases', {date: today.date})}
           </TodayCaption>
           <TodayContent>
             <TodayNumber color={color}>
-              +{formatNumber(country.total_new)}
+              {plusFormatter(today.value)}
             </TodayNumber>
-            <UpDown source={+country.total_new > prev ? upIcon : downIcon} />
+            {yesterday && today.value !== yesterday.value && (
+              <UpDown
+                source={today.value > yesterday.value ? upIcon : downIcon}
+              />
+            )}
           </TodayContent>
         </Today>
-        {history && history.length > 0 && (
+        {graph && graph.length > 0 && (
           <GraphContainer>
             <GraphCaption color={color}>
-              {t('stats.country.lastX', {days: data.length})}
+              {t('stats.country.lastX', {days: graph.length})}
             </GraphCaption>
             <BarChart
               color={color || theme.secondaryTextColor}
               width={90}
               height={50}
-              data={data}
+              data={graph}
               animated={animated}
             />
           </GraphContainer>
         )}
       </Content>
-      <Yesterday color={color}>
-        <YesterdayCaption color={color}>
-          {t('stats.country.yesterday')}
-        </YesterdayCaption>
-        <YesterdayNumber color={color}>+{formatNumber(prev)}</YesterdayNumber>
-      </Yesterday>
+      {yesterday && (
+        <Yesterday color={color}>
+          <YesterdayCaption color={color}>
+            {t('stats.country.yesterday', {date: yesterday.date})}
+          </YesterdayCaption>
+          <YesterdayNumber color={color}>
+            {plusFormatter(yesterday.value)}
+          </YesterdayNumber>
+        </Yesterday>
+      )}
     </Container>
   );
 }
