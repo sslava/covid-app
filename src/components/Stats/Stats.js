@@ -1,8 +1,14 @@
 import React, {useMemo} from 'react';
+import {useSelector} from 'react-redux';
 
 import {t} from '../../common/locale';
-import LargeHeader from '../shared/Header/LargeHeader';
+import {
+  topCountriesSelector,
+  countriesSelector,
+  worldSelector,
+} from '../../app/statsModule';
 
+import LargeHeader from '../shared/Header/LargeHeader';
 import WorldStats from './World/WorldStats';
 import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
 import Countries from './Countries/Countries';
@@ -25,22 +31,21 @@ function findPrimary(countries, code) {
   return primary;
 }
 
-function getTop(countries) {
-  return countries.slice(0, 9);
-}
+export default function Stats({prefs}) {
+  const countries = useSelector(countriesSelector);
+  const top = useSelector(topCountriesSelector);
+  const world = useSelector(worldSelector);
 
-export default function Stats({data, prefs}) {
-  const primary = useMemo(() => findPrimary(data.countries, prefs.primary), [
-    data.countries,
+  const primary = useMemo(() => findPrimary(countries, prefs.primary), [
+    countries,
     prefs.primary,
   ]);
 
-  const top = useMemo(() => getTop(data.countries), [data.countries]);
   return (
     <Container>
       <LargeHeader title={t('stats.title')} />
       <WorldContainer>
-        <WorldStats world={data.world} />
+        <WorldStats world={world} />
       </WorldContainer>
       {primary && (
         <PrimaryContainer>
