@@ -49,8 +49,11 @@ export function sortCountries(countries: Array<Object>) {
 export const formatNumber = (num: number): string =>
   i18n.toNumber(+num, {precision: 0, delimiter: ' '});
 
+export const parseDate = (date: string): Date =>
+  new Date(date.replace(' ', 'T') + 'Z');
+
 export const formatDate = (date: string): string =>
-  new Date(date.replace(' ', 'T') + 'Z').toLocaleDateString(i18n.locale);
+  parseDate(date).toLocaleDateString(i18n.locale);
 
 export const matchCountry = (query: srting, c: Object) =>
   countryName(c).toLowerCase().indexOf(query) !== -1 ||
