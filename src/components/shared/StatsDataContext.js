@@ -9,13 +9,13 @@ import React, {
 
 import {apiRequest} from '../../common/api';
 
-import {actionTypes, fetchReducer, getInitialFetchState} from './fetchReducer';
+import {actionTypes, fetchReducer, getInitialState} from './fetchReducer';
 
 import ItemStore from '../../common/ItemStore';
 
 const StatsContext = createContext(null);
 
-const initialState = getInitialFetchState({
+const initialState = getInitialState({
   nodata: false,
   world: {
     deaths: '0',

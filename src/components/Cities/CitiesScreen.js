@@ -15,11 +15,11 @@ const filterCity = (q, c) => c.name.toLowerCase().indexOf(q) !== -1;
 
 export default function CitiesScreen() {
   const {
-    state: {data, fetchState},
+    state: {data, isFetching},
     refreshStats,
   } = useStatsContext();
 
-  const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
+  const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
   const [cities, query, setQuery] = useDebouncedSearch(data.cities, filterCity);
 
