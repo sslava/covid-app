@@ -14,6 +14,8 @@ import {
   fetchingStatsSelector,
 } from '../../app/statsModule';
 
+import {fetchCountryHistory} from '../../app/historyModule';
+
 import Stats from './Stats';
 
 import {Safe, Scroll} from './StatsScreen.styles';
@@ -24,6 +26,14 @@ export default function StatsScreen({}) {
   const scrollRef = useRef();
   useScrollToTop(scrollRef);
 
+  const [prefs] = usePrefences();
+
+  useEffect(() => {
+    if (prefs.primary) {
+      dispatch(fetchCountryHistory(prefs.primary));
+    }
+  }, [dispatch, prefs.primary]);
+
   useEffect(() => {
     dispatch(initStats());
   }, [dispatch]);
@@ -33,7 +43,6 @@ export default function StatsScreen({}) {
   const isFetching = useSelector(fetchingStatsSelector);
   const nodata = useSelector(nodataSelector);
 
-  const [prefs] = usePrefences();
   const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
   return (

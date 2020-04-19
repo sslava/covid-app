@@ -1,10 +1,13 @@
 import React, {useMemo} from 'react';
 import {Dimensions} from 'react-native';
+
 import {useTheme} from 'styled-components/native';
+import {useSelector} from 'react-redux';
+
+import {formatDate, t} from '../../../common/locale';
+import {worldSelector} from '../../../app/statsModule';
 
 import Pie from '../../shared/PieChart/Pie';
-import {formatDate, t} from '../../../common/locale';
-
 import PercentCounter from './PercentCounter';
 import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';
@@ -30,8 +33,9 @@ const getPieData = (total, recovered, deaths, active, theme) => {
   ];
 };
 
-export default function WorldStats({world}) {
+export default function WorldStats() {
   const theme = useTheme();
+  const world = useSelector(worldSelector);
 
   const data = useMemo(
     () =>
