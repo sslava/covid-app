@@ -1,7 +1,7 @@
 // @flow
 import AsyncStorage from '@react-native-community/async-storage';
 
-export default class ItemStore {
+export class ItemStore {
   key: string;
   defaultValue: ?any;
 

@@ -1,4 +1,4 @@
-export function createFetchReducer(scope, initialData) {
+export default function createFetchReducer(scope, initialData) {
   const initialState = {
     data: initialData,
     isFetching: false,
@@ -17,11 +17,12 @@ export function createFetchReducer(scope, initialData) {
       case actionTypes.FETCH:
         return {...state, isFetching: true, error: null};
       case actionTypes.FETCH_COMPLETE:
+      case actionTypes.SET:
         return {isFetching: false, data: action.payload, error: null};
       case actionTypes.FETCH_FAILED:
         return {...state, isFetching: false, error: action.payload};
-      case actionTypes.SET:
-        return {...state, data: action.payload};
+      default:
+        break;
     }
     return state;
   };

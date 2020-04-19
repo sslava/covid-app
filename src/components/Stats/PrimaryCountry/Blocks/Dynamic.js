@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {useTheme} from 'styled-components/native';
 
 import {formatNumber, t, formatDate} from '../../../../common/locale';
@@ -23,8 +23,15 @@ import {
   UpDown,
 } from './Dynamic.styles';
 
-export default function Dynamic({country, data, animated, color}) {
+export default function Dynamic({country, history, animated, color}) {
   const theme = useTheme();
+
+  const data = useMemo(() => {
+    return history.slice(history.length - 15, history.length - 1).map((h) => ({
+      label: h.report_date_string,
+      value: +h.delta_confirmed,
+    }));
+  }, [history]);
 
   const prev = 3000;
   return (
@@ -41,7 +48,7 @@ export default function Dynamic({country, data, animated, color}) {
             <UpDown source={+country.total_new > prev ? upIcon : downIcon} />
           </TodayContent>
         </Today>
-        {data && (
+        {history && history.length > 0 && (
           <GraphContainer>
             <GraphCaption color={color}>
               {t('stats.country.lastX', {days: data.length})}

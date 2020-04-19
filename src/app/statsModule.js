@@ -1,8 +1,9 @@
-import ItemStore from '../common/ItemStore';
-import {apiRequest} from '../common/api';
-
-import {createFetchReducer} from './fetchReducer';
 import {createSelector} from 'reselect';
+
+import createFetchReducer from './createFetchReducer';
+
+import {ItemStore} from '../common/ItemStore';
+import {apiRequest} from '../common/api';
 
 const initial = {
   nodata: false,
@@ -21,6 +22,8 @@ const initial = {
   countries: [],
 };
 
+const storage = new ItemStore('stats', initial);
+
 const [statsReducer, actionTypes] = createFetchReducer('stats', initial);
 
 const normalize = (payload) => {
@@ -34,15 +37,12 @@ const normalize = (payload) => {
   };
 };
 
-const storage = new ItemStore('stats', initial);
+const fetcher = () => apiRequest('GET', 'https://covidum.com/request/get_stat');
 
 export const fetchStats = () => async (dispatch) => {
   dispatch({type: actionTypes.FETCH});
   try {
-    const json = await apiRequest(
-      'GET',
-      'https://covidum.com/request/get_stat',
-    );
+    const json = await fetcher();
     const payload = normalize(json);
     dispatch({type: actionTypes.FETCH_COMPLETE, payload});
     storage.set(payload);
