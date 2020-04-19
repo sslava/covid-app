@@ -5,7 +5,7 @@ import {TouchableOpacity} from 'react-native';
 
 import {t} from '../../common/locale';
 import useBrowserLink from '../shared/useBrowserLink';
-import {usePrefences} from '../shared/PreferencesContext';
+import {usePrefences} from '../shared/Preferences';
 
 const Container = styled.View`
   padding-horizontal: 25px;

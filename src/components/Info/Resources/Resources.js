@@ -3,7 +3,7 @@ import React, {useMemo} from 'react';
 import {View} from 'react-native';
 
 import {t} from '../../../common/locale';
-import {usePrefences} from '../../shared/PreferencesContext';
+import {usePrefences} from '../../shared/Preferences';
 
 import Subheader from '../Subheader';
 import Phone from './Phone';

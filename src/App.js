@@ -1,19 +1,21 @@
 import React from 'react';
+import {Provider} from 'react-redux';
 
 import Navigator from './components/Navigator';
 
 import AppearanceTheme from './components/shared/AppearanceTheme';
-import {StatsDataProvider} from './components/shared/StatsDataContext';
-import {PreferencesProvider} from './components/shared/PreferencesContext';
+import {PreferencesProvider} from './components/shared/Preferences';
+
+import {store} from './app/store';
 
 export default function App() {
   return (
     <PreferencesProvider>
-      <AppearanceTheme>
-        <StatsDataProvider>
+      <Provider store={store}>
+        <AppearanceTheme>
           <Navigator />
-        </StatsDataProvider>
-      </AppearanceTheme>
+        </AppearanceTheme>
+      </Provider>
     </PreferencesProvider>
   );
 }
