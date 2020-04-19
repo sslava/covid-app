@@ -26,7 +26,7 @@ const sortFns = [(a) => a, sortActive, sortDeaths];
 
 export default function CountriesScreen() {
   const {
-    state: {data, fetchState},
+    state: {data, isFetching},
     refreshStats,
   } = useStatsContext();
 
@@ -36,7 +36,7 @@ export default function CountriesScreen() {
     [],
   );
 
-  const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
+  const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
   const [countries, query, setQuery] = useDebouncedSearch(
     data.countries,

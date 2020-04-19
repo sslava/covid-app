@@ -5,25 +5,25 @@ export const actionTypes = {
   SET: 'SET',
 };
 
-export const getInitialFetchState = (data = null) => ({
+export const getInitialState = (data = null) => ({
   data,
-  fetchState: 'NotFetched',
+  isFetching: false,
   error: null,
 });
 
 export function fetchReducer(state, action) {
   switch (action.type) {
     case actionTypes.FETCH:
-      return {...state, fetchState: 'Fetching', error: null};
+      return {...state, isFetching: true, error: null};
     case actionTypes.FETCH_COMPLETE:
       return {
         ...state,
-        fetchState: 'Fetched',
+        isFetching: false,
         data: action.payload,
         error: null,
       };
     case actionTypes.FETCH_FAILED:
-      return {...state, fetchState: 'Error', error: action.payload};
+      return {...state, isFetching: false, error: action.payload};
     case actionTypes.SET:
       return {...state, data: action.payload};
   }

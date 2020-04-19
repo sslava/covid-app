@@ -16,12 +16,12 @@ export default function StatsScreen({}) {
   useScrollToTop(scrollRef);
 
   const {
-    state: {data, fetchState},
+    state: {data, isFetching},
     refreshStats,
   } = useStatsContext();
 
   const [prefs] = usePrefences();
-  const [refresh, refreshing] = useRefresh(refreshStats, fetchState);
+  const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
   return (
     <Safe>

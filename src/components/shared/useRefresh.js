@@ -1,12 +1,12 @@
 import {useState, useCallback, useEffect} from 'react';
 
-export default function useRefresh(callback, fetchState) {
+export default function useRefresh(callback, isFetching) {
   const [refreshing, setRefreshing] = useState(false);
   useEffect(() => {
-    if (fetchState !== 'Fetching') {
+    if (!isFetching) {
       setRefreshing(false);
     }
-  }, [fetchState]);
+  }, [isFetching]);
 
   const refresh = useCallback(() => {
     setRefreshing(true);

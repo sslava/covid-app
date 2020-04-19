@@ -21,7 +21,31 @@ export default class ItemStore {
     return this.defaultValue;
   };
 
-  set = async (stats: Object) => {
-    await AsyncStorage.setItem(this.key, JSON.stringify(stats));
+  set = async (data: Object) => {
+    await AsyncStorage.setItem(this.key, JSON.stringify(data));
   };
+}
+
+export class MapItemStore {
+  defaultValue: ?any;
+  scope: string;
+
+  constructor(scope: string, defaultValue: ?any) {
+    this.scope = scope;
+    this.defaultValue = defaultValue;
+  }
+
+  load = async (key: string): Promise<Object> => {
+    const is = this.getStore_(key);
+    return is.load();
+  };
+
+  set = async (key: string, data: Object) => {
+    const is = this.getStore_(key);
+    await is.set(data);
+  };
+
+  getStore_(key: string): ItemStore {
+    return new ItemStore(`${this.scope}-${key}`, this.defaultValue);
+  }
 }
