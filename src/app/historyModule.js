@@ -23,7 +23,11 @@ export const fetchCountryHistory = (code) => async (dispatch) => {
   dispatch({type: actionTypes.FETCH, meta: {code}});
   try {
     const payload = await fetcher(code);
-    dispatch({type: actionTypes.FETCH_COMPLETE, payload, meta: {code}});
+    dispatch({
+      type: actionTypes.FETCH_COMPLETE,
+      payload: payload || [],
+      meta: {code},
+    });
     historyStorage.set(code, payload);
   } catch (error) {
     dispatch({type: actionTypes.FETCH_FAILED, payload: error, meta: {code}});

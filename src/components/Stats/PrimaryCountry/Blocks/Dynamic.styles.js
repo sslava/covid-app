@@ -20,7 +20,7 @@ export const TodayCaption = styled.Text`
 
 export const TodayContent = styled.View`
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 `;
 
