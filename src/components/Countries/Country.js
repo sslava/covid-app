@@ -31,6 +31,7 @@ function Country({country, sort = 0}) {
       <RegionListToggle
         name={countryName(country)}
         {...getNumbers(country, sort)}
+        index={country.index}
         expanded={expanded}
         onPress={toggle}
       />
