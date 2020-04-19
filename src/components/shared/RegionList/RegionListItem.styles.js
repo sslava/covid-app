@@ -21,6 +21,14 @@ export const Button = styled.TouchableOpacity`
   justify-content: space-between;
 `;
 
+export const Index = styled.Text`
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  margin-right: 5px;
+  color: ${(p) => p.theme.secondaryTextColor};
+`;
+
 export const Title = styled.Text`
   font-weight: 600;
   font-size: 15px;
@@ -29,7 +37,7 @@ export const Title = styled.Text`
 `;
 
 export const Today = styled(SecondaryNumber)`
-  margin-left: 3px;
+  margin-left: 2px;
   font-size: 13px;
   font-weight: 600;
   line-height: 24px;
