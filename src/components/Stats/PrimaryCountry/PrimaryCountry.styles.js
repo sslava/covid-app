@@ -33,9 +33,8 @@ export const Actions = styled.View`
 
 export const UpdatedText = styled.Text`
   margin-top: 10px;
-  padding-left: 18px;
   font-size: 11px;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 13px;
   color: ${(p) => p.theme.secondaryTextColor};
 `;
