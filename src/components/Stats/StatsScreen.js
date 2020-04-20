@@ -6,6 +6,7 @@ import {useScrollToTop} from '@react-navigation/native';
 
 import useRefresh from '../shared/useRefresh';
 import {usePrefences} from '../shared/Preferences';
+import {useAppStateActive} from '../shared/useAppState';
 
 import {
   initStats,
@@ -29,16 +30,17 @@ export default function StatsScreen({}) {
   const [prefs] = usePrefences();
 
   useEffect(() => {
+    dispatch(initStats());
+  }, [dispatch]);
+
+  useEffect(() => {
     if (prefs.primary) {
       dispatch(fetchCountryHistory(prefs.primary));
     }
   }, [dispatch, prefs.primary]);
 
-  useEffect(() => {
-    dispatch(initStats());
-  }, [dispatch]);
-
   const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
+  useAppStateActive(refreshStats);
 
   const isFetching = useSelector(fetchingStatsSelector);
   const nodata = useSelector(nodataSelector);
