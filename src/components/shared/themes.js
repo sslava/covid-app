@@ -13,7 +13,7 @@ export const lightTheme = {
   expandedRegionColor: 'rgba(255, 149, 0, 0.05)',
   recommendationBackground: 'rgba(255, 59, 48, 0.05)',
   phoneBackground: 'rgba(0, 122, 255, 0.05)',
-  linkBackground: 'rgba(242, 242, 247, 0.05)',
+  linkBackground: '#F2F2F7',
 };
 
 export const darkTheme = {
