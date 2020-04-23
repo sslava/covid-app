@@ -11,7 +11,6 @@ import TotalStats from './Blocks/TotalStats';
 import Dynamic from './Blocks/Dynamic';
 import ShareCountry from './Share/ShareCountry';
 
-import Button from '../../shared/Button';
 import {useOffscreenViewShot} from '../../shared/OffscreenViewshot';
 import countryIcons from '../../shared/countryIcons';
 import shareImage from '../../shared/shareImage';
@@ -26,6 +25,8 @@ import {
   ChangeIcon,
   UpdatedText,
   Actions,
+  ShareBtn,
+  CountryBtn,
 } from './PrimaryCountry.styles';
 
 export default function PrimaryCountry({code}) {
@@ -38,6 +39,11 @@ export default function PrimaryCountry({code}) {
   const {data: history} = useSelector((s) => historySelector(s, code));
 
   const changeCountry = useCallback(() => nav.navigate('CountrySelect'), [nav]);
+  const openDetails = useCallback(() => nav.navigate('Country', {name, code}), [
+    nav,
+    name,
+    code,
+  ]);
 
   const name = countryName(country);
 
@@ -46,7 +52,7 @@ export default function PrimaryCountry({code}) {
     [name],
   );
 
-  const [sharing, onShare, onCapture] = useOffscreenViewShot(captured);
+  const [sharing, share, capture] = useOffscreenViewShot(captured);
 
   if (!country) {
     return null;
@@ -67,9 +73,12 @@ export default function PrimaryCountry({code}) {
         <Dynamic country={country} history={history} animated />
         <TotalStats country={country} />
         <Actions>
-          <Button onPress={onShare} icon={shareIcon}>
+          <ShareBtn onPress={share} icon={shareIcon}>
             {t('stats.country.share')}
-          </Button>
+          </ShareBtn>
+          <CountryBtn onPress={openDetails}>
+            {t('stats.country.details')}
+          </CountryBtn>
         </Actions>
         <UpdatedText>
           {t('stats.country.updatedAt', {date: formatDate(country.updated)})}
@@ -77,7 +86,7 @@ export default function PrimaryCountry({code}) {
       </Content>
       <ShareCountry
         sharing={sharing}
-        onCapture={onCapture}
+        onCapture={capture}
         country={country}
         history={history}
       />

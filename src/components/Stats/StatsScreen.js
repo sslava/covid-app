@@ -1,10 +1,11 @@
 import React, {useRef, useEffect, useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
 
+import {useDispatch, useSelector} from 'react-redux';
 import {RefreshControl} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
 import useRefresh from '../shared/useRefresh';
+
 import {usePrefences} from '../shared/Preferences';
 import {useAppStateActive} from '../shared/useAppState';
 

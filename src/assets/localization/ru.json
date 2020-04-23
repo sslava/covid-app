@@ -15,6 +15,7 @@
       "lastX": "за %{days} дней",
       "yesterday": "В предыдущий день",
       "share": "Поделиться",
+      "details": "Подробнее",
       "shareTitle": "%{country}: cтатистика COVID-19",
       "updatedAt": "По состоянию на %{date}",
       "regionsButton": "В регионах"

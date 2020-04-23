@@ -5,6 +5,8 @@ import createFetchReducer from './createFetchReducer';
 import {ItemStore} from '../common/ItemStore';
 import {apiRequest} from '../common/api';
 
+const fetcher = () => apiRequest('GET', 'https://covidum.com/request/get_stat');
+
 const initial = {
   nodata: false,
   world: {
@@ -26,6 +28,8 @@ const storage = new ItemStore('stats', initial);
 
 const [statsReducer, actionTypes] = createFetchReducer('stats', initial);
 
+export {statsReducer};
+
 const normalize = (payload) => {
   if (payload.nodata === true) {
     return {nodata: payload.nodata, ...initial};
@@ -36,8 +40,6 @@ const normalize = (payload) => {
     countries: payload.stats.countries.filter((c) => !!c.code),
   };
 };
-
-const fetcher = () => apiRequest('GET', 'https://covidum.com/request/get_stat');
 
 export const fetchStats = () => async (dispatch) => {
   dispatch({type: actionTypes.FETCH});
@@ -92,5 +94,3 @@ export const topCountriesSelector = createSelector(
   countriesByTotalSelector,
   (countries) => countries.slice(0, 9),
 );
-
-export {statsReducer};

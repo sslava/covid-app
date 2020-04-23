@@ -6,7 +6,7 @@ const Btn = styled.TouchableOpacity`
   height: 44px;
   flex-direction: row;
   justify-content: center;
-  align-items: center
+  align-items: center;
   background-color: ${(p) => p.theme.secondaryBackground};
 `;
 
@@ -25,11 +25,32 @@ const Caption = styled.Text`
   color: ${(p) => p.theme.primaryTextColor};
 `;
 
-export default function Button({children, onPress, icon, style}) {
+const PBtn = styled(Btn)`
+  background-color: ${(p) => p.theme.actionColor};
+`;
+
+const PIcon = styled(Icon)`
+  color: white;
+`;
+
+const PCaption = styled(Caption)`
+  color: white;
+`;
+
+export function Button({children, onPress, icon, style}) {
   return (
     <Btn style={style} onPress={onPress} activeOpacity={0.7}>
       {icon && <Icon source={icon} />}
       <Caption>{children}</Caption>
     </Btn>
+  );
+}
+
+export function PrimaryButton({children, onPress, icon, style}) {
+  return (
+    <PBtn style={style} onPress={onPress} activeOpacity={0.8}>
+      {icon && <PIcon source={icon} />}
+      <PCaption>{children}</PCaption>
+    </PBtn>
   );
 }

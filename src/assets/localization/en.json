@@ -15,6 +15,7 @@
       "lastX": "last %{days} days",
       "yesterday": "The day before",
       "share": "Share",
+      "details": "Details",
       "shareTitle": "COVID-19 stats for %{country}",
       "updatedAt": "Updated at %{date}",
       "regionsButton": "Stats by region"
