@@ -18,7 +18,7 @@ export default function TotalStats({country, color}) {
     country.active,
   );
   return (
-    <Container>
+    <Container color={color}>
       <NumberBlock number={country.total} color={color}>
         {t('stats.country.total')}
       </NumberBlock>

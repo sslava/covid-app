@@ -6,7 +6,7 @@ import StatsBar from '../../../shared/StatsBar/StatsBar';
 export const Container = styled.View`
   padding-top: 13px;
   border-top-width: 1px;
-  border-top-color: ${(p) => p.theme.borderLightColor};
+  border-top-color: ${(p) => p.color || p.theme.borderLightColor};
 `;
 
 export const Bar = styled(StatsBar)`
