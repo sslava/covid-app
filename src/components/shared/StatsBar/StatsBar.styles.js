@@ -5,9 +5,6 @@ export const Container = styled.View`
 `;
 
 export const Bar = styled.View`
-  margin-left: 1px;
-  margin-right: 1px;
-  border-radius: 2px;
   height: ${(p) => p.height}px;
   width: ${(p) => (p.fraction * 100).toFixed(3)}%;
   background-color: ${(p) => p.color};

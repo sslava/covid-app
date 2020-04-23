@@ -14,6 +14,7 @@ export const lightTheme = {
   recommendationBackground: 'rgba(255, 59, 48, 0.05)',
   phoneBackground: 'rgba(0, 122, 255, 0.05)',
   linkBackground: '#F2F2F7',
+  actionColor: '#007AFF',
 };
 
 export const darkTheme = {
@@ -30,4 +31,5 @@ export const darkTheme = {
   recommendationBackground: '#2C2C2E',
   phoneBackground: '#2C2C2E',
   linkBackground: '#2C2C2E',
+  actionColor: '#007AFF',
 };

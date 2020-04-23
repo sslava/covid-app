@@ -30,7 +30,7 @@ export const TodayNumber = styled.Text`
   font-weight: 500;
   font-size: 54px;
   line-height: 64px;
-  color: ${(p) => p.color || p.theme.primaryTextColor};
+  color: ${(p) => p.color || p.theme.activeColor};
 `;
 
 export const UpDown = styled.Image`
