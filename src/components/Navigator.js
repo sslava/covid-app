@@ -12,6 +12,7 @@ import InfoScreen from './Info/InfoScreen';
 import CountriesScreen from './Countries/CountriesScreen';
 import CitiesScreen from './Cities/CitiesScreen';
 import CountrySelectScreen from './CountrySelect/CountrySelectScreen';
+import DeatilsScreen from './CountryDetails/DeatilsScreen';
 
 import {HeaderBack, HeaderClose} from './shared/Header/HeaderBack';
 import TabIcon from './shared/TabIcon';
@@ -89,12 +90,19 @@ export default function Navigator() {
         <AppStack.Screen
           name="Countries"
           component={CountriesScreen}
-          options={{headerTitle: t('countries.title')}}
+          options={{title: t('countries.title')}}
         />
         <AppStack.Screen
           name="Cities"
           component={CitiesScreen}
-          options={{headerTitle: t('cities.title')}}
+          options={{title: t('cities.title')}}
+        />
+        <AppStack.Screen
+          name="Country"
+          component={DeatilsScreen}
+          options={({route}) => ({
+            title: route.params.name,
+          })}
         />
         <AppStack.Screen
           name="CountrySelect"
@@ -102,7 +110,7 @@ export default function Navigator() {
           options={{
             headerBackTitleVisible: false,
             headerBackImage: HeaderClose,
-            headerTitle: t('countryselect.title'),
+            title: t('countryselect.title'),
             gestureEnabled: true,
             ...TransitionPresets.ModalTransition,
           }}

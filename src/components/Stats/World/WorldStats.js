@@ -6,13 +6,12 @@ import {useSelector} from 'react-redux';
 
 import {formatDate, t} from '../../../common/locale';
 import {worldSelector} from '../../../app/statsModule';
+import worldIcon from '../../../assets/icons/earth.png';
 
 import Pie from '../../shared/PieChart/Pie';
 import PercentCounter from './PercentCounter';
 import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';
-
-import worldIcon from './world.png';
 
 import {
   Container,

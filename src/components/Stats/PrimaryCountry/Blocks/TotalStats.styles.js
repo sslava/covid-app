@@ -11,7 +11,6 @@ export const Container = styled.View`
 
 export const Bar = styled(StatsBar)`
   padding-vertical: 6px;
-  padding-right: 4px;
 `;
 
 export const Numbers = styled.View`
