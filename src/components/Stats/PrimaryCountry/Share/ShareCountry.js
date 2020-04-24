@@ -1,11 +1,11 @@
 import React, {useRef, useEffect, useCallback, useState} from 'react';
 
-import TotalStats from '../Blocks/TotalStats';
+import TotalStats from '../../common/TotalStats';
 import Dynamic from '../Blocks/Dynamic';
 import {OffscreenViewShot} from '../../../common/OffscreenViewshot';
 
-import bg from '../assets/sharebg.png';
-import favicon from '../assets/favicon.png';
+import bg from '../../../../assets/icons/sharebg.png';
+import favicon from '../../../../assets/icons/favicon.png';
 
 import {
   Container,
@@ -53,7 +53,7 @@ function CountryView({sharing, onCapture, country, history}) {
         </Header>
         <Content>
           <Dynamic country={country} history={history} color="white" />
-          <TotalStats country={country} color="white" />
+          <TotalStats region={country} color="white" />
           <Footer>
             <AppIcon source={favicon} />
             <FooterContent>
