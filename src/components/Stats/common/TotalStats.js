@@ -20,6 +20,7 @@ export default function TotalStats({
   deaths,
   active,
   deaths_new,
+  total_new,
   color,
 }) {
   const theme = useTheme();
@@ -27,7 +28,7 @@ export default function TotalStats({
   const stats = useRegionStats(total, recovered, deaths, active);
   return (
     <>
-      <NumberBlock number={total} large color={color}>
+      <NumberBlock number={total} large color={color} today={total_new}>
         {t('stats.total')}
       </NumberBlock>
       <Bar items={stats} height={10} />
