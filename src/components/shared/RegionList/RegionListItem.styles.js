@@ -9,7 +9,7 @@ export const Container = styled.View`
   border-bottom-width: ${StyleSheet.hairlineWidth}px;
   border-top-width: ${StyleSheet.hairlineWidth}px;
   background-color: ${(p) =>
-    p.expanded ? p.theme.expandedRegionColor : 'transparent'};
+    p.expanded ? p.theme.secondaryBackground : 'transparent'};
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -22,10 +22,10 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const Index = styled.Text`
-  font-weight: 400;
+  font-weight: 600;
   font-size: 15px;
   line-height: 20px;
-  margin-right: 5px;
+  margin-right: 10px;
   color: ${(p) => p.theme.secondaryTextColor};
 `;
 
@@ -47,7 +47,7 @@ export const Today = styled(SecondaryNumber)`
 export const Icon = styled(Animated.Image)`
   position: absolute;
   right: 20px;
-  top: 14px;
+  top: 12px;
   width: 20px;
   height: 20px;
   margin-left: 8px;
