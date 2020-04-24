@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, useCallback, useState} from 'react';
 
-import TotalStats from '../../common/TotalStats';
+import TotalStats, {StatsContainer} from '../../common/TotalStats';
 import Dynamic from '../Blocks/Dynamic';
 import {OffscreenViewShot} from '../../../common/OffscreenViewshot';
 
@@ -53,14 +53,16 @@ function CountryView({sharing, onCapture, country, history}) {
         </Header>
         <Content>
           <Dynamic country={country} history={history} color="white" />
-          <TotalStats
-            total={country.total}
-            recovered={country.recovered}
-            deaths={country.deaths}
-            active={country.active}
-            deaths_new={country.deaths_new}
-            color="white"
-          />
+          <StatsContainer color="white">
+            <TotalStats
+              total={country.total}
+              recovered={country.recovered}
+              deaths={country.deaths}
+              active={country.active}
+              deaths_new={country.deaths_new}
+              color="white"
+            />
+          </StatsContainer>
           <Footer>
             <AppIcon source={favicon} />
             <FooterContent>
