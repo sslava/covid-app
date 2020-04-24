@@ -1,8 +1,21 @@
 import {useCallback, useState, useMemo} from 'react';
+
 import {t} from '../../common/locale';
 
-export function useCountrySort() {
-  const [sort, setSort] = useState(0);
+export function sortTotal(arr) {
+  return [...arr].sort((a, b) => b.total - a.total);
+}
+
+export function sortActive(arr) {
+  return [...arr].sort((a, b) => b.active - a.active);
+}
+
+export function sortDeaths(arr) {
+  return [...arr].sort((a, b) => b.deaths - a.deaths);
+}
+
+export function useCountrySort(initialSort = 0) {
+  const [sort, setSort] = useState(initialSort);
   const changeSort = useCallback(
     (e) => setSort(e.nativeEvent.selectedSegmentIndex),
     [],

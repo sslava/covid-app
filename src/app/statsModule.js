@@ -82,15 +82,3 @@ export const makeCountrySelector = () =>
       return primary;
     },
   );
-
-export const countriesByTotalSelector = createSelector(
-  countriesSelector,
-  (countries) => {
-    return [...countries].sort((a, b) => b.total - a.total);
-  },
-);
-
-export const topCountriesSelector = createSelector(
-  countriesByTotalSelector,
-  (countries) => countries.slice(0, 10),
-);
