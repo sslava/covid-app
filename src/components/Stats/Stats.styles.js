@@ -1,4 +1,3 @@
-import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
@@ -6,19 +5,19 @@ export const Container = styled.View`
 `;
 
 export const WorldContainer = styled.View`
-  padding-top: 18px;
-  border-bottom-width: ${StyleSheet.hairlineWidth}px;
+  padding-top: 30px;
+  border-bottom-width: 10px;
   border-bottom-color: ${(p) => p.theme.borderLightColor};
 `;
 
 export const PrimaryContainer = styled.View`
-  padding-top: 16px;
-  padding-bottom: 30px;
-  border-bottom-width: ${StyleSheet.hairlineWidth}px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom-width: 10px;
   border-bottom-color: ${(p) => p.theme.borderLightColor};
 `;
 
 export const CountriesContainer = styled.View`
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 20px;
 `;
