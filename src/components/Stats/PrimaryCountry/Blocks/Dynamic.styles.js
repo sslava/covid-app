@@ -56,7 +56,8 @@ export const Yesterday = styled.View`
 
 export const YesterdayCaption = styled.Text`
   font-size: 13px;
-  line-height: 18px;
+  font-weight: 500;
+  line-height: 15px;
   color: ${(p) => p.color || p.theme.secondaryTextColor};
 `;
 
