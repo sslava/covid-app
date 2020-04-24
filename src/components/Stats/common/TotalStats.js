@@ -1,12 +1,18 @@
 import React from 'react';
-import {useTheme} from 'styled-components/native';
+import styled, {useTheme} from 'styled-components/native';
 
 import {t} from '../../../common/locale';
 import useRegionStats from '../../shared/useRegionStats';
 
 import NumberBlock from './NumberBlock';
 
-import {Container, Bar, Numbers, Left, GrowingBlock} from './TotalStats.styles';
+import {Bar, Numbers, Left, GrowingBlock} from './TotalStats.styles';
+
+export const StatsContainer = styled.View`
+  padding-top: 15px;
+  border-top-width: 1px;
+  border-top-color: ${(p) => p.color || p.theme.borderLightColor};
+`;
 
 export default function TotalStats({
   total,
@@ -20,7 +26,7 @@ export default function TotalStats({
 
   const stats = useRegionStats(total, recovered, deaths, active);
   return (
-    <Container color={color}>
+    <>
       <NumberBlock number={total} large color={color}>
         {t('stats.total')}
       </NumberBlock>
@@ -50,6 +56,6 @@ export default function TotalStats({
           {t('stats.deaths')}
         </NumberBlock>
       </Numbers>
-    </Container>
+    </>
   );
 }
