@@ -1,34 +1,43 @@
 import React, {useCallback} from 'react';
 import {FlatList, RefreshControl} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {t} from '../../common/locale';
-
-import Country from './Country';
-import SearchBar from '../shared/Search/SearchBar';
-
 import {matchCountry} from '../../common/locale';
 
-import useSortedSearch from './useSortedSearch';
+import SearchBar from '../shared/Search/SearchBar';
 import useRefresh from '../shared/useRefresh';
 import {useCountrySort} from '../shared/countrySort';
 
-import {Container, Top, SortControl} from './CountriesScreen.styles';
+import CountryListItem from '../shared/CountryListItem';
+import useSortedSearch from './useSortedSearch';
+
 import {
   fetchStats,
   fetchingStatsSelector,
   countriesSelector,
 } from '../../app/statsModule';
 
-export default function CountriesScreen() {
-  const dispatch = useDispatch();
-  const all = useSelector(countriesSelector);
+import {Container, Top, SortControl} from './CountriesScreen.styles';
 
+const keyCode = (c) => c.code;
+
+export default function CountriesScreen({route}) {
+  const dispatch = useDispatch();
+
+  const all = useSelector(countriesSelector);
   const isFetching = useSelector(fetchingStatsSelector);
   const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
   const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
-  const [sv, sort, changeSort] = useCountrySort();
+  const nav = useNavigation();
+  const openDetails = useCallback(
+    (code, name) => nav.navigate('Country', {code, name}),
+    [nav],
+  );
+
+  const [sv, sort, changeSort] = useCountrySort(route.params.sort);
   const [countries, query, setQuery] = useSortedSearch(all, matchCountry, sort);
 
   return (
@@ -46,8 +55,15 @@ export default function CountriesScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }
         data={countries}
-        renderItem={({item}) => <Country sort={sort} country={item} />}
-        keyExtractor={(item) => item.code}
+        renderItem={({item}) => (
+          <CountryListItem
+            sort={sort}
+            country={item}
+            index={item.index}
+            onDetails={openDetails}
+          />
+        )}
+        keyExtractor={keyCode}
       />
     </Container>
   );
