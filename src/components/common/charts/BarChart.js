@@ -28,6 +28,7 @@ function BarChanrt({
         useNativeDriver: false,
       }).start();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const maxValue = Math.max(...data.map((d) => d.value));

@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import {TouchableOpacity} from 'react-native';
 
 import {t} from '../../common/locale';
-import useBrowserLink from '../shared/useBrowserLink';
+import useBrowserLink from '../common/useBrowserLink';
 import {usePrefences} from '../shared/Preferences';
 
 const Container = styled.View`

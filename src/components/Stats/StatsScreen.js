@@ -4,10 +4,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RefreshControl} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
-import useRefresh from '../shared/useRefresh';
+import useRefresh from '../common/useRefresh';
 
 import {usePrefences} from '../shared/Preferences';
-import {useAppStateActive} from '../shared/useAppState';
+import {useAppStateActive} from '../common/useAppState';
 
 import {
   initStats,

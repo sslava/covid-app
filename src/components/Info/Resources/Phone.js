@@ -1,6 +1,6 @@
 import React from 'react';
 
-import usePhoneCall from '../../shared/usePhoneCall';
+import usePhoneCall from '../../common/usePhoneCall';
 
 import callIcon from './call.png';
 

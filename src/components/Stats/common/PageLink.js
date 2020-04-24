@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {useNavigation} from '@react-navigation/core';
 
-import {PrimaryButton} from '../../shared/Button';
+import {PrimaryButton} from '../../common/Button';
 
 export default function PageLink({children, route, params, ...rest}) {
   const nav = useNavigation();

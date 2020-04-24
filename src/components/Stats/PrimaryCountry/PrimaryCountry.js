@@ -13,10 +13,11 @@ import TotalStats from './Blocks/TotalStats';
 import Dynamic from './Blocks/Dynamic';
 import ShareCountry from './Share/ShareCountry';
 
-import {DetailsIcon, ShareIcon} from '../../shared/buttonIcons';
-import {useOffscreenViewShot} from '../../shared/OffscreenViewshot';
-import countryIcons from '../../shared/countryIcons';
-import shareImage from '../../shared/shareImage';
+import {DetailsIcon, ShareIcon} from '../../common/buttonIcons';
+import {useOffscreenViewShot} from '../../common/OffscreenViewshot';
+
+import countryIcons from '../../common/countryIcons';
+import shareImageDialog from '../../common/shareImage';
 
 import {
   Container,
@@ -47,7 +48,8 @@ export default function PrimaryCountry({code}) {
   const name = countryName(country);
 
   const captured = useCallback(
-    (tmp) => shareImage(tmp, t('stats.country.shareTitle', {country: name})),
+    (tmp) =>
+      shareImageDialog(tmp, t('stats.country.shareTitle', {country: name})),
     [name],
   );
 

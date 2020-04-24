@@ -7,7 +7,7 @@ import Subheader from '../common/Subheader';
 import ddIcon from '../../../assets/icons/dropdown.png';
 import markerIcon from '../../../assets/icons/marker.png';
 
-import {ShareIcon, ListIcon} from '../../shared/buttonIcons';
+import {ShareIcon, ListIcon} from '../../common/buttonIcons';
 
 import {
   Container,

@@ -1,7 +1,7 @@
 // @flow
 import {useState, useEffect} from 'react';
 
-import useDebounceValue from '../useDebounceValue';
+import useDebounceValue from '../../common/useDebounceValue';
 
 export default function useDebouncedSearch<T>(
   data: Array<T>,

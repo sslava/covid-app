@@ -5,9 +5,9 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import {t} from '../../common/locale';
 import {matchCountry} from '../../common/locale';
+import useRefresh from '../common/useRefresh';
 
 import SearchBar from '../shared/Search/SearchBar';
-import useRefresh from '../shared/useRefresh';
 import {useCountrySort} from '../shared/countrySort';
 
 import CountryListItem from '../shared/CountryListItem';

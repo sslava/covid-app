@@ -15,7 +15,7 @@ import CountrySelectScreen from './CountrySelect/CountrySelectScreen';
 import DeatilsScreen from './CountryDetails/DeatilsScreen';
 
 import {HeaderBack, HeaderClose} from './shared/Header/HeaderBack';
-import TabIcon from './shared/TabIcon';
+import TabIcon from './common/TabIcon';
 
 import infoIcon from '../assets/icons/info.png';
 import statsIcon from '../assets/icons/stats.png';

@@ -1,6 +1,6 @@
 import Share from 'react-native-share';
 
-export default async function shareImage(tmpPath, title) {
+export default async function shareImageDialog(tmpPath, title) {
   try {
     const url = `file://${tmpPath}`;
     await Share.open({
