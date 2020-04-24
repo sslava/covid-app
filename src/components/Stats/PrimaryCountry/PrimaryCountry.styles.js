@@ -43,18 +43,3 @@ export const CountryBtn = styled(PrimaryButton)`
   flex: 1;
   margin-left: 10px;
 `;
-
-export const ShareIcon = styled.Image`
-  tint-color: ${(p) => p.theme.primaryTextColor};
-  width: 16px;
-  height: 22px;
-  top: -2px;
-  margin-right: 10px;
-`;
-
-export const DetailsIcon = styled.Image`
-  tint-color: white;
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
-`;

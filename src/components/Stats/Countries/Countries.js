@@ -12,6 +12,7 @@ import Sources from '../common/Sources';
 import PageLink from '../common/PageLink';
 import SearchButton from '../../shared/Search/SearchButton';
 import CountryListItem from '../../shared/CountryListItem';
+import {ListIcon} from '../../shared/buttonIcons';
 
 import {
   useCountrySort,
@@ -69,7 +70,7 @@ export default function TopCountries() {
         ))}
       </View>
       <All>
-        <PageLink route="Countries" params={{sort}}>
+        <PageLink route="Countries" params={{sort}} icon={<ListIcon />}>
           {t('stats.countries.all')}
         </PageLink>
       </All>

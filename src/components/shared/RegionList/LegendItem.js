@@ -1,7 +1,14 @@
 import React from 'react';
 
-import {Left, Right, PrimaryNumber} from './controls';
-import {Container, Color, Title, Today} from './LegendItem.styles';
+import {
+  Left,
+  Right,
+  PrimaryNumber,
+  Container,
+  Color,
+  Title,
+  Today,
+} from './LegendItem.styles';
 
 export default function LegendItem({
   color,
@@ -14,7 +21,7 @@ export default function LegendItem({
   return (
     <Container>
       <Left>
-        <Color color={color} />
+        {color && <Color color={color} />}
         <Title>{title}</Title>
       </Left>
       <Right skipToday={skipToday}>
