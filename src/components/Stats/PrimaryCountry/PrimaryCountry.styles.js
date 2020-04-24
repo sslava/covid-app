@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import {Button, PrimaryButton} from '../../shared/Button';
+import {Button, PrimaryButton} from '../../common/Button';
 
 export const Container = styled.View`
   background-color: ${(p) => p.theme.primaryBackground};

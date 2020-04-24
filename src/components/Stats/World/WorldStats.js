@@ -8,7 +8,7 @@ import {formatDate, t} from '../../../common/locale';
 import {worldSelector} from '../../../app/statsModule';
 import worldIcon from '../../../assets/icons/earth.png';
 
-import Pie from '../../shared/PieChart/Pie';
+import Pie from '../../common/charts/PieChart/Pie';
 import PercentCounter from './PercentCounter';
 import Subheader from '../common/Subheader';
 import HeroStats from '../common/HeroStats';

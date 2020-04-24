@@ -4,7 +4,7 @@ import {useTheme} from 'styled-components/native';
 import {formatNumber, t} from '../../../../common/locale';
 import {getDynamicStats} from './model';
 
-import BarChart from '../../../shared/BarChart';
+import BarChart from '../../../common/charts/BarChart';
 import downIcon from '../assets/arrow-down.png';
 
 import {

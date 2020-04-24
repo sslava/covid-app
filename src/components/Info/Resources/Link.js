@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useBrowserLink from '../../shared/useBrowserLink';
+import useBrowserLink from '../../common/useBrowserLink';
 
 import linkIcon from './link.png';
 

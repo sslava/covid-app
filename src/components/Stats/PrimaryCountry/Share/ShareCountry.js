@@ -2,7 +2,7 @@ import React, {useRef, useEffect, useCallback, useState} from 'react';
 
 import TotalStats from '../Blocks/TotalStats';
 import Dynamic from '../Blocks/Dynamic';
-import {OffscreenViewShot} from '../../../shared/OffscreenViewshot';
+import {OffscreenViewShot} from '../../../common/OffscreenViewshot';
 
 import bg from '../assets/sharebg.png';
 import favicon from '../assets/favicon.png';
@@ -22,7 +22,7 @@ import {
 } from './ShareCountry.styles';
 
 import {countryName, formatDate} from '../../../../common/locale';
-import countryIcons from '../../../shared/countryIcons';
+import countryIcons from '../../../common/countryIcons';
 
 function CountryView({sharing, onCapture, country, history}) {
   const viewshotRef = useRef();
