@@ -10,10 +10,10 @@
     "recovered": "Выздоровело",
     "deaths": "Смертей",
     "country": {
-      "todayCases": "Выявлено новых случаев\nCOVID-19 за %{date}",
+      "todayCases": "Новых случаев за %{date}",
       "total": "Всего случаев",
-      "lastX": "за %{days} дней",
-      "yesterday": "В предыдущий день",
+      "lastX": "Последние %{days} дней",
+      "yesterday": " в предыдущий день",
       "share": "Поделиться",
       "details": "Подробнее",
       "shareTitle": "%{country}: cтатистика COVID-19",
