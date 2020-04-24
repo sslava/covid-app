@@ -14,6 +14,7 @@ export const Today = styled.View``;
 
 export const TodayCaption = styled.Text`
   font-size: 13px;
+  font-weight: 500;
   line-height: 18px;
   color: ${(p) => p.color || p.theme.primaryTextColor};
 `;
@@ -44,6 +45,7 @@ export const GraphContainer = styled.View``;
 
 export const GraphCaption = styled.Text`
   font-size: 13px;
+  font-weight: 500;
   line-height: 18px;
   margin-bottom: 19px;
   text-align: right;
@@ -62,8 +64,8 @@ export const YesterdayCaption = styled.Text`
 `;
 
 export const YesterdayNumber = styled.Text`
-  font-weight: 500;
   font-size: 18px;
+  font-weight: 500;
   line-height: 26px;
   color: ${(p) => p.color || p.theme.secondaryTextColor};
 `;

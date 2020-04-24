@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import {makeCountrySelector} from '../../../app/statsModule';
 import {makeCounrtyHistorySelector} from '../../../app/historyModule';
-import {formatDate, countryName, t} from '../../../common/locale';
+import {countryName, t} from '../../../common/locale';
 
 import Subheader from '../common/Subheader';
 import TotalStats from './Blocks/TotalStats';
@@ -23,7 +23,6 @@ import {
   Content,
   Icon,
   ChangeIcon,
-  UpdatedText,
   Actions,
   ShareBtn,
   CountryBtn,
@@ -80,9 +79,6 @@ export default function PrimaryCountry({code}) {
             {t('stats.country.details')}
           </CountryBtn>
         </Actions>
-        <UpdatedText>
-          {t('stats.country.updatedAt', {date: formatDate(country.updated)})}
-        </UpdatedText>
       </Content>
       <ShareCountry
         sharing={sharing}
