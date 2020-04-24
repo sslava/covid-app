@@ -8,18 +8,20 @@ import NumberBlock from './NumberBlock';
 
 import {Container, Bar, Numbers, Left, GrowingBlock} from './TotalStats.styles';
 
-export default function TotalStats({region, color}) {
+export default function TotalStats({
+  total,
+  recovered,
+  deaths,
+  active,
+  deaths_new,
+  color,
+}) {
   const theme = useTheme();
 
-  const stats = useRegionStats(
-    region.total,
-    region.recovered,
-    region.deaths,
-    region.active,
-  );
+  const stats = useRegionStats(total, recovered, deaths, active);
   return (
     <Container color={color}>
-      <NumberBlock number={region.total} large color={color}>
+      <NumberBlock number={total} large color={color}>
         {t('stats.total')}
       </NumberBlock>
       <Bar items={stats} height={10} />
@@ -27,21 +29,21 @@ export default function TotalStats({region, color}) {
         <Left>
           <GrowingBlock
             fraction={stats[0].fraction}
-            number={region.recovered}
+            number={recovered}
             todayColor={theme.recoveredColor}
             color={color}>
             {t('stats.recovered')}
           </GrowingBlock>
           <NumberBlock
-            number={region.active}
+            number={active}
             todayColor={theme.activeColor}
             color={color}>
             {t('stats.active')}
           </NumberBlock>
         </Left>
         <NumberBlock
-          number={region.deaths}
-          today={region.deaths_new}
+          number={deaths}
+          today={deaths_new}
           right
           color={color}
           todayColor={theme.deathsColor}>

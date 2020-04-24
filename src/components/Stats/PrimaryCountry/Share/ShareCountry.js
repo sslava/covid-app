@@ -53,7 +53,14 @@ function CountryView({sharing, onCapture, country, history}) {
         </Header>
         <Content>
           <Dynamic country={country} history={history} color="white" />
-          <TotalStats region={country} color="white" />
+          <TotalStats
+            total={country.total}
+            recovered={country.recovered}
+            deaths={country.deaths}
+            active={country.active}
+            deaths_new={country.deaths_new}
+            color="white"
+          />
           <Footer>
             <AppIcon source={favicon} />
             <FooterContent>

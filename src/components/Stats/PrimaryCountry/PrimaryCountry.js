@@ -72,7 +72,13 @@ export default function PrimaryCountry({code}) {
       </Subheader>
       <Content>
         <Dynamic country={country} history={history} animated />
-        <TotalStats region={country} />
+        <TotalStats
+          total={country.total}
+          recovered={country.recovered}
+          deaths={country.deaths}
+          active={country.active}
+          deaths_new={country.deaths_new}
+        />
         <Actions>
           <ShareBtn onPress={share} icon={<ShareIcon />}>
             {t('stats.country.share')}
