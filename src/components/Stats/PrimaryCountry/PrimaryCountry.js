@@ -2,6 +2,8 @@ import React, {useCallback, useMemo} from 'react';
 import {useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 
+import ddIcon from '../../../assets/icons/dropdown.png';
+
 import {makeCountrySelector} from '../../../app/statsModule';
 import {makeCounrtyHistorySelector} from '../../../app/historyModule';
 import {countryName, t} from '../../../common/locale';
@@ -15,13 +17,12 @@ import {DetailsIcon, ShareIcon} from '../../shared/buttonIcons';
 import {useOffscreenViewShot} from '../../shared/OffscreenViewshot';
 import countryIcons from '../../shared/countryIcons';
 import shareImage from '../../shared/shareImage';
-import changeIcon from './assets/change.png';
 
 import {
   Container,
   Content,
   Icon,
-  ChangeIcon,
+  DDIcon,
   Actions,
   ShareBtn,
   CountryBtn,
@@ -65,7 +66,7 @@ export default function PrimaryCountry({code}) {
         icon={countryIcon && <Icon source={countryIcon} />}
         activeOpacity={0.5}
         onPress={changeCountry}>
-        <ChangeIcon source={changeIcon} />
+        <DDIcon source={ddIcon} />
       </Subheader>
       <Content>
         <Dynamic country={country} history={history} animated />

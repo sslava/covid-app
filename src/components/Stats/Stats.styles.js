@@ -17,6 +17,12 @@ export const PrimaryContainer = styled.View`
   border-bottom-color: ${(p) => p.theme.borderLightColor};
 `;
 
+export const RegionContainer = styled.View`
+  padding-vertical: 20px;
+  border-bottom-width: 10px;
+  border-bottom-color: ${(p) => p.theme.borderLightColor};
+`;
+
 export const CountriesContainer = styled.View`
   padding-top: 20px;
   padding-bottom: 20px;

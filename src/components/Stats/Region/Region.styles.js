@@ -2,24 +2,7 @@ import styled from 'styled-components/native';
 
 import {Button, PrimaryButton} from '../../shared/Button';
 
-export const Container = styled.View`
-  background-color: ${(p) => p.theme.primaryBackground};
-`;
-
-export const Content = styled.View`
-  padding-horizontal: 20px;
-  padding-top: 23px;
-`;
-
-export const Icon = styled.Image`
-  height: 26px;
-  width: 26px;
-  border-radius: 12px;
-  margin-right: 10px;
-  resize-mode: cover;
-  border-color: ${(p) => p.theme.secondaryBackground};
-  border-width: 1px;
-`;
+export const Container = styled.View``;
 
 export const DDIcon = styled.Image`
   margin-left: 9px;
@@ -27,6 +10,17 @@ export const DDIcon = styled.Image`
   top: 1px;
   width: 10px;
   height: 8px;
+`;
+
+export const Marker = styled.Image`
+  width: 19px;
+  height: 24px;
+  margin-right: 7px;
+`;
+
+export const Content = styled.View`
+  padding-horizontal: 20px;
+  padding-top: 27px;
 `;
 
 export const Actions = styled.View`
