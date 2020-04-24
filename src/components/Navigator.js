@@ -10,7 +10,7 @@ import {t} from '../common/locale';
 import StatsScreen from './Stats/StatsScreen';
 import InfoScreen from './Info/InfoScreen';
 import CountriesScreen from './Countries/CountriesScreen';
-import CitiesScreen from './Cities/CitiesScreen';
+import RegionScreen from './Regions/RegionScreen';
 import CountrySelectScreen from './CountrySelect/CountrySelectScreen';
 import DeatilsScreen from './CountryDetails/DeatilsScreen';
 
@@ -93,8 +93,8 @@ export default function Navigator() {
           options={{title: t('countries.title')}}
         />
         <AppStack.Screen
-          name="Cities"
-          component={CitiesScreen}
+          name="Regions"
+          component={RegionScreen}
           options={{title: t('cities.title')}}
         />
         <AppStack.Screen

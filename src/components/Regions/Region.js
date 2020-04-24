@@ -7,17 +7,17 @@ import {
 
 import RegionListLegend from '../shared/RegionList/RegionListLegend';
 
-function City({city}) {
+function Region({region}) {
   const [expanded, setExpanded] = useState(false);
   const toggle = useCallback(() => setExpanded((s) => !s), []);
 
-  const active = city.total - city.recovered - city.deaths;
+  const active = region.total - region.recovered - region.deaths;
 
   return (
     <RegionListItem expanded={expanded}>
       <RegionListToggle
-        name={city.name}
-        total={city.total}
+        name={region.name}
+        total={region.total}
         expanded={expanded}
         onPress={toggle}
         skipToday
@@ -25,9 +25,9 @@ function City({city}) {
       {expanded && (
         <RegionListLegend
           active={active}
-          total={city.total}
-          recovered={city.recovered}
-          deaths={city.deaths}
+          total={region.total}
+          recovered={region.recovered}
+          deaths={region.deaths}
           skipToday
         />
       )}
@@ -35,4 +35,4 @@ function City({city}) {
   );
 }
 
-export default memo(City);
+export default memo(Region);
