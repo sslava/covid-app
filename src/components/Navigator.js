@@ -12,6 +12,8 @@ import InfoScreen from './Info/InfoScreen';
 import CountriesScreen from './Countries/CountriesScreen';
 import RegionScreen from './Regions/RegionScreen';
 import CountrySelectScreen from './CountrySelect/CountrySelectScreen';
+import RegionSelectScreen from './RegionSelect/RegionSelectScreen';
+
 import DeatilsScreen from './CountryDetails/DeatilsScreen';
 
 import {HeaderBack, HeaderClose} from './shared/Header/HeaderBack';
@@ -107,6 +109,17 @@ export default function Navigator() {
         <AppStack.Screen
           name="CountrySelect"
           component={CountrySelectScreen}
+          options={{
+            headerBackTitleVisible: false,
+            headerBackImage: HeaderClose,
+            title: t('countryselect.title'),
+            gestureEnabled: true,
+            ...TransitionPresets.ModalTransition,
+          }}
+        />
+        <AppStack.Screen
+          name="RegionSelect"
+          component={RegionSelectScreen}
           options={{
             headerBackTitleVisible: false,
             headerBackImage: HeaderClose,

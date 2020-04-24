@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+import {useSelector} from 'react-redux';
 
 import {t} from '../../common/locale';
+
+import {makeCountrySelector} from '../../app/statsModule';
 
 import LargeHeader from '../shared/Header/LargeHeader';
 import WorldStats from './World/WorldStats';
@@ -15,9 +18,13 @@ import {
   CountriesContainer,
 } from './Stats.styles';
 
-const hasRegion = (code) => code === 'US' || code === 'RU';
+const hasRegions = (country) =>
+  country && (country.code === 'US' || country.code === 'RU');
 
 export default function Stats({prefs}) {
+  const primarySelector = useMemo(makeCountrySelector);
+  const country = useSelector((s) => primarySelector(s, prefs.primary));
+
   return (
     <Container>
       <LargeHeader title={t('stats.title')} />
@@ -25,9 +32,9 @@ export default function Stats({prefs}) {
         <WorldStats />
       </WorldContainer>
       <PrimaryContainer>
-        <PrimaryCountry code={prefs.primary} />
+        <PrimaryCountry country={country} />
       </PrimaryContainer>
-      {hasRegion(prefs.primary) && <Region code={prefs.primary} />}
+      {hasRegions(country) && <Region country={country} />}
       <CountriesContainer>
         <Countries />
       </CountriesContainer>
