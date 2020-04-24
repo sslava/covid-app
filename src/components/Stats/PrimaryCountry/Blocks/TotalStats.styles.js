@@ -10,7 +10,7 @@ export const Container = styled.View`
 `;
 
 export const Bar = styled(StatsBar)`
-  padding-vertical: 6px;
+  padding-vertical: 7px;
 `;
 
 export const Numbers = styled.View`
