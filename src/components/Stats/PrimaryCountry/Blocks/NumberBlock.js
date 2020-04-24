@@ -7,14 +7,15 @@ import SecondaryNumber from '../../../shared/SecondaryNumber';
 
 const Caption = styled.Text`
   font-size: 13px;
-  line-height: 18px;
+  font-weight: 500;
+  line-height: 15px;
   text-align: ${(p) => (p.right ? 'right' : 'left')}
-  color: ${(p) => p.color || p.theme.primaryTextColor};
+  color: ${(p) => p.color || p.todayColor || p.theme.primaryTextColor};
 `;
 
 const Number = styled.Text`
   font-size: 18px;
-  line-height: 26px;
+  line-height: 21px;
   font-weight: 500;
   text-align: ${(p) => (p.right ? 'right' : 'left')}
   color: ${(p) => p.color || p.theme.primaryTextColor};
@@ -38,7 +39,11 @@ export default function NumberBlock({
 }) {
   return (
     <View style={style}>
-      <Caption right={right} numberOfLines={1} color={color}>
+      <Caption
+        right={right}
+        numberOfLines={1}
+        todayColor={todayColor}
+        color={color}>
         {children}
       </Caption>
       <Number right={right} numberOfLines={1} color={color}>

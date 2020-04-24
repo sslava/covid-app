@@ -28,10 +28,14 @@ export default function TotalStats({country, color}) {
           <GrowingBlock
             fraction={stats[0].fraction}
             number={country.recovered}
+            todayColor={theme.recoveredColor}
             color={color}>
             {t('stats.recovered')}
           </GrowingBlock>
-          <NumberBlock number={country.active} color={color}>
+          <NumberBlock
+            number={country.active}
+            todayColor={theme.activeColor}
+            color={color}>
             {t('stats.active')}
           </NumberBlock>
         </Left>
