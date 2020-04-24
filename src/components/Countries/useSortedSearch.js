@@ -2,24 +2,17 @@
 import {useState, useEffect} from 'react';
 
 import useDebounceValue from '../shared/useDebounceValue';
+import {sortActive, sortTotal, sortDeaths} from '../shared/countrySort';
 
-function withIndex(arr: Array<Object>): Array<Object> {
-  return arr.map((a, index) => ({index: index + 1, ...a}));
+function withIndex(fn: (arr: Array<Object>) => Array<Object>) {
+  return (arr) => fn(arr).map((a, index) => ({index: index + 1, ...a}));
 }
 
-function sortTotal(arr: Array<Object>): Array<Object> {
-  return withIndex([...arr].sort((a, b) => b.total - a.total));
-}
-
-function sortActive(arr: Array<Object>): Array<Object> {
-  return withIndex([...arr].sort((a, b) => b.active - a.active));
-}
-
-function sortDeaths(arr: Array<Object>): Array<Object> {
-  return withIndex([...arr].sort((a, b) => b.deaths - a.deaths));
-}
-
-const sortFns = [sortTotal, sortActive, sortDeaths];
+const sortFns = [
+  withIndex(sortTotal),
+  withIndex(sortActive),
+  withIndex(sortDeaths),
+];
 
 export default function useDebouncedSearch<T>(
   data: Array<T>,
