@@ -9,7 +9,6 @@ import {countriesSelector} from '../../../app/statsModule';
 
 import Subheader from '../common/Subheader';
 import Sources from '../common/Sources';
-import PageLink from '../common/PageLink';
 import SearchButton from '../../shared/Search/SearchButton';
 import CountryListItem from '../../shared/CountryListItem';
 import {ListIcon} from '../../common/buttonIcons';
@@ -22,6 +21,7 @@ import {
 } from '../../shared/countrySort';
 
 import {Search, All, SortControl} from './Countries.styles';
+import {PrimaryButton} from '../../common/Button';
 
 function sortedTop(countries, sort, topX = 10) {
   if (!countries || !countries.length) {
@@ -37,10 +37,11 @@ export default function TopCountries() {
   const countries = useMemo(() => sortedTop(all, sort), [all, sort]);
 
   const nav = useNavigation();
-  const openList = useCallback(
-    () => nav.navigate('Countries', {sort: sort, search: true}),
-    [nav, sort],
-  );
+
+  const openList = useCallback(() => nav.navigate('Countries', {sort: sort}), [
+    nav,
+    sort,
+  ]);
 
   const openDetails = useCallback(
     (code, name) => nav.navigate('Country', {code, name}),
@@ -70,9 +71,9 @@ export default function TopCountries() {
         ))}
       </View>
       <All>
-        <PageLink route="Countries" params={{sort}} icon={<ListIcon />}>
+        <PrimaryButton onPress={openList} icon={<ListIcon />}>
           {t('stats.countries.all')}
-        </PageLink>
+        </PrimaryButton>
       </All>
       <Sources date={countries[0].updated} />
     </View>

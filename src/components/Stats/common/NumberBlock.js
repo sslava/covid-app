@@ -2,8 +2,8 @@ import React from 'react';
 import {View} from 'react-native';
 import styled from 'styled-components/native';
 
-import {formatNumber} from '../../../../common/locale';
-import SecondaryNumber from '../../../shared/SecondaryNumber';
+import {formatNumber} from '../../../common/locale';
+import SecondaryNumber from '../../shared/SecondaryNumber';
 
 const Caption = styled.Text`
   font-size: 13px;

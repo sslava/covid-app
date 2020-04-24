@@ -2,7 +2,11 @@ import styled from 'styled-components/native';
 
 import {Button, PrimaryButton} from '../../common/Button';
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  padding-vertical: 20px;
+  border-bottom-width: 10px;
+  border-bottom-color: ${(p) => p.theme.borderLightColor};
+`;
 
 export const DDIcon = styled.Image`
   margin-left: 9px;

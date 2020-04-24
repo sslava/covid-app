@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 import NumberBlock from './NumberBlock';
-import StatsBar from '../../../shared/StatsBar/StatsBar';
+import StatsBar from '../../shared/StatsBar/StatsBar';
 
 export const Container = styled.View`
   padding-top: 15px;
