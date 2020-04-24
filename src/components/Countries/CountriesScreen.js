@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import {FlatList, RefreshControl} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
@@ -11,6 +11,7 @@ import {matchCountry} from '../../common/locale';
 
 import useSortedSearch from './useSortedSearch';
 import useRefresh from '../shared/useRefresh';
+import {useCountrySort} from '../shared/countrySort';
 
 import {Container, Top, SortControl} from './CountriesScreen.styles';
 import {
@@ -27,12 +28,7 @@ export default function CountriesScreen() {
   const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
   const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
-  const [sort, setSort] = useState(0);
-  const changeSort = useCallback(
-    (e) => setSort(e.nativeEvent.selectedSegmentIndex),
-    [],
-  );
-
+  const [sv, sort, changeSort] = useCountrySort();
   const [countries, query, setQuery] = useSortedSearch(all, matchCountry, sort);
 
   return (
@@ -43,15 +39,7 @@ export default function CountriesScreen() {
           onChange={setQuery}
           placeholder={t('countries.search')}
         />
-        <SortControl
-          selectedIndex={sort}
-          onChange={changeSort}
-          values={[
-            t('countries.sort.total'),
-            t('countries.sort.active'),
-            t('countries.sort.deaths'),
-          ]}
-        />
+        <SortControl selectedIndex={sort} onChange={changeSort} values={sv} />
       </Top>
       <FlatList
         refreshControl={

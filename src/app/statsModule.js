@@ -92,5 +92,5 @@ export const countriesByTotalSelector = createSelector(
 
 export const topCountriesSelector = createSelector(
   countriesByTotalSelector,
-  (countries) => countries.slice(0, 9),
+  (countries) => countries.slice(0, 10),
 );
