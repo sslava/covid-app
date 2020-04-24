@@ -13,7 +13,6 @@ import {
   WorldContainer,
   PrimaryContainer,
   CountriesContainer,
-  RegionContainer,
 } from './Stats.styles';
 
 const hasRegion = (code) => code === 'US' || code === 'RU';
@@ -28,11 +27,7 @@ export default function Stats({prefs}) {
       <PrimaryContainer>
         <PrimaryCountry code={prefs.primary} />
       </PrimaryContainer>
-      {hasRegion(prefs.primary) && (
-        <RegionContainer>
-          <Region code={prefs.primary} />
-        </RegionContainer>
-      )}
+      {hasRegion(prefs.primary) && <Region code={prefs.primary} />}
       <CountriesContainer>
         <Countries />
       </CountriesContainer>
