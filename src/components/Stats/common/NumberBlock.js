@@ -23,7 +23,7 @@ const Number = styled.Text`
 
 const Today = styled(SecondaryNumber)`
   font-weight: 500;
-  font-size: 13px;
+  font-size: ${(p) => (p.large ? 21 : 13)}px;
   line-height: 26px;
   color: ${(p) => p.color || p.theme.primaryTextColor};
 `;
@@ -49,7 +49,7 @@ export default function NumberBlock({
       </Caption>
       <Number large={large} right={right} numberOfLines={1} color={color}>
         {formatNumber(number)}
-        <Today num={+today} color={todayColor} />
+        <Today large={large} num={+today} color={todayColor} />
       </Number>
     </View>
   );

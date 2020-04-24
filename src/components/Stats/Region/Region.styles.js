@@ -37,7 +37,7 @@ export const ShareBtn = styled(Button)`
   margin-right: 10px;
 `;
 
-export const CountryBtn = styled(PrimaryButton)`
+export const ListBtn = styled(PrimaryButton)`
   flex: 1;
   margin-left: 10px;
 `;
