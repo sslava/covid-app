@@ -1,7 +1,7 @@
 // @flow
 import {useState, useEffect} from 'react';
 
-import useDebounceValue from '../shared/useDebounceValue';
+import useDebounceValue from '../common/useDebounceValue';
 import {sortActive, sortTotal, sortDeaths} from '../shared/countrySort';
 
 function withIndex(fn: (arr: Array<Object>) => Array<Object>) {

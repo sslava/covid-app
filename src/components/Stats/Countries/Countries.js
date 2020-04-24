@@ -12,7 +12,7 @@ import Sources from '../common/Sources';
 import PageLink from '../common/PageLink';
 import SearchButton from '../../shared/Search/SearchButton';
 import CountryListItem from '../../shared/CountryListItem';
-import {ListIcon} from '../../shared/buttonIcons';
+import {ListIcon} from '../../common/buttonIcons';
 
 import {
   useCountrySort,

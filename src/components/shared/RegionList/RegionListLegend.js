@@ -6,8 +6,8 @@ import useRegionStats from '../../shared/useRegionStats';
 import {t} from '../../../common/locale';
 
 import StatsBar from '../StatsBar/StatsBar';
-import {PrimaryButton} from '../Button';
-import {DetailsIcon} from '../buttonIcons';
+import {PrimaryButton} from '../../common/Button';
+import {DetailsIcon} from '../../common/buttonIcons';
 
 import LegendItem from './LegendItem';
 

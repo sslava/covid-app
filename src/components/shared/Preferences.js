@@ -10,7 +10,7 @@ import React, {
 import {initI18nConfig, getCurrentCountryCode} from '../../common/locale';
 import {ItemStore} from '../../common/ItemStore';
 
-import useWillMount from './useWillMount';
+import useWillMount from '../common/useWillMount';
 
 const PreferencesContext = createContext(null);
 

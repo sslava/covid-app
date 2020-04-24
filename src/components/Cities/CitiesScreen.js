@@ -6,7 +6,7 @@ import City from './City';
 import SearchBar from '../shared/Search/SearchBar';
 
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
-import useRefresh from '../shared/useRefresh';
+import useRefresh from '../common/useRefresh';
 
 import {Container, Search} from './CitiesScreen.styles';
 

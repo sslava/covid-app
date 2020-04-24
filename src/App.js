@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 
 import Navigator from './components/Navigator';
 
-import AppearanceTheme from './components/shared/AppearanceTheme';
+import AppearanceTheme from './components/common/AppearanceTheme';
 import {PreferencesProvider} from './components/shared/Preferences';
 
 import {store} from './app/store';
