@@ -9,7 +9,7 @@ import {makeCounrtyHistorySelector} from '../../../app/historyModule';
 import {countryName, t} from '../../../common/locale';
 
 import Subheader from '../common/Subheader';
-import TotalStats from '../common/TotalStats';
+import TotalStats, {StatsContainer} from '../common/TotalStats';
 import Dynamic from './Blocks/Dynamic';
 import ShareCountry from './Share/ShareCountry';
 
@@ -72,13 +72,15 @@ export default function PrimaryCountry({code}) {
       </Subheader>
       <Content>
         <Dynamic country={country} history={history} animated />
-        <TotalStats
-          total={country.total}
-          recovered={country.recovered}
-          deaths={country.deaths}
-          active={country.active}
-          deaths_new={country.deaths_new}
-        />
+        <StatsContainer>
+          <TotalStats
+            total={country.total}
+            recovered={country.recovered}
+            deaths={country.deaths}
+            active={country.active}
+            deaths_new={country.deaths_new}
+          />
+        </StatsContainer>
         <Actions>
           <ShareBtn onPress={share} icon={<ShareIcon />}>
             {t('stats.country.share')}

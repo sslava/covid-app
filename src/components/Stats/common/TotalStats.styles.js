@@ -3,12 +3,6 @@ import styled from 'styled-components/native';
 import NumberBlock from './NumberBlock';
 import StatsBar from '../../shared/StatsBar/StatsBar';
 
-export const Container = styled.View`
-  padding-top: 15px;
-  border-top-width: 1px;
-  border-top-color: ${(p) => p.color || p.theme.borderLightColor};
-`;
-
 export const Bar = styled(StatsBar)`
   padding-vertical: 7px;
 `;
