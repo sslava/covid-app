@@ -4,7 +4,6 @@ import {useNavigation} from '@react-navigation/native';
 
 import ddIcon from '../../../assets/icons/dropdown.png';
 
-import {makeCountrySelector} from '../../../app/statsModule';
 import {makeCounrtyHistorySelector} from '../../../app/historyModule';
 import {countryName, t} from '../../../common/locale';
 
@@ -29,11 +28,9 @@ import {
   CountryBtn,
 } from './PrimaryCountry.styles';
 
-export default function PrimaryCountry({code}) {
+export default function PrimaryCountry({code, country}) {
   const nav = useNavigation();
-
-  const primarySelector = useMemo(makeCountrySelector);
-  const country = useSelector((s) => primarySelector(s, code));
+  const name = countryName(country);
 
   const historySelector = useMemo(makeCounrtyHistorySelector);
   const {data: history} = useSelector((s) => historySelector(s, code));
@@ -44,8 +41,6 @@ export default function PrimaryCountry({code}) {
     name,
     code,
   ]);
-
-  const name = countryName(country);
 
   const captured = useCallback(
     (tmp) =>

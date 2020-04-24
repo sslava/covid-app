@@ -2,7 +2,7 @@ import React, {useEffect, useMemo, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/core';
 
-import {t, regionName} from '../../../common/locale';
+import {t, regionName, countryName} from '../../../common/locale';
 import {ShareIcon, ListIcon} from '../../common/buttonIcons';
 
 import Subheader from '../common/Subheader';
@@ -48,26 +48,30 @@ const a = {
 
 const regionId = 'Moskva';
 
-export default function Region({code, countryName}) {
+export default function Region({country}) {
   const nav = useNavigation();
+  const cname = countryName(country);
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (code) {
-      dispatch(fetchCountryRegions(code));
+    if (country.code) {
+      dispatch(fetchCountryRegions(country.code));
     }
-  }, [code, dispatch]);
+  }, [country.code, dispatch]);
   const regionsSelector = useMemo(makeCountryRegionsSelector);
-  const {data: regions} = useSelector((s) => regionsSelector(s, code));
+  const {data: regions} = useSelector((s) => regionsSelector(s, country.code));
 
   const region = useMemo(
     () => regions && regions.find((r) => r.region_name_en === regionId),
     [regions],
   );
-
+  const changeRegion = useCallback(
+    () => nav.navigate('RegionSelect', {code: country.code}),
+    [nav, country.code],
+  );
   const openList = useCallback(
-    () => nav.navigate('Regions', {code, countryName}),
-    [code, countryName, nav],
+    () => nav.navigate('Regions', {code: country.code, countryName: cname}),
+    [country.code, cname, nav],
   );
 
   if (!region) {
@@ -81,7 +85,7 @@ export default function Region({code, countryName}) {
       <Subheader
         title={regionName(region)}
         icon={<Marker source={markerIcon} />}
-        // onPress={changeCountry}
+        onPress={changeRegion}
         activeOpacity={0.7}>
         <DDIcon source={ddIcon} />
       </Subheader>
