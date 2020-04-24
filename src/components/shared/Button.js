@@ -10,14 +10,6 @@ const Btn = styled.TouchableOpacity`
   background-color: ${(p) => p.theme.secondaryBackground};
 `;
 
-const Icon = styled.Image`
-  tint-color: ${(p) => p.theme.primaryTextColor};
-  width: 16px;
-  height: 22px;
-  top: -2px;
-  margin-right: 10px;
-`;
-
 const Caption = styled.Text`
   font-size: 16px;
   line-height: 20px;
@@ -29,10 +21,6 @@ const PBtn = styled(Btn)`
   background-color: ${(p) => p.theme.actionColor};
 `;
 
-const PIcon = styled(Icon)`
-  color: white;
-`;
-
 const PCaption = styled(Caption)`
   color: white;
 `;
@@ -40,7 +28,7 @@ const PCaption = styled(Caption)`
 export function Button({children, onPress, icon, style}) {
   return (
     <Btn style={style} onPress={onPress} activeOpacity={0.7}>
-      {icon && <Icon source={icon} />}
+      {icon}
       <Caption>{children}</Caption>
     </Btn>
   );
@@ -49,7 +37,7 @@ export function Button({children, onPress, icon, style}) {
 export function PrimaryButton({children, onPress, icon, style}) {
   return (
     <PBtn style={style} onPress={onPress} activeOpacity={0.8}>
-      {icon && <PIcon source={icon} />}
+      {icon}
       <PCaption>{children}</PCaption>
     </PBtn>
   );
