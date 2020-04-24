@@ -66,7 +66,15 @@ export const formatDate = (date: string): string =>
 
 export const matchCountry = (query: srting, c: Object) =>
   countryName(c).toLowerCase().indexOf(query) !== -1 ||
-  c.country_name.toLowerCase().indexOf(query) !== -1;
+  c.country_name_en.toLowerCase().indexOf(query) !== -1;
+
+export function sortRegions(regions: Array<Object>) {
+  return objectSort(regions, regionName);
+}
+
+export const matchRegion = (query: srting, r: Object) =>
+  regionName(r).toLowerCase().indexOf(query) !== -1 ||
+  r.region_name_en.toLowerCase().indexOf(query) !== -1;
 
 const alpha2Map = {
   ru: 'RU',
