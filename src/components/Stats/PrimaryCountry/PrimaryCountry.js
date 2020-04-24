@@ -11,12 +11,10 @@ import TotalStats from './Blocks/TotalStats';
 import Dynamic from './Blocks/Dynamic';
 import ShareCountry from './Share/ShareCountry';
 
+import {DetailsIcon, ShareIcon} from '../../shared/buttonIcons';
 import {useOffscreenViewShot} from '../../shared/OffscreenViewshot';
 import countryIcons from '../../shared/countryIcons';
 import shareImage from '../../shared/shareImage';
-
-import shareIcon from '../../../assets/icons/share.png';
-import detialsIcon from '../../../assets/icons/details.png';
 import changeIcon from './assets/change.png';
 
 import {
@@ -27,8 +25,6 @@ import {
   Actions,
   ShareBtn,
   CountryBtn,
-  ShareIcon,
-  DetailsIcon,
 } from './PrimaryCountry.styles';
 
 export default function PrimaryCountry({code}) {
@@ -75,12 +71,10 @@ export default function PrimaryCountry({code}) {
         <Dynamic country={country} history={history} animated />
         <TotalStats country={country} />
         <Actions>
-          <ShareBtn onPress={share} icon={<ShareIcon source={shareIcon} />}>
+          <ShareBtn onPress={share} icon={<ShareIcon />}>
             {t('stats.country.share')}
           </ShareBtn>
-          <CountryBtn
-            onPress={openDetails}
-            icon={<DetailsIcon source={detialsIcon} />}>
+          <CountryBtn onPress={openDetails} icon={<DetailsIcon />}>
             {t('stats.country.details')}
           </CountryBtn>
         </Actions>

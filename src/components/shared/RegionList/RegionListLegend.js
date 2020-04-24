@@ -6,8 +6,10 @@ import useRegionStats from '../../shared/useRegionStats';
 import {t} from '../../../common/locale';
 
 import StatsBar from '../StatsBar/StatsBar';
-import LegendItem from '../Legend/LegendItem';
 import {PrimaryButton} from '../Button';
+import {DetailsIcon} from '../buttonIcons';
+
+import LegendItem from './LegendItem';
 
 import {Content, Legend} from './RegionListLegend.styles';
 
@@ -26,6 +28,11 @@ export default function RegionListLegend({
     <Content>
       <StatsBar items={stats} height={10} />
       <Legend>
+        <LegendItem
+          title={t('stats.total')}
+          number={total}
+          skipToday={skipToday}
+        />
         <LegendItem
           color={theme.recoveredColor}
           title={t('stats.recovered')}
@@ -47,7 +54,7 @@ export default function RegionListLegend({
         />
       </Legend>
       {onDetails && (
-        <PrimaryButton onPress={onDetails}>
+        <PrimaryButton onPress={onDetails} icon={<DetailsIcon />}>
           {t('stats.country.details')}
         </PrimaryButton>
       )}

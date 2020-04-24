@@ -6,12 +6,12 @@
       "updatedAt": "Updated at %{date}"
     },
     "cases": "Total cases",
+    "total": "Total cases",
     "active": "Active",
     "recovered": "Recovered",
     "deaths": "Deaths",
     "country": {
       "todayCases": "New cases at %{date}",
-      "total": "Total cases",
       "lastX": "last %{days} days",
       "yesterday": " the day before",
       "share": "Share",
