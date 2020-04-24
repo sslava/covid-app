@@ -24,6 +24,9 @@
       "title": "Rest of the world",
       "all": "All countries"
     },
+    "regions": {
+      "all": "All states"
+    },
     "source": {
       "source": "Source ",
       "updatedAt": ", updated at %{date}"
