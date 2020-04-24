@@ -20,7 +20,7 @@ export default function TotalStats({country, color}) {
   return (
     <Container color={color}>
       <NumberBlock number={country.total} large color={color}>
-        {t('stats.country.total')}
+        {t('stats.total')}
       </NumberBlock>
       <Bar items={stats} height={10} />
       <Numbers>
