@@ -25,9 +25,7 @@ export function Header({title, updated, code}) {
     <HeaderContainer>
       <HeaderLeft>
         {countryIcon && <CountryIcon source={countryIcon} />}
-        <Title numberOfLines={1} ellipsizeMode="tail">
-          {title}
-        </Title>
+        <Title>{title}</Title>
       </HeaderLeft>
       {updated && <Updated>{formatDate(updated)}</Updated>}
     </HeaderContainer>

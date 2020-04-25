@@ -6,7 +6,6 @@ import {Header, Footer, Content} from './Share/Tokens';
 
 import {regionName, t, formatNumber, formatDate} from '../../common/locale';
 import TotalStats from './Stats/TotalStats';
-import {getRegionActiveCases} from '../../app/regionsModule';
 
 const StatsContent = styled.View`
   padding-top: 37px;
@@ -38,7 +37,7 @@ const TotalNumber = styled.Text`
 function RegionView({sharing, onCapture, region, code}) {
   return (
     <ShareContainer sharing={sharing} onCapture={onCapture}>
-      <Header title={regionName(region, true)} code={code} />
+      <Header title={regionName(region)} code={code} />
       <Content>
         <StatsContent>
           <Totals>
@@ -53,7 +52,7 @@ function RegionView({sharing, onCapture, region, code}) {
             total={+region.total_cases}
             recovered={+region.total_recovered}
             deaths={+region.total_deaths}
-            active={getRegionActiveCases(region)}
+            active={+region.total_active}
             deaths_new={+region.new_deaths}
             total_new={+region.new_cases}
             hideTotal
