@@ -82,3 +82,15 @@ export const makeCountrySelector = () =>
       return primary;
     },
   );
+
+export function sortTotal(arr) {
+  return [...arr].sort((a, b) => b.total - a.total);
+}
+
+export function sortActive(arr) {
+  return [...arr].sort((a, b) => b.active - a.active);
+}
+
+export function sortDeaths(arr) {
+  return [...arr].sort((a, b) => b.deaths - a.deaths);
+}

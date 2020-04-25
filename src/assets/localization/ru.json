@@ -100,8 +100,8 @@
       "link": "verbaclinic.ru"
     }
   },
-  "cities": {
-    "title": "Статистика по регионам",
+  "states": {
+    "title": "Регионы: %{name}",
     "search": "Поиск по региону"
   },
   "countries": {
@@ -115,6 +115,9 @@
   },
   "countryselect": {
     "title": "Выберите страну"
+  },
+  "regionselect": {
+    "title": "Выберите регион"
   },
   "alpha2": {
     "AU": "Австралия",

@@ -1,17 +1,18 @@
 import React, {useCallback} from 'react';
 import {FlatList, RefreshControl} from 'react-native';
-import {useNavigation} from '@react-navigation/core';
 import {useDispatch, useSelector} from 'react-redux';
 
+import {withIndex} from '../../common/utils';
 import {t} from '../../common/locale';
 import {matchCountry} from '../../common/locale';
 import useRefresh from '../common/useRefresh';
 
 import SearchBar from '../shared/Search/SearchBar';
-import {useCountrySort} from '../shared/countrySort';
+import {sortActive, sortTotal, sortDeaths} from '../../app/statsModule';
 
 import CountryListItem from '../shared/CountryListItem';
-import useSortedSearch from './useSortedSearch';
+import useSortedSearch from '../shared/Search/useSortedSearch';
+import useSortTabs from '../shared/useSortTabs';
 
 import {
   fetchStats,
@@ -21,9 +22,15 @@ import {
 
 import {Container, Top, SortControl} from './CountriesScreen.styles';
 
+const sortFns = [
+  withIndex(sortTotal),
+  withIndex(sortActive),
+  withIndex(sortDeaths),
+];
+
 const keyCode = (c) => c.code;
 
-export default function CountriesScreen({route}) {
+export default function CountriesScreen({route, navigation}) {
   const dispatch = useDispatch();
 
   const all = useSelector(countriesSelector);
@@ -31,14 +38,18 @@ export default function CountriesScreen({route}) {
   const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
   const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
 
-  const nav = useNavigation();
   const openDetails = useCallback(
-    (code, name) => nav.navigate('Country', {code, name}),
-    [nav],
+    (code, name) => navigation.navigate('Country', {code, name}),
+    [navigation],
   );
 
-  const [sv, sort, changeSort] = useCountrySort(route.params.sort);
-  const [countries, query, setQuery] = useSortedSearch(all, matchCountry, sort);
+  const [sv, sort, changeSort] = useSortTabs(route.params.sort);
+  const [countries, query, setQuery] = useSortedSearch(
+    all,
+    matchCountry,
+    sortFns,
+    sort,
+  );
 
   return (
     <Container>

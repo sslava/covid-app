@@ -97,7 +97,9 @@ export default function Navigator() {
         <AppStack.Screen
           name="Regions"
           component={RegionScreen}
-          options={{title: t('cities.title')}}
+          options={({route}) => ({
+            title: t('states.title', {name: route.params.name}),
+          })}
         />
         <AppStack.Screen
           name="Country"
@@ -123,7 +125,7 @@ export default function Navigator() {
           options={{
             headerBackTitleVisible: false,
             headerBackImage: HeaderClose,
-            title: t('countryselect.title'),
+            title: t('regionselect.title'),
             gestureEnabled: true,
             ...TransitionPresets.ModalTransition,
           }}

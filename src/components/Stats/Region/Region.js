@@ -14,6 +14,7 @@ import markerIcon from '../../../assets/icons/marker.png';
 import {
   fetchCountryRegions,
   makeCountryRegionsSelector,
+  getRegionActiveCases,
 } from '../../../app/regionsModule';
 
 import {
@@ -69,16 +70,15 @@ export default function Region({country}) {
     () => nav.navigate('RegionSelect', {code: country.code}),
     [nav, country.code],
   );
-  const openList = useCallback(
-    () => nav.navigate('Regions', {code: country.code, countryName: cname}),
-    [country.code, cname, nav],
-  );
+  const openList = useCallback(() => nav.navigate('Regions', {name: cname}), [
+    cname,
+    nav,
+  ]);
 
   if (!region) {
     return null;
   }
-  const active =
-    region.total_cases - region.total_recovered - region.total_deaths;
+  const active = getRegionActiveCases(region);
 
   return (
     <Container>
