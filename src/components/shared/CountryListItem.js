@@ -20,7 +20,7 @@ function getNumbers(country, sort) {
   return {total: country.total, today: country.total_new};
 }
 
-function Country({country, onDetails, index, sort = 0}) {
+function CountryListItem({country, onDetails, index, sort = 0}) {
   const [expanded, setExpanded] = useState(false);
   const toggle = useCallback(() => setExpanded((s) => !s), []);
   const name = countryName(country);
@@ -54,4 +54,4 @@ function Country({country, onDetails, index, sort = 0}) {
   );
 }
 
-export default memo(Country);
+export default memo(CountryListItem);
