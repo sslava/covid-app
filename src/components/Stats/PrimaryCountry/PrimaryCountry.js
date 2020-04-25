@@ -49,19 +49,18 @@ export default function PrimaryCountry({code, country}) {
   );
 
   const [sharing, share, capture] = useOffscreenViewShot(captured);
+  const countryIcon = countryIcons[code];
 
   if (!country) {
     return null;
   }
-
-  const countryIcon = countryIcons[country.code];
 
   return (
     <Container>
       <Subheader
         title={name}
         icon={countryIcon && <Icon source={countryIcon} />}
-        activeOpacity={0.5}
+        activeOpacity={0.7}
         onPress={changeCountry}>
         <DDIcon source={ddIcon} />
       </Subheader>

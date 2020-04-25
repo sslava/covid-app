@@ -1,5 +1,5 @@
-import React, {useEffect, useMemo, useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, {useMemo, useCallback} from 'react';
+import {useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/core';
 
 import {t, regionName, countryName} from '../../../common/locale';
@@ -9,7 +9,6 @@ import Subheader from '../common/Subheader';
 import TotalStats from '../common/TotalStats';
 
 import {
-  preferredCountrySelector,
   preferredRegionSelector,
   getRegionId,
 } from '../../../app/preferencesModule';
@@ -18,7 +17,6 @@ import ddIcon from '../../../assets/icons/dropdown.png';
 import markerIcon from '../../../assets/icons/marker.png';
 
 import {
-  fetchCountryRegions,
   makeCountryRegionsSelector,
   getRegionActiveCases,
 } from '../../../app/regionsModule';
@@ -33,23 +31,12 @@ import {
   ListBtn,
 } from './Region.styles';
 
-export default function Region({country}) {
-  const dispatch = useDispatch();
+export default function Region({country, code}) {
   const nav = useNavigation();
-  const countryCode = useSelector(preferredCountrySelector);
+
   const regionId = useSelector(preferredRegionSelector);
-
-  const cname = countryName(country);
-
-  // FIXME: refresh
-  useEffect(() => {
-    if (countryCode) {
-      dispatch(fetchCountryRegions(countryCode));
-    }
-  }, [countryCode, dispatch]);
-
   const regionsSelector = useMemo(makeCountryRegionsSelector);
-  const {data: regions} = useSelector((s) => regionsSelector(s, countryCode));
+  const {data: regions} = useSelector((s) => regionsSelector(s, code));
 
   const region = useMemo(() => {
     if (!regions) {
@@ -60,15 +47,14 @@ export default function Region({country}) {
 
   const changeRegion = useCallback(() => nav.navigate('RegionSelect'), [nav]);
 
-  const openList = useCallback(() => nav.navigate('Regions', {name: cname}), [
-    cname,
-    nav,
-  ]);
+  const openList = useCallback(
+    () => nav.navigate('Regions', {name: countryName(country)}),
+    [country, nav],
+  );
 
   if (!region) {
     return null;
   }
-  const active = getRegionActiveCases(region);
 
   return (
     <Container>
@@ -84,7 +70,7 @@ export default function Region({country}) {
           total={+region.total_cases}
           recovered={+region.total_recovered}
           deaths={+region.total_deaths}
-          active={active}
+          active={getRegionActiveCases(region)}
           deaths_new={+region.new_deaths}
           total_new={+region.new_cases}
         />

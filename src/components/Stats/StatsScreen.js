@@ -4,9 +4,12 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RefreshControl} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
-import useRefresh from '../common/useRefresh';
-import {preferredCountrySelector} from '../../app/preferencesModule';
+import {
+  preferredCountrySelector,
+  countrySupportsRegions,
+} from '../../app/preferencesModule';
 
+import useRefresh from '../common/useRefresh';
 import {useAppStateActive} from '../common/useAppState';
 
 import {
@@ -17,6 +20,7 @@ import {
 } from '../../app/statsModule';
 
 import {fetchCountryHistory} from '../../app/historyModule';
+import {fetchCountryRegions} from '../../app/regionsModule';
 
 import Stats from './Stats';
 
@@ -28,22 +32,28 @@ export default function StatsScreen({}) {
   const scrollRef = useRef();
   useScrollToTop(scrollRef);
 
-  const primary = useSelector(preferredCountrySelector);
+  const code = useSelector(preferredCountrySelector);
 
   useEffect(() => {
     dispatch(initStats());
   }, [dispatch]);
 
   useEffect(() => {
-    if (primary) {
-      dispatch(fetchCountryHistory(primary));
+    if (code) {
+      dispatch(fetchCountryHistory(code));
+      if (countrySupportsRegions(code)) {
+        dispatch(fetchCountryRegions(code));
+      }
     }
-  }, [dispatch, primary]);
+  }, [dispatch, code]);
 
   const refreshStats = useCallback(() => {
     dispatch(fetchStats());
-    dispatch(fetchCountryHistory(primary));
-  }, [dispatch, primary]);
+    dispatch(fetchCountryHistory(code));
+    if (countrySupportsRegions(code)) {
+      dispatch(fetchCountryRegions(code));
+    }
+  }, [dispatch, code]);
 
   useAppStateActive(refreshStats);
 
@@ -59,7 +69,7 @@ export default function StatsScreen({}) {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
-        {!nodata && <Stats code={primary} />}
+        {!nodata && <Stats code={code} />}
       </Scroll>
     </Safe>
   );
