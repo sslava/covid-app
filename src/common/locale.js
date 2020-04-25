@@ -28,7 +28,7 @@ export const t = memoize(
   (key, config) => (config ? key + JSON.stringify(config) : key),
 );
 
-function localeName(c: Object) {
+function localeCountryName(c: Object) {
   if (i18n.locale === 'ru') {
     return c.country_name || c.country_name_en;
   }
@@ -36,10 +36,19 @@ function localeName(c: Object) {
 }
 
 const translateCountryName = (c: Object) =>
-  t(c.code, {scope: 'alpha2'}) || localeName(c);
+  t(c.code, {scope: 'alpha2'}) || localeCountryName(c);
 
 export function countryName(country: Object) {
   return !country ? '' : translateCountryName(country);
+}
+
+export function regionName(region: Object) {
+  if (!region) {
+    return '';
+  }
+  return i18n.locale === 'ru'
+    ? region.region_name || region.region_name_en
+    : region.region_name_en;
 }
 
 export function sortCountries(countries: Array<Object>) {
@@ -57,7 +66,15 @@ export const formatDate = (date: string): string =>
 
 export const matchCountry = (query: srting, c: Object) =>
   countryName(c).toLowerCase().indexOf(query) !== -1 ||
-  c.country_name.toLowerCase().indexOf(query) !== -1;
+  c.country_name_en.toLowerCase().indexOf(query) !== -1;
+
+export function sortRegions(regions: Array<Object>) {
+  return objectSort(regions, regionName);
+}
+
+export const matchRegion = (query: srting, r: Object) =>
+  regionName(r).toLowerCase().indexOf(query) !== -1 ||
+  r.region_name_en.toLowerCase().indexOf(query) !== -1;
 
 const alpha2Map = {
   ru: 'RU',

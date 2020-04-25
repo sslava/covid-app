@@ -5,14 +5,10 @@ import {apiRequest} from '../common/api';
 import createFetchReducer from './createFetchReducer';
 import entitiesMapReducer from './entitiesMapReducer';
 
-import {MapItemStore} from '../common/ItemStore';
-
 const fetcher = (code) =>
   apiRequest('GET', `https://covidum.com/request/get_stat_history/${code}`);
 
 const initial = [];
-
-const historyStorage = new MapItemStore('country-history', initial);
 
 const [reducer, actionTypes] = createFetchReducer('history', initial);
 
@@ -23,10 +19,6 @@ export const historyReducer = entitiesMapReducer(
 );
 
 export const fetchCountryHistory = (code) => async (dispatch) => {
-  const saved = await historyStorage.load(code);
-  if (saved) {
-    dispatch({type: actionTypes.SET, payload: saved, meta: {code}});
-  }
   dispatch({type: actionTypes.FETCH, meta: {code}});
   try {
     const payload = await fetcher(code);
@@ -35,7 +27,6 @@ export const fetchCountryHistory = (code) => async (dispatch) => {
       payload: payload || [],
       meta: {code},
     });
-    historyStorage.set(code, payload);
   } catch (error) {
     dispatch({type: actionTypes.FETCH_FAILED, payload: error, meta: {code}});
     console.log(error);

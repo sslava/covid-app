@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import {Button, PrimaryButton} from '../../common/Button';
+
 export const Container = styled.View`
   background-color: ${(p) => p.theme.primaryBackground};
 `;
@@ -19,7 +21,7 @@ export const Icon = styled.Image`
   border-width: 1px;
 `;
 
-export const ChangeIcon = styled.Image`
+export const DDIcon = styled.Image`
   margin-left: 9px;
   position: relative;
   top: 1px;
@@ -28,13 +30,16 @@ export const ChangeIcon = styled.Image`
 `;
 
 export const Actions = styled.View`
-  padding-top: 30px;
+  margin-top: 30px;
+  flex-direction: row;
 `;
 
-export const UpdatedText = styled.Text`
-  margin-top: 10px;
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 13px;
-  color: ${(p) => p.theme.secondaryTextColor};
+export const ShareBtn = styled(Button)`
+  flex: 1;
+  /* margin-right: 10px; */
+`;
+
+export const CountryBtn = styled(PrimaryButton)`
+  flex: 1;
+  margin-left: 10px;
 `;

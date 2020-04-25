@@ -10,11 +10,14 @@ import {t} from '../common/locale';
 import StatsScreen from './Stats/StatsScreen';
 import InfoScreen from './Info/InfoScreen';
 import CountriesScreen from './Countries/CountriesScreen';
-import CitiesScreen from './Cities/CitiesScreen';
+import RegionScreen from './Regions/RegionScreen';
 import CountrySelectScreen from './CountrySelect/CountrySelectScreen';
+import RegionSelectScreen from './RegionSelect/RegionSelectScreen';
+
+import DeatilsScreen from './CountryDetails/DeatilsScreen';
 
 import {HeaderBack, HeaderClose} from './shared/Header/HeaderBack';
-import TabIcon from './shared/TabIcon';
+import TabIcon from './common/TabIcon';
 
 import infoIcon from '../assets/icons/info.png';
 import statsIcon from '../assets/icons/stats.png';
@@ -89,12 +92,21 @@ export default function Navigator() {
         <AppStack.Screen
           name="Countries"
           component={CountriesScreen}
-          options={{headerTitle: t('countries.title')}}
+          options={{title: t('countries.title')}}
         />
         <AppStack.Screen
-          name="Cities"
-          component={CitiesScreen}
-          options={{headerTitle: t('cities.title')}}
+          name="Regions"
+          component={RegionScreen}
+          options={({route}) => ({
+            title: t('states.title', {name: route.params.name}),
+          })}
+        />
+        <AppStack.Screen
+          name="Country"
+          component={DeatilsScreen}
+          options={({route}) => ({
+            title: route.params.name,
+          })}
         />
         <AppStack.Screen
           name="CountrySelect"
@@ -102,7 +114,18 @@ export default function Navigator() {
           options={{
             headerBackTitleVisible: false,
             headerBackImage: HeaderClose,
-            headerTitle: t('countryselect.title'),
+            title: t('countryselect.title'),
+            gestureEnabled: true,
+            ...TransitionPresets.ModalTransition,
+          }}
+        />
+        <AppStack.Screen
+          name="RegionSelect"
+          component={RegionSelectScreen}
+          options={{
+            headerBackTitleVisible: false,
+            headerBackImage: HeaderClose,
+            title: t('regionselect.title'),
             gestureEnabled: true,
             ...TransitionPresets.ModalTransition,
           }}

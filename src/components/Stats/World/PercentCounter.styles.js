@@ -20,14 +20,14 @@ export const Circle = styled.View`
 export const Title = styled.Text`
   font-size: 13px;
   line-height: 18px;
-  font-weight: 600;
+  font-weight: 500;
   color: ${(p) => p.theme.secondaryTextColor};
   text-transform: uppercase;
 `;
 
 export const Num = styled.Text`
   margin-top: 5px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   line-height: 20px;
   color: ${(p) => p.theme.primaryTextColor};
@@ -36,6 +36,6 @@ export const Num = styled.Text`
 export const Today = styled(SecondaryNumber)`
   font-size: 13px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 500;
   color: ${(p) => p.theme.deathsColor};
 `;
