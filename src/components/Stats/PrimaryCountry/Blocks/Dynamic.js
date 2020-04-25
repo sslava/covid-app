@@ -4,7 +4,7 @@ import {useTheme} from 'styled-components/native';
 import {formatNumber, t} from '../../../../common/locale';
 import downIcon from '../../../../assets/icons/arrow-down.png';
 
-import {getDynamicStats} from './model';
+import {getGraphData, getLastStats, lastX} from './model';
 
 import BarChart from '../../../common/charts/BarChart';
 
@@ -29,10 +29,8 @@ export const plusFormatter = (num) => `${num ? '+' : ''}${formatNumber(num)}`;
 export default function Dynamic({country, history, animated, color}) {
   const theme = useTheme();
 
-  const {today, yesterday, graph} = useMemo(
-    () => getDynamicStats(history, country),
-    [history, country],
-  );
+  const graph = useMemo(() => getGraphData(lastX(history, 14)), [history]);
+  const [today, yesterday] = getLastStats(history, country);
 
   return (
     <Container>
