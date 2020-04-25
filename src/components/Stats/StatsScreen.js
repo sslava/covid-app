@@ -5,8 +5,8 @@ import {RefreshControl} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
 import useRefresh from '../common/useRefresh';
+import {preferredCountrySelector} from '../../app/preferencesModule';
 
-import {usePreferredCountry} from '../shared/Preferences';
 import {useAppStateActive} from '../common/useAppState';
 
 import {
@@ -28,7 +28,7 @@ export default function StatsScreen({}) {
   const scrollRef = useRef();
   useScrollToTop(scrollRef);
 
-  const [primary] = usePreferredCountry();
+  const primary = useSelector(preferredCountrySelector);
 
   useEffect(() => {
     dispatch(initStats());

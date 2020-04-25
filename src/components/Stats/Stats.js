@@ -5,7 +5,7 @@ import {t} from '../../common/locale';
 
 import {makeCountrySelector} from '../../app/statsModule';
 
-import {supportsRegions} from '../shared/Preferences';
+import {countrySupportsRegions} from '../../app/preferencesModule';
 import LargeHeader from '../shared/Header/LargeHeader';
 import WorldStats from './World/WorldStats';
 import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
@@ -32,7 +32,7 @@ export default function Stats({code}) {
       <PrimaryContainer>
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
-      {supportsRegions(country) && <Region country={country} />}
+      {countrySupportsRegions(country) && <Region country={country} />}
       <CountriesContainer>
         <Countries />
       </CountriesContainer>
