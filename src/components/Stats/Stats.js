@@ -20,8 +20,8 @@ import {
 } from './Stats.styles';
 
 export default function Stats({code}) {
-  const primarySelector = useMemo(makeCountrySelector);
-  const country = useSelector((s) => primarySelector(s, code));
+  const countrySelector = useMemo(makeCountrySelector);
+  const country = useSelector((s) => countrySelector(s, code));
 
   return (
     <Container>
@@ -32,7 +32,7 @@ export default function Stats({code}) {
       <PrimaryContainer>
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
-      {country && countrySupportsRegions(code) && <Region country={country} />}
+      {countrySupportsRegions(code) && <Region code={code} country={country} />}
       <CountriesContainer>
         <Countries />
       </CountriesContainer>
