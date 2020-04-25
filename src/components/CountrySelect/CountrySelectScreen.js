@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 import {FlatList} from 'react-native';
 
@@ -9,13 +9,18 @@ import {countriesSelector} from '../../app/statsModule';
 import SearchBar from '../shared/Search/SearchBar';
 import Country from './Country';
 
-import {usePrefences} from '../shared/Preferences';
+import {
+  preferredCountrySelector,
+  updatePrimaryCountry,
+} from '../../app/preferencesModule';
+
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
 import {Container, Search} from './CountrySelectScreen.styles';
 
 export default function CountrySelectScreen({navigation}) {
-  const [prefs, updatePrefs] = usePrefences();
+  const dispatch = useDispatch();
+  const primary = useSelector(preferredCountrySelector);
   const all = useSelector(countriesSelector);
 
   const sorted = useMemo(() => sortCountries(all), [all]);
@@ -23,11 +28,11 @@ export default function CountrySelectScreen({navigation}) {
   const [countries, query, setQuery] = useDebouncedSearch(sorted, matchCountry);
 
   const select = useCallback(
-    (primary) => {
-      updatePrefs({...prefs, primary});
+    (id) => {
+      dispatch(updatePrimaryCountry(id));
       navigation.goBack();
     },
-    [prefs, navigation, updatePrefs],
+    [navigation, dispatch],
   );
 
   return (
@@ -45,7 +50,7 @@ export default function CountrySelectScreen({navigation}) {
           <Country
             countryName={countryName(item)}
             code={item.code}
-            selected={item.code === prefs.primary}
+            selected={item.code === primary}
             onSelect={select}
           />
         )}

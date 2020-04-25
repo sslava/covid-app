@@ -2,11 +2,11 @@ import React, {useMemo} from 'react';
 import {useTheme} from 'styled-components/native';
 
 import {formatNumber, t} from '../../../../common/locale';
-import {getDynamicStats} from './model';
+import downIcon from '../../../../assets/icons/arrow-down.png';
 
-import BarChart from '../../../shared/BarChart';
-import upIcon from '../assets/up.png';
-import downIcon from '../assets/down.png';
+import {getGraphData, getLastStats, lastX} from './model';
+
+import BarChart from '../../../common/charts/BarChart';
 
 import {
   Container,
@@ -21,6 +21,7 @@ import {
   GraphContainer,
   GraphCaption,
   UpDown,
+  Arrow,
 } from './Dynamic.styles';
 
 export const plusFormatter = (num) => `${num ? '+' : ''}${formatNumber(num)}`;
@@ -28,10 +29,8 @@ export const plusFormatter = (num) => `${num ? '+' : ''}${formatNumber(num)}`;
 export default function Dynamic({country, history, animated, color}) {
   const theme = useTheme();
 
-  const {today, yesterday, graph} = useMemo(
-    () => getDynamicStats(history, country),
-    [history, country],
-  );
+  const graph = useMemo(() => getGraphData(lastX(history, 14)), [history]);
+  const [today, yesterday] = getLastStats(history, country);
 
   return (
     <Container>
@@ -45,9 +44,9 @@ export default function Dynamic({country, history, animated, color}) {
               {plusFormatter(today.value)}
             </TodayNumber>
             {yesterday && today.value !== yesterday.value && (
-              <UpDown
-                source={today.value > yesterday.value ? upIcon : downIcon}
-              />
+              <UpDown color={color}>
+                <Arrow up={today.value > yesterday.value} source={downIcon} />
+              </UpDown>
             )}
           </TodayContent>
         </Today>
@@ -69,11 +68,9 @@ export default function Dynamic({country, history, animated, color}) {
       {yesterday && (
         <Yesterday color={color}>
           <YesterdayCaption color={color}>
-            {t('stats.country.yesterday', {date: yesterday.date})}
+            <YesterdayNumber>{plusFormatter(yesterday.value)}</YesterdayNumber>
+            {t('stats.country.yesterday')}
           </YesterdayCaption>
-          <YesterdayNumber color={color}>
-            {plusFormatter(yesterday.value)}
-          </YesterdayNumber>
         </Yesterday>
       )}
     </Container>

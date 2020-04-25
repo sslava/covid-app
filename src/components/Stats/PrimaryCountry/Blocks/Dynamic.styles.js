@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  padding-bottom: 14px;
+  padding-bottom: 15px;
 `;
 
 export const Content = styled.View`
@@ -14,7 +14,8 @@ export const Today = styled.View``;
 
 export const TodayCaption = styled.Text`
   font-size: 13px;
-  line-height: 18px;
+  font-weight: 500;
+  line-height: 15px;
   color: ${(p) => p.color || p.theme.primaryTextColor};
 `;
 
@@ -25,44 +26,54 @@ export const TodayContent = styled.View`
 `;
 
 export const TodayNumber = styled.Text`
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin-top: 7px;
+  font-size: 48px;
+  line-height: 58px;
   font-weight: 500;
-  font-size: 54px;
-  line-height: 64px;
-  color: ${(p) => p.color || p.theme.primaryTextColor};
+  color: ${(p) => p.color || p.theme.activeColor};
 `;
 
-export const UpDown = styled.Image`
+export const UpDown = styled.View`
   width: 16px;
   height: 16px;
+  align-items: center;
+  justify-content: center;
   margin-left: 10px;
   margin-right: 5px;
+  background-color: ${(p) => p.color || p.theme.secondaryBackground};
 `;
 
-export const GraphContainer = styled.View``;
+export const Arrow = styled.Image`
+  width: 10px;
+  height: 10px;
+  transform: rotate(${(p) => (p.up ? 180 : 0)}deg);
+`;
+
+export const GraphContainer = styled.View`
+  align-items: flex-end;
+`;
 
 export const GraphCaption = styled.Text`
   font-size: 13px;
-  line-height: 18px;
-  margin-bottom: 19px;
+  font-weight: 500;
+  line-height: 15px;
+  margin-bottom: 7px;
   text-align: right;
   color: ${(p) => p.color || p.theme.primaryTextColor};
 `;
 
 export const Yesterday = styled.View`
+  margin-top: 5px;
   opacity: ${(p) => (p.color ? 0.7 : 1)};
 `;
 
 export const YesterdayCaption = styled.Text`
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 21px;
   color: ${(p) => p.color || p.theme.secondaryTextColor};
 `;
 
 export const YesterdayNumber = styled.Text`
-  font-weight: 500;
   font-size: 18px;
-  line-height: 26px;
-  color: ${(p) => p.color || p.theme.secondaryTextColor};
 `;

@@ -1,12 +1,16 @@
 import React, {useRef, useEffect, useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
 
+import {useDispatch, useSelector} from 'react-redux';
 import {RefreshControl} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
-import useRefresh from '../shared/useRefresh';
-import {usePrefences} from '../shared/Preferences';
-import {useAppStateActive} from '../shared/useAppState';
+import {
+  preferredCountrySelector,
+  countrySupportsRegions,
+} from '../../app/preferencesModule';
+
+import useRefresh from '../common/useRefresh';
+import {useAppStateActive} from '../common/useAppState';
 
 import {
   initStats,
@@ -16,6 +20,7 @@ import {
 } from '../../app/statsModule';
 
 import {fetchCountryHistory} from '../../app/historyModule';
+import {fetchCountryRegions} from '../../app/regionsModule';
 
 import Stats from './Stats';
 
@@ -27,19 +32,29 @@ export default function StatsScreen({}) {
   const scrollRef = useRef();
   useScrollToTop(scrollRef);
 
-  const [prefs] = usePrefences();
+  const code = useSelector(preferredCountrySelector);
 
   useEffect(() => {
     dispatch(initStats());
   }, [dispatch]);
 
   useEffect(() => {
-    if (prefs.primary) {
-      dispatch(fetchCountryHistory(prefs.primary));
+    if (code) {
+      dispatch(fetchCountryHistory(code));
+      if (countrySupportsRegions(code)) {
+        dispatch(fetchCountryRegions(code));
+      }
     }
-  }, [dispatch, prefs.primary]);
+  }, [dispatch, code]);
 
-  const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
+  const refreshStats = useCallback(() => {
+    dispatch(fetchStats());
+    dispatch(fetchCountryHistory(code));
+    if (countrySupportsRegions(code)) {
+      dispatch(fetchCountryRegions(code));
+    }
+  }, [dispatch, code]);
+
   useAppStateActive(refreshStats);
 
   const isFetching = useSelector(fetchingStatsSelector);
@@ -54,7 +69,7 @@ export default function StatsScreen({}) {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
-        {!nodata && <Stats prefs={prefs} />}
+        {!nodata && <Stats code={code} />}
       </Scroll>
     </Safe>
   );
