@@ -40,9 +40,7 @@ export default function Dynamic({country, history, animated, color}) {
             {t('stats.country.todayCases', {date: today.date})}
           </TodayCaption>
           <TodayContent>
-            <TodayNumber color={color}>
-              {plusFormatter(today.value)}
-            </TodayNumber>
+            <TodayNumber>{plusFormatter(today.value)}</TodayNumber>
             {yesterday && today.value !== yesterday.value && (
               <UpDown color={color}>
                 <Arrow up={today.value > yesterday.value} source={downIcon} />

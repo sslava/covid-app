@@ -1,14 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.ImageBackground``;
-
-export const Content = styled.View`
-  width: 100%;
-  padding-horizontal: 20px;
-  padding-top: 13px;
-`;
-
-export const Header = styled.View`
+export const HeaderContainer = styled.View`
   background-color: rgba(255, 255, 255, 0.1);
   height: 56px;
   flex-direction: row;
@@ -17,18 +9,18 @@ export const Header = styled.View`
   padding-horizontal: 20px;
 `;
 
+export const CountryIcon = styled.Image`
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+  margin-right: 10px;
+`;
+
 export const Title = styled.Text`
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
   color: #fff;
-`;
-
-export const Icon = styled.Image`
-  height: 24px;
-  width: 24px;
-  border-radius: 12px;
-  margin-right: 10px;
 `;
 
 export const Updated = styled.Text`
@@ -39,7 +31,13 @@ export const Updated = styled.Text`
   color: #fff;
 `;
 
-export const Footer = styled.View`
+export const Content = styled.View`
+  width: 100%;
+  padding-horizontal: 20px;
+  padding-top: 13px;
+`;
+
+export const FooterContainer = styled.View`
   padding-top: 20px;
   padding-bottom: 10px;
   flex-direction: row;
