@@ -62,14 +62,14 @@ export const countrySupportsRegions = (code) => code === 'US' || code === 'RU';
 
 const defaultRegionIds = {RU: 'Moscow', US: 'New-Yourk'};
 
-const getRegionKey = (code) => `region-${code}`;
+const getRegionCountryKey = (code) => `region-${code}`;
 
-export const getRegionId = (r) => r.region_name_en;
+export const getRegionId = (r) => r.slug;
 
 export const updatePrimaryRegion = (regionId) => (dispatch, getState) => {
   const code = preferredCountrySelector(getState());
-  const regionKey = getRegionKey(code);
-  dispatch(updatePrefences({[regionKey]: regionId}));
+  const key = getRegionCountryKey(code);
+  dispatch(updatePrefences({[key]: regionId}));
 };
 
 export const preferredRegionSelector = createSelector(
@@ -79,7 +79,7 @@ export const preferredRegionSelector = createSelector(
     if (!countrySupportsRegions(code)) {
       return null;
     }
-    const key = getRegionKey(code);
+    const key = getRegionCountryKey(code);
     return prefs[key] || defaultRegionIds[code];
   },
 );

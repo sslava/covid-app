@@ -20,10 +20,7 @@ import {
 import ddIcon from '../../../assets/icons/dropdown.png';
 import markerIcon from '../../../assets/icons/marker.png';
 
-import {
-  makeCountryRegionsSelector,
-  getRegionActiveCases,
-} from '../../../app/regionsModule';
+import {makeCountryRegionsSelector} from '../../../app/regionsModule';
 
 import {
   Container,
@@ -56,7 +53,7 @@ export default function Region({country, code}) {
     [country, nav],
   );
 
-  const name = regionName(region, true);
+  const name = regionName(region);
 
   const captured = useCallback(
     (tmp) => shareImageDialog(tmp, t('stats.regionShare.title', {name})),
@@ -83,7 +80,7 @@ export default function Region({country, code}) {
           total={+region.total_cases}
           recovered={+region.total_recovered}
           deaths={+region.total_deaths}
-          active={getRegionActiveCases(region)}
+          active={+region.total_active}
           deaths_new={+region.new_deaths}
           total_new={+region.new_cases}
         />

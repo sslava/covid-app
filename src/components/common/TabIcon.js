@@ -12,8 +12,8 @@ export default function TabIcon({color, size, icon}) {
       style={[
         imgSyles,
         {
-          width: size + 1,
-          height: size + 1,
+          width: size,
+          height: size,
           tintColor: color,
         },
       ]}
