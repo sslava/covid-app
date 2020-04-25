@@ -1,12 +1,12 @@
 import React from 'react';
 
-import TotalStats, {StatsContainer} from '../../common/TotalStats';
-import Dynamic from '../Blocks/Dynamic';
+import TotalStats, {StatsContainer} from './Stats/TotalStats';
+import Dynamic from './Stats/Dynamic';
 
-import {countryName} from '../../../../common/locale';
+import {countryName} from '../../common/locale';
+import ShareContainer from './Share/ShareContainer';
 
-import ShareContainer from '../../../shared/Share/ShareContainer';
-import {Footer, Header, Content} from '../../../shared/Share/Tokens';
+import {Footer, Header, Content} from './Share/Tokens';
 
 function CountryView({sharing, onCapture, country, history}) {
   return (

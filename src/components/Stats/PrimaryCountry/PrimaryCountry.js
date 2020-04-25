@@ -8,9 +8,9 @@ import {makeCounrtyHistorySelector} from '../../../app/historyModule';
 import {countryName, t} from '../../../common/locale';
 
 import Subheader from '../common/Subheader';
-import TotalStats, {StatsContainer} from '../common/TotalStats';
-import Dynamic from './Blocks/Dynamic';
-import ShareCountry from './Share/ShareCountry';
+import TotalStats, {StatsContainer} from '../../shared/Stats/TotalStats';
+import Dynamic from '../../shared/Stats/Dynamic';
+import ShareCountry from '../../shared/ShareCountry';
 
 import {DetailsIcon, ShareIcon} from '../../common/buttonIcons';
 import {useOffscreenViewShot} from '../../common/OffscreenViewshot';

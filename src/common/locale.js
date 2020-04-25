@@ -42,13 +42,30 @@ export function countryName(country: Object) {
   return !country ? '' : translateCountryName(country);
 }
 
-export function regionName(region: Object) {
+const trunacateRegionName = (name) => {
+  if (name.lentgh < 20) {
+    return name;
+  }
+  return name
+    .replace('область', 'обл.')
+    .replace('Республика', 'Респ.')
+    .replace('республика', 'респ.')
+    .replace('автономный округ', 'AO');
+};
+
+export function regionName(region: Object, truncate = false) {
   if (!region) {
     return '';
   }
-  return i18n.locale === 'ru'
+  const isRU = i18n.locale === 'ru';
+  const name = isRU
     ? region.region_name || region.region_name_en
     : region.region_name_en;
+
+  if (truncate && isRU) {
+    return trunacateRegionName(name);
+  }
+  return name;
 }
 
 export function sortCountries(countries: Array<Object>) {

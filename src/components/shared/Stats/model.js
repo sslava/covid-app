@@ -1,4 +1,4 @@
-import {formatDate, parseDate} from '../../../../common/locale';
+import {formatDate, parseDate} from '../../../common/locale';
 
 const formatStats = (c) => ({
   value: +c.total_new,

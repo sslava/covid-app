@@ -6,8 +6,8 @@ import {t, regionName, countryName} from '../../../common/locale';
 import {ShareIcon, ListIcon} from '../../common/buttonIcons';
 
 import Subheader from '../common/Subheader';
-import TotalStats from '../common/TotalStats';
-import ShareRegion from './Share/ShareRegion';
+import TotalStats from '../../shared/Stats/TotalStats';
+import ShareRegion from '../../shared/ShareRegion';
 
 import shareImageDialog from '../../common/shareImage';
 import {useOffscreenViewShot} from '../../common/OffscreenViewshot';
@@ -56,11 +56,10 @@ export default function Region({country, code}) {
     [country, nav],
   );
 
-  const name = regionName(region);
+  const name = regionName(region, true);
 
   const captured = useCallback(
-    (tmp) =>
-      shareImageDialog(tmp, t('stats.region.shareTitle', {country: name})),
+    (tmp) => shareImageDialog(tmp, t('stats.regionShare.title', {name})),
     [name],
   );
 
