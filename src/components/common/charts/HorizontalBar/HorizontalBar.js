@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {Container, Bar} from './StatsBar.styles';
+import {Container, Bar} from './HorizontalBar.styles';
 
-export default function StatsBar({style, items, height = 20}) {
+export default function HorizontalBar({style, items, height = 20}) {
   return (
     <Container style={style}>
       {items.map(({color, fraction}) => (

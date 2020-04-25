@@ -5,7 +5,7 @@ import useStatsBar from '../useStatsBar';
 
 import {t} from '../../../common/locale';
 
-import StatsBar from '../StatsBar/StatsBar';
+import HorizontalBar from '../../common/charts/HorizontalBar/HorizontalBar';
 import {PrimaryButton} from '../../common/Button';
 import {DetailsIcon} from '../../common/buttonIcons';
 
@@ -26,7 +26,7 @@ export default function RegionListLegend({
   const stats = useStatsBar(total, recovered, deaths, active);
   return (
     <Content>
-      <StatsBar items={stats} height={10} />
+      <HorizontalBar items={stats} height={10} />
       <Legend>
         <LegendItem
           title={t('stats.total')}
