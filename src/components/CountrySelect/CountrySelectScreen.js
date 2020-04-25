@@ -9,13 +9,14 @@ import {countriesSelector} from '../../app/statsModule';
 import SearchBar from '../shared/Search/SearchBar';
 import Country from './Country';
 
-import {usePrefences} from '../shared/Preferences';
+import {usePreferredCountry} from '../shared/Preferences';
+
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
 import {Container, Search} from './CountrySelectScreen.styles';
 
 export default function CountrySelectScreen({navigation}) {
-  const [prefs, updatePrefs] = usePrefences();
+  const [primary, updateCountry] = usePreferredCountry();
   const all = useSelector(countriesSelector);
 
   const sorted = useMemo(() => sortCountries(all), [all]);
@@ -23,11 +24,11 @@ export default function CountrySelectScreen({navigation}) {
   const [countries, query, setQuery] = useDebouncedSearch(sorted, matchCountry);
 
   const select = useCallback(
-    (primary) => {
-      updatePrefs({...prefs, primary});
+    (id) => {
+      updateCountry(id);
       navigation.goBack();
     },
-    [prefs, navigation, updatePrefs],
+    [navigation, updateCountry],
   );
 
   return (
@@ -45,7 +46,7 @@ export default function CountrySelectScreen({navigation}) {
           <Country
             countryName={countryName(item)}
             code={item.code}
-            selected={item.code === prefs.primary}
+            selected={item.code === primary}
             onSelect={select}
           />
         )}

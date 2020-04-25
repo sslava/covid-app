@@ -1,7 +1,7 @@
 import React from 'react';
 import {useTheme} from 'styled-components/native';
 
-import useRegionStats from '../../shared/useRegionStats';
+import useStatsBar from '../useStatsBar';
 
 import {t} from '../../../common/locale';
 
@@ -23,7 +23,7 @@ export default function RegionListLegend({
   onDetails,
 }) {
   const theme = useTheme();
-  const stats = useRegionStats(total, recovered, deaths, active);
+  const stats = useStatsBar(total, recovered, deaths, active);
   return (
     <Content>
       <StatsBar items={stats} height={10} />

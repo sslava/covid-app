@@ -59,6 +59,53 @@ export function PreferencesProvider({children}) {
   );
 }
 
-export function usePrefences() {
-  return useContext(PreferencesContext);
+export function usePreferredCountry() {
+  const [prefs, updatePrefences] = useContext(PreferencesContext);
+
+  const updateCountry = useCallback(
+    (code) => {
+      updatePrefences({...prefs, primary: code});
+    },
+    [prefs, updatePrefences],
+  );
+
+  return [prefs.primary, updateCountry];
+}
+
+export const supportsRegions = (country) =>
+  country && (country.code === 'US' || country.code === 'RU');
+
+export function getRegionKey(code) {
+  return `region-${code}`;
+}
+
+const defaultRegions = {
+  RU: 'Moscow',
+  US: 'New-Yourk',
+};
+
+export const getRegionId = (r) => r.region_name_en;
+
+export function getPreferredRegion(prefs, code) {
+  if (!supportsRegions(code)) {
+    return null;
+  }
+  return prefs[getRegionKey(code)] || defaultRegions[code];
+}
+
+export function usePreferredRegion() {
+  const [prefs, updatePrefences] = useContext(PreferencesContext);
+
+  const [primary] = usePreferredCountry();
+  const regionId = getPreferredRegion(prefs, primary);
+
+  const saveRegion = useCallback(
+    (id) => {
+      const regionKey = getRegionKey(primary);
+      updatePrefences({...prefs, [regionKey]: id});
+    },
+    [prefs, primary, updatePrefences],
+  );
+
+  return [regionId, primary, saveRegion];
 }

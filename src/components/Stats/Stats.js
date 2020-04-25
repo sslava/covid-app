@@ -5,6 +5,7 @@ import {t} from '../../common/locale';
 
 import {makeCountrySelector} from '../../app/statsModule';
 
+import {supportsRegions} from '../shared/Preferences';
 import LargeHeader from '../shared/Header/LargeHeader';
 import WorldStats from './World/WorldStats';
 import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
@@ -18,12 +19,9 @@ import {
   CountriesContainer,
 } from './Stats.styles';
 
-const hasRegions = (country) =>
-  country && (country.code === 'US' || country.code === 'RU');
-
-export default function Stats({prefs}) {
+export default function Stats({code}) {
   const primarySelector = useMemo(makeCountrySelector);
-  const country = useSelector((s) => primarySelector(s, prefs.primary));
+  const country = useSelector((s) => primarySelector(s, code));
 
   return (
     <Container>
@@ -34,7 +32,7 @@ export default function Stats({prefs}) {
       <PrimaryContainer>
         <PrimaryCountry country={country} />
       </PrimaryContainer>
-      {hasRegions(country) && <Region country={country} />}
+      {supportsRegions(country) && <Region country={country} />}
       <CountriesContainer>
         <Countries />
       </CountriesContainer>
