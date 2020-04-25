@@ -30,7 +30,7 @@ export default function Stats({code}) {
         <WorldStats />
       </WorldContainer>
       <PrimaryContainer>
-        <PrimaryCountry country={country} />
+        <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
       {supportsRegions(country) && <Region country={country} />}
       <CountriesContainer>
