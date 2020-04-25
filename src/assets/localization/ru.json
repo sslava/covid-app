@@ -30,6 +30,10 @@
     "source": {
       "source": "По данным ",
       "updatedAt": " на %{date}"
+    },
+    "regionShare": {
+      "title": "%{name}: cтатистика COVID-19",
+      "updatedAt": "Всего случаев на %{date}"
     }
   },
   "info": {

@@ -1,12 +1,11 @@
 import React, {useMemo} from 'react';
 import {useTheme} from 'styled-components/native';
 
-import {formatNumber, t} from '../../../../common/locale';
-import downIcon from '../../../../assets/icons/arrow-down.png';
+import {formatNumber, t} from '../../../common/locale';
+import downIcon from '../../../assets/icons/arrow-down.png';
 
+import BarChart from '../../common/charts/BarChart';
 import {getGraphData, getLastStats, lastX} from './model';
-
-import BarChart from '../../../common/charts/BarChart';
 
 import {
   Container,

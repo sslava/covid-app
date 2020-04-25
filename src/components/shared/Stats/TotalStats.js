@@ -2,8 +2,7 @@ import React from 'react';
 import styled, {useTheme} from 'styled-components/native';
 
 import {t} from '../../../common/locale';
-import useStatsBar from '../../shared/useStatsBar';
-
+import useStatsBar from '../useStatsBar';
 import NumberBlock from './NumberBlock';
 
 import {Bar, Numbers, Left, GrowingBlock} from './TotalStats.styles';
@@ -22,15 +21,18 @@ export default function TotalStats({
   deaths_new,
   total_new,
   color,
+  hideTotal = false,
 }) {
   const theme = useTheme();
 
   const stats = useStatsBar(total, recovered, deaths, active);
   return (
     <>
-      <NumberBlock number={total} large color={color} today={total_new}>
-        {t('stats.total')}
-      </NumberBlock>
+      {!hideTotal && (
+        <NumberBlock number={total} large color={color} today={total_new}>
+          {t('stats.total')}
+        </NumberBlock>
+      )}
       <Bar items={stats} height={10} />
       <Numbers>
         <Left>

@@ -42,7 +42,6 @@ export const preferencesSelector = (store) => store.preferences;
 export const updatePrefences = (prefs) => (dispatch, getState) => {
   dispatch(setPreferences(prefs));
   const state = preferencesSelector(getState());
-  console.log(state);
   storage.set(state);
 };
 

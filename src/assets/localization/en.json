@@ -30,6 +30,10 @@
     "source": {
       "source": "Source ",
       "updatedAt": ", updated at %{date}"
+    },
+    "regionShare": {
+      "title": "COVID-19 stats for %{name}",
+      "updatedAt": "Total cases by %{date}"
     }
   },
   "info": {
