@@ -1,12 +1,15 @@
 import React from 'react';
 import {useTheme} from 'styled-components/native';
 
-import useRegionStats from '../../shared/useRegionStats';
+import useStatsBar from '../useStatsBar';
 
 import {t} from '../../../common/locale';
 
-import StatsBar from '../StatsBar/StatsBar';
-import LegendItem from '../Legend/LegendItem';
+import HorizontalBar from '../../common/charts/HorizontalBar/HorizontalBar';
+import {PrimaryButton} from '../../common/Button';
+import {DetailsIcon} from '../../common/buttonIcons';
+
+import LegendItem from './LegendItem';
 
 import {Content, Legend} from './RegionListLegend.styles';
 
@@ -17,12 +20,19 @@ export default function RegionListLegend({
   deaths,
   deaths_new,
   skipToday,
+  onDetails,
 }) {
   const theme = useTheme();
-  const stats = useRegionStats(total, recovered, deaths, active);
+  const stats = useStatsBar(total, recovered, deaths, active);
   return (
     <Content>
+      <HorizontalBar items={stats} height={10} />
       <Legend>
+        <LegendItem
+          title={t('stats.total')}
+          number={total}
+          skipToday={skipToday}
+        />
         <LegendItem
           color={theme.recoveredColor}
           title={t('stats.recovered')}
@@ -43,7 +53,11 @@ export default function RegionListLegend({
           skipToday={skipToday}
         />
       </Legend>
-      <StatsBar items={stats} height={10} />
+      {/* {onDetails && (
+        <PrimaryButton onPress={onDetails} icon={<DetailsIcon />}>
+          {t('stats.country.details')}
+        </PrimaryButton>
+      )} */}
     </Content>
   );
 }

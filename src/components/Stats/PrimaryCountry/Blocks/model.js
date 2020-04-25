@@ -16,27 +16,20 @@ export const getGraphData = (history) =>
 const sortbyDate = (a, b) =>
   parseDate(a.updated_at).getTime() - parseDate(b.updated_at).getTime();
 
-const lastX = (history, x) =>
+export const lastX = (history, x) =>
   [...history].sort(sortbyDate).slice(Math.max(history.length - 14, 0));
 
-export function getDynamicStats(history, country) {
-  const lastEntities = lastX(history, 14);
+export function getLastStats(history, country) {
   let today = formatStats(country);
-
-  const len = lastEntities.length;
+  const len = history.length;
   let yesterday = null;
   if (len) {
     if (today.value) {
-      yesterday = formatHistory(lastEntities[len - 1]);
+      yesterday = formatHistory(history[len - 1]);
     } else {
-      today = formatHistory(lastEntities[len - 1]);
-      yesterday = formatHistory(lastEntities[len - 2]);
+      today = formatHistory(history[len - 1]);
+      yesterday = formatHistory(history[len - 2]);
     }
   }
-
-  return {
-    today,
-    yesterday,
-    graph: getGraphData(lastEntities),
-  };
+  return [today, yesterday];
 }

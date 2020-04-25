@@ -1,11 +1,11 @@
 import React, {useRef, useEffect, useCallback, useState} from 'react';
 
-import TotalStats from '../Blocks/TotalStats';
+import TotalStats, {StatsContainer} from '../../common/TotalStats';
 import Dynamic from '../Blocks/Dynamic';
-import {OffscreenViewShot} from '../../../shared/OffscreenViewshot';
+import {OffscreenViewShot} from '../../../common/OffscreenViewshot';
 
-import bg from '../assets/sharebg.png';
-import favicon from '../assets/favicon.png';
+import bg from '../../../../assets/icons/sharebg.png';
+import favicon from '../../../../assets/icons/favicon.png';
 
 import {
   Container,
@@ -22,7 +22,7 @@ import {
 } from './ShareCountry.styles';
 
 import {countryName, formatDate} from '../../../../common/locale';
-import countryIcons from '../../../shared/countryIcons';
+import countryIcons from '../../../common/countryIcons';
 
 function CountryView({sharing, onCapture, country, history}) {
   const viewshotRef = useRef();
@@ -53,7 +53,16 @@ function CountryView({sharing, onCapture, country, history}) {
         </Header>
         <Content>
           <Dynamic country={country} history={history} color="white" />
-          <TotalStats country={country} color="white" />
+          <StatsContainer color="white">
+            <TotalStats
+              total={country.total}
+              recovered={country.recovered}
+              deaths={country.deaths}
+              active={country.active}
+              deaths_new={country.deaths_new}
+              color="white"
+            />
+          </StatsContainer>
           <Footer>
             <AppIcon source={favicon} />
             <FooterContent>

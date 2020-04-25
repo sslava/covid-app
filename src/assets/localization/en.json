@@ -6,15 +6,16 @@
       "updatedAt": "Updated at %{date}"
     },
     "cases": "Total cases",
+    "total": "Total cases",
     "active": "Active",
     "recovered": "Recovered",
     "deaths": "Deaths",
     "country": {
-      "todayCases": "New COVID-19 cases\nregistered on %{date}",
-      "total": "Total cases",
+      "todayCases": "New cases at %{date}",
       "lastX": "last %{days} days",
-      "yesterday": "The day before",
+      "yesterday": " the day before",
       "share": "Share",
+      "details": "Details",
       "shareTitle": "COVID-19 stats for %{country}",
       "updatedAt": "Updated at %{date}",
       "regionsButton": "Stats by region"
@@ -22,6 +23,9 @@
     "countries": {
       "title": "Rest of the world",
       "all": "All countries"
+    },
+    "regions": {
+      "all": "All states"
     },
     "source": {
       "source": "Source ",
@@ -96,9 +100,9 @@
       "link": "verbaclinic.ru"
     }
   },
-  "cities": {
-    "title": "Regions stats",
-    "search": "Search by region"
+  "states": {
+    "title": "States: %{name}",
+    "search": "Search by state"
   },
   "countries": {
     "title": "Countries stats",
@@ -111,6 +115,9 @@
   },
   "countryselect": {
     "title": "Select country"
+  },
+  "regionselect": {
+    "title": "Select state"
   },
   "alpha2": {
     "AF": "Afghanistan",

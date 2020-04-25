@@ -1,29 +1,54 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useMemo} from 'react';
 import {View} from 'react-native';
 import {useSelector} from 'react-redux';
-
 import {useNavigation} from '@react-navigation/core';
 
 import {t} from '../../../common/locale';
-import {topCountriesSelector} from '../../../app/statsModule';
 
-import Country from './Country';
+import {
+  countriesSelector,
+  sortTotal,
+  sortActive,
+  sortDeaths,
+} from '../../../app/statsModule';
+
 import Subheader from '../common/Subheader';
 import Sources from '../common/Sources';
-import PageLink from '../common/PageLink';
 import SearchButton from '../../shared/Search/SearchButton';
+import CountryListItem from '../../shared/CountryListItem';
+import {ListIcon} from '../../common/buttonIcons';
 
-import {Search, All} from './Countries.styles';
+import useSortTabs from '../../shared/useSortTabs';
 
-export default function Countries() {
-  const countries = useSelector(topCountriesSelector);
+import {Search, All, SortControl} from './Countries.styles';
+import {PrimaryButton} from '../../common/Button';
+
+function sortedTop(countries, sort, topX = 10) {
+  if (!countries || !countries.length) {
+    return [];
+  }
+  const sortFns = [sortTotal, sortActive, sortDeaths];
+  return sortFns[sort](countries).slice(0, topX);
+}
+
+export default function TopCountries() {
+  const [sv, sort, changeSort] = useSortTabs();
+  const all = useSelector(countriesSelector);
+  const countries = useMemo(() => sortedTop(all, sort), [all, sort]);
 
   const nav = useNavigation();
-  const open = useCallback(() => nav.navigate('Countries', {search: true}), [
+
+  const openList = useCallback(() => nav.navigate('Countries', {sort: sort}), [
     nav,
+    sort,
   ]);
 
-  if (!countries || !countries.length) {
+  const openDetails = useCallback(
+    (code, name) => nav.navigate('Country', {code, name}),
+    [nav],
+  );
+
+  if (!countries.length) {
     return null;
   }
 
@@ -31,15 +56,24 @@ export default function Countries() {
     <View>
       <Subheader title={t('stats.countries.title')} />
       <Search>
-        <SearchButton placeholder={t('countries.search')} onPress={open} />
+        <SearchButton placeholder={t('countries.search')} onPress={openList} />
+        <SortControl selectedIndex={sort} onChange={changeSort} values={sv} />
       </Search>
       <View>
-        {countries.map((c) => (
-          <Country key={c.code} country={c} />
+        {countries.map((c, index) => (
+          <CountryListItem
+            key={c.code}
+            index={1 + index}
+            sort={sort}
+            country={c}
+            onDetails={openDetails}
+          />
         ))}
       </View>
       <All>
-        <PageLink route="Countries">{t('stats.countries.all')}</PageLink>
+        <PrimaryButton onPress={openList} icon={<ListIcon />}>
+          {t('stats.countries.all')}
+        </PrimaryButton>
       </All>
       <Sources date={countries[0].updated} />
     </View>

@@ -1,9 +1,9 @@
 import React, {useRef, useEffect} from 'react';
 import {Animated, Easing} from 'react-native';
 
-import {Left, Right, PrimaryNumber} from '../Legend/controls';
-
 import openIcon from '../../../assets/icons/open_grey.png';
+
+import {Left, Right, PrimaryNumber} from './LegendItem.styles';
 
 import {
   Container,

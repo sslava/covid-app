@@ -47,3 +47,20 @@ export const makeCountryRegionsSelector = () =>
       return state;
     },
   );
+
+export const getRegionActiveCases = (r) =>
+  r.total_cases - r.total_recovered - r.total_deaths;
+
+export function sortTotal(arr) {
+  return [...arr].sort((a, b) => b.total_cases - a.total_cases);
+}
+
+export function sortActive(arr) {
+  return [...arr].sort(
+    (a, b) => getRegionActiveCases(b) - getRegionActiveCases(a),
+  );
+}
+
+export function sortDeaths(arr) {
+  return [...arr].sort((a, b) => b.total_deaths - a.total_deaths);
+}
