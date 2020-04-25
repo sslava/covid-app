@@ -7,6 +7,7 @@ import favicon from '../../../assets/icons/favicon.png';
 
 import {
   HeaderContainer,
+  HeaderLeft,
   CountryIcon,
   Title,
   Updated,
@@ -22,9 +23,13 @@ export function Header({title, updated, code}) {
   const countryIcon = countryIcons[code];
   return (
     <HeaderContainer>
-      {countryIcon && <CountryIcon source={countryIcon} />}
-      <Title>{title}</Title>
-      <Updated>{formatDate(updated)}</Updated>
+      <HeaderLeft>
+        {countryIcon && <CountryIcon source={countryIcon} />}
+        <Title numberOfLines={1} ellipsizeMode="tail">
+          {title}
+        </Title>
+      </HeaderLeft>
+      {updated && <Updated>{formatDate(updated)}</Updated>}
     </HeaderContainer>
   );
 }

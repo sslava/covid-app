@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import styled from 'styled-components/native';
 
 import {formatNumber} from '../../../common/locale';
-import SecondaryNumber from '../../shared/SecondaryNumber';
+import SecondaryNumber from '../SecondaryNumber';
 
 const Caption = styled.Text`
   font-size: 13px;

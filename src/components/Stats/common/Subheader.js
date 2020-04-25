@@ -30,7 +30,9 @@ export default function Subheader({
     <Container>
       <Header activeOpacity={activeOpacity} {...rest}>
         {icon}
-        <Title>{title}</Title>
+        <Title numberOfLines={1} ellipsizeMode="tail">
+          {title}
+        </Title>
         <View>{children}</View>
       </Header>
     </Container>

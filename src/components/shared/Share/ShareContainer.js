@@ -19,13 +19,13 @@ export default function ShareContainer({sharing, onCapture, children}) {
   }, [loaded]);
 
   return (
-    // <OffscreenViewShot
-    //   ref={viewshotRef}
-    //   onCapture={onCapture}
-    //   options={{format: 'jpg', quality: 0.8, result: 'tmpfile'}}>
-    <Container source={bg} onLoad={loadEnd}>
-      {children}
-    </Container>
-    // </OffscreenViewShot>
+    <OffscreenViewShot
+      ref={viewshotRef}
+      onCapture={onCapture}
+      options={{format: 'jpg', quality: 0.8, result: 'tmpfile'}}>
+      <Container source={bg} onLoad={loadEnd}>
+        {children}
+      </Container>
+    </OffscreenViewShot>
   );
 }

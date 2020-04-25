@@ -9,6 +9,10 @@ export const HeaderContainer = styled.View`
   padding-horizontal: 20px;
 `;
 
+export const HeaderLeft = styled.View`
+  flex-direction: row;
+`;
+
 export const CountryIcon = styled.Image`
   height: 24px;
   width: 24px;
