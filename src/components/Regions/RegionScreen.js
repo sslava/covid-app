@@ -12,10 +12,10 @@ import {
 
 import {t, matchRegion} from '../../common/locale';
 import {withIndex} from '../../common/utils';
+import {preferredCountrySelector} from '../../app/preferencesModule';
 
 import Region from './Region';
 import SearchBar from '../shared/Search/SearchBar';
-import {usePreferredCountry} from '../shared/Preferences';
 import useSortTabs from '../shared/useSortTabs';
 import useSortedSearch from '../shared/Search/useSortedSearch';
 
@@ -33,7 +33,7 @@ const keyer = (r) => r.region_name_en;
 
 export default function RegionScreen() {
   const dispatch = useDispatch();
-  const [countryCode] = usePreferredCountry();
+  const countryCode = useSelector(preferredCountrySelector);
 
   const regionsSelector = useMemo(makeCountryRegionsSelector);
   const {data: all, isFetching} = useSelector((s) =>
@@ -44,6 +44,7 @@ export default function RegionScreen() {
     () => dispatch(fetchCountryRegions(countryCode)),
     [dispatch, countryCode],
   );
+
   const [refresh, refreshing] = useRefresh(refreshRegions, isFetching);
 
   const [sv, sort, changeSort] = useSortTabs();

@@ -1,23 +1,31 @@
 import React, {useCallback, useMemo} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 import {FlatList} from 'react-native';
 
 import {matchRegion, t, regionName, sortRegions} from '../../common/locale';
 import {makeCountryRegionsSelector} from '../../app/regionsModule';
 
-import SearchBar from '../shared/Search/SearchBar';
-import Region from './Region';
+import {
+  preferredCountrySelector,
+  preferredRegionSelector,
+  getRegionId,
+  updatePrimaryRegion,
+} from '../../app/preferencesModule';
 
-import {usePreferredRegion, getRegionId} from '../shared/Preferences';
+import SearchBar from '../shared/Search/SearchBar';
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
+
+import Region from './Region';
 
 import {Container, Search} from './RegionSelectScreen.styles';
 
 const keyer = (r) => getRegionId(r);
 
 export default function RegionSelectScreen({navigation}) {
-  const [regionId, code, saveRegion] = usePreferredRegion();
+  const dispatch = useDispatch();
+  const code = useSelector(preferredCountrySelector);
+  const regionId = useSelector(preferredRegionSelector);
 
   const regionsSelector = useMemo(makeCountryRegionsSelector);
   const {data: all} = useSelector((s) => regionsSelector(s, code));
@@ -27,10 +35,10 @@ export default function RegionSelectScreen({navigation}) {
 
   const select = useCallback(
     (id) => {
-      saveRegion(id);
+      dispatch(updatePrimaryRegion(id));
       navigation.goBack();
     },
-    [navigation, saveRegion],
+    [navigation, dispatch],
   );
 
   return (

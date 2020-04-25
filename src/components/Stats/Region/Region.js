@@ -4,10 +4,15 @@ import {useNavigation} from '@react-navigation/core';
 
 import {t, regionName, countryName} from '../../../common/locale';
 import {ShareIcon, ListIcon} from '../../common/buttonIcons';
-import {getRegionId, usePreferredRegion} from '../../shared/Preferences';
 
 import Subheader from '../common/Subheader';
 import TotalStats from '../common/TotalStats';
+
+import {
+  preferredCountrySelector,
+  preferredRegionSelector,
+  getRegionId,
+} from '../../../app/preferencesModule';
 
 import ddIcon from '../../../assets/icons/dropdown.png';
 import markerIcon from '../../../assets/icons/marker.png';
@@ -31,10 +36,12 @@ import {
 export default function Region({country}) {
   const dispatch = useDispatch();
   const nav = useNavigation();
-  const [regionId, countryCode] = usePreferredRegion();
+  const countryCode = useSelector(preferredCountrySelector);
+  const regionId = useSelector(preferredRegionSelector);
 
   const cname = countryName(country);
 
+  // FIXME: refresh
   useEffect(() => {
     if (countryCode) {
       dispatch(fetchCountryRegions(countryCode));
