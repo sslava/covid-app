@@ -53,11 +53,11 @@ export default function RegionListLegend({
           skipToday={skipToday}
         />
       </Legend>
-      {/* {onDetails && (
+      {onDetails && (
         <PrimaryButton onPress={onDetails} icon={<DetailsIcon />}>
           {t('stats.country.details')}
         </PrimaryButton>
-      )} */}
+      )}
     </Content>
   );
 }
