@@ -1,41 +1,78 @@
-import React from 'react';
-import {t} from '../../common/locale';
+import React, {useMemo, useCallback} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {FlatList, RefreshControl} from 'react-native';
+
+import {
+  makeCountryRegionsSelector,
+  fetchCountryRegions,
+  sortTotal,
+  sortActive,
+  sortDeaths,
+} from '../../app/regionsModule';
+
+import {t, matchRegion} from '../../common/locale';
+import {withIndex} from '../../common/utils';
 
 import Region from './Region';
 import SearchBar from '../shared/Search/SearchBar';
+import {usePrefences} from '../shared/Preferences';
+import useSortTabs from '../shared/useSortTabs';
+import useSortedSearch from '../shared/Search/useSortedSearch';
 
-import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 import useRefresh from '../common/useRefresh';
 
-import {Container, Search} from './RegionScreen.styles';
+import {Container, Top, SortControl} from './RegionScreen.styles';
 
-const filterCity = (q, c) => c.name.toLowerCase().indexOf(q) !== -1;
+const sortFns = [
+  withIndex(sortTotal),
+  withIndex(sortActive),
+  withIndex(sortDeaths),
+];
 
-const refreshCities = () => {};
-const isFetching = false;
-const allcities = [];
+const keyer = (r) => r.region_name_en;
 
 export default function RegionScreen() {
-  const [refresh, refreshing] = useRefresh(refreshCities, isFetching);
-  const [cities, query, setQuery] = useDebouncedSearch(allcities, filterCity);
+  const dispatch = useDispatch();
+  const [prefs] = usePrefences();
+
+  const regionsSelector = useMemo(makeCountryRegionsSelector);
+  const {data: all, isFetching} = useSelector((s) =>
+    regionsSelector(s, prefs.primary),
+  );
+
+  const refreshRegions = useCallback(
+    () => dispatch(fetchCountryRegions(prefs.primary)),
+    [dispatch, prefs.primary],
+  );
+  const [refresh, refreshing] = useRefresh(refreshRegions, isFetching);
+
+  const [sv, sort, changeSort] = useSortTabs();
+  const [states, query, setQuery] = useSortedSearch(
+    all,
+    matchRegion,
+    sortFns,
+    sort,
+  );
 
   return (
     <Container>
-      <Search>
+      <Top>
         <SearchBar
           value={query}
           onChange={setQuery}
-          placeholder={t('cities.search')}
+          placeholder={t('states.search')}
         />
-      </Search>
+        <SortControl selectedIndex={sort} onChange={changeSort} values={sv} />
+      </Top>
       <FlatList
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }
-        data={cities}
-        renderItem={({item}) => <Region region={item} />}
-        keyExtractor={(item) => item.name}
+        data={states}
+        renderItem={({item}) => (
+          <Region sort={sort} index={item.index} region={item} />
+        )}
+        keyExtractor={keyer}
       />
     </Container>
   );

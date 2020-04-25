@@ -5,7 +5,12 @@ import {useNavigation} from '@react-navigation/core';
 
 import {t} from '../../../common/locale';
 
-import {countriesSelector} from '../../../app/statsModule';
+import {
+  countriesSelector,
+  sortTotal,
+  sortActive,
+  sortDeaths,
+} from '../../../app/statsModule';
 
 import Subheader from '../common/Subheader';
 import Sources from '../common/Sources';
@@ -13,12 +18,7 @@ import SearchButton from '../../shared/Search/SearchButton';
 import CountryListItem from '../../shared/CountryListItem';
 import {ListIcon} from '../../common/buttonIcons';
 
-import {
-  useCountrySort,
-  sortTotal,
-  sortActive,
-  sortDeaths,
-} from '../../shared/countrySort';
+import useSortTabs from '../../shared/useSortTabs';
 
 import {Search, All, SortControl} from './Countries.styles';
 import {PrimaryButton} from '../../common/Button';
@@ -32,7 +32,7 @@ function sortedTop(countries, sort, topX = 10) {
 }
 
 export default function TopCountries() {
-  const [sv, sort, changeSort] = useCountrySort();
+  const [sv, sort, changeSort] = useSortTabs();
   const all = useSelector(countriesSelector);
   const countries = useMemo(() => sortedTop(all, sort), [all, sort]);
 

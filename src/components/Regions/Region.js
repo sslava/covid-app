@@ -1,5 +1,8 @@
 import React, {useState, useCallback, memo} from 'react';
 
+import {getRegionActiveCases} from '../../app/regionsModule';
+import {regionName} from '../../common/locale';
+
 import {
   RegionListToggle,
   RegionListItem,
@@ -7,17 +10,33 @@ import {
 
 import RegionListLegend from '../shared/RegionList/RegionListLegend';
 
-function Region({region}) {
+const SORT_ACTIVE = 1;
+const SORT_DEATHS = 2;
+
+function getNumbers(r, sort) {
+  switch (sort) {
+    case SORT_ACTIVE:
+      return {total: getRegionActiveCases(r)};
+    case SORT_DEATHS:
+      return {total: r.total_deaths};
+    default:
+      break;
+  }
+  return {total: r.total_cases};
+}
+
+function Region({region, sort, index}) {
   const [expanded, setExpanded] = useState(false);
   const toggle = useCallback(() => setExpanded((s) => !s), []);
 
-  const active = region.total - region.recovered - region.deaths;
+  const active = getRegionActiveCases(region);
 
   return (
     <RegionListItem expanded={expanded}>
       <RegionListToggle
-        name={region.name}
-        total={region.total}
+        index={index}
+        name={regionName(region)}
+        {...getNumbers(region, sort)}
         expanded={expanded}
         onPress={toggle}
         skipToday
@@ -25,9 +44,9 @@ function Region({region}) {
       {expanded && (
         <RegionListLegend
           active={active}
-          total={region.total}
-          recovered={region.recovered}
-          deaths={region.deaths}
+          total={region.total_cases}
+          recovered={region.total_recovered}
+          deaths={region.total_deaths}
           skipToday
         />
       )}

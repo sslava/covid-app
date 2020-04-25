@@ -100,9 +100,9 @@
       "link": "verbaclinic.ru"
     }
   },
-  "cities": {
-    "title": "Regions stats",
-    "search": "Search by region"
+  "states": {
+    "title": "States: %{name}",
+    "search": "Search by state"
   },
   "countries": {
     "title": "Countries stats",
@@ -115,6 +115,9 @@
   },
   "countryselect": {
     "title": "Select country"
+  },
+  "regionselect": {
+    "title": "Select state"
   },
   "alpha2": {
     "AF": "Afghanistan",
