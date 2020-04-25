@@ -40,7 +40,11 @@ export default function StatsScreen({}) {
     }
   }, [dispatch, primary]);
 
-  const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
+  const refreshStats = useCallback(() => {
+    dispatch(fetchStats());
+    dispatch(fetchCountryHistory(primary));
+  }, [dispatch, primary]);
+
   useAppStateActive(refreshStats);
 
   const isFetching = useSelector(fetchingStatsSelector);
