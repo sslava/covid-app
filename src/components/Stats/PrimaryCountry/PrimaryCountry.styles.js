@@ -36,7 +36,7 @@ export const Actions = styled.View`
 
 export const ShareBtn = styled(Button)`
   flex: 1;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 `;
 
 export const CountryBtn = styled(PrimaryButton)`
