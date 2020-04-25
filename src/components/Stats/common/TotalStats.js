@@ -2,7 +2,7 @@ import React from 'react';
 import styled, {useTheme} from 'styled-components/native';
 
 import {t} from '../../../common/locale';
-import useRegionStats from '../../shared/useRegionStats';
+import useStatsBar from '../../shared/useStatsBar';
 
 import NumberBlock from './NumberBlock';
 
@@ -25,7 +25,7 @@ export default function TotalStats({
 }) {
   const theme = useTheme();
 
-  const stats = useRegionStats(total, recovered, deaths, active);
+  const stats = useStatsBar(total, recovered, deaths, active);
   return (
     <>
       <NumberBlock number={total} large color={color} today={total_new}>

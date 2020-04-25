@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import {useTheme} from 'styled-components/native';
 
-export default function useRegionStats(total, recovered, deaths, active) {
+export default function useStatsBar(total, recovered, deaths, active) {
   const theme = useTheme();
   return useMemo(() => {
     return [

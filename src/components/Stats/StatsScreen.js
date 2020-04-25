@@ -6,7 +6,7 @@ import {useScrollToTop} from '@react-navigation/native';
 
 import useRefresh from '../common/useRefresh';
 
-import {usePrefences} from '../shared/Preferences';
+import {usePreferredCountry} from '../shared/Preferences';
 import {useAppStateActive} from '../common/useAppState';
 
 import {
@@ -28,17 +28,17 @@ export default function StatsScreen({}) {
   const scrollRef = useRef();
   useScrollToTop(scrollRef);
 
-  const [prefs] = usePrefences();
+  const [primary] = usePreferredCountry();
 
   useEffect(() => {
     dispatch(initStats());
   }, [dispatch]);
 
   useEffect(() => {
-    if (prefs.primary) {
-      dispatch(fetchCountryHistory(prefs.primary));
+    if (primary) {
+      dispatch(fetchCountryHistory(primary));
     }
-  }, [dispatch, prefs.primary]);
+  }, [dispatch, primary]);
 
   const refreshStats = useCallback(() => dispatch(fetchStats()), [dispatch]);
   useAppStateActive(refreshStats);
@@ -55,7 +55,7 @@ export default function StatsScreen({}) {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
-        {!nodata && <Stats prefs={prefs} />}
+        {!nodata && <Stats code={primary} />}
       </Scroll>
     </Safe>
   );

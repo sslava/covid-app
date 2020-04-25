@@ -15,7 +15,7 @@ import {withIndex} from '../../common/utils';
 
 import Region from './Region';
 import SearchBar from '../shared/Search/SearchBar';
-import {usePrefences} from '../shared/Preferences';
+import {usePreferredCountry} from '../shared/Preferences';
 import useSortTabs from '../shared/useSortTabs';
 import useSortedSearch from '../shared/Search/useSortedSearch';
 
@@ -33,16 +33,16 @@ const keyer = (r) => r.region_name_en;
 
 export default function RegionScreen() {
   const dispatch = useDispatch();
-  const [prefs] = usePrefences();
+  const [countryCode] = usePreferredCountry();
 
   const regionsSelector = useMemo(makeCountryRegionsSelector);
   const {data: all, isFetching} = useSelector((s) =>
-    regionsSelector(s, prefs.primary),
+    regionsSelector(s, countryCode),
   );
 
   const refreshRegions = useCallback(
-    () => dispatch(fetchCountryRegions(prefs.primary)),
-    [dispatch, prefs.primary],
+    () => dispatch(fetchCountryRegions(countryCode)),
+    [dispatch, countryCode],
   );
   const [refresh, refreshing] = useRefresh(refreshRegions, isFetching);
 

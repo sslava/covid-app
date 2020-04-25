@@ -3,7 +3,7 @@ import React, {useMemo} from 'react';
 import {View} from 'react-native';
 
 import {t} from '../../../common/locale';
-import {usePrefences} from '../../shared/Preferences';
+import {usePreferredCountry} from '../../shared/Preferences';
 
 import Subheader from '../Subheader';
 import Phone from './Phone';
@@ -14,14 +14,10 @@ import {getResources, phonesMap, linksMap} from './list';
 import {List} from './Resources.styles';
 
 export default function Resources() {
-  const [prefs] = usePrefences();
+  const [primary] = usePreferredCountry();
 
-  const phones = useMemo(() => getResources(phonesMap, prefs.primary), [
-    prefs.primary,
-  ]);
-  const links = useMemo(() => getResources(linksMap, prefs.primary), [
-    prefs.primary,
-  ]);
+  const phones = useMemo(() => getResources(phonesMap, primary), [primary]);
+  const links = useMemo(() => getResources(linksMap, primary), [primary]);
 
   return (
     <View>
