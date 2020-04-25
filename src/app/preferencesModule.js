@@ -41,7 +41,8 @@ export const preferencesSelector = (store) => store.preferences;
 
 export const updatePrefences = (prefs) => (dispatch, getState) => {
   dispatch(setPreferences(prefs));
-  const state = getState(preferencesSelector);
+  const state = preferencesSelector(getState());
+  console.log(state);
   storage.set(state);
 };
 
@@ -67,7 +68,7 @@ const getRegionKey = (code) => `region-${code}`;
 export const getRegionId = (r) => r.region_name_en;
 
 export const updatePrimaryRegion = (regionId) => (dispatch, getState) => {
-  const code = getState(preferredCountrySelector);
+  const code = preferredCountrySelector(getState());
   const regionKey = getRegionKey(code);
   dispatch(updatePrefences({[regionKey]: regionId}));
 };

@@ -32,7 +32,7 @@ export default function Stats({code}) {
       <PrimaryContainer>
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
-      {countrySupportsRegions(country) && <Region country={country} />}
+      {country && countrySupportsRegions(code) && <Region country={country} />}
       <CountriesContainer>
         <Countries />
       </CountriesContainer>
