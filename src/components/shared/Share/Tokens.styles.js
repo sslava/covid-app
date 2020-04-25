@@ -2,15 +2,16 @@ import styled from 'styled-components/native';
 
 export const HeaderContainer = styled.View`
   background-color: rgba(255, 255, 255, 0.1);
-  height: 56px;
+  padding-vertical: 16px;
+  padding-horizontal: 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-horizontal: 20px;
 `;
 
 export const HeaderLeft = styled.View`
   flex-direction: row;
+  align-items: center;
 `;
 
 export const CountryIcon = styled.Image`

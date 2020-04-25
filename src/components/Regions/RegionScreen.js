@@ -12,7 +12,10 @@ import {
 
 import {t, matchRegion} from '../../common/locale';
 import {withIndex} from '../../common/utils';
-import {preferredCountrySelector} from '../../app/preferencesModule';
+import {
+  preferredCountrySelector,
+  getRegionId,
+} from '../../app/preferencesModule';
 
 import Region from './Region';
 import SearchBar from '../shared/Search/SearchBar';
@@ -28,8 +31,6 @@ const sortFns = [
   withIndex(sortActive),
   withIndex(sortDeaths),
 ];
-
-const keyer = (r) => r.region_name_en;
 
 export default function RegionScreen() {
   const dispatch = useDispatch();
@@ -73,7 +74,7 @@ export default function RegionScreen() {
         renderItem={({item}) => (
           <Region sort={sort} index={item.index} region={item} />
         )}
-        keyExtractor={keyer}
+        keyExtractor={getRegionId}
       />
     </Container>
   );

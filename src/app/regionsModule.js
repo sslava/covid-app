@@ -48,17 +48,12 @@ export const makeCountryRegionsSelector = () =>
     },
   );
 
-export const getRegionActiveCases = (r) =>
-  r.total_cases - r.total_recovered - r.total_deaths;
-
 export function sortTotal(arr) {
   return [...arr].sort((a, b) => b.total_cases - a.total_cases);
 }
 
 export function sortActive(arr) {
-  return [...arr].sort(
-    (a, b) => getRegionActiveCases(b) - getRegionActiveCases(a),
-  );
+  return [...arr].sort((a, b) => b.total_active - a.total_active);
 }
 
 export function sortDeaths(arr) {
