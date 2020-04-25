@@ -82,7 +82,7 @@ export default function Region({country}) {
           total_new={+region.new_cases}
         />
         <Actions>
-          <ShareBtn icon={<ShareIcon />}>{t('stats.country.share')}</ShareBtn>
+          {/* <ShareBtn icon={<ShareIcon />}>{t('stats.country.share')}</ShareBtn> */}
           <ListBtn onPress={openList} icon={<ListIcon />}>
             {t('stats.regions.all')}
           </ListBtn>
