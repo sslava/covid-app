@@ -79,9 +79,9 @@ export default function PrimaryCountry({code, country}) {
           <ShareBtn onPress={share} icon={<ShareIcon />}>
             {t('stats.country.share')}
           </ShareBtn>
-          {/* <CountryBtn onPress={openDetails} icon={<DetailsIcon />}>
+          <CountryBtn onPress={openDetails} icon={<DetailsIcon />}>
             {t('stats.country.details')}
-          </CountryBtn> */}
+          </CountryBtn>
         </Actions>
       </Content>
       <ShareCountry
