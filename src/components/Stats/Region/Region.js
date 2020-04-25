@@ -7,6 +7,10 @@ import {ShareIcon, ListIcon} from '../../common/buttonIcons';
 
 import Subheader from '../common/Subheader';
 import TotalStats from '../common/TotalStats';
+import ShareRegion from './Share/ShareRegion';
+
+import shareImageDialog from '../../common/shareImage';
+import {useOffscreenViewShot} from '../../common/OffscreenViewshot';
 
 import {
   preferredRegionSelector,
@@ -52,6 +56,16 @@ export default function Region({country, code}) {
     [country, nav],
   );
 
+  const name = regionName(region);
+
+  const captured = useCallback(
+    (tmp) =>
+      shareImageDialog(tmp, t('stats.region.shareTitle', {country: name})),
+    [name],
+  );
+
+  const [sharing, share, capture] = useOffscreenViewShot(captured);
+
   if (!region) {
     return null;
   }
@@ -59,7 +73,7 @@ export default function Region({country, code}) {
   return (
     <Container>
       <Subheader
-        title={regionName(region)}
+        title={name}
         icon={<Marker source={markerIcon} />}
         onPress={changeRegion}
         activeOpacity={0.7}>
@@ -75,12 +89,20 @@ export default function Region({country, code}) {
           total_new={+region.new_cases}
         />
         <Actions>
-          {/* <ShareBtn icon={<ShareIcon />}>{t('stats.country.share')}</ShareBtn> */}
+          <ShareBtn onPress={share} icon={<ShareIcon />}>
+            {t('stats.country.share')}
+          </ShareBtn>
           <ListBtn onPress={openList} icon={<ListIcon />}>
             {t('stats.regions.all')}
           </ListBtn>
         </Actions>
       </Content>
+      <ShareRegion
+        sharing={sharing}
+        onCapture={capture}
+        region={region}
+        code={code}
+      />
     </Container>
   );
 }
