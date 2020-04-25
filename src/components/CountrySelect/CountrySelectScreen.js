@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 import {FlatList} from 'react-native';
 
@@ -9,14 +9,18 @@ import {countriesSelector} from '../../app/statsModule';
 import SearchBar from '../shared/Search/SearchBar';
 import Country from './Country';
 
-import {usePreferredCountry} from '../shared/Preferences';
+import {
+  preferredCountrySelector,
+  updatePrimaryCountry,
+} from '../../app/preferencesModule';
 
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
 import {Container, Search} from './CountrySelectScreen.styles';
 
 export default function CountrySelectScreen({navigation}) {
-  const [primary, updateCountry] = usePreferredCountry();
+  const dispatch = useDispatch();
+  const primary = useSelector(preferredCountrySelector);
   const all = useSelector(countriesSelector);
 
   const sorted = useMemo(() => sortCountries(all), [all]);
@@ -25,10 +29,10 @@ export default function CountrySelectScreen({navigation}) {
 
   const select = useCallback(
     (id) => {
-      updateCountry(id);
+      dispatch(updatePrimaryCountry(id));
       navigation.goBack();
     },
-    [navigation, updateCountry],
+    [navigation, dispatch],
   );
 
   return (

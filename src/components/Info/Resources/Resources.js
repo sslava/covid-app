@@ -1,9 +1,10 @@
 import React, {useMemo} from 'react';
+import {useSelector} from 'react-redux';
 
 import {View} from 'react-native';
 
 import {t} from '../../../common/locale';
-import {usePreferredCountry} from '../../shared/Preferences';
+import {preferredCountrySelector} from '../../../app/preferencesModule';
 
 import Subheader from '../Subheader';
 import Phone from './Phone';
@@ -14,7 +15,7 @@ import {getResources, phonesMap, linksMap} from './list';
 import {List} from './Resources.styles';
 
 export default function Resources() {
-  const [primary] = usePreferredCountry();
+  const primary = useSelector(preferredCountrySelector);
 
   const phones = useMemo(() => getResources(phonesMap, primary), [primary]);
   const links = useMemo(() => getResources(linksMap, primary), [primary]);
