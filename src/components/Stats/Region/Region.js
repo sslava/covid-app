@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/core';
 
 import {t, regionName, countryName} from '../../../common/locale';
 import {ShareIcon, ListIcon} from '../../common/buttonIcons';
+import {getRegionId, usePreferredRegion} from '../../shared/Preferences';
 
 import Subheader from '../common/Subheader';
 import TotalStats from '../common/TotalStats';
@@ -27,49 +28,31 @@ import {
   ListBtn,
 } from './Region.styles';
 
-const a = {
-  country_id: '1',
-  id: '1',
-  isolation: '0',
-  lat: '',
-  lng: '',
-  new_cases: '0',
-  new_deaths: '0',
-  region_name: 'Москва',
-  region_name_en: 'Moskva',
-  source: '',
-  source_id: '',
-  total_active: '0',
-  total_cases: '36897',
-  total_deaths: '325',
-  total_recovered: '2735',
-  total_tests: '0',
-  updated_at: '2020-04-24 10:35:00',
-};
-
-const regionId = 'Moskva';
-
 export default function Region({country}) {
+  const dispatch = useDispatch();
   const nav = useNavigation();
+  const [regionId, countryCode] = usePreferredRegion();
+
   const cname = countryName(country);
 
-  const dispatch = useDispatch();
   useEffect(() => {
-    if (country.code) {
-      dispatch(fetchCountryRegions(country.code));
+    if (countryCode) {
+      dispatch(fetchCountryRegions(countryCode));
     }
-  }, [country.code, dispatch]);
-  const regionsSelector = useMemo(makeCountryRegionsSelector);
-  const {data: regions} = useSelector((s) => regionsSelector(s, country.code));
+  }, [countryCode, dispatch]);
 
-  const region = useMemo(
-    () => regions && regions.find((r) => r.region_name_en === regionId),
-    [regions],
-  );
-  const changeRegion = useCallback(
-    () => nav.navigate('RegionSelect', {code: country.code}),
-    [nav, country.code],
-  );
+  const regionsSelector = useMemo(makeCountryRegionsSelector);
+  const {data: regions} = useSelector((s) => regionsSelector(s, countryCode));
+
+  const region = useMemo(() => {
+    if (!regions) {
+      return null;
+    }
+    return regions.find((r) => getRegionId(r) === regionId) || regions[0];
+  }, [regions, regionId]);
+
+  const changeRegion = useCallback(() => nav.navigate('RegionSelect'), [nav]);
+
   const openList = useCallback(() => nav.navigate('Regions', {name: cname}), [
     cname,
     nav,

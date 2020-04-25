@@ -64,3 +64,23 @@ export function sortActive(arr) {
 export function sortDeaths(arr) {
   return [...arr].sort((a, b) => b.total_deaths - a.total_deaths);
 }
+
+// const a = {
+//   country_id: '1',
+//   id: '1',
+//   isolation: '0',
+//   lat: '',
+//   lng: '',
+//   new_cases: '0',
+//   new_deaths: '0',
+//   region_name: 'Москва',
+//   region_name_en: 'Moskva',
+//   source: '',
+//   source_id: '',
+//   total_active: '0',
+//   total_cases: '36897',
+//   total_deaths: '325',
+//   total_recovered: '2735',
+//   total_tests: '0',
+//   updated_at: '2020-04-24 10:35:00',
+// };

@@ -9,27 +9,28 @@ import {makeCountryRegionsSelector} from '../../app/regionsModule';
 import SearchBar from '../shared/Search/SearchBar';
 import Region from './Region';
 
-import {usePrefences} from '../shared/Preferences';
+import {usePreferredRegion, getRegionId} from '../shared/Preferences';
 import useDebouncedSearch from '../shared/Search/useDebounceSearch';
 
 import {Container, Search} from './RegionSelectScreen.styles';
 
+const keyer = (r) => getRegionId(r);
+
 export default function RegionSelectScreen({navigation}) {
-  const [prefs] = usePrefences();
+  const [regionId, code, saveRegion] = usePreferredRegion();
 
   const regionsSelector = useMemo(makeCountryRegionsSelector);
-  const {data: all} = useSelector((s) => regionsSelector(s, prefs.primary));
+  const {data: all} = useSelector((s) => regionsSelector(s, code));
 
   const sorted = useMemo(() => sortRegions(all), [all]);
-
   const [regions, query, setQuery] = useDebouncedSearch(sorted, matchRegion);
 
   const select = useCallback(
-    (primary) => {
-      // updatePrefs({...prefs, primary});
+    (id) => {
+      saveRegion(id);
       navigation.goBack();
     },
-    [navigation],
+    [navigation, saveRegion],
   );
 
   return (
@@ -43,12 +44,12 @@ export default function RegionSelectScreen({navigation}) {
       </Search>
       <FlatList
         data={regions}
-        keyExtractor={(item) => item.id}
+        keyExtractor={keyer}
         renderItem={({item}) => (
           <Region
-            id={item.id}
+            id={getRegionId(item)}
             name={regionName(item)}
-            selected={item.id === '1'}
+            selected={getRegionId(item) === regionId}
             onSelect={select}
           />
         )}
