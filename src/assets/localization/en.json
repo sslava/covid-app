@@ -128,7 +128,10 @@
       "title": "За сутки"
     },
     "all": {
-      "title": "За все время"
+      "title": "Overall stats",
+      "vs": "VS",
+      "recoveryRate": "Recovery rate",
+      "deathsRate": "Deaths rate"
     },
     "graphs": {
       "title": "Новые случаи в сутки"
