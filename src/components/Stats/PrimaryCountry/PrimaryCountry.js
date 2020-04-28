@@ -8,7 +8,9 @@ import {makeCounrtyHistorySelector} from '../../../app/historyModule';
 import {countryName, t} from '../../../common/locale';
 
 import Subheader from '../common/Subheader';
-import TotalStats, {StatsContainer} from '../../shared/Stats/TotalStats';
+import TotalStats, {
+  StatsContainer,
+} from '../../shared/Stats/TotalStats/TotalStats';
 import Dynamic from '../../shared/Stats/Dynamic';
 import ShareCountry from '../../shared/ShareCountry';
 
