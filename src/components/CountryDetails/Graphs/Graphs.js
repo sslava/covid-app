@@ -1,44 +1,27 @@
 import React, {useRef} from 'react';
+import {useTheme} from 'styled-components/native';
+
 import {Animated, Dimensions} from 'react-native';
 
 import {range} from '../../../common/utils';
 
 import GraphPage from './GraphPage';
 
-const {width} = Dimensions.get('window');
+import {deltaConfirmed, totalCases, totalDeaths} from './model';
 
 import {Container, ScrollIndicator, Dot} from './Graphs.styles';
 
-import {
-  lastN,
-  composeGraph,
-  sortBy,
-  valueField,
-} from '../../shared/Stats/historyGraph';
-
-const deltaConfirmed = composeGraph(
-  valueField((h) => +h.delta_confirmed),
-  sortBy(),
-  lastN(30),
-);
-
-const totalCases = composeGraph(
-  valueField((h) => +h.total_cases),
-  sortBy(),
-  lastN(30),
-);
-
-const totalDeaths = composeGraph(
-  valueField((h) => +h.total_deaths),
-  sortBy(),
-  lastN(30),
-);
+const {width} = Dimensions.get('window');
 
 export default function Graphs({country, history}) {
+  const theme = useTheme();
   const scrollX = useRef(new Animated.Value(0));
+
   if (!history || !history.length) {
     return null;
   }
+
+  const fr = Animated.divide(scrollX.current, width);
   return (
     <Container>
       <Animated.ScrollView
@@ -52,12 +35,19 @@ export default function Graphs({country, history}) {
         <GraphPage
           title="deltaConfirmed"
           getGraph={deltaConfirmed}
+          color={theme.activeColor}
           history={history}
         />
-        <GraphPage title="totalCases" getGraph={totalCases} history={history} />
+        <GraphPage
+          title="totalCases"
+          getGraph={totalCases}
+          color={theme.activeColor}
+          history={history}
+        />
         <GraphPage
           title="totalDeaths"
           getGraph={totalDeaths}
+          color={theme.deathsColor}
           history={history}
         />
       </Animated.ScrollView>
@@ -66,7 +56,7 @@ export default function Graphs({country, history}) {
           <Dot
             key={i}
             style={{
-              opacity: Animated.divide(scrollX.current, width).interpolate({
+              opacity: fr.interpolate({
                 inputRange: [i - 1, i, i + 1],
                 outputRange: [0.3, 1, 0.3],
                 extrapolate: 'clamp',

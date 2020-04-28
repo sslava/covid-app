@@ -8,6 +8,7 @@ export const Container = styled.View`
 `;
 
 export const Dates = styled.Text`
+  padding-right: 10px;
   margin-top: 6px;
   font-size: 13px;
   line-height: 15px;
