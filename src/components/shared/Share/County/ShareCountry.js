@@ -1,12 +1,12 @@
 import React from 'react';
 
-import TotalStats, {StatsContainer} from './Stats/TotalStats/TotalStats';
-import Dynamic from './Stats/Dynamic';
+import CountryStats from './CountryStats';
+import Dynamic from '../../Stats/Dynamic';
 
-import {countryName} from '../../common/locale';
-import ShareContainer from './Share/ShareContainer';
+import {countryName} from '../../../../common/locale';
+import ShareContainer from '../ShareContainer';
 
-import {Footer, Header, Content} from './Share/Tokens';
+import {Footer, Header, Content} from '../Tokens';
 
 function CountryView({sharing, onCapture, country, history}) {
   return (
@@ -18,16 +18,7 @@ function CountryView({sharing, onCapture, country, history}) {
       />
       <Content>
         <Dynamic country={country} history={history} color="white" />
-        <StatsContainer color="white">
-          <TotalStats
-            total={country.total}
-            recovered={country.recovered}
-            deaths={country.deaths}
-            active={country.active}
-            deaths_new={country.deaths_new}
-            color="white"
-          />
-        </StatsContainer>
+        <CountryStats country={country} />
         <Footer updated={country.updated} />
       </Content>
     </ShareContainer>

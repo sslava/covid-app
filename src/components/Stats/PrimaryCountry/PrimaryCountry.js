@@ -12,7 +12,7 @@ import TotalStats, {
   StatsContainer,
 } from '../../shared/Stats/TotalStats/TotalStats';
 import Dynamic from '../../shared/Stats/Dynamic';
-import ShareCountry from '../../shared/ShareCountry';
+import ShareCountry from '../../shared/Share/County/ShareCountry';
 
 import {DetailsIcon, ShareIcon} from '../../common/buttonIcons';
 import {useOffscreenViewShot} from '../../common/OffscreenViewshot';
