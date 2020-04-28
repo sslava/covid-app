@@ -52,7 +52,6 @@ export default function TotalStats({
         left={
           <NumberBlock
             caption={t('stats.recovered')}
-            fraction={fr}
             number={recovered}
             color={color}
           />
