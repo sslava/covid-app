@@ -9,7 +9,7 @@ const range = (count) => [...Array(count).keys()];
 
 const R = Animated.createAnimatedComponent(Rect);
 
-function BarChanrt({
+export default function BarChart({
   style,
   data,
   color,
@@ -59,5 +59,3 @@ function BarChanrt({
     </Svg>
   );
 }
-
-export default memo(BarChanrt);

@@ -123,6 +123,17 @@
   "regionselect": {
     "title": "Select state"
   },
+  "country": {
+    "today": {
+      "title": "За сутки"
+    },
+    "all": {
+      "title": "За все время"
+    },
+    "graphs": {
+      "title": "Новые случаи в сутки"
+    }
+  },
   "alpha2": {
     "AF": "Afghanistan",
     "AL": "Albania",

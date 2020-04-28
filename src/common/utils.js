@@ -17,3 +17,5 @@ export function withIndex(fn: (arr: Array<Object>) => Array<Object>): Function {
   return (arr: Array<Object>) =>
     fn(arr).map((a, index) => ({index: index + 1, ...a}));
 }
+
+export const range = (count: number): Array<number> => [...Array(count).keys()];
