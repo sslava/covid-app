@@ -20,19 +20,19 @@ import {
 } from './Stats.styles';
 
 export default function Stats({code}) {
-  const countrySelector = useMemo(makeCountrySelector);
+  const countrySelector = useMemo(makeCountrySelector, []);
   const country = useSelector((s) => countrySelector(s, code));
 
   return (
     <Container>
       <LargeHeader title={t('stats.title')} />
-      <WorldContainer>
-        <WorldStats />
-      </WorldContainer>
       <PrimaryContainer>
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
       {countrySupportsRegions(code) && <Region code={code} country={country} />}
+      <WorldContainer>
+        <WorldStats />
+      </WorldContainer>
       <CountriesContainer>
         <Countries />
       </CountriesContainer>

@@ -17,6 +17,7 @@ import RegionSelectScreen from './RegionSelect/RegionSelectScreen';
 import DeatilsScreen from './CountryDetails/DeatilsScreen';
 
 import {HeaderBack, HeaderClose} from './shared/Header/HeaderBack';
+import HeaderTitleCountry from './shared/Header/HeaderTitleCountry';
 import TabIcon from './common/TabIcon';
 
 import infoIcon from '../assets/icons/info.png';
@@ -105,7 +106,12 @@ export default function Navigator() {
           name="Country"
           component={DeatilsScreen}
           options={({route}) => ({
-            title: route.params.name,
+            headerTitle: () => (
+              <HeaderTitleCountry
+                code={route.params.code}
+                name={route.params.name}
+              />
+            ),
           })}
         />
         <AppStack.Screen
