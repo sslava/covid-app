@@ -3,17 +3,20 @@ import styled, {useTheme} from 'styled-components/native';
 
 import {View} from 'react-native';
 
-import {t} from '../../../../common/locale';
-import useStatsBar from '../../useStatsBar';
-import {StatsNumber, StatsNumberLarge} from './StatsNumber';
-import HorizontalBar from '../../../common/charts/HorizontalBar/HorizontalBar';
+import {t} from '../../../common/locale';
+import useStatsBar from '../../shared/useStatsBar';
+import {
+  StatsNumber,
+  StatsNumberLarge,
+} from '../../shared/Stats/TotalStats/StatsNumber';
+import HorizontalBar from '../../common/charts/HorizontalBar/HorizontalBar';
 
-import SlidingBlocks from './SlidingBlocks';
+import SlidingBlocks from '../../shared/Stats/TotalStats/SlidingBlocks';
 
 export const StatsContainer = styled.View`
   padding-top: 15px;
   border-top-width: 1px;
-  border-top-color: ${(p) => p.color || p.theme.borderLightColor};
+  border-top-color: ${(p) => p.theme.borderLightColor};
 `;
 
 export const Bar = styled(HorizontalBar)`
@@ -27,8 +30,6 @@ export default function TotalStats({
   active,
   deaths_new,
   total_new,
-  color,
-  hideTotal = false,
 }) {
   const theme = useTheme();
   const stats = useStatsBar(total, recovered, deaths, active);
@@ -36,14 +37,11 @@ export default function TotalStats({
   const fr = stats[0].fraction;
   return (
     <View>
-      {!hideTotal && (
-        <StatsNumberLarge
-          caption={t('stats.total')}
-          number={total}
-          color={color}
-          today={total_new}
-        />
-      )}
+      <StatsNumberLarge
+        caption={t('stats.total')}
+        number={total}
+        today={total_new}
+      />
       <Bar items={stats} height={10} />
       <SlidingBlocks
         fraction={fr}
@@ -52,7 +50,6 @@ export default function TotalStats({
             caption={t('stats.recovered')}
             number={recovered}
             todayColor={theme.recoveredColor}
-            color={color}
           />
         }
         center={
@@ -60,7 +57,6 @@ export default function TotalStats({
             caption={t('stats.active')}
             number={active}
             todayColor={theme.activeColor}
-            color={color}
             align="center"
           />
         }
@@ -69,7 +65,6 @@ export default function TotalStats({
             caption={t('stats.deaths')}
             number={deaths}
             today={deaths_new}
-            color={color}
             todayColor={theme.deathsColor}
             align="flex-end"
           />
