@@ -36,6 +36,9 @@ const totalDeaths = composeGraph(
 
 export default function Graphs({country, history}) {
   const scrollX = useRef(new Animated.Value(0));
+  if (!history || !history.length) {
+    return null;
+  }
   return (
     <Container>
       <Animated.ScrollView
