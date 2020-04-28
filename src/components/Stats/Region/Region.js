@@ -7,7 +7,7 @@ import {ShareIcon, ListIcon} from '../../common/buttonIcons';
 
 import Subheader from '../common/Subheader';
 import TotalStats from '../../shared/Stats/TotalStats/TotalStats';
-import ShareRegion from '../../shared/ShareRegion';
+import ShareRegion from '../../shared/Share/Region/ShareRegion';
 
 import shareImageDialog from '../../common/shareImage';
 import {useOffscreenViewShot} from '../../common/OffscreenViewshot';
