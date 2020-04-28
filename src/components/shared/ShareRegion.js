@@ -5,7 +5,7 @@ import ShareContainer from './Share/ShareContainer';
 import {Header, Footer, Content} from './Share/Tokens';
 
 import {regionName, t, formatNumber, formatDate} from '../../common/locale';
-import TotalStats from './Stats/TotalStats';
+import TotalStats from './Stats/TotalStats/TotalStats';
 
 const StatsContent = styled.View`
   padding-top: 37px;
