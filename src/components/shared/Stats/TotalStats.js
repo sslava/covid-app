@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, {useTheme} from 'styled-components/native';
 
+import {View} from 'react-native';
+
 import {t} from '../../../common/locale';
 import useStatsBar from '../useStatsBar';
 import NumberBlock from './NumberBlock';
@@ -22,12 +24,13 @@ export default function TotalStats({
   total_new,
   color,
   hideTotal = false,
+  style,
 }) {
   const theme = useTheme();
 
   const stats = useStatsBar(total, recovered, deaths, active);
   return (
-    <>
+    <View style={style}>
       {!hideTotal && (
         <NumberBlock number={total} large color={color} today={total_new}>
           {t('stats.total')}
@@ -59,6 +62,6 @@ export default function TotalStats({
           {t('stats.deaths')}
         </NumberBlock>
       </Numbers>
-    </>
+    </View>
   );
 }
