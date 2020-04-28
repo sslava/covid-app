@@ -16,7 +16,7 @@ function graphWithPeak(items, getGraph) {
   return {graph, peak, peakIndex};
 }
 
-export default function GraphPage({title, getGraph, history}) {
+export default function GraphPage({title, color, getGraph, history}) {
   const {graph, peak, peakIndex} = useMemo(
     () => graphWithPeak(history, getGraph),
     [history, getGraph],
@@ -24,7 +24,7 @@ export default function GraphPage({title, getGraph, history}) {
   return (
     <Page>
       <Header>{title}</Header>
-      <SimpleGraph graph={graph} peak={peak} peakIndex={peakIndex} />
+      <SimpleGraph color={color} graph={graph} peakIndex={peakIndex} />
       <Values>
         <Value>
           <ValueTitle>Пик – {formatDate(peak.label)}</ValueTitle>

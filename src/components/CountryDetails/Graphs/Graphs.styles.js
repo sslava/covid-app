@@ -19,6 +19,7 @@ export const Dot = styled(Animated.View)`
   height: 7px;
   width: 7px;
   background-color: ${(p) => p.theme.primaryTextColor};
-  margin: 9px;
+  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 5px;
 `;
