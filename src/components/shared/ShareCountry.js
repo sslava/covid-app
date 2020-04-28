@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TotalStats, {StatsContainer} from './Stats/TotalStats';
+import TotalStats, {StatsContainer} from './Stats/TotalStats/TotalStats';
 import Dynamic from './Stats/Dynamic';
 
 import {countryName} from '../../common/locale';
