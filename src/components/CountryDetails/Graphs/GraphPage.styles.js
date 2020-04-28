@@ -9,13 +9,6 @@ export const Page = styled.View`
   width: ${width}px;
 `;
 
-export const Graph = styled.View`
-  padding-top: 15px;
-  padding-bottom: 20px;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const Values = styled.View`
   flex-direction: row;
   justify-content: flex-start;

@@ -4,7 +4,7 @@ import {useTheme} from 'styled-components/native';
 import {formatNumber, t, formatDate} from '../../../common/locale';
 import downIcon from '../../../assets/icons/arrow-down.png';
 
-import BarChart from '../../common/charts/BarChart';
+import AnimatedBarChart from '../../common/charts/BarChart/AnimatedBarChart';
 
 import {getLatestStats} from './latestStats';
 import {lastN, composeGraph, sortBy, valueField} from './historyGraph';
@@ -59,7 +59,7 @@ export default function Dynamic({country, history, animated, color}) {
             <GraphCaption color={color}>
               {t('stats.country.lastX', {days: graph.length})}
             </GraphCaption>
-            <BarChart
+            <AnimatedBarChart
               color={color || theme.secondaryTextColor}
               width={90}
               height={50}
