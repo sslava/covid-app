@@ -1,19 +1,11 @@
 import React, {useMemo} from 'react';
-import {useTheme} from 'styled-components/native';
-
-import BarChart from '../../common/charts/BarChart';
 import {findLatestPeak} from '../../shared/Stats/historyGraph';
 import {formatNumber, formatDate} from '../../../common/locale';
 
 import {Header} from '../Layout';
-import {
-  Page,
-  Value,
-  ValueTitle,
-  ValueNumber,
-  Values,
-  Graph,
-} from './GraphPage.styles';
+import {Page, Value, ValueTitle, ValueNumber, Values} from './GraphPage.styles';
+
+import SimpleGraph from './SimpleGraph';
 
 function graphWithPeak(items, getGraph) {
   if (!items) {
@@ -25,7 +17,6 @@ function graphWithPeak(items, getGraph) {
 }
 
 export default function GraphPage({title, getGraph, history}) {
-  const theme = useTheme();
   const {graph, peak, peakIndex} = useMemo(
     () => graphWithPeak(history, getGraph),
     [history, getGraph],
@@ -33,14 +24,7 @@ export default function GraphPage({title, getGraph, history}) {
   return (
     <Page>
       <Header>{title}</Header>
-      <Graph>
-        <BarChart
-          color={theme.activeColor}
-          width={200}
-          height={100}
-          data={graph}
-        />
-      </Graph>
+      <SimpleGraph graph={graph} peak={peak} peakIndex={peakIndex} />
       <Values>
         <Value>
           <ValueTitle>Пик – {formatDate(peak.label)}</ValueTitle>
