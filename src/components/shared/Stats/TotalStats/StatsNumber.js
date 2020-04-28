@@ -27,16 +27,14 @@ export function StatsNumberLarge({caption, number, today, color, todayColor}) {
 
 export function StatsNumber({
   caption,
-  style,
   number,
   today,
   color,
   todayColor,
-  children,
   align = 'flex-start',
 }) {
   return (
-    <Container align={align} style={style}>
+    <Container align={align}>
       <Caption todayColor={todayColor} color={color}>
         {caption}
       </Caption>
@@ -44,7 +42,6 @@ export function StatsNumber({
         {formatNumber(+number)}
         <Today num={+today} color={todayColor} />
       </Number>
-      {children}
     </Container>
   );
 }
