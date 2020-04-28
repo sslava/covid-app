@@ -14,8 +14,14 @@ export default function LabeledBarChart({
   height,
   peakIndex,
   paddingLeft = 20,
+  labelSize = 13,
 }) {
-  const [x, y] = useBarChart(data, width - paddingLeft, height - 20, 0.5);
+  const [x, y] = useBarChart(
+    data,
+    width - paddingLeft,
+    height - labelSize - 8,
+    0.5,
+  );
 
   return (
     <Svg style={style} width={width} height={height}>
@@ -27,7 +33,7 @@ export default function LabeledBarChart({
         />
       ))}
       {peakIndex !== null && (
-        <BarLabel color={color} fontSize={13} x={x(peakIndex)}>
+        <BarLabel color={color} fontSize={labelSize} x={x(peakIndex)}>
           {formatNumber(data[peakIndex].value)}
         </BarLabel>
       )}
