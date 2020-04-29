@@ -31,7 +31,7 @@ export function StatsNumber({
   today,
   color,
   todayColor,
-  align = 'flex-start',
+  align,
 }) {
   return (
     <Container align={align}>
