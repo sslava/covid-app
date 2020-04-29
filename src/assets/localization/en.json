@@ -129,7 +129,6 @@
     },
     "all": {
       "title": "Overall stats",
-      "vs": "VS",
       "recoveryRate": "Recovery rate",
       "deathsRate": "Deaths rate"
     },

@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 
 import {t} from '../../common/locale';
 
-import {makeCountrySelector} from '../../app/statsModule';
+import {makePrimaryCountrySelector} from '../../app/statsModule';
 
 import {countrySupportsRegions} from '../../app/preferencesModule';
 import LargeHeader from '../shared/Header/LargeHeader';
@@ -20,7 +20,7 @@ import {
 } from './Stats.styles';
 
 export default function Stats({code}) {
-  const countrySelector = useMemo(makeCountrySelector, []);
+  const countrySelector = useMemo(makePrimaryCountrySelector, []);
   const country = useSelector((s) => countrySelector(s, code));
 
   return (

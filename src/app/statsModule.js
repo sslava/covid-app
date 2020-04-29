@@ -75,13 +75,20 @@ export const makeCountrySelector = () =>
       if (!code) {
         return null;
       }
-      const primary = countries.find((c) => c.code === code);
-      if (!primary) {
-        return countries.find((c) => c.code === 'US');
-      }
-      return primary;
+      return countries.find((c) => c.code === code);
     },
   );
+
+export const makePrimaryCountrySelector = () => {
+  const countrySelector = makeCountrySelector();
+  return createSelector(
+    countrySelector,
+    countriesSelector,
+    (country, countries) => {
+      return country || countries.find((c) => c.code === 'US');
+    },
+  );
+};
 
 export function sortTotal(arr) {
   return [...arr].sort((a, b) => b.total - a.total);
