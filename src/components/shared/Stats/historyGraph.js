@@ -47,7 +47,7 @@ export function lastN(x: number): GraphTf {
 }
 
 export type LabelSelector = (h: HistoryItem) => string;
-export type ValueSelector = (h: HistoryItem) => number;
+export type ValueSelector = (h: HistoryItem, p?: ?HistoryItem) => number;
 
 export const labelUpdatedAt: LabelSelector = (h) => h.updated_at;
 
@@ -55,7 +55,14 @@ export function valueField(
   selectValue: ValueSelector,
   selectLabel: LabelSelector = labelUpdatedAt,
 ): GraphFn {
-  return (l) => l.map((i) => ({label: selectLabel(i), value: selectValue(i)}));
+  return (list) =>
+    list.map((item, ix) => {
+      const prev = ix ? list[ix - 1] : null;
+      return {
+        label: selectLabel(item),
+        value: selectValue(item, prev),
+      };
+    });
 }
 
 export function composeGraph(

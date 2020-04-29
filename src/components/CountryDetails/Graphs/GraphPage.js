@@ -21,6 +21,7 @@ export default function GraphPage({title, color, getGraph, history}) {
     () => graphWithPeak(history, getGraph),
     [history, getGraph],
   );
+  const last = graph[graph.length - 1];
   return (
     <Page>
       <Header>{title}</Header>
@@ -32,7 +33,7 @@ export default function GraphPage({title, color, getGraph, history}) {
         </Value>
         <Value>
           <ValueTitle>Последние сутки</ValueTitle>
-          <ValueNumber>5 236</ValueNumber>
+          <ValueNumber>{formatNumber(last.value)}</ValueNumber>
         </Value>
       </Values>
     </Page>
