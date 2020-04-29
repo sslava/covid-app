@@ -6,7 +6,7 @@ import {Animated, Dimensions} from 'react-native';
 import {range} from '../../../common/utils';
 
 import BarChartSlide from './BarChartSlide';
-import StackedBarChartSlide from './StackedBarChartSlide';
+import TotalsSlide from './TotalsSlide';
 
 import {deltaConfirmed, deltaDeaths} from './model';
 
@@ -33,7 +33,7 @@ export default function Graphs({country, history}) {
           [{nativeEvent: {contentOffset: {x: scrollX.current}}}],
           {useNativeDriver: true},
         )}>
-        <StackedBarChartSlide title="stackedBar" history={history} />
+        <TotalsSlide title="stackedBar" history={history} />
         <BarChartSlide
           title="deltaCases"
           getChartData={deltaConfirmed}
