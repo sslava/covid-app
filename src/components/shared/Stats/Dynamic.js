@@ -7,7 +7,7 @@ import downIcon from '../../../assets/icons/arrow-down.png';
 import AnimatedBarChart from '../../common/charts/BarChart/AnimatedBarChart';
 
 import {getLatestStats} from './latestStats';
-import {lastN, composeGraph, sortBy, valueField} from './historyGraph';
+import {lastN, composeBarChart, sortBy, valueField} from './historyGraph';
 
 import {
   Container,
@@ -25,7 +25,7 @@ import {
   Arrow,
 } from './Dynamic.styles';
 
-const deltaConfirmedGraph = composeGraph(
+const deltaConfirmedGraph = composeBarChart(
   valueField((h) => +h.delta_confirmed),
   sortBy(),
   lastN(14),

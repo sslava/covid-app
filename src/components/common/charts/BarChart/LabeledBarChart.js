@@ -1,7 +1,7 @@
 import React from 'react';
-import Svg, {Text} from 'react-native-svg';
+import Svg from 'react-native-svg';
 
-import {useBarChart, getBar} from './useBarChart';
+import {useBarChart, getBar} from './barcharts';
 import {formatNumber} from '../../../../common/locale';
 
 import {Bar, BarLabel} from './Blocks';
@@ -16,24 +16,18 @@ export default function LabeledBarChart({
   paddingLeft = 20,
   labelSize = 13,
 }) {
-  const [x, y] = useBarChart(
-    data,
-    width - paddingLeft,
-    height - labelSize - 8,
-    0.5,
-  );
-
+  const {xs, ys} = useBarChart(data, width, height, 0.5, 20, labelSize + 8);
   return (
     <Svg style={style} width={width} height={height}>
       {data.map((item, index) => (
         <Bar
           key={item.label}
-          {...getBar(item, index, x, y, height)}
+          {...getBar(item, index, xs, ys, height)}
           fill={color}
         />
       ))}
       {peakIndex !== null && (
-        <BarLabel color={color} fontSize={labelSize} x={x(peakIndex)}>
+        <BarLabel color={color} fontSize={labelSize} x={xs(peakIndex)}>
           {formatNumber(data[peakIndex].value)}
         </BarLabel>
       )}
