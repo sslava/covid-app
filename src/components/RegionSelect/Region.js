@@ -1,6 +1,7 @@
 import React, {useCallback, memo} from 'react';
 
 import checkboxImage from '../../assets/icons/checkmark.png';
+
 import {Container, Left, Title, Selected} from './Region.styles';
 
 function Region({name, id, selected, onSelect}) {
