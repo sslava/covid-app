@@ -7,7 +7,7 @@ import {range} from '../../../common/utils';
 
 import GraphPage from './GraphPage';
 
-import {deltaConfirmed, totalCases, totalDeaths} from './model';
+import {deltaConfirmed, totalCases, totalDeaths, deltaDeaths} from './model';
 
 import {Container, ScrollIndicator, Dot} from './Graphs.styles';
 
@@ -33,9 +33,15 @@ export default function Graphs({country, history}) {
           {useNativeDriver: true},
         )}>
         <GraphPage
-          title="deltaConfirmed"
+          title="deltaCases"
           getGraph={deltaConfirmed}
           color={theme.activeColor}
+          history={history}
+        />
+        <GraphPage
+          title="deltaDeaths"
+          getGraph={deltaDeaths}
+          color={theme.deathsColor}
           history={history}
         />
         <GraphPage
@@ -52,7 +58,7 @@ export default function Graphs({country, history}) {
         />
       </Animated.ScrollView>
       <ScrollIndicator>
-        {range(3).map((i) => (
+        {range(4).map((i) => (
           <Dot
             key={i}
             style={{
