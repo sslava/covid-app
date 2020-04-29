@@ -1,54 +1,76 @@
-import React from 'react';
-import {useTheme} from 'styled-components/native';
-import {View} from 'react-native';
+import React, {useState, useMemo, useCallback} from 'react';
 
-import {t} from '../../../common/locale';
+import {t, countryName} from '../../../common/locale';
+import {useSelector} from 'react-redux';
+import {Modal} from 'react-native';
 
 import worldIcon from '../../../assets/icons/earth.png';
 import countryIcons from '../../common/countryIcons';
+import useToggle from '../../common/useToggle';
+import CountrySelect from '../../shared/CountrySelect/CountrySelect';
+
+import {makeCountrySelector} from '../../../app/statsModule';
 
 import {
   Container,
   Headline,
   CountryIcon,
-  WorldIcon,
+  CountryName,
   Metrica,
   Percent,
   MetricaName,
-  Vs,
+  Country,
 } from './Comparison.styles';
 
 const getPercent = (fraction, total) =>
   `${((100 * fraction) / total).toFixed(2)}%`;
 
-export default function Comparison({country, world}) {
-  const theme = useTheme();
-  const countryIcon = countryIcons[country.code];
+export default function Comparison({left, world}) {
+  const [modal, toggleModal] = useToggle();
+  const [rightId, setRightId] = useState(null);
+  const selectRight = useCallback(
+    (id) => {
+      setRightId(id);
+      toggleModal();
+    },
+    [toggleModal],
+  );
+
+  const countrySelector = useMemo(makeCountrySelector, []);
+  const right = useSelector((s) => countrySelector(s, rightId)) || world;
+
+  const leftIcon = countryIcons[left.code];
+  const rightIcon = rightId ? countryIcons[right.code] : worldIcon;
   return (
     <Container>
       <Headline>
-        <View>{countryIcon && <CountryIcon source={countryIcon} />}</View>
-        <Vs>{t('country.all.vs')}</Vs>
-        <WorldIcon source={worldIcon} />
+        <Country activeOpacity={1}>
+          <CountryIcon source={leftIcon} />
+          <CountryName>{countryName(left)}</CountryName>
+        </Country>
+        <Country align="flex-end" onPress={toggleModal}>
+          <CountryIcon source={rightIcon} />
+          <CountryName link>
+            {rightId ? countryName(right) : 'World'}
+          </CountryName>
+        </Country>
       </Headline>
       <Metrica>
-        <Percent color={theme.recoveredColor}>
-          {getPercent(country.recovered, country.total)}
-        </Percent>
+        <Percent>{getPercent(left.recovered, left.total)}</Percent>
         <MetricaName>{t('country.all.recoveryRate')}</MetricaName>
-        <Percent color={theme.recoveredColor} right>
-          {getPercent(world.recovered, world.total)}
-        </Percent>
+        <Percent right>{getPercent(right.recovered, right.total)}</Percent>
       </Metrica>
       <Metrica>
-        <Percent color={theme.deathsColor}>
-          {getPercent(country.deaths, country.total)}
-        </Percent>
+        <Percent>{getPercent(left.deaths, left.total)}</Percent>
         <MetricaName>{t('country.all.deathsRate')}</MetricaName>
-        <Percent color={theme.deathsColor} right>
-          {getPercent(world.deaths, world.total)}
-        </Percent>
+        <Percent right>{getPercent(right.deaths, right.total)}</Percent>
       </Metrica>
+      <Modal
+        visible={modal}
+        animationType="slide"
+        presentationStyle="formSheet">
+        <CountrySelect selected={rightId} onSelect={selectRight} />
+      </Modal>
     </Container>
   );
 }
