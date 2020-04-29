@@ -47,3 +47,31 @@ export const ValueNumber = styled.Text`
   line-height: 21px;
   color: ${(p) => p.theme.primaryTextColor};
 `;
+
+export const Legend = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LegendItem = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-horizontal: 7px;
+`;
+
+export const LegendColor = styled.View`
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: ${(p) => p.color};
+  margin-right: 3px;
+`;
+
+export const LegendCaption = styled.Text`
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: left;
+  color: ${(p) => p.theme.primaryTextColor};
+`;
