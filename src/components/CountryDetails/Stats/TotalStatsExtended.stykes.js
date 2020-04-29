@@ -57,7 +57,7 @@ export function StatsNum({number, caption, pos, today, align, todayColor}) {
       {!!pos && (
         <Position>
           <PositionIcon source={globeIcon} />
-          <Place>#4</Place>
+          <Place>#{pos}</Place>
         </Position>
       )}
     </Container>
@@ -83,7 +83,7 @@ export function StatsNumXl({caption, number, pos}) {
         {!!pos && (
           <PositionXL>
             <PositionIcon source={globeIcon} />
-            <Place>#{4} в мире</Place>
+            <Place>#{pos} в мире</Place>
           </PositionXL>
         )}
       </XlContent>
