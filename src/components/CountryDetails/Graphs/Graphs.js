@@ -5,9 +5,10 @@ import {Animated, Dimensions} from 'react-native';
 
 import {range} from '../../../common/utils';
 
-import GraphPage from './GraphPage';
+import BarChartSlide from './BarChartSlide';
+import StackedBarChartSlide from './StackedBarChartSlide';
 
-import {deltaConfirmed, totalCases, totalDeaths, deltaDeaths} from './model';
+import {deltaConfirmed, deltaDeaths} from './model';
 
 import {Container, ScrollIndicator, Dot} from './Graphs.styles';
 
@@ -32,33 +33,22 @@ export default function Graphs({country, history}) {
           [{nativeEvent: {contentOffset: {x: scrollX.current}}}],
           {useNativeDriver: true},
         )}>
-        <GraphPage
+        <StackedBarChartSlide title="stackedBar" history={history} />
+        <BarChartSlide
           title="deltaCases"
-          getGraph={deltaConfirmed}
+          getChartData={deltaConfirmed}
           color={theme.activeColor}
           history={history}
         />
-        <GraphPage
+        <BarChartSlide
           title="deltaDeaths"
-          getGraph={deltaDeaths}
-          color={theme.deathsColor}
-          history={history}
-        />
-        <GraphPage
-          title="totalCases"
-          getGraph={totalCases}
-          color={theme.activeColor}
-          history={history}
-        />
-        <GraphPage
-          title="totalDeaths"
-          getGraph={totalDeaths}
+          getChartData={deltaDeaths}
           color={theme.deathsColor}
           history={history}
         />
       </Animated.ScrollView>
       <ScrollIndicator>
-        {range(4).map((i) => (
+        {range(3).map((i) => (
           <Dot
             key={i}
             style={{

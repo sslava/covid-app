@@ -20,18 +20,20 @@ export type HistoryItem = {
   updated_at: string,
 };
 
-export type GraphItem = {
+export type BarChartItem = {
   label: string,
   value: number,
 };
 
 export type HistoryComparer = (a: HistoryItem, b: HistoryItem) => number;
 
+export type GraphTf = (Array<HistoryItem>) => Array<HistoryItem>;
+export type BarChartFn = (Array<HistoryItem>) => Array<BarChartItem>;
+
+export type StackedBarChartFn = (Array<HistoryItem>) => Array<Object>;
+
 export const byUpdatedAt: HistoryComparer = (a, b) =>
   parseDate(a.updated_at).getTime() - parseDate(b.updated_at).getTime();
-
-export type GraphTf = (Array<HistoryItem>) => Array<HistoryItem>;
-export type GraphFn = (Array<HistoryItem>) => Array<GraphItem>;
 
 export function sortBy(comparer: HistoryComparer = byUpdatedAt): GraphTf {
   return (items) => {
@@ -54,7 +56,7 @@ export const labelUpdatedAt: LabelSelector = (h) => h.updated_at;
 export function valueField(
   selectValue: ValueSelector,
   selectLabel: LabelSelector = labelUpdatedAt,
-): GraphFn {
+): BarChartFn {
   return (list) =>
     list.map((item, ix) => {
       const prev = ix ? list[ix - 1] : null;
@@ -65,27 +67,35 @@ export function valueField(
     });
 }
 
-export function composeGraph(
-  mapper: GraphFn,
+function composeGraph(...transforms: Array<GraphTf>): GraphTf {
+  return (items) =>
+    transforms.reduce((result, nextTransform) => nextTransform(result), items);
+}
+
+export function composeBarChart(
+  mapper: BarChartFn,
   ...transforms: Array<GraphTf>
-): GraphFn {
-  return (items) => {
-    const prepared = transforms.reduce(
-      (result, nextTransform) => nextTransform(result),
-      items,
-    );
-    return mapper(prepared);
-  };
+): BarChartFn {
+  const transformer = composeGraph(...transforms);
+  return (items) => mapper(transformer(items));
+}
+
+export function composeStackedBarChart(
+  mapper: StackedBarChartFn,
+  ...transforms: Array<GraphTf>
+): BarChartFn {
+  const transformer = composeGraph(...transforms);
+  return (items) => mapper(transformer(items));
 }
 
 export function findLatestPeak(
-  items: Array<GraphItem>,
-): [GraphItem | null, number] {
+  items: Array<BarChartItem>,
+): [BarChartItem | null, number] {
   if (!items || !items.length) {
     return [null, -1];
   }
 
-  let peak: GraphItem = items[0];
+  let peak: BarChartItem = items[0];
   let peakIndex: number = 0;
 
   items.forEach((item, index) => {
