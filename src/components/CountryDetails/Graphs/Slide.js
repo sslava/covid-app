@@ -3,10 +3,26 @@ import {Dimensions} from 'react-native';
 
 const {width} = Dimensions.get('window');
 
-export const Page = styled.View`
+export const Slide = styled.View`
   padding-horizontal: 20px;
   padding-vertical: 20px;
   width: ${width}px;
+`;
+
+export const ChartContainer = styled.View`
+  padding-top: 15px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Dates = styled.Text`
+  padding-right: 10px;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  color: ${(p) => p.theme.secondaryTextColor};
 `;
 
 export const Values = styled.View`
