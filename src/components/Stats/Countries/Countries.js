@@ -21,7 +21,7 @@ import {ListIcon} from '../../common/buttonIcons';
 import useSortTabs from '../../shared/useSortTabs';
 
 import {Search, All, SortControl} from './Countries.styles';
-import {PrimaryButton} from '../../common/Button';
+import {Button} from '../../common/Button';
 
 function sortedTop(countries, sort, topX = 10) {
   if (!countries || !countries.length) {
@@ -71,9 +71,9 @@ export default function TopCountries() {
         ))}
       </View>
       <All>
-        <PrimaryButton onPress={openList} icon={<ListIcon />}>
+        <Button onPress={openList} icon={<ListIcon />}>
           {t('stats.countries.all')}
-        </PrimaryButton>
+        </Button>
       </All>
       <Sources date={countries[0].updated} />
     </View>

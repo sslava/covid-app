@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import {Button, PrimaryButton} from '../../common/Button';
+import {Button} from '../../common/Button';
 
 export const Container = styled.View`
   background-color: ${(p) => p.theme.primaryBackground};
@@ -39,7 +39,7 @@ export const ShareBtn = styled(Button)`
   margin-right: 10px;
 `;
 
-export const CountryBtn = styled(PrimaryButton)`
+export const CountryBtn = styled(Button)`
   flex: 1;
   margin-left: 10px;
 `;

@@ -54,7 +54,7 @@ export default function RegionListLegend({
         />
       </Legend>
       {onDetails && (
-        <PrimaryButton onPress={onDetails} icon={<DetailsIcon />}>
+        <PrimaryButton onPress={onDetails} icon={<DetailsIcon color="white" />}>
           {t('stats.country.details')}
         </PrimaryButton>
       )}
