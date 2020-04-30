@@ -131,6 +131,7 @@
       "title": "Total stats",
       "recoveryRate": "Recovery rate",
       "deathsRate": "Deaths rate",
+      "world": "World",
       "rank": "in the world"
     },
     "slides": {

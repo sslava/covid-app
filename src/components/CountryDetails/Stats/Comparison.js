@@ -46,7 +46,7 @@ export default function Comparison({left, world}) {
         <Country align="flex-end" onPress={toggleModal}>
           <CountryIcon source={rightIcon} />
           <CountryName link>
-            {rightId ? countryName(right) : 'World'}
+            {rightId ? countryName(right) : t('country.all.world')}
           </CountryName>
         </Country>
       </Headline>
