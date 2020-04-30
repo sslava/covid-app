@@ -8,7 +8,7 @@ import {useScrollToTop} from '@react-navigation/native';
 import {t} from '../../common/locale';
 import {nodataSelector} from '../../app/statsModule';
 
-import LargeHeader from '../shared/Header/LargeHeader';
+import LargeHeader from '../common/Header/LargeHeader';
 import Symptoms from './Symptoms/Symptoms';
 import Recommendations from './Recommendations/Recommendations';
 import Resources from './Resources/Resources';

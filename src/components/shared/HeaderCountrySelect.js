@@ -1,30 +1,28 @@
 import React, {useCallback} from 'react';
-import {Modal} from 'react-native';
 
-import useToggle from '../../common/useToggle';
-import CountrySelect from '../CountrySelect/CountrySelect';
+import useToggle from '../common/useToggle';
+import CountrySelectModal from './CountrySelect/CountrySelectModal';
 
 import HeaderTitleCountry from './HeaderTitleCountry';
 
 export default function HeaderCountrySelect({code, name, navigation}) {
   const [modal, toggleModal] = useToggle();
-  const selectRight = useCallback(
+  const select = useCallback(
     (id, countryName) => {
       navigation.navigate('Country', {code: id, name: countryName});
-      toggleModal();
     },
-    [toggleModal, navigation],
+    [navigation],
   );
 
   return (
     <>
       <HeaderTitleCountry onPress={toggleModal} code={code} name={name} />
-      <Modal
+      <CountrySelectModal
         visible={modal}
-        animationType="slide"
-        presentationStyle="formSheet">
-        <CountrySelect selected={code} onSelect={selectRight} />
-      </Modal>
+        selected={code}
+        onSelect={select}
+        onHide={toggleModal}
+      />
     </>
   );
 }
