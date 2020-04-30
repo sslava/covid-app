@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 import {Dimensions} from 'react-native';
-import {findLatestPeak} from '../../shared/Stats/historyGraph';
+import {findLatestPeak} from '../../shared/historyModel';
 import {formatNumber, formatDate, t} from '../../../common/locale';
 import LabeledBarChart from '../../common/charts/BarChart/LabeledBarChart';
 
@@ -18,12 +18,18 @@ import {
 
 const {width} = Dimensions.get('window');
 
-export default function BarChartSlide({title, color, getChartData, history}) {
+export default function BarChartSlide({
+  title,
+  color,
+  getChartData,
+  history,
+  country,
+}) {
   const {chart, peak, peakIndex} = useMemo(() => {
-    const data = getChartData(history);
+    const data = getChartData(history, country);
     const [p, i] = findLatestPeak(data);
     return {chart: data, peak: p, peakIndex: i};
-  }, [history, getChartData]);
+  }, [history, getChartData, country]);
 
   const first = chart[0];
   const last = chart[chart.length - 1];

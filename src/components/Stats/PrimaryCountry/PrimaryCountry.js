@@ -34,7 +34,7 @@ export default function PrimaryCountry({code, country}) {
   const name = countryName(country);
 
   const historySelector = useMemo(makeCounrtyHistorySelector);
-  const {data: history} = useSelector((s) => historySelector(s, code));
+  const history = useSelector((s) => historySelector(s, code));
 
   const changeCountry = useCallback(() => nav.navigate('CountrySelect'), [nav]);
   const openDetails = useCallback(() => nav.navigate('Country', {name, code}), [

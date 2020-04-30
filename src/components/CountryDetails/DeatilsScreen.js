@@ -44,8 +44,7 @@ export default function DeatilsScreen({navigation, route}) {
   const country = useSelector((s) => countrySelector(s, code));
 
   const historySelector = useMemo(makeCounrtyHistorySelector, []);
-  const {data: history} = useSelector((s) => historySelector(s, code));
-
+  const history = useSelector((s) => historySelector(s, code));
   return (
     <Safe>
       <Scroll

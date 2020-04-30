@@ -4,6 +4,7 @@ import {apiRequest} from '../common/api';
 
 import createFetchReducer from './createFetchReducer';
 import entitiesMapReducer from './entitiesMapReducer';
+import {lastX} from '../common/utils';
 
 const fetcher = (code) =>
   apiRequest('GET', `https://covidum.com/request/get_stat_history/${code}`);
@@ -42,8 +43,8 @@ export const makeCounrtyHistorySelector = () =>
     (items, code) => {
       const state = items[code];
       if (!state) {
-        return {data: [], isFetching: false, error: null};
+        return [];
       }
-      return state;
+      return lastX(state.data, 50);
     },
   );
