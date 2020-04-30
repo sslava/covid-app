@@ -1,4 +1,5 @@
 import React, {useMemo} from 'react';
+import {Dimensions} from 'react-native';
 import {findLatestPeak} from '../../shared/Stats/historyGraph';
 import {formatNumber, formatDate, t} from '../../../common/locale';
 import LabeledBarChart from '../../common/charts/BarChart/LabeledBarChart';
@@ -14,6 +15,8 @@ import {
   ChartContainer,
   Dates,
 } from './Slide';
+
+const {width} = Dimensions.get('window');
 
 export default function BarChartSlide({title, color, getChartData, history}) {
   const {chart, peak, peakIndex} = useMemo(() => {
@@ -31,7 +34,7 @@ export default function BarChartSlide({title, color, getChartData, history}) {
       <ChartContainer>
         <LabeledBarChart
           color={color}
-          width={350}
+          width={width - 40}
           height={150}
           data={chart}
           peakIndex={peakIndex}

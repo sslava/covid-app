@@ -1,4 +1,6 @@
 import React, {useMemo} from 'react';
+import {Dimensions} from 'react-native';
+
 import {useTheme} from 'styled-components';
 
 import {formatDate, t, formatNumber} from '../../../common/locale';
@@ -17,6 +19,8 @@ import {
   LegendColor,
   LegendCaption,
 } from './Slide';
+
+const {width} = Dimensions.get('window');
 
 const categories = ['deaths', 'active', 'recovered'];
 const dataMax = (data) => Math.max(...data.map((d) => d.total));
@@ -40,7 +44,7 @@ export default function TotalsSlide({title, color, history}) {
         <StackedBarChart
           data={data}
           colors={colors}
-          width={350}
+          width={width - 40}
           delta={0.3}
           height={150}
           maxFn={dataMax}
