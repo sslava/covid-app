@@ -29,5 +29,5 @@ export const darkTheme = {
   recommendationBackground: '#2C2C2E',
   phoneBackground: '#2C2C2E',
   linkBackground: '#2C2C2E',
-  actionColor: '#007AFF',
+  actionColor: '#0A84FF',
 };
