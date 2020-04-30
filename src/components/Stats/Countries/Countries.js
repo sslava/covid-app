@@ -43,6 +43,11 @@ export default function TopCountries() {
     sort,
   ]);
 
+  const openSearch = useCallback(
+    () => nav.navigate('Countries', {sort: sort, search: true}),
+    [nav, sort],
+  );
+
   const openDetails = useCallback(
     (code, name) => nav.navigate('Country', {code, name}),
     [nav],
@@ -56,7 +61,10 @@ export default function TopCountries() {
     <View>
       <Subheader title={t('stats.countries.title')} />
       <Search>
-        <SearchButton placeholder={t('countries.search')} onPress={openList} />
+        <SearchButton
+          placeholder={t('countries.search')}
+          onPress={openSearch}
+        />
         <SortControl selectedIndex={sort} onChange={changeSort} values={sv} />
       </Search>
       <View>

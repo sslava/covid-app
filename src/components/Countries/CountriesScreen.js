@@ -56,6 +56,7 @@ export default function CountriesScreen({route, navigation}) {
       <Top>
         <SearchBar
           value={query}
+          focused={!!route.params.search}
           onChange={setQuery}
           placeholder={t('countries.search')}
         />
