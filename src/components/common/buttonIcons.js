@@ -6,14 +6,13 @@ import detialsIcon from '../../assets/icons/details.png';
 import listIcon from '../../assets/icons/list.png';
 
 const Icon = styled.Image`
-  tint-color: white;
+  tint-color: ${(p) => p.color || p.theme.primaryTextColor};
   width: 16px;
   height: 16px;
   margin-right: 10px;
 `;
 
 const ShareImg = styled(Icon)`
-  tint-color: ${(p) => p.theme.primaryTextColor};
   height: 22px;
   top: -2px;
 `;

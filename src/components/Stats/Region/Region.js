@@ -88,7 +88,7 @@ export default function Region({country, code}) {
           <ShareBtn onPress={share} icon={<ShareIcon />}>
             {t('stats.country.share')}
           </ShareBtn>
-          <ListBtn onPress={openList} icon={<ListIcon />}>
+          <ListBtn onPress={openList} icon={<ListIcon color="white" />}>
             {t('stats.regions.all')}
           </ListBtn>
         </Actions>
