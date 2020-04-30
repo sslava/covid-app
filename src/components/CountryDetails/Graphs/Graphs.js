@@ -4,11 +4,12 @@ import {useTheme} from 'styled-components/native';
 import {Animated, Dimensions} from 'react-native';
 
 import {range} from '../../../common/utils';
+import {t} from '../../../common/locale';
 
 import BarChartSlide from './BarChartSlide';
 import TotalsSlide from './TotalsSlide';
 
-import {deltaConfirmed, deltaDeaths} from './model';
+import {activeDaily, deathsDaily} from './model';
 
 import {Container, ScrollIndicator, Dot} from './Graphs.styles';
 
@@ -21,8 +22,8 @@ export default function Graphs({country, history}) {
   if (!history || !history.length) {
     return null;
   }
-
   const fr = Animated.divide(scrollX.current, width);
+
   return (
     <Container>
       <Animated.ScrollView
@@ -33,16 +34,16 @@ export default function Graphs({country, history}) {
           [{nativeEvent: {contentOffset: {x: scrollX.current}}}],
           {useNativeDriver: true},
         )}>
-        <TotalsSlide title="stackedBar" history={history} />
+        <TotalsSlide title={t('country.slides.totals')} history={history} />
         <BarChartSlide
-          title="deltaCases"
-          getChartData={deltaConfirmed}
+          title={t('country.slides.dailyActive')}
+          getChartData={activeDaily}
           color={theme.activeColor}
           history={history}
         />
         <BarChartSlide
-          title="deltaDeaths"
-          getChartData={deltaDeaths}
+          title={t('country.slides.dailyDeaths')}
+          getChartData={deathsDaily}
           color={theme.deathsColor}
           history={history}
         />

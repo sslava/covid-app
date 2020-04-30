@@ -125,15 +125,22 @@
   },
   "country": {
     "today": {
-      "title": "За сутки"
+      "title": "Last day"
     },
     "all": {
-      "title": "Overall stats",
+      "title": "Total stats",
       "recoveryRate": "Recovery rate",
-      "deathsRate": "Deaths rate"
+      "deathsRate": "Deaths rate",
+      "rank": "in the world"
     },
-    "graphs": {
-      "title": "Новые случаи в сутки"
+    "slides": {
+      "legend": {
+        "lastday": "Last day",
+        "peak": "Peak — %{date}"
+      },
+      "totals": "Total cases",
+      "dailyActive": "Daily new cases",
+      "dailyDeaths": "Daily deaths"
     }
   },
   "alpha2": {
