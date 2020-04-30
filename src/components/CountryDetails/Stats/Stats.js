@@ -13,7 +13,7 @@ export default function Stats({country, history}) {
   return (
     <ContentBlock>
       <Header>{t('country.all.title')}</Header>
-      <TotalStatsExtended country={country} />
+      {country && <TotalStatsExtended country={country} />}
       <Comparison left={country} world={world} />
     </ContentBlock>
   );

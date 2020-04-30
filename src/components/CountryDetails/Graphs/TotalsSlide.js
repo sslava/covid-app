@@ -6,11 +6,7 @@ import {formatDate, t, formatNumber} from '../../../common/locale';
 import StackedBarChart from '../../common/charts/BarChart/StackedBarChart';
 
 import {Header} from '../Layout';
-import {
-  composeStackedBarChart,
-  sortBy,
-  lastN,
-} from '../../shared/Stats/historyGraph';
+import {totalCases} from './model';
 
 import {
   Slide,
@@ -23,24 +19,11 @@ import {
 } from './Slide';
 
 const categories = ['deaths', 'active', 'recovered'];
-
 const dataMax = (data) => Math.max(...data.map((d) => d.total));
-
-const historyMapper = (items) => {
-  return items.map((d) => ({
-    active: +d.total_active,
-    recovered: +d.total_recovered,
-    deaths: +d.total_deaths,
-    total: +d.total_cases,
-    key: d.updated_at,
-  }));
-};
-
-const getTotals = composeStackedBarChart(historyMapper, sortBy(), lastN(40));
 
 export default function TotalsSlide({title, color, history}) {
   const theme = useTheme();
-  const data = useMemo(() => getTotals(history), [history]);
+  const data = useMemo(() => totalCases(history), [history]);
   const colors = useMemo(
     () => ({
       active: theme.activeColor,

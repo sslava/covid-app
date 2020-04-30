@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const ContentBlockContainer = styled.View`
+export const ContentBlock = styled.View`
   background-color: ${(p) => p.theme.primaryBackground};
   margin-top: 12px;
   padding-horizontal: 20px;
   padding-vertical: 20px;
 `;
-
-export function ContentBlock({children}) {
-  return <ContentBlockContainer>{children}</ContentBlockContainer>;
-}
 
 const HeaderContainer = styled.View`
   padding-bottom: 18px;
