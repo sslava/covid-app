@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import {Button} from '../../common/Button';
+import {Button, PrimaryButton} from '../../common/Button';
 
 export const Container = styled.View`
   background-color: ${(p) => p.theme.primaryBackground};
@@ -10,6 +10,8 @@ export const Content = styled.View`
   padding-horizontal: 20px;
   padding-top: 23px;
 `;
+
+export const Tappable = styled.TouchableOpacity``;
 
 export const Icon = styled.Image`
   height: 26px;
@@ -39,7 +41,7 @@ export const ShareBtn = styled(Button)`
   margin-right: 10px;
 `;
 
-export const CountryBtn = styled(Button)`
+export const CountryBtn = styled(PrimaryButton)`
   flex: 1;
   margin-left: 10px;
 `;

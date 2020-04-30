@@ -26,6 +26,7 @@ import {
   Actions,
   ShareBtn,
   CountryBtn,
+  Tappable,
 } from './PrimaryCountry.styles';
 
 export default function PrimaryCountry({code, country}) {
@@ -65,21 +66,25 @@ export default function PrimaryCountry({code, country}) {
         <DDIcon source={ddIcon} />
       </Subheader>
       <Content>
-        <Dynamic country={country} history={history} animated />
-        <StatsContainer>
-          <TotalStats
-            total={country.total}
-            recovered={country.recovered}
-            deaths={country.deaths}
-            active={country.active}
-            deaths_new={country.deaths_new}
-          />
-        </StatsContainer>
+        <Tappable activeOpacity={0.8} onPress={openDetails}>
+          <Dynamic country={country} history={history} animated />
+          <StatsContainer>
+            <TotalStats
+              total={country.total}
+              recovered={country.recovered}
+              deaths={country.deaths}
+              active={country.active}
+              deaths_new={country.deaths_new}
+            />
+          </StatsContainer>
+        </Tappable>
         <Actions>
           <ShareBtn onPress={share} icon={<ShareIcon />}>
             {t('stats.country.share')}
           </ShareBtn>
-          <CountryBtn onPress={openDetails} icon={<DetailsIcon />}>
+          <CountryBtn
+            onPress={openDetails}
+            icon={<DetailsIcon color="white" />}>
             {t('stats.country.details')}
           </CountryBtn>
         </Actions>
