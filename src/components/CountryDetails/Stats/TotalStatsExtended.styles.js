@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import {formatNumber} from '../../../common/locale';
+import {formatNumber, t} from '../../../common/locale';
 import HorizontalBar from '../../common/charts/HorizontalBar/HorizontalBar';
 import globeIcon from '../../../assets/icons/globe-2.png';
 
@@ -83,7 +83,9 @@ export function StatsNumXl({caption, number, pos}) {
         {!!pos && (
           <PositionXL>
             <PositionIcon source={globeIcon} />
-            <Place>#{pos} в мире</Place>
+            <Place>
+              #{pos} {t('country.all.rank')}
+            </Place>
           </PositionXL>
         )}
       </XlContent>

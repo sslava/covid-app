@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 import {findLatestPeak} from '../../shared/Stats/historyGraph';
-import {formatNumber, formatDate} from '../../../common/locale';
+import {formatNumber, formatDate, t} from '../../../common/locale';
 import LabeledBarChart from '../../common/charts/BarChart/LabeledBarChart';
 
 import {Header} from '../Layout';
@@ -42,11 +42,13 @@ export default function BarChartSlide({title, color, getChartData, history}) {
       </ChartContainer>
       <Values>
         <Value>
-          <ValueTitle>Пик – {formatDate(peak.label)}</ValueTitle>
+          <ValueTitle>
+            {t('country.slides.legend.peak', {date: formatDate(peak.label)})}
+          </ValueTitle>
           <ValueNumber>{formatNumber(peak.value)}</ValueNumber>
         </Value>
         <Value>
-          <ValueTitle>Последние сутки</ValueTitle>
+          <ValueTitle>{t('country.slides.legend.lastday')}</ValueTitle>
           <ValueNumber>{formatNumber(last.value)}</ValueNumber>
         </Value>
       </Values>

@@ -5,6 +5,8 @@ import {useSelector} from 'react-redux';
 import {t} from '../../../common/locale';
 import useStatsBar from '../../shared/useStatsBar';
 
+import {makeCountryRatingSelector} from '../../../app/statsModule';
+
 import SlidingBlocks from '../../shared/Stats/TotalStats/SlidingBlocks';
 
 import {
@@ -12,8 +14,7 @@ import {
   Bar,
   StatsNum,
   StatsNumXl,
-} from './TotalStatsExtended.stykes';
-import {makeCountryRatingSelector} from '../../../app/statsModule';
+} from './TotalStatsExtended.styles';
 
 export default function TotalStatsExtended({country}) {
   const theme = useTheme();
