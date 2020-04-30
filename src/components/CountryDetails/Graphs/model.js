@@ -18,6 +18,12 @@ export const deathsDaily = composeBarChart(
   lastN(50),
 );
 
+export const totalActive = composeBarChart(
+  valueField((h) => +h.total_active),
+  sortBy(),
+  lastN(50),
+);
+
 const historyMapper = (items) => {
   return items.map((d) => ({
     active: +d.total_active,
