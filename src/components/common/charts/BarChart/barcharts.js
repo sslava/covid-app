@@ -1,4 +1,4 @@
-import {useRef, useMemo} from 'react';
+import {useMemo} from 'react';
 import {Animated} from 'react-native';
 
 import {scaleBand, scaleLinear} from 'd3-scale';
@@ -6,9 +6,10 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 import {range} from '../../../../common/utils';
 
 export function useBarChart(data, width, height, delta, pRight, pTop) {
-  const max = useMemo(() => Math.max(...data.map((d) => d.value)), [data]);
-  const xdomain = useMemo(() => range(data.length), [data.length]);
-
+  const [xdomain, max] = useMemo(
+    () => [range(data.length), Math.max(...data.map((d) => d.value))],
+    [data],
+  );
   return useScales(xdomain, max, width, height, delta, pRight, pTop);
 }
 
@@ -21,15 +22,14 @@ export function useScales(
   pRight = 0,
   pTop = 0,
 ) {
-  const scales = useRef({xs: scaleBand(), ys: scaleLinear()}).current;
-  scales.xs
-    .domain(xdomain)
-    .range([0, width - pRight])
-    .padding(delta);
-
-  scales.ys.domain([0, max]).range([height, pTop]);
-
-  return scales;
+  return useMemo(() => {
+    const xs = scaleBand()
+      .domain(xdomain)
+      .range([0, width - pRight])
+      .padding(delta);
+    const ys = scaleLinear().domain([0, max]).range([height, pTop]);
+    return {xs, ys};
+  }, [xdomain, max, width, height, delta, pRight, pTop]);
 }
 
 export function getBar(item, index, xs, ys, height) {

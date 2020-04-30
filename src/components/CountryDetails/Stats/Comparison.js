@@ -2,12 +2,12 @@ import React, {useState, useMemo, useCallback} from 'react';
 
 import {t, countryName} from '../../../common/locale';
 import {useSelector} from 'react-redux';
-import {Modal} from 'react-native';
 
 import worldIcon from '../../../assets/icons/earth.png';
 import countryIcons from '../../common/countryIcons';
 import useToggle from '../../common/useToggle';
-import CountrySelect from '../../shared/CountrySelect/CountrySelect';
+
+import CountrySelectModal from '../../shared/CountrySelect/CountrySelectModal';
 
 import {makeCountrySelector} from '../../../app/statsModule';
 
@@ -26,15 +26,10 @@ const getPercent = (fraction, total) =>
   `${((100 * fraction) / total).toFixed(2)}%`;
 
 export default function Comparison({left, world}) {
-  const [modal, toggleModal] = useToggle();
+  const [modal, toggleModal] = useToggle(false);
+
   const [rightId, setRightId] = useState(null);
-  const selectRight = useCallback(
-    (id) => {
-      setRightId(id);
-      toggleModal();
-    },
-    [toggleModal],
-  );
+  const selectRight = useCallback((id) => setRightId(id), []);
 
   const countrySelector = useMemo(makeCountrySelector, []);
   const right = useSelector((s) => countrySelector(s, rightId)) || world;
@@ -65,12 +60,12 @@ export default function Comparison({left, world}) {
         <MetricaName>{t('country.all.deathsRate')}</MetricaName>
         <Percent right>{getPercent(right.deaths, right.total)}</Percent>
       </Metrica>
-      <Modal
+      <CountrySelectModal
+        selected={rightId}
+        onSelect={selectRight}
         visible={modal}
-        animationType="slide"
-        presentationStyle="formSheet">
-        <CountrySelect selected={rightId} onSelect={selectRight} />
-      </Modal>
+        onHide={toggleModal}
+      />
     </Container>
   );
 }
