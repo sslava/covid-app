@@ -6,8 +6,8 @@ import {t, regionName, countryName} from '../../../common/locale';
 import {ShareIcon, ListIcon} from '../../common/buttonIcons';
 
 import Subheader from '../common/Subheader';
-import TotalStats from '../../shared/Stats/TotalStats';
-import ShareRegion from '../../shared/ShareRegion';
+import TotalStats from '../common/TotalStats';
+import ShareRegion from '../../shared/Share/Region/ShareRegion';
 
 import shareImageDialog from '../../common/shareImage';
 import {useOffscreenViewShot} from '../../common/OffscreenViewshot';

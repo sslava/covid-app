@@ -5,7 +5,7 @@ export const Container = styled.View`
 `;
 
 export const WorldContainer = styled.View`
-  padding-top: 30px;
+  padding-top: 20px;
   border-bottom-width: 10px;
   border-bottom-color: ${(p) => p.theme.borderLightColor};
 `;

@@ -75,13 +75,20 @@ export const makeCountrySelector = () =>
       if (!code) {
         return null;
       }
-      const primary = countries.find((c) => c.code === code);
-      if (!primary) {
-        return countries.find((c) => c.code === 'US');
-      }
-      return primary;
+      return countries.find((c) => c.code === code);
     },
   );
+
+export const makePrimaryCountrySelector = () => {
+  const countrySelector = makeCountrySelector();
+  return createSelector(
+    countrySelector,
+    countriesSelector,
+    (country, countries) => {
+      return country || countries.find((c) => c.code === 'US');
+    },
+  );
+};
 
 export function sortTotal(arr) {
   return [...arr].sort((a, b) => b.total - a.total);
@@ -91,6 +98,34 @@ export function sortActive(arr) {
   return [...arr].sort((a, b) => b.active - a.active);
 }
 
+export function sortRecovered(arr) {
+  return [...arr].sort((a, b) => b.recovered - a.recovered);
+}
+
 export function sortDeaths(arr) {
   return [...arr].sort((a, b) => b.deaths - a.deaths);
 }
+
+export const sortedCountriesSelector = createSelector(
+  countriesSelector,
+  (countries) => ({
+    total: sortTotal(countries),
+    active: sortActive(countries),
+    recovered: sortRecovered(countries),
+    deaths: sortDeaths(countries),
+  }),
+);
+
+export const makeCountryRatingSelector = () =>
+  createSelector(
+    sortedCountriesSelector,
+    (s, code) => code,
+    (sorted, code) => {
+      return {
+        total: sorted.total.findIndex((c) => c.code === code) + 1,
+        active: sorted.active.findIndex((c) => c.code === code) + 1,
+        recovered: sorted.recovered.findIndex((c) => c.code === code) + 1,
+        deaths: sorted.deaths.findIndex((c) => c.code === code) + 1,
+      };
+    },
+  );

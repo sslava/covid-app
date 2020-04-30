@@ -1,11 +1,13 @@
 import React, {useMemo} from 'react';
 import {useTheme} from 'styled-components/native';
 
-import {formatNumber, t} from '../../../common/locale';
+import {formatNumber, t, formatDate} from '../../../common/locale';
 import downIcon from '../../../assets/icons/arrow-down.png';
 
-import BarChart from '../../common/charts/BarChart';
-import {getGraphData, getLastStats, lastX} from './model';
+import AnimatedBarChart from '../../common/charts/BarChart/AnimatedBarChart';
+
+import {getLatestStats} from './latestStats';
+import {lastN, composeBarChart, sortBy, valueField} from './historyGraph';
 
 import {
   Container,
@@ -23,20 +25,25 @@ import {
   Arrow,
 } from './Dynamic.styles';
 
+const deltaConfirmedGraph = composeBarChart(
+  valueField((h) => +h.delta_confirmed),
+  sortBy(),
+  lastN(14),
+);
+
 export const plusFormatter = (num) => `${num ? '+' : ''}${formatNumber(num)}`;
 
 export default function Dynamic({country, history, animated, color}) {
   const theme = useTheme();
-
-  const graph = useMemo(() => getGraphData(lastX(history, 14)), [history]);
-  const [today, yesterday] = getLastStats(history, country);
+  const graph = useMemo(() => deltaConfirmedGraph(history), [history]);
+  const [today, yesterday] = getLatestStats(history, country);
 
   return (
     <Container>
       <Content>
         <Today>
           <TodayCaption color={color}>
-            {t('stats.country.todayCases', {date: today.date})}
+            {t('stats.country.todayCases', {date: formatDate(today.date)})}
           </TodayCaption>
           <TodayContent>
             <TodayNumber>{plusFormatter(today.value)}</TodayNumber>
@@ -52,7 +59,7 @@ export default function Dynamic({country, history, animated, color}) {
             <GraphCaption color={color}>
               {t('stats.country.lastX', {days: graph.length})}
             </GraphCaption>
-            <BarChart
+            <AnimatedBarChart
               color={color || theme.secondaryTextColor}
               width={90}
               height={50}

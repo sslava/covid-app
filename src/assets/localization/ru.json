@@ -123,6 +123,27 @@
   "regionselect": {
     "title": "Выберите регион"
   },
+  "country": {
+    "today": {
+      "title": "За сутки"
+    },
+    "all": {
+      "title": "За все время",
+      "recoveryRate": "Процент выздоровлений",
+      "deathsRate": "Процент смертей",
+      "rank": "в мире"
+    },
+    "slides": {
+      "legend": {
+        "lastday": "Последние сутки",
+        "peak": "Пик — %{date}"
+      },
+      "totals": "Рост значений в сутки",
+      "dailyActive": "Новые случаи в сутки",
+      "dailyDeaths": "Смертей в сутки",
+      "totalActive": "Болеет сейчас"
+    }
+  },
   "alpha2": {
     "AU": "Австралия",
     "AT": "Австрия",

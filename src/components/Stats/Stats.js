@@ -3,10 +3,10 @@ import {useSelector} from 'react-redux';
 
 import {t} from '../../common/locale';
 
-import {makeCountrySelector} from '../../app/statsModule';
+import {makePrimaryCountrySelector} from '../../app/statsModule';
 
 import {countrySupportsRegions} from '../../app/preferencesModule';
-import LargeHeader from '../shared/Header/LargeHeader';
+import LargeHeader from '../common/Header/LargeHeader';
 import WorldStats from './World/WorldStats';
 import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
 import Countries from './Countries/Countries';
@@ -20,19 +20,19 @@ import {
 } from './Stats.styles';
 
 export default function Stats({code}) {
-  const countrySelector = useMemo(makeCountrySelector);
+  const countrySelector = useMemo(makePrimaryCountrySelector, []);
   const country = useSelector((s) => countrySelector(s, code));
 
   return (
     <Container>
       <LargeHeader title={t('stats.title')} />
-      <WorldContainer>
-        <WorldStats />
-      </WorldContainer>
       <PrimaryContainer>
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
       {countrySupportsRegions(code) && <Region code={code} country={country} />}
+      <WorldContainer>
+        <WorldStats />
+      </WorldContainer>
       <CountriesContainer>
         <Countries />
       </CountriesContainer>

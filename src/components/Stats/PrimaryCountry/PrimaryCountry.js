@@ -8,9 +8,9 @@ import {makeCounrtyHistorySelector} from '../../../app/historyModule';
 import {countryName, t} from '../../../common/locale';
 
 import Subheader from '../common/Subheader';
-import TotalStats, {StatsContainer} from '../../shared/Stats/TotalStats';
+import TotalStats, {StatsContainer} from '../common/TotalStats';
 import Dynamic from '../../shared/Stats/Dynamic';
-import ShareCountry from '../../shared/ShareCountry';
+import ShareCountry from '../../shared/Share/County/ShareCountry';
 
 import {DetailsIcon, ShareIcon} from '../../common/buttonIcons';
 import {useOffscreenViewShot} from '../../common/OffscreenViewshot';
@@ -79,9 +79,9 @@ export default function PrimaryCountry({code, country}) {
           <ShareBtn onPress={share} icon={<ShareIcon />}>
             {t('stats.country.share')}
           </ShareBtn>
-          {/* <CountryBtn onPress={openDetails} icon={<DetailsIcon />}>
+          <CountryBtn onPress={openDetails} icon={<DetailsIcon />}>
             {t('stats.country.details')}
-          </CountryBtn> */}
+          </CountryBtn>
         </Actions>
       </Content>
       <ShareCountry
