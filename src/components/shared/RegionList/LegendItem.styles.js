@@ -25,7 +25,7 @@ export const Right = styled.View`
   flex-direction: row;
   align-items: center;
   margin-left: 10px;
-  width: ${(p) => (p.skipToday ? 75 : 140)}px;
+  width: ${(p) => (p.skipToday ? 80 : 148)}px;
 `;
 
 export const Container = styled.View`
