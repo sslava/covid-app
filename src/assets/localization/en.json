@@ -140,7 +140,8 @@
       },
       "totals": "Total cases",
       "dailyActive": "Daily new cases",
-      "dailyDeaths": "Daily deaths"
+      "dailyDeaths": "Daily deaths",
+      "totalActive": "Active cases"
     }
   },
   "alpha2": {
