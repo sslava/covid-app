@@ -1,5 +1,4 @@
 import {useMemo} from 'react';
-import {Animated} from 'react-native';
 
 import {scaleBand, scaleLinear} from 'd3-scale';
 
@@ -38,14 +37,5 @@ export function getBar(item, index, xs, ys, height) {
     width: xs.bandwidth(),
     y: ys(item.value),
     height: height - ys(item.value),
-  };
-}
-
-export function getAnimatedBar(item, index, xs, ys, height, anim) {
-  return {
-    x: xs(index),
-    width: xs.bandwidth(),
-    y: ys(item.value),
-    height: Animated.subtract(height, Animated.multiply(anim, ys(item.value))),
   };
 }

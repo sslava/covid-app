@@ -4,7 +4,7 @@ import {useTheme} from 'styled-components/native';
 import {formatNumber, t, formatDate} from '../../../common/locale';
 import downIcon from '../../../assets/icons/arrow-down.png';
 
-import AnimatedBarChart from '../../common/charts/BarChart/AnimatedBarChart';
+import BarChart from '../../common/charts/BarChart/BarChart';
 
 import {
   getLatestStats,
@@ -38,12 +38,20 @@ const deltaConfirmedGraph = composeBarChart(
 
 export const plusFormatter = (num) => `${num ? '+' : ''}${formatNumber(num)}`;
 
+const createSetFill = (length, fill) => (_, index) =>
+  index === length - 1 ? {fill} : {};
+
 export default function Dynamic({country, history, animated, color}) {
   const theme = useTheme();
   const chart = useMemo(() => deltaConfirmedGraph(history, country), [
     history,
     country,
   ]);
+
+  const setFill = useMemo(
+    () => createSetFill(chart.length, theme.activeColor),
+    [chart.length, theme.activeColor],
+  );
 
   const [today, yesterday] = getLatestStats(history, country);
 
@@ -68,12 +76,13 @@ export default function Dynamic({country, history, animated, color}) {
             <GraphCaption color={color}>
               {t('stats.country.lastX', {days: chart.length})}
             </GraphCaption>
-            <AnimatedBarChart
+            <BarChart
               color={color || theme.secondaryTextColor}
               width={90}
               height={50}
               data={chart}
-              animated={animated}
+              padding={0.5}
+              getItemProps={setFill}
             />
           </GraphContainer>
         )}
