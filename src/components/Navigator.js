@@ -16,8 +16,8 @@ import RegionSelectScreen from './RegionSelect/RegionSelectScreen';
 
 import DeatilsScreen from './CountryDetails/DeatilsScreen';
 
-import {HeaderBack, HeaderClose} from './shared/Header/HeaderBack';
-import HeaderCountrySelect from './shared/Header/HeaderCountrySelect';
+import {HeaderBack, HeaderCloseImg} from './common/Header/Header';
+import HeaderCountrySelect from './shared/HeaderCountrySelect';
 import TabIcon from './common/TabIcon';
 
 import infoIcon from '../assets/icons/info.png';
@@ -120,7 +120,7 @@ export default function Navigator() {
           component={CountrySelectScreen}
           options={{
             headerBackTitleVisible: false,
-            headerBackImage: HeaderClose,
+            headerBackImage: HeaderCloseImg,
             title: t('countryselect.title'),
             gestureEnabled: true,
             ...TransitionPresets.ModalTransition,
@@ -131,7 +131,7 @@ export default function Navigator() {
           component={RegionSelectScreen}
           options={{
             headerBackTitleVisible: false,
-            headerBackImage: HeaderClose,
+            headerBackImage: HeaderCloseImg,
             title: t('regionselect.title'),
             gestureEnabled: true,
             ...TransitionPresets.ModalTransition,

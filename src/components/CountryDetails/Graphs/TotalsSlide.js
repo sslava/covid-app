@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react';
 import {useTheme} from 'styled-components';
 
-import {formatDate, t} from '../../../common/locale';
+import {formatDate, t, formatNumber} from '../../../common/locale';
 
 import StackedBarChart from '../../common/charts/BarChart/StackedBarChart';
 
@@ -26,14 +26,15 @@ const categories = ['deaths', 'active', 'recovered'];
 
 const dataMax = (data) => Math.max(...data.map((d) => d.total));
 
-const historyMapper = (data) =>
-  data.map((d) => ({
+const historyMapper = (items) => {
+  return items.map((d) => ({
     active: +d.total_active,
     recovered: +d.total_recovered,
     deaths: +d.total_deaths,
     total: +d.total_cases,
     key: d.updated_at,
   }));
+};
 
 const getTotals = composeStackedBarChart(historyMapper, sortBy(), lastN(40));
 
@@ -48,6 +49,7 @@ export default function TotalsSlide({title, color, history}) {
     }),
     [theme],
   );
+  const last = data[data.length - 1];
   return (
     <Slide>
       <Header>{title}</Header>
@@ -60,9 +62,11 @@ export default function TotalsSlide({title, color, history}) {
           height={150}
           maxFn={dataMax}
           categories={categories}
+          label={formatNumber(last.total)}
+          labelColor={theme.primaryTextColor}
         />
         <Dates>
-          {formatDate(data[0].key)} — {formatDate(data[data.length - 1].key)}
+          {formatDate(data[0].key)} — {formatDate(last.key)}
         </Dates>
       </ChartContainer>
       <Legend>

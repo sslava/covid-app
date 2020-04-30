@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import countryIcons from '../../common/countryIcons';
-import downIcon from '../../../assets/icons/dropdown.png';
+import countryIcons from '../common/countryIcons';
+import downIcon from '../../assets/icons/dropdown.png';
 
 const Container = styled.TouchableOpacity`
   flex-direction: row;
