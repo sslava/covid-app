@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {t, formatDate} from '../../../common/locale';
 
 import Dynamic from '../../shared/Stats/Dynamic';
 
 import {ContentBlock, Header} from '../Layout';
 
-export default function Today({country, history}) {
+function Today({country, history}) {
   if (!country || !history) {
     return null;
   }
@@ -18,3 +18,5 @@ export default function Today({country, history}) {
     </ContentBlock>
   );
 }
+
+export default memo(Today);

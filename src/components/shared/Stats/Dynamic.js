@@ -6,8 +6,13 @@ import downIcon from '../../../assets/icons/arrow-down.png';
 
 import AnimatedBarChart from '../../common/charts/BarChart/AnimatedBarChart';
 
-import {getLatestStats} from './latestStats';
-import {lastN, composeBarChart, sortBy, valueField} from './historyGraph';
+import {
+  getLatestStats,
+  lastN,
+  composeBarChart,
+  mergeTodayStats,
+  valueField,
+} from '../historyModel';
 
 import {
   Container,
@@ -27,7 +32,7 @@ import {
 
 const deltaConfirmedGraph = composeBarChart(
   valueField((h) => +h.delta_confirmed),
-  sortBy(),
+  mergeTodayStats,
   lastN(14),
 );
 
@@ -35,7 +40,11 @@ export const plusFormatter = (num) => `${num ? '+' : ''}${formatNumber(num)}`;
 
 export default function Dynamic({country, history, animated, color}) {
   const theme = useTheme();
-  const graph = useMemo(() => deltaConfirmedGraph(history), [history]);
+  const chart = useMemo(() => deltaConfirmedGraph(history, country), [
+    history,
+    country,
+  ]);
+
   const [today, yesterday] = getLatestStats(history, country);
 
   return (
@@ -43,7 +52,7 @@ export default function Dynamic({country, history, animated, color}) {
       <Content>
         <Today>
           <TodayCaption color={color}>
-            {t('stats.country.todayCases', {date: formatDate(today.date)})}
+            {t('stats.country.todayCases', {date: formatDate(today.label)})}
           </TodayCaption>
           <TodayContent>
             <TodayNumber>{plusFormatter(today.value)}</TodayNumber>
@@ -54,16 +63,16 @@ export default function Dynamic({country, history, animated, color}) {
             )}
           </TodayContent>
         </Today>
-        {graph && graph.length > 0 && (
+        {chart && chart.length > 0 && (
           <GraphContainer>
             <GraphCaption color={color}>
-              {t('stats.country.lastX', {days: graph.length})}
+              {t('stats.country.lastX', {days: chart.length})}
             </GraphCaption>
             <AnimatedBarChart
               color={color || theme.secondaryTextColor}
               width={90}
               height={50}
-              data={graph}
+              data={chart}
               animated={animated}
             />
           </GraphContainer>

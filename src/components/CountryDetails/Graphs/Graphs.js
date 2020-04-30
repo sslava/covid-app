@@ -34,23 +34,30 @@ export default function Graphs({country, history}) {
           [{nativeEvent: {contentOffset: {x: scrollX.current}}}],
           {useNativeDriver: true},
         )}>
-        <TotalsSlide title={t('country.slides.totals')} history={history} />
+        <TotalsSlide
+          title={t('country.slides.totals')}
+          country={country}
+          history={history}
+        />
         <BarChartSlide
           title={t('country.slides.dailyActive')}
           getChartData={activeDaily}
           color={theme.activeColor}
+          country={country}
           history={history}
         />
         <BarChartSlide
           title={t('country.slides.dailyDeaths')}
           getChartData={deathsDaily}
           color={theme.deathsColor}
+          country={country}
           history={history}
         />
         <BarChartSlide
           title={t('country.slides.totalActive')}
           getChartData={totalActive}
           color={theme.activeColor}
+          country={country}
           history={history}
         />
       </Animated.ScrollView>

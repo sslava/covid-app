@@ -19,3 +19,7 @@ export function withIndex(fn: (arr: Array<Object>) => Array<Object>): Function {
 }
 
 export const range = (count: number): Array<number> => [...Array(count).keys()];
+
+export function lastX<T>(array: Array<T>, x: number): Array<T> {
+  return array.slice(Math.max(array.length - x, 0));
+}
