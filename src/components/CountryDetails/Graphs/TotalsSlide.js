@@ -45,7 +45,7 @@ export default function TotalsSlide({title, color, history}) {
           data={data}
           colors={colors}
           width={width - 40}
-          delta={0.3}
+          delta={0.4}
           height={150}
           maxFn={dataMax}
           categories={categories}

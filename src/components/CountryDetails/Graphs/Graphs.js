@@ -9,7 +9,7 @@ import {t} from '../../../common/locale';
 import BarChartSlide from './BarChartSlide';
 import TotalsSlide from './TotalsSlide';
 
-import {activeDaily, deathsDaily} from './model';
+import {activeDaily, deathsDaily, totalActive} from './model';
 
 import {Container, ScrollIndicator, Dot} from './Graphs.styles';
 
@@ -47,9 +47,15 @@ export default function Graphs({country, history}) {
           color={theme.deathsColor}
           history={history}
         />
+        <BarChartSlide
+          title={t('country.slides.totalActive')}
+          getChartData={totalActive}
+          color={theme.activeColor}
+          history={history}
+        />
       </Animated.ScrollView>
       <ScrollIndicator>
-        {range(3).map((i) => (
+        {range(4).map((i) => (
           <Dot
             key={i}
             style={{
