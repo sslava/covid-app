@@ -123,6 +123,27 @@
   "regionselect": {
     "title": "Select state"
   },
+  "country": {
+    "today": {
+      "title": "Last day"
+    },
+    "all": {
+      "title": "Total stats",
+      "recoveryRate": "Recovery rate",
+      "deathsRate": "Deaths rate",
+      "rank": "in the world"
+    },
+    "slides": {
+      "legend": {
+        "lastday": "Last day",
+        "peak": "Peak — %{date}"
+      },
+      "totals": "Total cases",
+      "dailyActive": "Daily new cases",
+      "dailyDeaths": "Daily deaths",
+      "totalActive": "Active cases"
+    }
+  },
   "alpha2": {
     "AF": "Afghanistan",
     "AL": "Albania",
