@@ -142,7 +142,8 @@
       "totals": "Рост значений в сутки",
       "dailyActive": "Новые случаи в сутки",
       "dailyDeaths": "Смертей в сутки",
-      "totalActive": "Болеет сейчас"
+      "totalActive": "Болеет сейчас",
+      "totalConfirmed": "Случаев заболевания"
     }
   },
   "alpha2": {

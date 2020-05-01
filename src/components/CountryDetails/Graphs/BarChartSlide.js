@@ -18,7 +18,13 @@ import {
 
 const {width} = Dimensions.get('window');
 
-export default function BarChartSlide({title, color, getChartData, history}) {
+export default function BarChartSlide({
+  title,
+  color,
+  getChartData,
+  history,
+  hideTotal,
+}) {
   const {chart, peak, peakIndex} = useMemo(() => {
     const data = getChartData(history);
     const [p, i] = findLatestPeak(data);
@@ -43,18 +49,20 @@ export default function BarChartSlide({title, color, getChartData, history}) {
           {formatDate(first.label)} — {formatDate(last.label)}
         </Dates>
       </ChartContainer>
-      <Values>
-        <Value>
-          <ValueTitle>
-            {t('country.slides.legend.peak', {date: formatDate(peak.label)})}
-          </ValueTitle>
-          <ValueNumber>{formatNumber(peak.value)}</ValueNumber>
-        </Value>
-        <Value>
-          <ValueTitle>{t('country.slides.legend.lastday')}</ValueTitle>
-          <ValueNumber>{formatNumber(last.value)}</ValueNumber>
-        </Value>
-      </Values>
+      {!hideTotal && (
+        <Values>
+          <Value>
+            <ValueTitle>
+              {t('country.slides.legend.peak', {date: formatDate(peak.label)})}
+            </ValueTitle>
+            <ValueNumber>{formatNumber(peak.value)}</ValueNumber>
+          </Value>
+          <Value>
+            <ValueTitle>{t('country.slides.legend.lastday')}</ValueTitle>
+            <ValueNumber>{formatNumber(last.value)}</ValueNumber>
+          </Value>
+        </Values>
+      )}
     </Slide>
   );
 }
