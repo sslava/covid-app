@@ -11,7 +11,9 @@ export const Content = styled.View`
   padding-top: 23px;
 `;
 
-export const Tappable = styled.TouchableOpacity``;
+export const Tappable = styled.TouchableOpacity`
+  min-height: 255px;
+`;
 
 export const Icon = styled.Image`
   height: 26px;

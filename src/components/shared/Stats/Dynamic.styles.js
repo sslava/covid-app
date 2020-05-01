@@ -10,7 +10,9 @@ export const Content = styled.View`
   align-items: flex-start;
 `;
 
-export const Today = styled.View``;
+export const Today = styled.View`
+  min-height: 80px;
+`;
 
 export const TodayCaption = styled.Text`
   font-size: 13px;
@@ -28,6 +30,7 @@ export const TodayContent = styled.View`
 export const TodayNumber = styled.Text`
   margin-top: 7px;
   font-size: 48px;
+  min-height: 58px;
   line-height: 58px;
   font-weight: 500;
   color: ${(p) => p.color || p.theme.activeColor};
@@ -64,6 +67,7 @@ export const GraphCaption = styled.Text`
 
 export const Yesterday = styled.View`
   margin-top: 5px;
+  min-height: 21px;
   opacity: ${(p) => (p.color ? 0.7 : 1)};
 `;
 
