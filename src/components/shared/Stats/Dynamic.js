@@ -87,14 +87,14 @@ export default function Dynamic({country, history, animated, color}) {
           </GraphContainer>
         )}
       </Content>
-      {yesterday && (
-        <Yesterday color={color}>
+      <Yesterday color={color}>
+        {yesterday && (
           <YesterdayCaption color={color}>
             <YesterdayNumber>{plusFormatter(yesterday.value)}</YesterdayNumber>
             {t('stats.country.yesterday')}
           </YesterdayCaption>
-        </Yesterday>
-      )}
+        )}
+      </Yesterday>
     </Container>
   );
 }

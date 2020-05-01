@@ -3,7 +3,6 @@ import React, {useCallback, useEffect, useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {RefreshControl} from 'react-native';
 
-import {t} from '../../common/locale';
 import useRefresh from '../common/useRefresh';
 
 import {

@@ -25,6 +25,7 @@ export const Marker = styled.Image`
 export const Content = styled.View`
   padding-horizontal: 20px;
   padding-top: 27px;
+  min-height: 220px;
 `;
 
 export const Actions = styled.View`
