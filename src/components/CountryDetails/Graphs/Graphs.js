@@ -9,13 +9,19 @@ import {t} from '../../../common/locale';
 import BarChartSlide from './BarChartSlide';
 import TotalsSlide from './TotalsSlide';
 
-import {activeDaily, deathsDaily, totalActive, hasTotalActive} from './model';
+import {
+  activeDaily,
+  deathsDaily,
+  totalActive,
+  hasTotalActive,
+  totalConfirmed,
+} from './model';
 
 import {Container, ScrollIndicator, Dot} from './Graphs.styles';
 
 const {width} = Dimensions.get('window');
 
-export default function Graphs({country, history}) {
+export default function Graphs({history}) {
   const theme = useTheme();
   const scrollX = useRef(new Animated.Value(0));
 
@@ -23,9 +29,7 @@ export default function Graphs({country, history}) {
     return null;
   }
   const fr = Animated.divide(scrollX.current, width);
-
   const hasActive = hasTotalActive(history);
-
   return (
     <Container>
       <Animated.ScrollView
@@ -37,9 +41,13 @@ export default function Graphs({country, history}) {
           {useNativeDriver: true},
         )}>
         {hasActive && (
-          <TotalsSlide
+          <TotalsSlide title={t('country.slides.totals')} history={history} />
+        )}
+        {!hasActive && (
+          <BarChartSlide
             title={t('country.slides.totals')}
-            country={country}
+            getChartData={totalConfirmed}
+            color={theme.activeColor}
             history={history}
           />
         )}
@@ -47,14 +55,12 @@ export default function Graphs({country, history}) {
           title={t('country.slides.dailyActive')}
           getChartData={activeDaily}
           color={theme.activeColor}
-          country={country}
           history={history}
         />
         <BarChartSlide
           title={t('country.slides.dailyDeaths')}
           getChartData={deathsDaily}
           color={theme.deathsColor}
-          country={country}
           history={history}
         />
         {hasActive && (
@@ -62,13 +68,12 @@ export default function Graphs({country, history}) {
             title={t('country.slides.totalActive')}
             getChartData={totalActive}
             color={theme.activeColor}
-            country={country}
             history={history}
           />
         )}
       </Animated.ScrollView>
       <ScrollIndicator>
-        {range(hasActive ? 4 : 2).map((i) => (
+        {range(hasActive ? 4 : 3).map((i) => (
           <Dot
             key={i}
             style={{

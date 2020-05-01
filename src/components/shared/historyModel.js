@@ -196,6 +196,7 @@ export const mergeTodayStats: GraphTf = (
   if (formatDate(today.updated) === formatDate(last.updated_at)) {
     return history;
   }
+
   return history.concat(statsToHistoryItem(today));
 };
 

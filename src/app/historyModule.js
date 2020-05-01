@@ -45,6 +45,6 @@ export const makeCounrtyHistorySelector = () =>
       if (!state) {
         return [];
       }
-      return lastX(state.data, 50);
+      return lastX(state.data, 45);
     },
   );

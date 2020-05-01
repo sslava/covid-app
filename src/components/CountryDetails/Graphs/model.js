@@ -4,26 +4,34 @@ import {
   composeStackedBarChart,
   sortBy,
   valueField,
-  mergeTodayStats,
+  // mergeTodayStats,
   pickRandom,
   hasValue,
 } from '../../shared/historyModel';
 
 export const activeDaily = composeBarChart(
   valueField((h) => +h.delta_confirmed),
-  mergeTodayStats,
   lastN(45),
 );
 
 export const deathsDaily = composeBarChart(
-  valueField((h, y) => (y ? h.total_deaths - y.total_deaths : 0)),
-  mergeTodayStats,
+  valueField((h, y) => {
+    if (!y) {
+      return 0;
+    }
+    const diff = h.total_deaths - y.total_deaths;
+    return diff >= 0 ? diff : 0;
+  }),
+  lastN(45),
+);
+
+export const totalConfirmed = composeBarChart(
+  valueField((h) => +h.total_cases),
   lastN(45),
 );
 
 export const totalActive = composeBarChart(
   valueField((h) => +h.total_active),
-  mergeTodayStats,
   lastN(45),
 );
 
@@ -43,7 +51,6 @@ const historyMapper = (items) => {
 
 export const totalCases = composeStackedBarChart(
   historyMapper,
-  mergeTodayStats,
   sortBy(),
   lastN(40),
 );

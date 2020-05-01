@@ -16,7 +16,7 @@ export default function LabeledBarChart({
   paddingLeft = 20,
   labelSize = 13,
 }) {
-  const {xs, ys} = useBarChart(data, width, height, 0.5, 20, labelSize + 8);
+  const {xs, ys} = useBarChart(data, width, height, 0.5, 25, labelSize + 8);
   return (
     <Svg style={style} width={width} height={height}>
       {data.map((item, index) => (

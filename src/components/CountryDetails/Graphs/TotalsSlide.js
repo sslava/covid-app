@@ -25,9 +25,9 @@ const {width} = Dimensions.get('window');
 const categories = ['deaths', 'active', 'recovered'];
 const dataMax = (data) => Math.max(...data.map((d) => d.total));
 
-export default function TotalsSlide({title, color, history, country}) {
+export default function TotalsSlide({title, color, history}) {
   const theme = useTheme();
-  const data = useMemo(() => totalCases(history, country), [history, country]);
+  const data = useMemo(() => totalCases(history), [history]);
   const colors = useMemo(
     () => ({
       active: theme.activeColor,

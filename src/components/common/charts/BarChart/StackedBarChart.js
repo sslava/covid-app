@@ -23,7 +23,7 @@ export default function StackedBarChart({
     const domain = data.map((d) => d.key);
     return [domain, stack(data), maxFn(data)];
   }, [data, maxFn, categories]);
-  const {xs, ys} = useScales(xdomain, max, width, height, delta, 20, 20);
+  const {xs, ys} = useScales(xdomain, max, width, height, delta, 25, 20);
 
   return (
     <Svg style={style} width={width} height={height}>

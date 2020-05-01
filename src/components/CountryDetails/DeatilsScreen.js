@@ -53,7 +53,7 @@ export default function DeatilsScreen({navigation, route}) {
         }>
         <Today country={country} history={history} />
         <Stats country={country} history={history} />
-        <Graphs country={country} history={history} />
+        <Graphs history={history} />
       </Scroll>
     </Safe>
   );

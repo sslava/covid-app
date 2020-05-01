@@ -18,18 +18,12 @@ import {
 
 const {width} = Dimensions.get('window');
 
-export default function BarChartSlide({
-  title,
-  color,
-  getChartData,
-  history,
-  country,
-}) {
+export default function BarChartSlide({title, color, getChartData, history}) {
   const {chart, peak, peakIndex} = useMemo(() => {
-    const data = getChartData(history, country);
+    const data = getChartData(history);
     const [p, i] = findLatestPeak(data);
     return {chart: data, peak: p, peakIndex: i};
-  }, [history, getChartData, country]);
+  }, [history, getChartData]);
 
   const first = chart[0];
   const last = chart[chart.length - 1];
