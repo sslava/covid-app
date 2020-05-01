@@ -43,14 +43,6 @@ export default function Graphs({history}) {
         {hasActive && (
           <TotalsSlide title={t('country.slides.totals')} history={history} />
         )}
-        {!hasActive && (
-          <BarChartSlide
-            title={t('country.slides.totals')}
-            getChartData={totalConfirmed}
-            color={theme.activeColor}
-            history={history}
-          />
-        )}
         <BarChartSlide
           title={t('country.slides.dailyActive')}
           getChartData={activeDaily}
@@ -69,6 +61,15 @@ export default function Graphs({history}) {
             getChartData={totalActive}
             color={theme.activeColor}
             history={history}
+          />
+        )}
+        {!hasActive && (
+          <BarChartSlide
+            title={t('country.slides.totalConfirmed')}
+            getChartData={totalConfirmed}
+            color={theme.activeColor}
+            history={history}
+            hideTotal
           />
         )}
       </Animated.ScrollView>
