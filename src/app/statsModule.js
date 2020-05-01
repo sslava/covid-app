@@ -108,12 +108,14 @@ export function sortDeaths(arr) {
 
 export const sortedCountriesSelector = createSelector(
   countriesSelector,
-  (countries) => ({
-    total: sortTotal(countries),
-    active: sortActive(countries),
-    recovered: sortRecovered(countries),
-    deaths: sortDeaths(countries),
-  }),
+  (countries) => {
+    return {
+      total: sortTotal(countries),
+      active: sortActive(countries),
+      recovered: sortRecovered(countries),
+      deaths: sortDeaths(countries),
+    };
+  },
 );
 
 export const makeCountryRatingSelector = () =>
