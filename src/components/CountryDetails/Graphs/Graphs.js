@@ -9,7 +9,7 @@ import {t} from '../../../common/locale';
 import BarChartSlide from './BarChartSlide';
 import TotalsSlide from './TotalsSlide';
 
-import {activeDaily, deathsDaily, totalActive} from './model';
+import {activeDaily, deathsDaily, totalActive, hasTotalActive} from './model';
 
 import {Container, ScrollIndicator, Dot} from './Graphs.styles';
 
@@ -24,6 +24,8 @@ export default function Graphs({country, history}) {
   }
   const fr = Animated.divide(scrollX.current, width);
 
+  const hasActive = hasTotalActive(history);
+
   return (
     <Container>
       <Animated.ScrollView
@@ -34,11 +36,13 @@ export default function Graphs({country, history}) {
           [{nativeEvent: {contentOffset: {x: scrollX.current}}}],
           {useNativeDriver: true},
         )}>
-        <TotalsSlide
-          title={t('country.slides.totals')}
-          country={country}
-          history={history}
-        />
+        {hasActive && (
+          <TotalsSlide
+            title={t('country.slides.totals')}
+            country={country}
+            history={history}
+          />
+        )}
         <BarChartSlide
           title={t('country.slides.dailyActive')}
           getChartData={activeDaily}
@@ -53,16 +57,18 @@ export default function Graphs({country, history}) {
           country={country}
           history={history}
         />
-        <BarChartSlide
-          title={t('country.slides.totalActive')}
-          getChartData={totalActive}
-          color={theme.activeColor}
-          country={country}
-          history={history}
-        />
+        {hasActive && (
+          <BarChartSlide
+            title={t('country.slides.totalActive')}
+            getChartData={totalActive}
+            color={theme.activeColor}
+            country={country}
+            history={history}
+          />
+        )}
       </Animated.ScrollView>
       <ScrollIndicator>
-        {range(4).map((i) => (
+        {range(hasActive ? 4 : 2).map((i) => (
           <Dot
             key={i}
             style={{
