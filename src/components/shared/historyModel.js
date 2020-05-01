@@ -91,7 +91,7 @@ export function valueField(
     });
 }
 
-function composeGraph(...transforms: Array<GraphTf>): GraphTf {
+function composeTfs(...transforms: Array<GraphTf>): GraphTf {
   return (items, ...ctx) =>
     transforms.reduce(
       (result, nextTransform) => nextTransform(result, ...ctx),
@@ -103,7 +103,7 @@ export function composeBarChart(
   mapper: BarChartFn,
   ...transforms: Array<GraphTf>
 ): BarChartFn {
-  const transformer = composeGraph(...transforms);
+  const transformer = composeTfs(...transforms);
   return (...args) => mapper(transformer(...args));
 }
 
@@ -111,7 +111,7 @@ export function composeStackedBarChart(
   mapper: StackedBarChartFn,
   ...transforms: Array<GraphTf>
 ): BarChartFn {
-  const transformer = composeGraph(...transforms);
+  const transformer = composeTfs(...transforms);
   return (...args) => mapper(transformer(...args));
 }
 
@@ -160,6 +160,7 @@ const statsToBarchart = (c: StatsItem): BarChartItem => ({
   label: c.updated,
   value: +c.total_new,
 });
+
 const historyToBarhart = (h: HistoryItem): BarChartItem => ({
   label: h.updated_at,
   value: +h.delta_confirmed,
@@ -197,3 +198,24 @@ export const mergeTodayStats: GraphTf = (
   }
   return history.concat(statsToHistoryItem(today));
 };
+
+export function hasValue(value: any, field: string): boolean {
+  return (
+    value !== null &&
+    value !== undefined &&
+    value !== '' &&
+    value !== '0' &&
+    value !== 0
+  );
+}
+
+export function pickRandom(history: Array<HistoryItem>): Array<HistoryItem> {
+  if (!history || !history.length) {
+    return [];
+  }
+  return [
+    history[0],
+    history[Math.ceil(history.length / 2)],
+    history[history.length - 1],
+  ];
+}

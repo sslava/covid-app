@@ -5,6 +5,8 @@ import {
   sortBy,
   valueField,
   mergeTodayStats,
+  pickRandom,
+  hasValue,
 } from '../../shared/historyModel';
 
 export const activeDaily = composeBarChart(
@@ -24,6 +26,10 @@ export const totalActive = composeBarChart(
   mergeTodayStats,
   lastN(45),
 );
+
+export const hasTotalActive = (history: Array<HistoryItem>): boolean => {
+  return pickRandom(history).some((item) => hasValue(item.total_active));
+};
 
 const historyMapper = (items) => {
   return items.map((d) => ({
