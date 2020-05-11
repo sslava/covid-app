@@ -12,10 +12,7 @@ import {
 
 import {t, matchRegion} from '../../common/locale';
 import {withIndex} from '../../common/utils';
-import {
-  preferredCountrySelector,
-  getRegionId,
-} from '../../app/preferencesModule';
+import {getRegionId} from '../../app/preferencesModule';
 
 import Region from './Region';
 import SearchBar from '../shared/Search/SearchBar';
@@ -32,9 +29,9 @@ const sortFns = [
   withIndex(sortDeaths),
 ];
 
-export default function RegionScreen() {
+export default function RegionScreen({route}) {
   const dispatch = useDispatch();
-  const countryCode = useSelector(preferredCountrySelector);
+  const countryCode = route.params.code;
 
   const regionsSelector = useMemo(makeCountryRegionsSelector);
   const {data: all, isFetching} = useSelector((s) =>
@@ -48,7 +45,7 @@ export default function RegionScreen() {
 
   const [refresh, refreshing] = useRefresh(refreshRegions, isFetching);
 
-  const [sv, sort, changeSort] = useSortTabs();
+  const [sv, sort, changeSort] = useSortTabs(route.params.sort);
   const [states, query, setQuery] = useSortedSearch(
     all,
     matchRegion,
@@ -61,6 +58,7 @@ export default function RegionScreen() {
       <Top>
         <SearchBar
           value={query}
+          focused={!!route.params.search}
           onChange={setQuery}
           placeholder={t('states.search')}
         />

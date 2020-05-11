@@ -144,6 +144,10 @@
       "dailyDeaths": "Смертей в сутки",
       "totalActive": "Болеет сейчас",
       "totalConfirmed": "Случаев заболевания"
+    },
+    "regions": {
+      "title":"Регионы",
+      "all":"Все регионы"
     }
   },
   "alpha2": {

@@ -23,9 +23,9 @@ const HeaderSubtitle = styled.Text`
   color: ${(p) => p.theme.secondaryTextColor};
 `;
 
-export function Header({children, subtitle}) {
+export function Header({children, subtitle, style}) {
   return (
-    <HeaderContainer>
+    <HeaderContainer style={style}>
       <HeaderTitle>
         {children}
         {subtitle && <HeaderSubtitle> {subtitle}</HeaderSubtitle>}
