@@ -10,6 +10,7 @@ export default function CountrySelectModal({
   selected,
   onHide,
   onSelect,
+  world = false,
 }) {
   const select = useCallback(
     (id, countryName) => {
@@ -24,7 +25,7 @@ export default function CountrySelectModal({
   }
   return (
     <FullscreenModal title={t('countryselect.title')} visible onHide={onHide}>
-      <CountrySelect selected={selected} onSelect={select} />
+      <CountrySelect world={world} selected={selected} onSelect={select} />
     </FullscreenModal>
   );
 }
