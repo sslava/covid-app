@@ -63,6 +63,7 @@ export default function Comparison({left, world}) {
       <CountrySelectModal
         selected={rightId}
         onSelect={selectRight}
+        world
         visible={modal}
         onHide={toggleModal}
       />

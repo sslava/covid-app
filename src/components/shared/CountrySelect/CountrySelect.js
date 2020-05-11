@@ -18,9 +18,15 @@ import useDebouncedSearch from '../Search/useDebounceSearch';
 
 import {Container, Search} from './CountrySelect.styles';
 
-export default function CountrySelect({selected, onSelect}) {
+export default function CountrySelect({selected, onSelect, world = false}) {
   const all = useSelector(countriesSelector);
-  const sorted = useMemo(() => sortCountries(all), [all]);
+  const sorted = useMemo(() => {
+    let s = sortCountries(all);
+    if (!world) {
+      return s;
+    }
+    return [{code: null, country_name_en: t('country.all.world')}, ...s];
+  }, [all, world]);
   const [countries, query, setQuery] = useDebouncedSearch(sorted, matchCountry);
 
   return (
