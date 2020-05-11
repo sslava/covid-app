@@ -49,8 +49,8 @@ export default function Region({country, code}) {
   const changeRegion = useCallback(() => nav.navigate('RegionSelect'), [nav]);
 
   const openList = useCallback(
-    () => nav.navigate('Regions', {name: countryName(country)}),
-    [country, nav],
+    () => nav.navigate('Regions', {code: code, name: countryName(country)}),
+    [country, code, nav],
   );
 
   const name = regionName(region);

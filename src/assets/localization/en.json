@@ -144,6 +144,10 @@
       "dailyDeaths": "Daily deaths",
       "totalActive": "Active cases",
       "totalConfirmed": "Total cases"
+    },
+    "regions": {
+      "title":"States",
+      "all":"All states"
     }
   },
   "alpha2": {

@@ -7,14 +7,14 @@ import {range} from '../../../common/utils';
 import {t} from '../../../common/locale';
 
 import BarChartSlide from './BarChartSlide';
-// import TotalsSlide from './TotalsSlide';
+import TotalsSlide from './TotalsSlide';
 
 import {
   activeDaily,
   deathsDaily,
-  // totalActive,
-  // hasTotalActive,
-  // totalConfirmed,
+  totalActive,
+  hasTotalActive,
+  totalConfirmed,
 } from './model';
 
 import {Container, ScrollIndicator, Dot} from './Graphs.styles';
@@ -29,7 +29,7 @@ export default function Graphs({history}) {
     return null;
   }
   const fr = Animated.divide(scrollX.current, width);
-  // const hasActive = hasTotalActive(history);
+  const hasActive = hasTotalActive(history);
   return (
     <Container>
       <Animated.ScrollView
@@ -40,9 +40,9 @@ export default function Graphs({history}) {
           [{nativeEvent: {contentOffset: {x: scrollX.current}}}],
           {useNativeDriver: true},
         )}>
-        {/* {hasActive && (
+        {hasActive && (
           <TotalsSlide title={t('country.slides.totals')} history={history} />
-        )} */}
+        )}
         <BarChartSlide
           title={t('country.slides.dailyActive')}
           getChartData={activeDaily}
@@ -55,7 +55,7 @@ export default function Graphs({history}) {
           color={theme.deathsColor}
           history={history}
         />
-        {/* {hasActive && (
+        {hasActive && (
           <BarChartSlide
             title={t('country.slides.totalActive')}
             getChartData={totalActive}
@@ -71,10 +71,10 @@ export default function Graphs({history}) {
             history={history}
             hideTotal
           />
-        )} */}
+        )}
       </Animated.ScrollView>
       <ScrollIndicator>
-        {range(2).map((i) => (
+        {range(hasActive ? 4 : 3).map((i) => (
           <Dot
             key={i}
             style={{
