@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* rucovidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rucovidTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -20,6 +19,10 @@
 		6CAEEFB21FCA1DC2A83DE19D /* libPods-rucovid-rucovidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B82CC4E152506DF74A979CF /* libPods-rucovid-rucovidTests.a */; };
 		CCC50389BAC2629DC3AB2779 /* libPods-rucovid-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71384B8B9CE6D25633D9196D /* libPods-rucovid-tvOSTests.a */; };
 		ECB8ACBF1B1F3FF0A843DAEA /* libPods-rucovid-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B88DECB02C44512DAC2509 /* libPods-rucovid-tvOS.a */; };
+		F97EED4625335BFE00C33C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EED4525335BFE00C33C21 /* LaunchScreen.storyboard */; };
+		F97EED4725335BFE00C33C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97EED4525335BFE00C33C21 /* LaunchScreen.storyboard */; };
+		F97EED8B25335D5500C33C21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97EED8925335D5500C33C21 /* LaunchScreen.xib */; };
+		F97EED8C25335D5500C33C21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97EED8925335D5500C33C21 /* LaunchScreen.xib */; };
 		F9FA6C98243226CB0030AC51 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C90243226CB0030AC51 /* Ubuntu-Bold.ttf */; };
 		F9FA6C99243226CB0030AC51 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C91243226CB0030AC51 /* Ubuntu-LightItalic.ttf */; };
 		F9FA6C9A243226CB0030AC51 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9FA6C92243226CB0030AC51 /* Ubuntu-Italic.ttf */; };
@@ -55,7 +58,6 @@
 		13B07F961A680F5B00A75B9A /* Coronavirus-Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coronavirus-Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = rucovid/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = rucovid/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = rucovid/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rucovid/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = rucovid/main.m; sourceTree = "<group>"; };
@@ -75,7 +77,8 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F5BEA140B0EA98FF37DE928E /* Pods-rucovid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid.debug.xcconfig"; path = "Target Support Files/Pods-rucovid/Pods-rucovid.debug.xcconfig"; sourceTree = "<group>"; };
 		F8D5105B816F1AF9CB4DAEA5 /* Pods-rucovid-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rucovid-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rucovid-tvOSTests/Pods-rucovid-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F9F01815243229AA001C2EF5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F97EED4525335BFE00C33C21 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rucovid/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F97EED8A25335D5500C33C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = rucovid/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9FA6C90243226CB0030AC51 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 		F9FA6C91243226CB0030AC51 /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
 		F9FA6C92243226CB0030AC51 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
@@ -142,12 +145,13 @@
 		13B07FAE1A68108700A75B9A /* rucovid */ = {
 			isa = PBXGroup;
 			children = (
+				F97EED8925335D5500C33C21 /* LaunchScreen.xib */,
+				F97EED4525335BFE00C33C21 /* LaunchScreen.storyboard */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = rucovid;
@@ -241,6 +245,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				12CF1796975A9E4E38C03D74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +267,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				7A15472CEA21BE28D7DF4167 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -380,9 +386,10 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				F9FA6C9C243226CB0030AC51 /* Ubuntu-Medium.ttf in Resources */,
 				F9FA6C9B243226CB0030AC51 /* Ubuntu-MediumItalic.ttf in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				F9FA6C9E243226CB0030AC51 /* Ubuntu-Regular.ttf in Resources */,
 				F9FA6C9A243226CB0030AC51 /* Ubuntu-Italic.ttf in Resources */,
+				F97EED4625335BFE00C33C21 /* LaunchScreen.storyboard in Resources */,
+				F97EED8B25335D5500C33C21 /* LaunchScreen.xib in Resources */,
 				F9FA6C98243226CB0030AC51 /* Ubuntu-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +399,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				F97EED8C25335D5500C33C21 /* LaunchScreen.xib in Resources */,
+				F97EED4725335BFE00C33C21 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +448,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		12CF1796975A9E4E38C03D74 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rucovid-rucovidTests/Pods-rucovid-rucovidTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rucovid-rucovidTests/Pods-rucovid-rucovidTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
@@ -497,6 +524,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A15472CEA21BE28D7DF4167 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rucovid/Pods-rucovid-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rucovid/Pods-rucovid-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A83D4B5F2807751495828F1C /* [CP] Check Pods Manifest.lock */ = {
@@ -612,14 +657,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
+		F97EED8925335D5500C33C21 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-				F9F01815243229AA001C2EF5 /* ru */,
+				F97EED8A25335D5500C33C21 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = rucovid;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
