@@ -27,6 +27,7 @@
     "react-native-safe-area-context": "^3.1.8",
     "react-native-screens": "^2.11.0",
     "react-native-share": "^4.0.2",
+    "react-native-star-rating": "^1.1.0",
     "react-native-svg": "^12.1.0",
     "react-native-view-shot": "^3.1.2",
     "react-redux": "^7.2.1",
