@@ -236,9 +236,9 @@ PODS:
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
   - React-jsinspector (0.63.3)
-  - react-native-safe-area-context (3.0.2):
-    - React
-  - react-native-segmented-control (1.6.1):
+  - react-native-safe-area-context (3.1.8):
+    - React-Core
+  - react-native-segmented-control (2.1.2):
     - React
   - react-native-view-shot (3.1.2):
     - React
@@ -302,18 +302,18 @@ PODS:
     - React-Core (= 0.63.3)
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
-  - RNCAsyncStorage (1.11.0):
-    - React
+  - RNCAsyncStorage (1.12.1):
+    - React-Core
   - RNCMaskedView (0.1.10):
     - React
-  - RNGestureHandler (1.6.1):
+  - RNGestureHandler (1.8.0):
     - React
-  - RNLocalize (1.4.0):
+  - RNLocalize (1.4.2):
+    - React-Core
+  - RNScreens (2.11.0):
     - React
-  - RNScreens (2.8.0):
-    - React
-  - RNShare (3.3.2):
-    - React
+  - RNShare (4.0.2):
+    - React-Core
   - RNSVG (12.1.0):
     - React
   - Yoga (1.14.0)
@@ -495,8 +495,8 @@ SPEC CHECKSUMS:
   React-jsi: df07aa95b39c5be3e41199921509bfa929ed2b9d
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
-  react-native-safe-area-context: b11a34881faac509cad5578726c98161ad4d275c
-  react-native-segmented-control: d7c444e5cc5f526da766f8ff24346898b7ac7be5
+  react-native-safe-area-context: 79fea126c6830c85f65947c223a5e3058a666937
+  react-native-segmented-control: e257b39e80733b848d7d040e07c29eee99396aff
   react-native-view-shot: 4475fde003fe8a210053d1f98fb9e06c1d834e1c
   React-RCTActionSheet: 53ea72699698b0b47a6421cb1c8b4ab215a774aa
   React-RCTAnimation: 1befece0b5183c22ae01b966f5583f42e69a83c2
@@ -508,12 +508,12 @@ SPEC CHECKSUMS:
   React-RCTText: 65a6de06a7389098ce24340d1d3556015c38f746
   React-RCTVibration: 8e9fb25724a0805107fc1acc9075e26f814df454
   ReactCommon: 4167844018c9ed375cc01a843e9ee564399e53c3
-  RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
+  RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
-  RNLocalize: b6df30cc25ae736d37874f9bce13351db2f56796
-  RNScreens: 62211832af51e0aebcf6e8c36bcf7dd65592f244
-  RNShare: bd6518701db274b8ba282b33620885f2225a5bcf
+  RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
+  RNLocalize: 452d4118e338dee1e5ca3fac4d5a11a4ab26a46a
+  RNScreens: 0e91da98ab26d5d04c7b59a9b6bd694124caf88c
+  RNShare: 7a7277f3c313652422d9de072ac50714dff5e8a4
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   Yoga: 7d13633d129fd179e01b8953d38d47be90db185a
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
