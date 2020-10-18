@@ -33,7 +33,7 @@ export default function PrimaryCountry({code, country}) {
   const nav = useNavigation();
   const name = countryName(country);
 
-  const historySelector = useMemo(makeCounrtyHistorySelector);
+  const historySelector = useMemo(makeCounrtyHistorySelector, []);
   const history = useSelector((s) => historySelector(s, code));
 
   const changeCountry = useCallback(() => nav.navigate('CountrySelect'), [nav]);
