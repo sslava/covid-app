@@ -22,17 +22,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-7167431573335979~3108913919</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-  <key>GADApplicationIdentifier</key>
-  <string>ca-app-pub-7167431573335979~3108913919</string>
-  <key>SKAdNetworkItems</key>
-  <array>
-    <dict>
-      <key>SKAdNetworkIdentifier</key>
-      <string>cstr6suwn9.skadnetwork</string>
-    </dict>
-  </array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -50,6 +43,13 @@
 	<string>Your location is required to show actual data</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We need an access to photo library to save an image</string>
+	<key>SKAdNetworkItems</key>
+	<array>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>cstr6suwn9.skadnetwork</string>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ubuntu-Bold.ttf</string>
