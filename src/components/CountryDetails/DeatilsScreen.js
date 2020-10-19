@@ -25,6 +25,8 @@ import Regions from './Regions/Regions';
 
 import {Safe, Scroll} from './DeatilsScreen.styles';
 import {fetchCountryRegions} from '../../app/regionsModule';
+import AdmobBlock from '../Admob/AdmobBlock';
+import {adsSelector} from '../../app/adModule';
 
 export default function DeatilsScreen({navigation, route}) {
   const dispatch = useDispatch();
@@ -60,6 +62,8 @@ export default function DeatilsScreen({navigation, route}) {
   const historySelector = useMemo(makeCounrtyHistorySelector, []);
   const history = useSelector((s) => historySelector(s, code));
 
+  const ads = useSelector(adsSelector);
+
   return (
     <Safe>
       <Scroll
@@ -67,7 +71,9 @@ export default function DeatilsScreen({navigation, route}) {
           <RefreshControl refreshing={refreshing} onRefresh={refresh} />
         }>
         <Today country={country} history={history} />
+        <AdmobBlock unitId={ads.countryTop} />
         <Stats country={country} history={history} />
+        <AdmobBlock unitId={ads.countryMiddle} />
         <Graphs history={history} />
         {hasRegions && <Regions code={code} country={country} />}
       </Scroll>

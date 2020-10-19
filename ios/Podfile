@@ -4,6 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '10.0'
 
 target 'rucovid' do
+
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
@@ -21,6 +22,8 @@ target 'rucovid' do
   post_install do |installer|
     flipper_post_install(installer)
   end
+
+  pod 'Google-Mobile-Ads-SDK'
 end
 
 target 'rucovid-tvOS' do
