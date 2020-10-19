@@ -17,7 +17,7 @@ export const StatsContainer = styled.View`
 `;
 
 export const Bar = styled(HorizontalBar)`
-  padding-vertical: 7px;
+  margin-vertical: 10px;
 `;
 
 const XlNumber = styled(Number)`

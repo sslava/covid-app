@@ -36,6 +36,7 @@ export default function Comparison({left, world}) {
 
   const leftIcon = countryIcons[left.code];
   const rightIcon = rightId ? countryIcons[right.code] : worldIcon;
+
   return (
     <Container>
       <Headline>
@@ -50,11 +51,13 @@ export default function Comparison({left, world}) {
           </CountryName>
         </Country>
       </Headline>
-      <Metrica>
-        <Percent>{getPercent(left.recovered, left.total)}</Percent>
-        <MetricaName>{t('country.all.recoveryRate')}</MetricaName>
-        <Percent right>{getPercent(right.recovered, right.total)}</Percent>
-      </Metrica>
+      {!+left.recovered || !+right.recovered ? null : (
+        <Metrica>
+          <Percent>{getPercent(left.recovered, left.total)}</Percent>
+          <MetricaName>{t('country.all.recoveryRate')}</MetricaName>
+          <Percent right>{getPercent(right.recovered, right.total)}</Percent>
+        </Metrica>
+      )}
       <Metrica>
         <Percent>{getPercent(left.deaths, left.total)}</Percent>
         <MetricaName>{t('country.all.deathsRate')}</MetricaName>

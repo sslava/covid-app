@@ -16,6 +16,8 @@ import {
   StatsNumXl,
 } from './TotalStatsExtended.styles';
 
+const aligns = ['flex-start', 'center', 'flex-end'];
+
 export default function TotalStatsExtended({country}) {
   const theme = useTheme();
   const stats = useStatsBar(
@@ -28,6 +30,44 @@ export default function TotalStatsExtended({country}) {
   const ratingSelector = useMemo(makeCountryRatingSelector, []);
   const rating = useSelector((s) => ratingSelector(s, country.code));
 
+  const elements = [];
+
+  if (+country.recovered) {
+    elements.push(
+      <StatsNum
+        caption={t('stats.recovered')}
+        number={country.recovered}
+        todayColor={theme.recoveredColor}
+        pos={rating.recovered}
+        align={aligns[elements.length]}
+      />,
+    );
+  }
+  if (+country.active) {
+    elements.push(
+      <StatsNum
+        caption={t('stats.active')}
+        number={country.active}
+        todayColor={theme.activeColor}
+        align={aligns[elements.length]}
+        pos={rating.active}
+      />,
+    );
+  }
+
+  if (+country.deaths) {
+    elements.push(
+      <StatsNum
+        caption={t('stats.deaths')}
+        number={country.deaths}
+        today={country.deaths_new}
+        todayColor={theme.deathsColor}
+        align={aligns[elements.length]}
+        pos={rating.deaths}
+      />,
+    );
+  }
+
   const fr = stats[0].fraction;
   return (
     <StatsContainer>
@@ -39,33 +79,9 @@ export default function TotalStatsExtended({country}) {
       <Bar items={stats} height={10} />
       <SlidingBlocks
         fraction={fr}
-        left={
-          <StatsNum
-            caption={t('stats.recovered')}
-            number={country.recovered}
-            todayColor={theme.recoveredColor}
-            pos={rating.recovered}
-          />
-        }
-        center={
-          <StatsNum
-            caption={t('stats.active')}
-            number={country.active}
-            todayColor={theme.activeColor}
-            align="center"
-            pos={rating.active}
-          />
-        }
-        right={
-          <StatsNum
-            caption={t('stats.deaths')}
-            number={country.deaths}
-            today={country.deaths_new}
-            todayColor={theme.deathsColor}
-            align="flex-end"
-            pos={rating.deaths}
-          />
-        }
+        left={elements[0] || null}
+        center={elements[1] || null}
+        right={elements[2] || null}
       />
     </StatsContainer>
   );

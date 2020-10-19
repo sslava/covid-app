@@ -20,9 +20,10 @@ export const StatsContainer = styled.View`
 `;
 
 export const Bar = styled(HorizontalBar)`
-  padding-vertical: 7px;
+  margin-vertical: 10px;
 `;
 
+const aligns = ['flex-start', 'center', 'flex-end'];
 export default function TotalStats({
   total,
   recovered,
@@ -35,6 +36,43 @@ export default function TotalStats({
   const stats = useStatsBar(total, recovered, deaths, active);
 
   const fr = stats[0].fraction;
+
+  const elements = [];
+
+  if (+recovered) {
+    elements.push(
+      <StatsNumber
+        caption={t('stats.recovered')}
+        number={recovered}
+        todayColor={theme.recoveredColor}
+        align={aligns[elements.length]}
+      />,
+    );
+  }
+
+  if (+active) {
+    elements.push(
+      <StatsNumber
+        caption={t('stats.active')}
+        number={active}
+        todayColor={theme.activeColor}
+        align={aligns[elements.length]}
+      />,
+    );
+  }
+
+  if (+deaths) {
+    elements.push(
+      <StatsNumber
+        caption={t('stats.deaths')}
+        number={deaths}
+        today={deaths_new}
+        todayColor={theme.deathsColor}
+        align={aligns[elements.length]}
+      />,
+    );
+  }
+
   return (
     <View>
       <StatsNumberLarge
@@ -45,30 +83,9 @@ export default function TotalStats({
       <Bar items={stats} height={10} />
       <SlidingBlocks
         fraction={fr}
-        left={
-          <StatsNumber
-            caption={t('stats.recovered')}
-            number={recovered}
-            todayColor={theme.recoveredColor}
-          />
-        }
-        center={
-          <StatsNumber
-            caption={t('stats.active')}
-            number={active}
-            todayColor={theme.activeColor}
-            align="center"
-          />
-        }
-        right={
-          <StatsNumber
-            caption={t('stats.deaths')}
-            number={deaths}
-            today={deaths_new}
-            todayColor={theme.deathsColor}
-            align="flex-end"
-          />
-        }
+        left={elements[0] || null}
+        center={elements[1] || null}
+        right={elements[2] || null}
       />
     </View>
   );

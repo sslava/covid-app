@@ -7,7 +7,7 @@ export const Container = styled.View`
 
 export const Growing = styled.View`
   margin-right: 5px;
-  flex-grow: ${(p) => p.fraction};
+  flex-grow: ${(p) => (Number.isNaN(p.fraction) ? 0 : p.fraction)};
 `;
 
 export const Left = styled.View`
