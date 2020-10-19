@@ -1,3 +1,4 @@
+import {Dimensions} from 'react-native';
 import NativeAdView, {
   AdvertiserView,
   CallToActionView,
@@ -8,35 +9,40 @@ import NativeAdView, {
 
 import styled from 'styled-components/native';
 
+const {width} = Dimensions.get('window');
+
 export const AdView = styled(NativeAdView)`
-  width: 95%;
-  align-self: center;
-  height: 100px;
-`;
-
-export const Inner = styled.View`
   height: 100px;
   width: 100%;
+  background-color: ${(p) => p.theme.primaryBackground};
 `;
 
-export const Content = styled.View`
+export const Container = styled.View`
   height: 100px;
   width: 100%;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding-horizontal: 10px;
-`;
-
-export const Left = styled.View`
-  width: 65%;
-  max-width: 65%;
-  padding-horizontal: 6px;
 `;
 
 export const ADIcon = styled(IconView)`
   width: 60px;
   height: 60px;
+`;
+
+export const Inner = styled.View`
+  width: ${width - 90}px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Content = styled.View`
+  width: 75%
+  padding-horizontal: 6px;
 `;
 
 export const Headline = styled(HeadlineView)`
@@ -57,6 +63,7 @@ export const Advertiser = styled(AdvertiserView)`
 
 export const CallToAction = styled(CallToActionView)`
   height: 45px;
+  max-width: 80px;
   padding-horizontal: 12px;
   background-color: ${(p) => p.theme.actionColor};
   justify-content: center;
