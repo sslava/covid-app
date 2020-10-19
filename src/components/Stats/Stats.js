@@ -1,15 +1,6 @@
 import React, {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 
-import NativeAdView, {
-  CallToActionView,
-  IconView,
-  HeadlineView,
-  TaglineView,
-  AdvertiserView,
-  AdBadge,
-} from 'react-native-admob-native-ads';
-
 import {t} from '../../common/locale';
 
 import {makePrimaryCountrySelector} from '../../app/statsModule';
@@ -29,22 +20,25 @@ import {
 } from './Stats.styles';
 
 import AdmobBlock from '../Admob/AdmobBlock';
+import {adsSelector} from '../../app/adModule';
 
 export default function Stats({code}) {
   const countrySelector = useMemo(makePrimaryCountrySelector, []);
   const country = useSelector((s) => countrySelector(s, code));
 
+  const ads = useSelector(adsSelector);
   return (
     <Container>
       <LargeHeader title={t('stats.title')} />
       <PrimaryContainer>
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
-      <AdmobBlock unitId="ca-app-pub-7167431573335979/5142058616" />
+      <AdmobBlock unitId={ads.statsTop} />
       {countrySupportsRegions(code) && <Region code={code} country={country} />}
       <WorldContainer>
         <WorldStats />
       </WorldContainer>
+      <AdmobBlock unitId={ads.statsMiddle} />
       <CountriesContainer>
         <Countries />
       </CountriesContainer>

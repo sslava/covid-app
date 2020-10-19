@@ -1,39 +1,35 @@
 import React from 'react';
 
 import {
-  HeadlineView,
-  AdvertiserView,
-  AdBadge,
-} from 'react-native-admob-native-ads';
-
-import {
+  Container,
   AdView,
   Inner,
   Content,
-  Left,
   ADIcon,
   CallToAction,
   Tagline,
   Headline,
+  Advertiser,
 } from './AdmobBlock.styles';
 
-import {adUnitID} from './ad';
+export default function AdmobBlock({unitId}) {
+  if (!unitId) {
+    return null;
+  }
 
-export default function AdmobBlock({code, unitId = adUnitID}) {
   return (
-    <AdView adUnitID={unitId}>
-      <Inner>
-        <AdBadge />
-        <Content>
-          <ADIcon />
-          <Left>
+    <AdView adUnitID={unitId} enableTestMode={false}>
+      <Container>
+        <ADIcon />
+        <Inner>
+          <Content>
             <Headline />
             <Tagline numberOfLines={1} />
-            <AdvertiserView />
-          </Left>
+            <Advertiser />
+          </Content>
           <CallToAction textStyle={{color: 'white', fontSize: 14}} />
-        </Content>
-      </Inner>
+        </Inner>
+      </Container>
     </AdView>
   );
 }
