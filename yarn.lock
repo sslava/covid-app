@@ -6387,6 +6387,11 @@ react-native-animatable@^1.2.4:
   dependencies:
     prop-types "^15.7.2"
 
+react-native-appmetrica@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-appmetrica/-/react-native-appmetrica-2.0.0.tgz#cbb592743975c7162ec7731400ac00da06344c33"
+  integrity sha512-WYr8yRbWrRxtIy05mKJ5KAEI5nBInlSOzuy6lTswh/9VP9wY1AiOOv8iVQ6hCXe7ax+GIyVpLU5xmvGgyZASow==
+
 react-native-button@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-native-button/-/react-native-button-2.4.0.tgz#42b487073a7ce7c54ab503f77c6ced1ab95742bf"

@@ -271,6 +271,9 @@ PODS:
   - React-jsinspector (0.63.3)
   - react-native-admob-native-ads (0.3.6):
     - React
+  - react-native-appmetrica (2.0.0):
+    - React
+    - YandexMobileMetrica (= 3.9.4)
   - react-native-safe-area-context (3.1.8):
     - React-Core
   - react-native-segmented-control (2.2.0):
@@ -351,6 +354,14 @@ PODS:
     - React-Core
   - RNSVG (12.1.0):
     - React
+  - YandexMobileMetrica (3.9.4):
+    - YandexMobileMetrica/Static (= 3.9.4)
+  - YandexMobileMetrica/Static (3.9.4):
+    - YandexMobileMetrica/Static/Core (= 3.9.4)
+    - YandexMobileMetrica/Static/Crashes (= 3.9.4)
+  - YandexMobileMetrica/Static/Core (3.9.4)
+  - YandexMobileMetrica/Static/Crashes (3.9.4):
+    - YandexMobileMetrica/Static/Core
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -394,6 +405,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-admob-native-ads (from `../node_modules/react-native-admob-native-ads`)
+  - react-native-appmetrica (from `../node_modules/react-native-appmetrica`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-segmented-control (from `../node_modules/@react-native-community/segmented-control`)"
   - react-native-view-shot (from `../node_modules/react-native-view-shot`)
@@ -435,6 +447,7 @@ SPEC REPOS:
     - nanopb
     - OpenSSL-Universal
     - PromisesObjC
+    - YandexMobileMetrica
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -470,6 +483,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-admob-native-ads:
     :path: "../node_modules/react-native-admob-native-ads"
+  react-native-appmetrica:
+    :path: "../node_modules/react-native-appmetrica"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-segmented-control:
@@ -547,6 +562,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
   react-native-admob-native-ads: 03281928f52ecc7cfb6dda7c458f0c9599be8f3f
+  react-native-appmetrica: 799bd81c1d9ba026705b54d7b7081c57b9348387
   react-native-safe-area-context: 79fea126c6830c85f65947c223a5e3058a666937
   react-native-segmented-control: 949660ffafc2d4c13ac2bcb6024da1a816e01217
   react-native-view-shot: 4475fde003fe8a210053d1f98fb9e06c1d834e1c
@@ -567,6 +583,7 @@ SPEC CHECKSUMS:
   RNScreens: 0e91da98ab26d5d04c7b59a9b6bd694124caf88c
   RNShare: 7a7277f3c313652422d9de072ac50714dff5e8a4
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
+  YandexMobileMetrica: 1030df2959c886a7be3bc3d274eb54c8e86afd6f
   Yoga: 7d13633d129fd179e01b8953d38d47be90db185a
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

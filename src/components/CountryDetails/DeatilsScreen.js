@@ -1,5 +1,7 @@
 import React, {useCallback, useEffect, useMemo} from 'react';
 
+import AppMetrica from 'react-native-appmetrica';
+
 import {useDispatch, useSelector} from 'react-redux';
 import {RefreshControl} from 'react-native';
 
@@ -38,6 +40,10 @@ export default function DeatilsScreen({navigation, route}) {
     dispatch(fetchStats());
     dispatch(fetchCountryHistory(code));
   }, [dispatch, code]);
+
+  useEffect(() => {
+    AppMetrica.reportEvent('CountryOpen', {code});
+  }, [code]);
 
   useEffect(() => {
     if (hasRegions) {
