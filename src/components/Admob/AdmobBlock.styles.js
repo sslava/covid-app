@@ -1,13 +1,13 @@
 import {Dimensions} from 'react-native';
 import NativeAdView, {
   AdvertiserView,
-  CallToActionView,
   HeadlineView,
   IconView,
   TaglineView,
 } from 'react-native-admob-native-ads';
 
 import styled from 'styled-components/native';
+import CallToActionView from './CallToActionView';
 
 const {width} = Dimensions.get('window');
 
@@ -41,7 +41,7 @@ export const Inner = styled.View`
 `;
 
 export const Content = styled.View`
-  width: 75%
+  width: 75%;
   padding-horizontal: 6px;
 `;
 
@@ -69,5 +69,5 @@ export const CallToAction = styled(CallToActionView)`
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  elevation: 10;
+  padding-vertical: 8px;
 `;

@@ -27,7 +27,10 @@ export default function AdmobBlock({unitId}) {
             <Tagline numberOfLines={1} />
             <Advertiser />
           </Content>
-          <CallToAction textStyle={{color: 'white', fontSize: 14}} />
+          <CallToAction
+            textStyle={{color: 'white', fontSize: 14}}
+            style={{elevation: 100}}
+          />
         </Inner>
       </Container>
     </AdView>
