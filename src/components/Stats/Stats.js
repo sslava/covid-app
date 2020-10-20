@@ -36,7 +36,7 @@ export default function Stats({code}) {
       <WorldContainer>
         <WorldStats />
       </WorldContainer>
-      <AdmobBlock palce="statsMiddle" />
+      <AdmobBlock place="statsMiddle" />
       <CountriesContainer>
         <Countries />
       </CountriesContainer>
