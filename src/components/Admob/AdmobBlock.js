@@ -1,4 +1,8 @@
-import React from 'react';
+import React, {useCallback} from 'react';
+import {useSelector} from 'react-redux';
+import {adsSelector} from '../../app/adModule';
+
+import AppMetrica from 'react-native-appmetrica';
 
 import {
   Container,
@@ -12,13 +16,22 @@ import {
   Advertiser,
 } from './AdmobBlock.styles';
 
-export default function AdmobBlock({unitId}) {
+export default function AdmobBlock({place}) {
+  const ads = useSelector(adsSelector);
+  const unitId = ads[place];
+
+  const clicked = useCallback(() => {
+    if (unitId) {
+      AppMetrica.reportEvent('BannerClick', {unitId});
+    }
+  }, [unitId]);
+
   if (!unitId) {
     return null;
   }
 
   return (
-    <AdView adUnitID={unitId} enableTestMode={false}>
+    <AdView adUnitID={unitId} enableTestMode={false} onAdClicked={clicked}>
       <Container>
         <ADIcon />
         <Inner>
