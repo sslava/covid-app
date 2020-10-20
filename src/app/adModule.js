@@ -3,7 +3,7 @@ import createFetchReducer from './createFetchReducer';
 import {ItemStore} from '../common/ItemStore';
 import {apiRequest} from '../common/api';
 
-const fetcher = () => apiRequest('GET', 'https://covidum.com/request/get_adv');
+const fetcher = () => apiRequest('GET', '/get_adv');
 
 const initial = {
   statsTop: null,

@@ -5,8 +5,7 @@ import {apiRequest} from '../common/api';
 import createFetchReducer from './createFetchReducer';
 import entitiesMapReducer from './entitiesMapReducer';
 
-const fetcher = (code) =>
-  apiRequest('GET', `https://covidum.com/request/get_stat_regions/${code}`);
+const fetcher = (code) => apiRequest('GET', `/get_stat_regions/${code}`);
 
 const initial = [];
 

@@ -12,12 +12,17 @@ const params = {
   },
 };
 
+export const baseApiUrl = 'https://api.covidum.com/request';
+
 export async function apiRequest(
   method: string,
   url: string,
   paramsExt: (Object) => Object = (o) => o,
 ): Promise<?Object> {
-  const response = await fetch(url, {...paramsExt(params), method});
+  const response = await fetch(`${baseApiUrl}${url}`, {
+    ...paramsExt(params),
+    method,
+  });
   const text = await response.text();
   let json = null;
   try {

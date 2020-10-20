@@ -6,8 +6,7 @@ import createFetchReducer from './createFetchReducer';
 import entitiesMapReducer from './entitiesMapReducer';
 import {lastX} from '../common/utils';
 
-const fetcher = (code) =>
-  apiRequest('GET', `https://covidum.com/request/get_stat_history/${code}`);
+const fetcher = (code) => apiRequest('GET', `/get_stat_history/${code}`);
 
 const initial = [];
 

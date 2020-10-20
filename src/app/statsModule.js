@@ -5,7 +5,7 @@ import createFetchReducer from './createFetchReducer';
 import {ItemStore} from '../common/ItemStore';
 import {apiRequest} from '../common/api';
 
-const fetcher = () => apiRequest('GET', 'https://covidum.com/request/get_stat');
+const fetcher = () => apiRequest('GET', '/get_stat');
 
 const initial = {
   nodata: false,
