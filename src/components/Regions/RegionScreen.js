@@ -33,7 +33,7 @@ export default function RegionScreen({route}) {
   const dispatch = useDispatch();
   const countryCode = route.params.code;
 
-  const regionsSelector = useMemo(makeCountryRegionsSelector);
+  const regionsSelector = useMemo(makeCountryRegionsSelector, []);
   const {data: all, isFetching} = useSelector((s) =>
     regionsSelector(s, countryCode),
   );

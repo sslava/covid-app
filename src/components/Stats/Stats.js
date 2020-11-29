@@ -32,7 +32,7 @@ export default function Stats({code}) {
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
       <AdmobBlock place="statsTop" />
-      {countrySupportsRegions(code) && <Region code={code} country={country} />}
+      {country?.has_state && <Region country={country} />}
       <WorldContainer>
         <WorldStats />
       </WorldContainer>

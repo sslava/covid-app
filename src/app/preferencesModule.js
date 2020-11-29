@@ -3,6 +3,8 @@ import {createSelector} from 'reselect';
 import {ItemStore} from '../common/ItemStore';
 import {getCurrentCountryCode} from '../common/locale';
 
+import {makeCountrySelector} from './statsModule';
+
 const initialPrefs = {
   primary: null,
 };
@@ -60,26 +62,26 @@ export const preferredCountrySelector = createSelector(
 
 export const countrySupportsRegions = (code) => code === 'US' || code === 'RU';
 
-const defaultRegionIds = {RU: 'Moscow', US: 'New-Yourk'};
-
 const getRegionCountryKey = (code) => `region-${code}`;
 
 export const getRegionId = (r) => r.slug;
 
-export const updatePrimaryRegion = (regionId) => (dispatch, getState) => {
-  const code = preferredCountrySelector(getState());
+export const updatePrimaryRegion = (code, regionId) => (dispatch, getState) => {
   const key = getRegionCountryKey(code);
   dispatch(updatePrefences({[key]: regionId}));
 };
 
-export const preferredRegionSelector = createSelector(
-  preferencesSelector,
-  preferredCountrySelector,
-  (prefs, code) => {
-    if (!countrySupportsRegions(code)) {
-      return null;
-    }
-    const key = getRegionCountryKey(code);
-    return prefs[key] || defaultRegionIds[code];
-  },
-);
+export const makePreferredRegionSelector = () => {
+  const countrySelector = makeCountrySelector();
+  return createSelector(
+    preferencesSelector,
+    countrySelector,
+    (prefs, country) => {
+      if (!country?.has_state) {
+        return null;
+      }
+      const key = getRegionCountryKey(country.code);
+      return prefs[key] || country.default_state;
+    },
+  );
+};

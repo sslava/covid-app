@@ -13,7 +13,7 @@ import shareImageDialog from '../../common/shareImage';
 import {useOffscreenViewShot} from '../../common/OffscreenViewshot';
 
 import {
-  preferredRegionSelector,
+  makePreferredRegionSelector,
   getRegionId,
 } from '../../../app/preferencesModule';
 
@@ -32,12 +32,14 @@ import {
   ListBtn,
 } from './Region.styles';
 
-export default function Region({country, code}) {
+export default function Region({country}) {
   const nav = useNavigation();
 
-  const regionId = useSelector(preferredRegionSelector);
-  const regionsSelector = useMemo(makeCountryRegionsSelector);
-  const {data: regions} = useSelector((s) => regionsSelector(s, code));
+  const regionIdSelector = useMemo(makePreferredRegionSelector, []);
+  const regionId = useSelector((s) => regionIdSelector(s, country.code));
+
+  const regionsSelector = useMemo(makeCountryRegionsSelector, []);
+  const {data: regions} = useSelector((s) => regionsSelector(s, country.code));
 
   const region = useMemo(() => {
     if (!regions) {
@@ -46,11 +48,19 @@ export default function Region({country, code}) {
     return regions.find((r) => getRegionId(r) === regionId) || regions[0];
   }, [regions, regionId]);
 
-  const changeRegion = useCallback(() => nav.navigate('RegionSelect'), [nav]);
+  const changeRegion = useCallback(
+    () =>
+      nav.navigate('RegionSelect', {
+        code: country.code,
+        name: countryName(country),
+      }),
+    [nav, country],
+  );
 
   const openList = useCallback(
-    () => nav.navigate('Regions', {code: code, name: countryName(country)}),
-    [country, code, nav],
+    () =>
+      nav.navigate('Regions', {code: country.code, name: countryName(country)}),
+    [country, nav],
   );
 
   const name = regionName(region);
@@ -97,7 +107,7 @@ export default function Region({country, code}) {
         sharing={sharing}
         onCapture={capture}
         region={region}
-        code={code}
+        code={country.code}
       />
     </Container>
   );

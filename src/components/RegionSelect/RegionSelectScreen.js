@@ -7,8 +7,7 @@ import {matchRegion, t, regionName, sortRegions} from '../../common/locale';
 import {makeCountryRegionsSelector} from '../../app/regionsModule';
 
 import {
-  preferredCountrySelector,
-  preferredRegionSelector,
+  makePreferredRegionSelector,
   getRegionId,
   updatePrimaryRegion,
 } from '../../app/preferencesModule';
@@ -22,12 +21,14 @@ import {Container, Search} from './RegionSelectScreen.styles';
 
 const keyer = (r) => getRegionId(r);
 
-export default function RegionSelectScreen({navigation}) {
+export default function RegionSelectScreen({navigation, route}) {
   const dispatch = useDispatch();
-  const code = useSelector(preferredCountrySelector);
-  const regionId = useSelector(preferredRegionSelector);
+  const code = route.params.code;
 
-  const regionsSelector = useMemo(makeCountryRegionsSelector);
+  const regionIdSelecor = useMemo(makePreferredRegionSelector, []);
+  const regionId = useSelector((s) => regionIdSelecor(s, code));
+
+  const regionsSelector = useMemo(makeCountryRegionsSelector, []);
   const {data: all} = useSelector((s) => regionsSelector(s, code));
 
   const sorted = useMemo(() => sortRegions(all), [all]);
@@ -35,10 +36,10 @@ export default function RegionSelectScreen({navigation}) {
 
   const select = useCallback(
     (id) => {
-      dispatch(updatePrimaryRegion(id));
+      dispatch(updatePrimaryRegion(code, id));
       navigation.goBack();
     },
-    [navigation, dispatch],
+    [navigation, dispatch, code],
   );
 
   return (
