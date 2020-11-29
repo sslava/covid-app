@@ -53,14 +53,12 @@ export const updatePrimaryCountry = (code) => (dispatch) => {
   dispatch(updatePrefences({primary: code}));
 };
 
-export const preferredCountrySelector = createSelector(
+export const preferredCountryCodeSelector = createSelector(
   preferencesSelector,
   (prefs) => prefs.primary || getCurrentCountryCode(),
 );
 
 // primary region
-
-export const countrySupportsRegions = (code) => code === 'US' || code === 'RU';
 
 const getRegionCountryKey = (code) => `region-${code}`;
 

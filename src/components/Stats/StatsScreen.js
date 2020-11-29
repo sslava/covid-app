@@ -1,13 +1,10 @@
-import React, {useRef, useEffect, useCallback} from 'react';
+import React, {useRef, useEffect, useCallback, useMemo} from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {RefreshControl} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 
-import {
-  preferredCountrySelector,
-  countrySupportsRegions,
-} from '../../app/preferencesModule';
+import {preferredCountryCodeSelector} from '../../app/preferencesModule';
 
 import useRefresh from '../common/useRefresh';
 import {useAppStateActive} from '../common/useAppState';
@@ -17,6 +14,7 @@ import {
   fetchStats,
   nodataSelector,
   fetchingStatsSelector,
+  makePrimaryCountrySelector,
 } from '../../app/statsModule';
 
 import {fetchCountryHistory} from '../../app/historyModule';
@@ -32,7 +30,10 @@ export default function StatsScreen({}) {
   const scrollRef = useRef();
   useScrollToTop(scrollRef);
 
-  const code = useSelector(preferredCountrySelector);
+  const code = useSelector(preferredCountryCodeSelector);
+
+  const countrySelector = useMemo(makePrimaryCountrySelector, []);
+  const country = useSelector((s) => countrySelector(s, code));
 
   useEffect(() => {
     dispatch(initStats());
@@ -41,19 +42,23 @@ export default function StatsScreen({}) {
   useEffect(() => {
     if (code) {
       dispatch(fetchCountryHistory(code));
-      if (countrySupportsRegions(code)) {
-        dispatch(fetchCountryRegions(code));
-      }
     }
   }, [dispatch, code]);
+
+  useEffect(() => {
+    if (country?.has_state) {
+      dispatch(fetchCountryRegions(country.code));
+    }
+  }, [dispatch, country]);
 
   const refreshStats = useCallback(() => {
     dispatch(fetchStats());
     dispatch(fetchCountryHistory(code));
-    if (countrySupportsRegions(code)) {
-      dispatch(fetchCountryRegions(code));
+
+    if (country?.has_state) {
+      dispatch(fetchCountryRegions(country.code));
     }
-  }, [dispatch, code]);
+  }, [dispatch, code, country]);
 
   useAppStateActive(refreshStats);
 

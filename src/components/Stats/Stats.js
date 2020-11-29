@@ -5,7 +5,6 @@ import {t} from '../../common/locale';
 
 import {makePrimaryCountrySelector} from '../../app/statsModule';
 
-import {countrySupportsRegions} from '../../app/preferencesModule';
 import LargeHeader from '../common/Header/LargeHeader';
 import WorldStats from './World/WorldStats';
 import PrimaryCountry from './PrimaryCountry/PrimaryCountry';

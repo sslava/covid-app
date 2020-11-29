@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import {useSelector} from 'react-redux';
 import {TouchableOpacity} from 'react-native';
 
-import {preferredCountrySelector} from '../../app/preferencesModule';
+import {preferredCountryCodeSelector} from '../../app/preferencesModule';
 import {t} from '../../common/locale';
 
 import useBrowserLink from '../common/useBrowserLink';
@@ -27,7 +27,7 @@ const Link = styled.Text`
 `;
 
 export default function VerbaLink() {
-  const code = useSelector(preferredCountrySelector);
+  const code = useSelector(preferredCountryCodeSelector);
   const pressLink = useBrowserLink('http://verbaclinic.ru/');
 
   if (code !== 'RU') {

@@ -33,7 +33,7 @@ function sortedTop(cities, sort, topX = 10) {
 export default function TopRegions({code, country}) {
   const [sv, sort, changeSort] = useSortTabs();
 
-  const regionsSelector = useMemo(makeCountryRegionsSelector);
+  const regionsSelector = useMemo(makeCountryRegionsSelector, []);
   const {data: all} = useSelector((s) => regionsSelector(s, code));
   const cities = useMemo(() => sortedTop(all, sort), [all, sort]);
 

@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {
-  preferredCountrySelector,
+  preferredCountryCodeSelector,
   updatePrimaryCountry,
 } from '../../app/preferencesModule';
 
@@ -10,7 +10,7 @@ import CountrySelect from '../shared/CountrySelect/CountrySelect';
 
 export default function PrimarySelectScreen({navigation}) {
   const dispatch = useDispatch();
-  const primary = useSelector(preferredCountrySelector);
+  const primary = useSelector(preferredCountryCodeSelector);
 
   const select = useCallback(
     (id) => {

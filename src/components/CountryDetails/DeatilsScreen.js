@@ -18,8 +18,6 @@ import {
   makeCounrtyHistorySelector,
 } from '../../app/historyModule';
 
-import {countrySupportsRegions} from '../../app/preferencesModule';
-
 import Today from './Today/Today';
 import Stats from './Stats/Stats';
 import Graphs from './Graphs/Graphs';
@@ -33,7 +31,8 @@ export default function DeatilsScreen({navigation, route}) {
   const dispatch = useDispatch();
   const {code} = route.params;
 
-  const hasRegions = countrySupportsRegions(code);
+  const countrySelector = useMemo(makeCountrySelector, []);
+  const country = useSelector((s) => countrySelector(s, code));
 
   useEffect(() => {
     dispatch(fetchStats());
@@ -45,24 +44,21 @@ export default function DeatilsScreen({navigation, route}) {
   }, [code]);
 
   useEffect(() => {
-    if (hasRegions) {
-      dispatch(fetchCountryRegions(code));
+    if (country?.has_state) {
+      dispatch(fetchCountryRegions(country.code));
     }
-  }, [dispatch, hasRegions, code]);
+  }, [dispatch, country]);
 
   const refreshStats = useCallback(() => {
     dispatch(fetchStats());
     dispatch(fetchCountryHistory(code));
-    if (hasRegions) {
-      dispatch(fetchCountryRegions(code));
+    if (country?.has_state) {
+      dispatch(fetchCountryRegions(country.code));
     }
-  }, [dispatch, code, hasRegions]);
+  }, [dispatch, country, code]);
 
   const isFetching = useSelector(fetchingStatsSelector);
   const [refresh, refreshing] = useRefresh(refreshStats, isFetching);
-
-  const countrySelector = useMemo(makeCountrySelector, []);
-  const country = useSelector((s) => countrySelector(s, code));
 
   const historySelector = useMemo(makeCounrtyHistorySelector, []);
   const history = useSelector((s) => historySelector(s, code));
@@ -78,7 +74,7 @@ export default function DeatilsScreen({navigation, route}) {
         <Stats country={country} history={history} />
         <AdmobBlock place="countryMiddle" />
         <Graphs history={history} />
-        {hasRegions && <Regions code={code} country={country} />}
+        {country?.has_state && <Regions code={code} country={country} />}
       </Scroll>
     </Safe>
   );
