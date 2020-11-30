@@ -11,14 +11,14 @@ import PrimaryCountry from './PrimaryCountry/PrimaryCountry';
 import Countries from './Countries/Countries';
 import Region from './Region/Region';
 
+// import AdmobBlock from '../Admob/AdmobBlock';
+
 import {
   Container,
   WorldContainer,
   PrimaryContainer,
   CountriesContainer,
 } from './Stats.styles';
-
-import AdmobBlock from '../Admob/AdmobBlock';
 
 export default function Stats({code}) {
   const countrySelector = useMemo(makePrimaryCountrySelector, []);
@@ -30,12 +30,12 @@ export default function Stats({code}) {
       <PrimaryContainer>
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
-      <AdmobBlock place="statsTop" />
+      {/* <AdmobBlock place="statsTop" /> */}
       {country?.has_state && <Region country={country} />}
       <WorldContainer>
         <WorldStats />
       </WorldContainer>
-      <AdmobBlock place="statsMiddle" />
+      {/* <AdmobBlock place="statsMiddle" /> */}
       <CountriesContainer>
         <Countries />
       </CountriesContainer>

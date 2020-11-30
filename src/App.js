@@ -12,13 +12,13 @@ import AppearanceTheme from './components/common/AppearanceTheme';
 
 import {store} from './app/store';
 import {initAds} from './app/adModule';
-import {AdManager} from 'react-native-admob-native-ads';
+// import {AdManager} from 'react-native-admob-native-ads';
 
 initI18nConfig();
 
-AdManager.setRequestConfiguration({
-  maxAdContetRating: 'G',
-});
+// AdManager.setRequestConfiguration({
+//   maxAdContetRating: 'G',
+// });
 
 AppMetrica.activate({
   apiKey: 'f34cf193-d2c4-4530-9b34-3577c479fdde',

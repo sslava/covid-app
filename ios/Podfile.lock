@@ -269,8 +269,6 @@ PODS:
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
   - React-jsinspector (0.63.3)
-  - react-native-admob-native-ads (0.3.9):
-    - React-Core
   - react-native-appmetrica (2.0.0):
     - React
     - YandexMobileMetrica (= 3.9.4)
@@ -406,7 +404,6 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - react-native-admob-native-ads (from `../node_modules/react-native-admob-native-ads`)
   - react-native-appmetrica (from `../node_modules/react-native-appmetrica`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-segmented-control (from `../node_modules/@react-native-community/segmented-control`)"
@@ -484,8 +481,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
-  react-native-admob-native-ads:
-    :path: "../node_modules/react-native-admob-native-ads"
   react-native-appmetrica:
     :path: "../node_modules/react-native-appmetrica"
   react-native-safe-area-context:
@@ -566,7 +561,6 @@ SPEC CHECKSUMS:
   React-jsi: df07aa95b39c5be3e41199921509bfa929ed2b9d
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
-  react-native-admob-native-ads: ba2d1ae5166188d524764466ecc69bd9f7fef82d
   react-native-appmetrica: 799bd81c1d9ba026705b54d7b7081c57b9348387
   react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
   react-native-segmented-control: eb9e25fbfbce226ecf66d643428fbe97601e691a
