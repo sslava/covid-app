@@ -19,6 +19,7 @@ import {
   PrimaryContainer,
   CountriesContainer,
 } from './Stats.styles';
+import Banner from '../shared/Banner';
 
 export default function Stats({code}) {
   const countrySelector = useMemo(makePrimaryCountrySelector, []);
@@ -30,6 +31,7 @@ export default function Stats({code}) {
       <PrimaryContainer>
         <PrimaryCountry code={code} country={country} />
       </PrimaryContainer>
+      <Banner place="statsMiddle" />
       {/* <AdmobBlock place="statsTop" /> */}
       {country?.has_state && <Region country={country} />}
       <WorldContainer>
