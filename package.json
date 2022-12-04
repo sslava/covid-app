@@ -2,6 +2,8 @@
   "name": "rucovid",
   "version": "0.0.1",
   "private": true,
+  "license": "MIT",
+  "author": "Iaroslav Sobolev <sobolevslava@gmail.com>",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
